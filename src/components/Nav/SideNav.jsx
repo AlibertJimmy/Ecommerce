@@ -77,7 +77,7 @@ function SideNav ({ open, handleCloseBurger }) {
       <StyledUl open={open}>
             <StyledLi><StyledLink to="/" onClick={handleLinkClick}>Home</StyledLink></StyledLi>
             <StyledLi><Dropdown dropDownTitle ={dropDownTitle} options={linksRender} links={links} handleCloseBurger={handleCloseBurger}/></StyledLi>
-            <StyledLi><StyledLink to="/Contact" onClick={handleLinkClick}>Contact</StyledLink></StyledLi>
+            <StyledLi><StyledLink to="/Account" onClick={handleLinkClick}>Account</StyledLink></StyledLi>
         </StyledUl>
     </div>
 

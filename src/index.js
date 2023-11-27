@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
+import Account from './pages/Account/Account';
 import Shelter from './pages/Items/Shelter/Shelter';
 import ShelterSingleWall from './pages/Items/Shelter/SingleWall';
 import ShelterDoubleWall from './pages/Items/Shelter/DoubleWall';
@@ -25,7 +26,6 @@ const ContentWrapper = styled.div`
 `;
 
 function App () {
-
   return (
     <React.StrictMode>
     <Router>
@@ -38,6 +38,7 @@ function App () {
               <Route path="/Shelter/SingleWall" element={<ShelterSingleWall />} />
               <Route path="/Shelter/DoubleWall" element={<ShelterDoubleWall />} />
               <Route path="/Bedding" element={<Bedding />} />
+              <Route path="/Account" element={<Account />} />
             </Routes>
           </ContentWrapper>
         </HomeWrapper>
@@ -46,7 +47,6 @@ function App () {
   </React.StrictMode>
   );
 }
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
