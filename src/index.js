@@ -8,10 +8,15 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import Account from './pages/Account/Account';
+
 import Shelter from './pages/Items/Shelter/Shelter';
 import ShelterSingleWall from './pages/Items/Shelter/SingleWall';
 import ShelterDoubleWall from './pages/Items/Shelter/DoubleWall';
-import Bedding from './pages/Items/Bedding';
+
+import Bedding from './pages/Items/Bedding/Bedding';
+import Hammock from './pages/Items/Bedding/Hammock';
+import Mattress from './pages/Items/Bedding/Mattress';
+import SleepingBag from './pages/Items/Bedding/SleepingBag';
 
 // Import Style
 import styled from 'styled-components';
@@ -37,7 +42,12 @@ function App () {
               <Route path="/Shelter" element={<Shelter />} />
               <Route path="/Shelter/SingleWall" element={<ShelterSingleWall />} />
               <Route path="/Shelter/DoubleWall" element={<ShelterDoubleWall />} />
+
               <Route path="/Bedding" element={<Bedding />} />
+              <Route path="/Bedding/SleepingBag" element={<SleepingBag />} />
+              <Route path="/Bedding/Mattress" element={<Mattress />} />
+              <Route path="/Bedding/Hammock" element={<Hammock />} />
+
               <Route path="/Account" element={<Account />} />
             </Routes>
           </ContentWrapper>

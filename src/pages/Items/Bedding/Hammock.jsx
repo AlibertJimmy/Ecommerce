@@ -6,14 +6,14 @@ import React from 'react';
 // Import Datas
 
 // Import Style
-import { PageWrapper } from '../../utils/Styles';
+import { PageWrapper } from '../../../utils/Styles';
 
-function Bedding () {
+function Hammock () {
   return (
       <PageWrapper>
-        Bedding
+        Hammock
       </PageWrapper>
   );
 }
 
-export default Bedding;
+export default Hammock;

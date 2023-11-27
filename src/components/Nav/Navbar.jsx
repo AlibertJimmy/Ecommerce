@@ -23,8 +23,6 @@ BaseNav.propTypes = {
 const StyledNav = styled(BaseNav)`
   height: ${headerHeight}px;
   z-index: 9999;
-
-  color: white;
 `;
 
 function Navbar () {

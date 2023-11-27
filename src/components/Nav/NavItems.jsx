@@ -5,13 +5,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // Import compoment
+import Dropdown from '../Dropdown/Dropdown';
 
 // Import Functions
-import { scrollToTop } from '../../utils/Functions';
 
 // Import Style
 import styled from 'styled-components';
-import { StyledLink } from '../../utils/Styles';
 
 // Import Colors
 import colors from '../../utils/Colors';
@@ -29,6 +28,7 @@ const StyledUl = styled.ul`
     list-style: none;
     text-decoration: none;
     
+    padding:0;
     margin:0;
     background: ${colors.marineBlue};
 
@@ -36,13 +36,12 @@ const StyledUl = styled.ul`
         flex-flow: column nowrap;
 
         position: fixed;
-        top: 0;
+        top: 120px;
         right: 0;
         height: 100vh;
         width: 100px;
-        padding: 3rem 3rem;
+        padding: 0 3rem;
         align-items: stretch;
-        margin-top: 0;
         margin-right:0;
         gap:1rem;
         
@@ -60,26 +59,29 @@ const StyledLi = styled.li`
 
 `;
 
-function SideNav ({ open, handleCloseBurger }) {
-  function handleLinkClick () {
-    handleCloseBurger();
-    scrollToTop();
-  }
+function NavItems ({ open, handleCloseBurger }) {
+  const dropDownTitle1 = 'Shelter';
+  const links1 = ['Shelter/SingleWall', 'Shelter/DoubleWall'];
+  const linksRender1 = ['Single Wall', 'Double Wall', 'Accesories'];
+
+  const dropDownTitle2 = 'Bedding';
+  const links2 = ['Bedding/SleepingBag', 'Bedding/Mattress', 'Bedding/Hammock'];
+  const linksRender2 = ['SleepingBag', 'Mattress', 'Hammock'];
 
   return (
-    <div id='#SideNav'>
+    <div id='#ItemNav'>
       <StyledUl open={open}>
-            <StyledLi><StyledLink to="/" onClick={handleLinkClick}>Home</StyledLink></StyledLi>
-            <StyledLi><StyledLink to="/Account" onClick={handleLinkClick}>Account</StyledLink></StyledLi>
+            <StyledLi><Dropdown dropDownTitle ={dropDownTitle1} options={linksRender1} links={links1} handleCloseBurger={handleCloseBurger}/></StyledLi>
+            <StyledLi><Dropdown dropDownTitle ={dropDownTitle2} options={linksRender2} links={links2} handleCloseBurger={handleCloseBurger}/></StyledLi>
         </StyledUl>
     </div>
 
   );
 }
 
-SideNav.propTypes = {
+NavItems.propTypes = {
   open: PropTypes.bool.isRequired,
   handleCloseBurger: PropTypes.func.isRequired
 };
 
-export default SideNav;
+export default NavItems;

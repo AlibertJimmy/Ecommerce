@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 
 // Import Component
 import SideNav from './SideNav';
+import NavItems from './NavItems';
 
 // Import Style
 import styled from 'styled-components';
@@ -110,6 +111,7 @@ function Burger () {
                 <div />
             </StyledBurger>
             <SideNav open={open} handleCloseBurger={handleCloseBurger}/>
+            <NavItems open={open} handleCloseBurger={handleCloseBurger}/>
         </MenuWrapper>
   );
 }
