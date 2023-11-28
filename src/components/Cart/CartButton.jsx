@@ -29,96 +29,58 @@ const CartWrapper = styled.div`
   }
 `;
 
-const ToggleCartButton = styled.button`
+const OpenCartButton = styled.button`
   background: none;
   outline: none;
   border: none;
   font-weight: 600;
   cursor: pointer;
   z-index: 10;
-  
-  
-  ${props =>
-    props.isOpen
-      ? `
-        color: red;
-      `
-      : `
-        color: white;
-      `}
-`;
+  color: white;
+  position: relative;
 
+  &::after {
+
+    ${props => (props.amount > 0
+    ? `
+    content: '${props.amount}';
+    background-color: red;
+    `
+    : `
+    content: '';
+    background-color: transparent;
+    `)}
+
+    position: absolute;
+    top: -12px;
+    left: 15px;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 50%;
+    font-size: 12px;
+    z-index: 99999999999;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 10px;
+    height: 10px;
+  }
+`;
 const CartIMG = styled.img`
     width: 25px;
     height:25px;
-
-    &::after {
-      content: "${props => (props.amount > 0 ? props.amount : '')}";
-      position: absolute;
-      top: 0;
-      right: 0;
-      background-color: red; // You can customize the background color
-      color: white;
-      padding: 2px 5px;
-      border-radius: 50%;
-      font-size: 12px;
-    }
-
-    
-`;
-
-const ClosingCross = styled.div`
-    width: 2rem;
-    height: 2rem;
-    
-    position:fixed;
-    top: 5px;
-    right: 5px;
-
-    border: 1px solid black;
-    
-    border-radius: 5px;
-    padding: 2px;
-
-    z-index: 20;
-
-    color: black;
-
-    div{
-        
-        height: 0.25rem;
-        border-radius: 10px;
-        
-        transform-origin: 1px;
-
-        background-color: black;
-
-        &:nth-child(1){
-            transform: translate(14%, 65%) rotate(45deg);
-        }
-
-        &:nth-child(2){
-            transform: translate(14%, 500%) rotate(-45deg);
-        }
-    }
 `;
 
 function CartButton ({ isOpen, setIsOpen, cart, updateCart }) {
   const amoutOfItemInCart = itemQuantity(cart);
   return (
     <CartWrapper id='#CartWrapperButton'>
-      <ToggleCartButton
-        isOpen={ isOpen }
+      <OpenCartButton
         onClick={() => setIsOpen(!isOpen)}
+        amount={amoutOfItemInCart}
       >
-        {isOpen
-          ? <ClosingCross>
-            <div/>
-            <div/>
-          </ClosingCross>
-          : <CartIMG src={CartWhite} alt='cartPic' amount={amoutOfItemInCart}></CartIMG>
-        }
-      </ToggleCartButton >
+        <CartIMG id='CartIcon' src={CartWhite} alt='cartPic'></CartIMG>
+      </OpenCartButton >
       <Cart isOpen={isOpen} setIsOpen={setIsOpen} cart={cart} updateCart={updateCart}/>
     </CartWrapper>
   );
