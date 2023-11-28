@@ -1,5 +1,5 @@
 // Import React Libraries
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 // Import PropType
 import PropTypes from 'prop-types';
@@ -19,7 +19,7 @@ const MenuWrapper = styled.div`
   padding:0;
 
 `;
-// border: ${({ open }) => (open ? `1px solid ${colors.burgerDivOpen}` : `1px solid ${colors.burgerDiv}`)};
+
 const StyledBurger = styled.div`
     width: 2rem;
     height: 2rem;
@@ -78,15 +78,14 @@ export const sideNavPropsType = PropTypes.shape({
   handleCloseBurger: PropTypes.func.isRequired
 });
 
-function Burger () {
-  const [open, setOpen] = useState(false);
+function Burger ({ openBurgerButton, setOpenBurgerButton }) {
   const burgerRef = useRef(null);
 
   useEffect(() => {
     // Function to handle clicks outside the component
     function handleClickOutside (event) {
       if (burgerRef.current && !burgerRef.current.contains(event.target)) {
-        setOpen(false);
+        setOpenBurgerButton(false);
       }
     }
 
@@ -99,21 +98,22 @@ function Burger () {
     };
   }, []);
 
-  function handleCloseBurger () {
-    setOpen(false);
-  }
-
   return (
         <MenuWrapper ref={burgerRef} id='MenuWrapper'>
-            <StyledBurger open={open} onClick={() => setOpen(!open)}>
+            <StyledBurger open={openBurgerButton} onClick={() => setOpenBurgerButton(!openBurgerButton)}>
                 <div />
                 <div />
                 <div />
             </StyledBurger>
-            <SideNav open={open} handleCloseBurger={handleCloseBurger}/>
-            <NavItems open={open} handleCloseBurger={handleCloseBurger}/>
+            <SideNav openBurgerButton={openBurgerButton} handleCloseBurger={() => setOpenBurgerButton(false)}/>
+            <NavItems openBurgerButton={openBurgerButton} handleCloseBurger={() => setOpenBurgerButton(false)}/>
         </MenuWrapper>
   );
 }
+
+Burger.propTypes = {
+  openBurgerButton: PropTypes.bool.isRequired,
+  setOpenBurgerButton: PropTypes.func.isRequired
+};
 
 export default Burger;

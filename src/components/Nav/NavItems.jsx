@@ -58,8 +58,10 @@ const StyledUl = styled.ul`
 const StyledLi = styled.li`
 
 `;
-
-function NavItems ({ open, handleCloseBurger }) {
+function NavItems ({ openBurgerButton, handleCloseBurger }) {
+  console.log('NavItems');
+  console.log(`openBurgerButton : ${openBurgerButton}`);
+  console.log(`handleCloseBurger : ${handleCloseBurger}`);
   const dropDownTitle1 = 'Shelter';
   const links1 = ['Shelter/SingleWall', 'Shelter/DoubleWall'];
   const linksRender1 = ['Single Wall', 'Double Wall', 'Accesories'];
@@ -70,7 +72,7 @@ function NavItems ({ open, handleCloseBurger }) {
 
   return (
     <div id='#ItemNav'>
-      <StyledUl open={open}>
+      <StyledUl open={openBurgerButton}>
             <StyledLi><Dropdown dropDownTitle ={dropDownTitle1} options={linksRender1} links={links1} handleCloseBurger={handleCloseBurger}/></StyledLi>
             <StyledLi><Dropdown dropDownTitle ={dropDownTitle2} options={linksRender2} links={links2} handleCloseBurger={handleCloseBurger}/></StyledLi>
         </StyledUl>
@@ -80,7 +82,7 @@ function NavItems ({ open, handleCloseBurger }) {
 }
 
 NavItems.propTypes = {
-  open: PropTypes.bool.isRequired,
+  openBurgerButton: PropTypes.bool.isRequired,
   handleCloseBurger: PropTypes.func.isRequired
 };
 

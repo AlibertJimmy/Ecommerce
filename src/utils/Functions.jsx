@@ -21,6 +21,7 @@ export function addToCart (cart, updateCart, name, price) {
 }
 
 export function itemQuantity (cart) {
+  console.log('function itemQuantity');
   let quantity = 0;
   if (!cart) {
     return 0;
@@ -29,6 +30,5 @@ export function itemQuantity (cart) {
   for (let i = 0; i < cart.length; i++) {
     quantity = quantity + cart[i].amount;
   }
-  console.log('cart');
   return quantity;
 };

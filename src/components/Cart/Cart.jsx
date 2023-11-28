@@ -5,7 +5,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // Import Components
-import CartButton from './CartButton';
+// import CartButton from './CartButton';
 
 // Import Function
 import { itemQuantity } from '../../utils/Functions';
@@ -53,10 +53,9 @@ function Cart ({ isOpen, setIsOpen, cart, updateCart }) {
     (acc, plantType) => acc + plantType.amount * plantType.price,
     0
   );
-
+  // <CartButton isOpen={isOpen} setIsOpen={setIsOpen} cart={cart} updateCart={updateCart}/>
   return (
       <CartContentWrapper isOpen={ isOpen } id='CartWrapper'>
-        <CartButton isOpen={isOpen} setIsOpen={setIsOpen}/>
         <h2>Cart ({itemQuantity(cart)})</h2>
           {cart.length > 0
             ? (

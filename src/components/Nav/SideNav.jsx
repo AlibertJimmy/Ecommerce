@@ -60,7 +60,7 @@ const StyledLi = styled.li`
 
 `;
 
-function SideNav ({ open, handleCloseBurger }) {
+function SideNav ({ openBurgerButton, handleCloseBurger }) {
   function handleLinkClick () {
     handleCloseBurger();
     scrollToTop();
@@ -68,7 +68,7 @@ function SideNav ({ open, handleCloseBurger }) {
 
   return (
     <div id='#SideNav'>
-      <StyledUl open={open}>
+      <StyledUl open={openBurgerButton}>
             <StyledLi><StyledLink to="/" onClick={handleLinkClick}>Home</StyledLink></StyledLi>
             <StyledLi><StyledLink to="/Account" onClick={handleLinkClick}>Account</StyledLink></StyledLi>
         </StyledUl>
@@ -78,7 +78,7 @@ function SideNav ({ open, handleCloseBurger }) {
 }
 
 SideNav.propTypes = {
-  open: PropTypes.bool.isRequired,
+  openBurgerButton: PropTypes.bool.isRequired,
   handleCloseBurger: PropTypes.func.isRequired
 };
 

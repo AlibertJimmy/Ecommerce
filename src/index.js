@@ -33,6 +33,7 @@ const ContentWrapper = styled.div`
 function App () {
   const savedCart = localStorage.getItem('cart');
   const [cart, updateCart] = useState(savedCart ? JSON.parse(savedCart) : []);
+  const [openBurgerButton, setOpenBurgerButton] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -45,7 +46,7 @@ function App () {
   return (
     <React.StrictMode>
     <Router>
-        <Header isOpen={isOpen} setIsOpen={setIsOpen} cart={cart} updateCart={updateCart}/>
+        <Header openBurgerButton={openBurgerButton} setOpenBurgerButton={setOpenBurgerButton} isOpen={isOpen} setIsOpen={setIsOpen} cart={cart} updateCart={updateCart}/>
         <HomeWrapper>
           <ContentWrapper>
             <Routes>

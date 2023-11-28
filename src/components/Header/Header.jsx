@@ -49,13 +49,15 @@ const NavItemDiv = styled.div`
   margin-left: ${sideMargin}px;
 `;
 
-function Header ({ isOpen, setIsOpen, cart, updateCart }) {
+function Header ({ openBurgerButton, setOpenBurgerButton, isOpen, setIsOpen, cart, updateCart }) {
   function handleOnClick () {
     scrollToTop();
   }
   console.log('Header');
   console.log(`cart : ${cart}`);
   console.log(`isOpen : ${isOpen}`);
+  console.log(`openBurgerButton : ${openBurgerButton}`);
+  console.log(`setOpenBurgerButton : ${setOpenBurgerButton}`);
 
   return (
     <HeaderWrapper>
@@ -64,17 +66,19 @@ function Header ({ isOpen, setIsOpen, cart, updateCart }) {
           <Link to='/' onClick={handleOnClick}><Logo/></Link>
         </LogoDiv>
         <NavBarDiv>
-          <Navbar/>
+          <Navbar openBurgerButton={openBurgerButton} setOpenBurgerButton={setOpenBurgerButton}/>
         </NavBarDiv>
         <CartButton isOpen={isOpen} setIsOpen={setIsOpen} cart={cart} updateCart={updateCart} />
       </StyledHeader>
       <NavItemDiv>
-        <NavItems/>
+        <NavItems openBurgerButton={openBurgerButton} handleCloseBurger={() => setOpenBurgerButton(false)}/>
       </NavItemDiv>
     </HeaderWrapper>
   );
 }
 Header.propTypes = {
+  openBurgerButton: PropTypes.bool.isRequired,
+  setOpenBurgerButton: PropTypes.func.isRequired,
   isOpen: PropTypes.bool.isRequired,
   setIsOpen: PropTypes.func.isRequired,
   cart: PropTypes.array.isRequired,

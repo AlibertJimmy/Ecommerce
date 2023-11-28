@@ -104,8 +104,6 @@ const ClosingCross = styled.div`
 `;
 
 function CartButton ({ isOpen, setIsOpen, cart, updateCart }) {
-  console.log(`CartButton, cart : ${cart}`);
-  console.log(`itemQuantity : ${itemQuantity(cart)}`);
   return (
     <CartWrapper id='#CartWrapperButton'>
       <ToggleCartButton
