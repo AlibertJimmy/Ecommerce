@@ -4,14 +4,12 @@ import React from 'react';
 // Import PropTypes
 import PropTypes from 'prop-types';
 
-// Import Components
-// import CartButton from './CartButton';
-
 // Import Function
 import { itemQuantity } from '../../utils/Functions';
 
 // Import Style
 import styled from 'styled-components';
+import CloseButton from './CloseButton';
 
 const CartContentWrapper = styled.div`
   display: flex;
@@ -53,10 +51,10 @@ function Cart ({ isOpen, setIsOpen, cart, updateCart }) {
     (acc, plantType) => acc + plantType.amount * plantType.price,
     0
   );
-  // <CartButton isOpen={isOpen} setIsOpen={setIsOpen} cart={cart} updateCart={updateCart}/>
   return (
       <CartContentWrapper isOpen={ isOpen } id='CartWrapper'>
         <h2>Cart ({itemQuantity(cart)})</h2>
+        <CloseButton isOpen={isOpen} setIsOpen={setIsOpen}/>
           {cart.length > 0
             ? (
             <div>

@@ -40,6 +40,11 @@ const StyledHeader = styled.div`
 const LogoDiv = styled.div`
   margin-left: ${sideMargin}px;
 `;
+const NavCartDiv = styled.div`
+  display:flex;
+  align-items: center;
+  margin-right: ${sideMargin}px;
+`;
 
 const NavBarDiv = styled.div`
   margin-right: ${sideMargin}px;
@@ -65,10 +70,12 @@ function Header ({ openBurgerButton, setOpenBurgerButton, isOpen, setIsOpen, car
         <LogoDiv id='#LogoDiv'>
           <Link to='/' onClick={handleOnClick}><Logo/></Link>
         </LogoDiv>
-        <NavBarDiv>
-          <Navbar openBurgerButton={openBurgerButton} setOpenBurgerButton={setOpenBurgerButton}/>
-        </NavBarDiv>
-        <CartButton isOpen={isOpen} setIsOpen={setIsOpen} cart={cart} updateCart={updateCart} />
+        <NavCartDiv>
+          <NavBarDiv>
+            <Navbar openBurgerButton={openBurgerButton} setOpenBurgerButton={setOpenBurgerButton}/>
+          </NavBarDiv>
+          <CartButton isOpen={isOpen} setIsOpen={setIsOpen} cart={cart} updateCart={updateCart} />
+        </NavCartDiv>
       </StyledHeader>
       <NavItemDiv>
         <NavItems openBurgerButton={openBurgerButton} handleCloseBurger={() => setOpenBurgerButton(false)}/>

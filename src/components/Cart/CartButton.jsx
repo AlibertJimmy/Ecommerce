@@ -21,7 +21,7 @@ import { responsiveWidth } from '../../utils/Constant';
 
 const CartWrapper = styled.div`
   display:flex;
-  height: 20px;
+  height: 25px;
   width: 40px;
 
   @media (max-width: ${responsiveWidth}px){
@@ -104,6 +104,7 @@ const ClosingCross = styled.div`
 `;
 
 function CartButton ({ isOpen, setIsOpen, cart, updateCart }) {
+  const amoutOfItemInCart = itemQuantity(cart);
   return (
     <CartWrapper id='#CartWrapperButton'>
       <ToggleCartButton
@@ -115,7 +116,7 @@ function CartButton ({ isOpen, setIsOpen, cart, updateCart }) {
             <div/>
             <div/>
           </ClosingCross>
-          : <CartIMG src={CartWhite} alt='cartPic' amount={itemQuantity(cart)}></CartIMG>
+          : <CartIMG src={CartWhite} alt='cartPic' amount={amoutOfItemInCart}></CartIMG>
         }
       </ToggleCartButton >
       <Cart isOpen={isOpen} setIsOpen={setIsOpen} cart={cart} updateCart={updateCart}/>
