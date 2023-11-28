@@ -10,7 +10,8 @@ import { borderWidth, responsiveWidth } from './Constant';
 
 export const PageWrapper = styled.div`
 
-  margin-top: 250px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 `;
 
 export const ComponentBorder = css`

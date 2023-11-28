@@ -1,5 +1,5 @@
 // Import React Libraries
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -31,16 +31,25 @@ const ContentWrapper = styled.div`
 `;
 
 function App () {
+  const savedCart = localStorage.getItem('cart');
+  const [cart, updateCart] = useState(savedCart ? JSON.parse(savedCart) : []);
+  const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
+
+  console.log(`isOpen : ${isOpen}`);
+
   return (
     <React.StrictMode>
     <Router>
-        <Header/>
+        <Header isOpen={isOpen} setIsOpen={setIsOpen} cart={cart} updateCart={updateCart}/>
         <HomeWrapper>
           <ContentWrapper>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/Shelter" element={<Shelter />} />
-              <Route path="/Shelter/SingleWall" element={<ShelterSingleWall />} />
+              <Route path="/Shelter/SingleWall" element={<ShelterSingleWall cart={cart} updateCart={updateCart}/>} />
               <Route path="/Shelter/DoubleWall" element={<ShelterDoubleWall />} />
 
               <Route path="/Bedding" element={<Bedding />} />

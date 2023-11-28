@@ -50,7 +50,7 @@ const StyledUl = styled.ul`
         
         background: #ffffff;
 
-        transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
+        transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
        li{
             margin-bottom: 0px;
        }
