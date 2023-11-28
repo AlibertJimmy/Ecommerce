@@ -19,3 +19,16 @@ export function addToCart (cart, updateCart, name, price) {
     updateCart([...cart, { name, price, amount: 1 }]);
   }
 }
+
+export function itemQuantity (cart) {
+  let quantity = 0;
+  if (!cart) {
+    return 0;
+  }
+
+  for (let i = 0; i < cart.length; i++) {
+    quantity = quantity + cart[i].amount;
+  }
+  console.log('cart');
+  return quantity;
+};

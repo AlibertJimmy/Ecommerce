@@ -53,6 +53,9 @@ function Header ({ isOpen, setIsOpen, cart, updateCart }) {
   function handleOnClick () {
     scrollToTop();
   }
+  console.log('Header');
+  console.log(`cart : ${cart}`);
+  console.log(`isOpen : ${isOpen}`);
 
   return (
     <HeaderWrapper>

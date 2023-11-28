@@ -1,11 +1,14 @@
 // Import React Libraries
-import React, { useEffect } from 'react';
+import React from 'react';
 
 // Import PropTypes
 import PropTypes from 'prop-types';
 
 // Import Components
 import CartButton from './CartButton';
+
+// Import Function
+import { itemQuantity } from '../../utils/Functions';
 
 // Import Style
 import styled from 'styled-components';
@@ -44,23 +47,20 @@ const CartContentWrapper = styled.div`
 
 function Cart ({ isOpen, setIsOpen, cart, updateCart }) {
   if (!cart) {
-    return null; // or handle the case where cart is not defined
+    return null;
   }
   const total = cart.reduce(
     (acc, plantType) => acc + plantType.amount * plantType.price,
     0
   );
-  useEffect(() => {
-    document.title = `LMJ: ${total}€ d'achats`;
-  }, [total]);
 
   return (
       <CartContentWrapper isOpen={ isOpen } id='CartWrapper'>
         <CartButton isOpen={isOpen} setIsOpen={setIsOpen}/>
+        <h2>Cart ({itemQuantity(cart)})</h2>
           {cart.length > 0
             ? (
             <div>
-              <h2>Cart</h2>
               <ul>
                 {cart.map(({ name, price, amount }, index) => (
                   <div key={`${name}-${index}`}>

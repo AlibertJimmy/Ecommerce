@@ -38,7 +38,9 @@ function App () {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
 
+  console.log('App');
   console.log(`isOpen : ${isOpen}`);
+  console.log('cart', cart);
 
   return (
     <React.StrictMode>

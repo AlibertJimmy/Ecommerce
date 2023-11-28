@@ -10,7 +10,7 @@ import NavItems from './NavItems';
 
 // Import Style
 import styled from 'styled-components';
-import colors from '../../utils/Colors';
+// import colors from '../../utils/Colors';
 
 // Import Constante
 import { responsiveWidth } from '../../utils/Constant';
@@ -19,7 +19,7 @@ const MenuWrapper = styled.div`
   padding:0;
 
 `;
-
+// border: ${({ open }) => (open ? `1px solid ${colors.burgerDivOpen}` : `1px solid ${colors.burgerDiv}`)};
 const StyledBurger = styled.div`
     width: 2rem;
     height: 2rem;
@@ -28,7 +28,7 @@ const StyledBurger = styled.div`
     top: 10px;
     right: 15px;
     
-    border: ${({ open }) => (open ? `1px solid ${colors.burgerDivOpen}` : `1px solid ${colors.burgerDiv}`)};
+    
 
     border-radius: 5px;
     padding: 2px;
@@ -64,10 +64,10 @@ const StyledBurger = styled.div`
             transform: ${({ open }) => open ? 'translate(14%) rotate(-45deg)' : 'translate(0) rotate(0)'};
         }
 
-        background-color: ${({ open }) => open ? colors.burgerDivOpen : colors.burgerDiv};
+        
         
         @media (max-width: ${responsiveWidth}px){
-            background-color: black;
+          background-color: ${({ open }) => open ? 'black' : 'white'};
         }
 
     }
