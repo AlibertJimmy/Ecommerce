@@ -54,15 +54,13 @@ const NavItemDiv = styled.div`
   margin-left: ${sideMargin}px;
 `;
 
-function Header ({ openBurgerButton, setOpenBurgerButton, isOpen, setIsOpen, cart, updateCart }) {
+function Header ({ isOpen, setIsOpen, cart, updateCart }) {
   function handleOnClick () {
     scrollToTop();
   }
   console.log('Header');
   console.log(`cart : ${cart}`);
   console.log(`isOpen : ${isOpen}`);
-  console.log(`openBurgerButton : ${openBurgerButton}`);
-  console.log(`setOpenBurgerButton : ${setOpenBurgerButton}`);
 
   return (
     <HeaderWrapper>
@@ -72,13 +70,13 @@ function Header ({ openBurgerButton, setOpenBurgerButton, isOpen, setIsOpen, car
         </LogoDiv>
         <NavCartDiv>
           <NavBarDiv>
-            <Navbar openBurgerButton={openBurgerButton} setOpenBurgerButton={setOpenBurgerButton}/>
+            <Navbar/>
           </NavBarDiv>
           <CartButton isOpen={isOpen} setIsOpen={setIsOpen} cart={cart} updateCart={updateCart} />
         </NavCartDiv>
       </StyledHeader>
       <NavItemDiv>
-        <NavItems openBurgerButton={openBurgerButton} handleCloseBurger={() => setOpenBurgerButton(false)}/>
+        <NavItems/>
       </NavItemDiv>
     </HeaderWrapper>
   );
