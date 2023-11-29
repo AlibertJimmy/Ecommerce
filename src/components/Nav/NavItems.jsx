@@ -1,8 +1,8 @@
 // Import React Libraries
 import React from 'react';
 
-// Import PropType
-import PropTypes from 'prop-types';
+// Import Context
+import { useNav } from '../../context';
 
 // Import compoment
 import Dropdown from '../Dropdown/Dropdown';
@@ -58,10 +58,10 @@ const StyledUl = styled.ul`
 const StyledLi = styled.li`
 
 `;
-function NavItems ({ openBurgerButton, handleCloseBurger }) {
+function NavItems () {
+  const { openBurgerButton, setOpenBurgerButton } = useNav();
   console.log('NavItems');
   console.log(`openBurgerButton : ${openBurgerButton}`);
-  console.log(`handleCloseBurger : ${handleCloseBurger}`);
   const dropDownTitle1 = 'Shelter';
   const links1 = ['Shelter/SingleWall', 'Shelter/DoubleWall'];
   const linksRender1 = ['Single Wall', 'Double Wall', 'Accesories'];
@@ -73,17 +73,12 @@ function NavItems ({ openBurgerButton, handleCloseBurger }) {
   return (
     <div id='#ItemNav'>
       <StyledUl open={openBurgerButton}>
-            <StyledLi><Dropdown dropDownTitle ={dropDownTitle1} options={linksRender1} links={links1} handleCloseBurger={handleCloseBurger}/></StyledLi>
-            <StyledLi><Dropdown dropDownTitle ={dropDownTitle2} options={linksRender2} links={links2} handleCloseBurger={handleCloseBurger}/></StyledLi>
+            <StyledLi><Dropdown dropDownTitle ={dropDownTitle1} options={linksRender1} links={links1} handleCloseBurger={() => setOpenBurgerButton(false)}/></StyledLi>
+            <StyledLi><Dropdown dropDownTitle ={dropDownTitle2} options={linksRender2} links={links2} handleCloseBurger={() => setOpenBurgerButton(false)}/></StyledLi>
         </StyledUl>
     </div>
 
   );
 }
-
-NavItems.propTypes = {
-  openBurgerButton: PropTypes.bool.isRequired,
-  handleCloseBurger: PropTypes.func.isRequired
-};
 
 export default NavItems;

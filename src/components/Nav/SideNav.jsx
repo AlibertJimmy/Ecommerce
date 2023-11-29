@@ -1,8 +1,8 @@
 // Import React Libraries
 import React from 'react';
 
-// Import PropType
-import PropTypes from 'prop-types';
+// Import Context
+import { useNav } from '../../context';
 
 // Import compoment
 
@@ -60,9 +60,10 @@ const StyledLi = styled.li`
 
 `;
 
-function SideNav ({ openBurgerButton, handleCloseBurger }) {
+function SideNav () {
+  const { openBurgerButton, setOpenBurgerButton } = useNav();
   function handleLinkClick () {
-    handleCloseBurger();
+    setOpenBurgerButton(false);
     scrollToTop();
   }
 
@@ -76,10 +77,5 @@ function SideNav ({ openBurgerButton, handleCloseBurger }) {
 
   );
 }
-
-SideNav.propTypes = {
-  openBurgerButton: PropTypes.bool.isRequired,
-  handleCloseBurger: PropTypes.func.isRequired
-};
 
 export default SideNav;

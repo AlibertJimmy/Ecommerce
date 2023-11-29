@@ -4,6 +4,9 @@ import React, { useEffect, useRef } from 'react';
 // Import PropType
 import PropTypes from 'prop-types';
 
+// Import Context
+import { useNav } from '../../context';
+
 // Import Component
 import SideNav from './SideNav';
 import NavItems from './NavItems';
@@ -78,7 +81,8 @@ export const sideNavPropsType = PropTypes.shape({
   handleCloseBurger: PropTypes.func.isRequired
 });
 
-function Burger ({ openBurgerButton, setOpenBurgerButton }) {
+function Burger () {
+  const { openBurgerButton, setOpenBurgerButton } = useNav();
   const burgerRef = useRef(null);
 
   useEffect(() => {
@@ -110,10 +114,5 @@ function Burger ({ openBurgerButton, setOpenBurgerButton }) {
         </MenuWrapper>
   );
 }
-
-Burger.propTypes = {
-  openBurgerButton: PropTypes.bool.isRequired,
-  setOpenBurgerButton: PropTypes.func.isRequired
-};
 
 export default Burger;

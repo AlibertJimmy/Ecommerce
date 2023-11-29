@@ -25,7 +25,7 @@ const StyledNav = styled(BaseNav)`
   z-index: 9999;
 `;
 
-function Navbar ({ openBurgerButton, setOpenBurgerButton }) {
+function Navbar () {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -51,14 +51,9 @@ function Navbar ({ openBurgerButton, setOpenBurgerButton }) {
 
   return (
         <StyledNav isScrolled={isScrolled} id='#NavBar'>
-            <Burger openBurgerButton={openBurgerButton} setOpenBurgerButton={setOpenBurgerButton} />
+            <Burger/>
         </StyledNav>
   );
-};
-
-Navbar.propTypes = {
-  openBurgerButton: PropTypes.bool.isRequired,
-  setOpenBurgerButton: PropTypes.func.isRequired
 };
 
 export default Navbar;
