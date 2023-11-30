@@ -58,7 +58,7 @@ const OpenCartButton = styled.button`
     padding: 2px 5px;
     border-radius: 50%;
     font-size: 12px;
-    z-index: 99999999999;
+    
     display: flex;
     align-items: center;
     text-align: center;

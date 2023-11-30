@@ -31,12 +31,10 @@ const StyledBurger = styled.div`
     top: 10px;
     right: 15px;
     
-    
-
     border-radius: 5px;
     padding: 2px;
 
-    z-index: 20;
+    z-index: 99;
 
     display: none;
 

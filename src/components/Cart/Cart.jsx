@@ -44,7 +44,7 @@ const CartContentWrapper = styled.div`
 `;
 
 function Cart () {
-  const { isOpen, setIsOpen, cart, updateCart } = useCart();
+  const { isOpen, cart, updateCart } = useCart();
   if (!cart) {
     return null;
   }
@@ -57,7 +57,7 @@ function Cart () {
   return (
       <CartContentWrapper isOpen={ isOpen } id='CartWrapper'>
         <h2>Cart ({itemQuantity(cart)})</h2>
-        <CloseButton isOpen={isOpen} setIsOpen={setIsOpen}/>
+        <CloseButton />
           {cart.length > 0
             ? (
             <div>

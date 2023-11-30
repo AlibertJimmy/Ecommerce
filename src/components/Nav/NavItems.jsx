@@ -27,6 +27,7 @@ const StyledUl = styled.ul`
 
     list-style: none;
     text-decoration: none;
+    z-index:25;
     
     padding:0;
     margin:0;

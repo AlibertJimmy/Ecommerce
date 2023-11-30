@@ -1,8 +1,8 @@
 // Import React Libraries
 import React from 'react';
 
-// Import PropTypes
-import PropTypes from 'prop-types';
+// Import Context
+import { useCart } from '../../context';
 
 // Import Style
 import styled from 'styled-components';
@@ -43,7 +43,8 @@ const ClosingCross = styled.div`
     }
 `;
 
-function CloseButton ({ isOpen, setIsOpen }) {
+function CloseButton () {
+  const { isOpen, setIsOpen } = useCart();
   return (
           <ClosingCross onClick={() => setIsOpen(!isOpen)}>
             <div/>
@@ -51,9 +52,5 @@ function CloseButton ({ isOpen, setIsOpen }) {
           </ClosingCross>
   );
 }
-CloseButton.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  setIsOpen: PropTypes.func.isRequired
-};
 
 export default CloseButton;
