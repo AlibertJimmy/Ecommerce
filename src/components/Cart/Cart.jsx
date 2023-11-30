@@ -1,8 +1,8 @@
 // Import React Libraries
 import React from 'react';
 
-// Import PropTypes
-import PropTypes from 'prop-types';
+// Import Context
+import { useCart } from '../../context';
 
 // Import Function
 import { itemQuantity } from '../../utils/CartFunctions/Functions';
@@ -43,7 +43,8 @@ const CartContentWrapper = styled.div`
       `}
 `;
 
-function Cart ({ isOpen, setIsOpen, cart, updateCart }) {
+function Cart () {
+  const { isOpen, setIsOpen, cart, updateCart } = useCart();
   if (!cart) {
     return null;
   }
@@ -77,12 +78,5 @@ function Cart ({ isOpen, setIsOpen, cart, updateCart }) {
     </CartContentWrapper>
   );
 }
-
-Cart.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  setIsOpen: PropTypes.func.isRequired,
-  cart: PropTypes.array.isRequired,
-  updateCart: PropTypes.func.isRequired
-};
 
 export default Cart;

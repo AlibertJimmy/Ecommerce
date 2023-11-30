@@ -2,9 +2,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// Import PropTypes
-import PropTypes from 'prop-types';
-
 // Import Component
 import Navbar from '../Nav/Navbar';
 import NavItems from '../Nav/NavItems';
@@ -54,13 +51,10 @@ const NavItemDiv = styled.div`
   margin-left: ${sideMargin}px;
 `;
 
-function Header ({ isOpen, setIsOpen, cart, updateCart }) {
+function Header () {
   function handleOnClick () {
     scrollToTop();
   }
-  console.log('Header');
-  console.log(`cart : ${cart}`);
-  console.log(`isOpen : ${isOpen}`);
 
   return (
     <HeaderWrapper>
@@ -72,7 +66,7 @@ function Header ({ isOpen, setIsOpen, cart, updateCart }) {
           <NavBarDiv>
             <Navbar/>
           </NavBarDiv>
-          <CartButton isOpen={isOpen} setIsOpen={setIsOpen} cart={cart} updateCart={updateCart} />
+          <CartButton />
         </NavCartDiv>
       </StyledHeader>
       <NavItemDiv>
@@ -81,11 +75,5 @@ function Header ({ isOpen, setIsOpen, cart, updateCart }) {
     </HeaderWrapper>
   );
 }
-Header.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  setIsOpen: PropTypes.func.isRequired,
-  cart: PropTypes.array.isRequired,
-  updateCart: PropTypes.func.isRequired
-};
 
 export default Header;

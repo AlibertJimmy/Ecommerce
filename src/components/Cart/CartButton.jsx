@@ -1,8 +1,8 @@
 // Import React Libraries
 import React from 'react';
 
-// Import PropTypes
-import PropTypes from 'prop-types';
+// Import Context
+import { useCart } from '../../context';
 
 // Import Components
 import Cart from './Cart';
@@ -71,7 +71,8 @@ const CartIMG = styled.img`
     height:25px;
 `;
 
-function CartButton ({ isOpen, setIsOpen, cart, updateCart }) {
+function CartButton () {
+  const { isOpen, setIsOpen, cart } = useCart();
   const amoutOfItemInCart = itemQuantity(cart);
   return (
     <CartWrapper id='#CartWrapperButton'>
@@ -81,16 +82,9 @@ function CartButton ({ isOpen, setIsOpen, cart, updateCart }) {
       >
         <CartIMG id='CartIcon' src={CartWhite} alt='cartPic'></CartIMG>
       </OpenCartButton >
-      <Cart isOpen={isOpen} setIsOpen={setIsOpen} cart={cart} updateCart={updateCart}/>
+      <Cart />
     </CartWrapper>
   );
 }
-
-CartButton.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  setIsOpen: PropTypes.func.isRequired,
-  cart: PropTypes.array.isRequired,
-  updateCart: PropTypes.func.isRequired
-};
 
 export default CartButton;

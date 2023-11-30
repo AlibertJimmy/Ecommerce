@@ -4,6 +4,9 @@ import React from 'react';
 // Import PropTypes
 import PropTypes from 'prop-types';
 
+// Import Context
+import { useCart } from '../../../context';
+
 // Import Components
 
 // Import Functions
@@ -37,7 +40,8 @@ const ItemDatas = styled.p`
 
 `;
 
-function ShelterSingleWall ({ cart, updateCart }) {
+function ShelterSingleWall () {
+  const { cart, updateCart } = useCart();
   console.log('ShelterSingleWall');
   console.log('cart');
   console.log(cart);
