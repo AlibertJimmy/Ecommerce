@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import Cart from './Cart';
 
 // Import Functions
-import { itemQuantity } from '../../utils/Functions';
+import { itemQuantity } from '../../utils/CartFunctions/Functions';
 
 // Import Asset
 import CartWhite from '../../assets/Functionnal_Icon/Cart_White.png';

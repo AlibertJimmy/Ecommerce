@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 // Import Components
 
 // Import Functions
-import { addToCart } from '../../../utils/Functions';
+import { addToCart } from '../../../utils/CartFunctions/Functions';
 
 // Import Datas
 import { singleWallList } from '../../../datas/Shelter/SingleWall';
@@ -38,6 +38,9 @@ const ItemDatas = styled.p`
 `;
 
 function ShelterSingleWall ({ cart, updateCart }) {
+  console.log('ShelterSingleWall');
+  console.log('cart');
+  console.log(cart);
   return (
       <PageWrapper>
         {singleWallList.map((item, index) => (
@@ -49,7 +52,7 @@ function ShelterSingleWall ({ cart, updateCart }) {
                 <li>{item.price} euros</li>
               </ul>
             </ItemDatas>
-            <AddToCartButton onClick={() => addToCart(cart, updateCart, item.name, item.price)}>Add To Cart</AddToCartButton>
+            <AddToCartButton onClick={() => addToCart(cart, updateCart, item)}>Add To Cart</AddToCartButton>
           </ItemPresentation>
         ))}
       </PageWrapper>

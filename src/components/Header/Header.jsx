@@ -82,8 +82,6 @@ function Header ({ isOpen, setIsOpen, cart, updateCart }) {
   );
 }
 Header.propTypes = {
-  openBurgerButton: PropTypes.bool.isRequired,
-  setOpenBurgerButton: PropTypes.func.isRequired,
   isOpen: PropTypes.bool.isRequired,
   setIsOpen: PropTypes.func.isRequired,
   cart: PropTypes.array.isRequired,

@@ -1,6 +1,6 @@
-import MagicCarpetXL1 from '../../assets/Items/Shelter/SingleWall/MagicCarpet/MagicCarpet1.jpg';
-import MagicCarpetXL2 from '../../assets/Items/Shelter/SingleWall/MagicCarpet/MagicCarpet2.jpg';
-import MagicCarpetXL3 from '../../assets/Items/Shelter/SingleWall/MagicCarpet/MagicCarpet3.jpg';
+// import MagicCarpetXL1 from '../../assets/Items/Shelter/SingleWall/MagicCarpet/MagicCarpet1.jpg';
+// import MagicCarpetXL2 from '../../assets/Items/Shelter/SingleWall/MagicCarpet/MagicCarpet2.jpg';
+// import MagicCarpetXL3 from '../../assets/Items/Shelter/SingleWall/MagicCarpet/MagicCarpet3.jpg';
 
 export const singleWallList = [
   {
@@ -10,9 +10,9 @@ export const singleWallList = [
     id: 'MagicCarpetXL',
     available: true,
     weight: '225g',
-    picture1: MagicCarpetXL1,
-    picture2: MagicCarpetXL2,
-    picture3: MagicCarpetXL3,
+    picture1: '',
+    picture2: '',
+    picture3: '',
     picture4: '',
     picture5: '',
     picture6: '',

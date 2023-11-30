@@ -21,6 +21,9 @@ import Hammock from './pages/Items/Bedding/Hammock';
 import Mattress from './pages/Items/Bedding/Mattress';
 import SleepingBag from './pages/Items/Bedding/SleepingBag';
 
+// Import Functions
+import { isValidCartItem } from './utils/CartFunctions/Functions';
+
 // Import Style
 import styled from 'styled-components';
 
@@ -34,15 +37,39 @@ const ContentWrapper = styled.div`
 `;
 
 function App () {
+  console.log('App');
   const savedCart = localStorage.getItem('cart');
-  const [cart, updateCart] = useState(savedCart ? JSON.parse(savedCart) : []);
+  console.log('savedCart');
+  console.log(savedCart);
+  const [cart, updateCart] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
+
+  // Check if savedCart is not null and is a valid JSON string
+  useEffect(() => {
+    if (savedCart) {
+      try {
+        const parsedCart = JSON.parse(savedCart);
+        console.log('parsedCart');
+        console.log(parsedCart);
+        // Check if parsedCart is an array and has the desired structure
+        if (Array.isArray(parsedCart) && parsedCart.every(item => isValidCartItem(item))) {
+          updateCart(parsedCart);
+          console.log('Cart data is valid:', parsedCart);
+        } else {
+          console.error('Invalid cart format:', parsedCart);
+        }
+      } catch (error) {
+        console.error('Error parsing cart data:', error);
+      }
+    } else {
+      console.error('No cart data found in local storage');
+    }
+  }, []);
+
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
 
-  console.log('App');
-  console.log(`isOpen : ${isOpen}`);
   console.log('cart', cart);
 
   return (

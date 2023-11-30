@@ -5,7 +5,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // Import Function
-import { itemQuantity } from '../../utils/Functions';
+import { itemQuantity } from '../../utils/CartFunctions/Functions';
 
 // Import Style
 import styled from 'styled-components';
@@ -48,7 +48,9 @@ function Cart ({ isOpen, setIsOpen, cart, updateCart }) {
     return null;
   }
   const total = cart.reduce(
-    (acc, plantType) => acc + plantType.amount * plantType.price,
+    (acc, item) => {
+      return acc + item.amount * item.item.price;
+    },
     0
   );
   return (
@@ -59,9 +61,9 @@ function Cart ({ isOpen, setIsOpen, cart, updateCart }) {
             ? (
             <div>
               <ul>
-                {cart.map(({ name, price, amount }, index) => (
-                  <div key={`${name}-${index}`}>
-                    {name} {price}€ x {amount}
+                {cart.map(({ item, amount }, index) => (
+                  <div key={`${item.name}-${index}`}>
+                    {item.name} {item.price}€ x {amount}
                   </div>
                 ))}
               </ul>
