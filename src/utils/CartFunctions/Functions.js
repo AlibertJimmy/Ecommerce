@@ -8,27 +8,27 @@ export function isValidCartItem (item) {
 
   return (
     typeof item === 'object' &&
-    'item' in item &&
-    typeof item.item === 'object' &&
-    expectedKeys.every(key => key in item.item)
+    'itemProperty' in item &&
+    typeof item.itemProperty === 'object' &&
+    expectedKeys.every(key => key in item.itemProperty)
   );
 }
 
-export function addToCart (cart, updateCart, item) {
+export function addToCart (cart, updateCart, itemProperty) {
   const currentItemAdded = cart.find((itemFound) => {
-    return itemFound.item.name === item.name;
+    return itemFound.itemProperty.name === itemProperty.name;
   }
   );
   if (currentItemAdded) {
     const cartFilteredCurrentItem = cart.filter(
-      (itemFiltered) => itemFiltered.item.name !== item.name
+      (itemFiltered) => itemFiltered.itemProperty.name !== itemProperty.name
     );
     updateCart([
       ...cartFilteredCurrentItem,
-      { item, amount: currentItemAdded.amount + 1 }
+      { itemProperty, amount: currentItemAdded.amount + 1 }
     ]);
   } else {
-    updateCart([...cart, { item, amount: 1 }]);
+    updateCart([...cart, { itemProperty, amount: 1 }]);
   }
 }
 

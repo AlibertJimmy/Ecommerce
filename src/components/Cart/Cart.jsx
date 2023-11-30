@@ -50,7 +50,7 @@ function Cart () {
   }
   const total = cart.reduce(
     (acc, item) => {
-      return acc + item.amount * item.item.price;
+      return acc + item.amount * item.itemProperty.price;
     },
     0
   );
@@ -62,9 +62,9 @@ function Cart () {
             ? (
             <div>
               <ul>
-                {cart.map(({ item, amount }, index) => (
-                  <div key={`${item.name}-${index}`}>
-                    {item.name} {item.price}€ x {amount}
+                {cart.map(({ itemProperty, amount }, index) => (
+                  <div key={`${itemProperty.name}-${index}`}>
+                    {itemProperty.name} {itemProperty.price}€ x {amount}
                   </div>
                 ))}
               </ul>
