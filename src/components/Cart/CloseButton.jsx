@@ -14,8 +14,6 @@ const ClosingCross = styled.div`
     position:fixed;
     top: 5px;
     right: 5px;
-
-    border: 1px solid black;
     
     border-radius: 5px;
     padding: 2px;

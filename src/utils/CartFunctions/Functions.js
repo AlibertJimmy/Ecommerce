@@ -14,7 +14,7 @@ export function isValidCartItem (item) {
   );
 }
 
-export function addToCart (cart, updateCart, itemProperty) {
+export function addToCart (cart, updateCart, itemProperty, amountToAdd) {
   const currentItemAdded = cart.find((itemFound) => {
     return itemFound.itemProperty.name === itemProperty.name;
   }
@@ -25,10 +25,10 @@ export function addToCart (cart, updateCart, itemProperty) {
     );
     updateCart([
       ...cartFilteredCurrentItem,
-      { itemProperty, amount: currentItemAdded.amount + 1 }
+      { itemProperty, amount: currentItemAdded.amount + amountToAdd }
     ]);
   } else {
-    updateCart([...cart, { itemProperty, amount: 1 }]);
+    updateCart([...cart, { itemProperty, amount: amountToAdd }]);
   }
 }
 

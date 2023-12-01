@@ -1,5 +1,5 @@
 // Import React Libraries
-import React from 'react';
+import React, { useState } from 'react';
 
 // Import PropTypes
 import PropTypes from 'prop-types';
@@ -17,7 +17,7 @@ import { singleWallList } from '../../../datas/Shelter/SingleWall';
 
 // Import Style
 import styled from 'styled-components';
-import { PageWrapper } from '../../../utils/Styles';
+import { CommonButton, CommonQuantitySelectorStyle, PageWrapper } from '../../../utils/Styles';
 
 const ItemPresentation = styled.div`
   border: 1px solid black;
@@ -29,9 +29,6 @@ const ItemPicture = styled.img`
 
 `;
 
-const AddToCartButton = styled.button`
-
-`;
 const ItemTitle = styled.h1`
 
 `;
@@ -40,11 +37,45 @@ const ItemDatas = styled.p`
 
 `;
 
+const QuantitySelectorWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const QuantityButton = styled.button`
+  ${CommonButton};
+  font-weight: bold;
+  width: 25px;
+`;
+
+const QuantityP = styled.p`
+  ${CommonQuantitySelectorStyle};
+  width: 45px;
+`;
+
+const AddToCartButton = styled.button`
+  ${CommonButton};
+`;
+
+function increaseSelection (amount, updateAmount) {
+  amount = amount + 1;
+  updateAmount(amount);
+}
+
+function decreaseSelection (amount, updateAmount) {
+  if (amount > 1) {
+    amount = amount - 1;
+    updateAmount(amount);
+  }
+}
+
 function ShelterSingleWall () {
   const { cart, updateCart } = useCart();
+
   console.log('ShelterSingleWall');
   console.log('cart');
   console.log(cart);
+  const [amount, updateAmount] = useState(1);
   return (
       <PageWrapper>
         {singleWallList.map((item, index) => (
@@ -56,7 +87,12 @@ function ShelterSingleWall () {
                 <li>{item.price} euros</li>
               </ul>
             </ItemDatas>
-            <AddToCartButton onClick={() => addToCart(cart, updateCart, item)}>Add To Cart</AddToCartButton>
+            <QuantitySelectorWrapper>
+                <QuantityButton onClick={() => decreaseSelection(amount, updateAmount)}>-</QuantityButton>
+                <QuantityP>{amount}</QuantityP>
+                <QuantityButton onClick={() => increaseSelection(amount, updateAmount)}>+</QuantityButton>
+                <AddToCartButton onClick={() => addToCart(cart, updateCart, item, amount)}>Add To Cart</AddToCartButton>
+            </QuantitySelectorWrapper>
           </ItemPresentation>
         ))}
       </PageWrapper>
