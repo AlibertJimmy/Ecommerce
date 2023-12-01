@@ -7,6 +7,9 @@ import { useCart } from '../../context';
 // Import Function
 import { itemQuantity } from '../../utils/CartFunctions/Functions';
 
+// Import Assets
+import emptyCart from '../../assets/Functionnal_Icon/Empty_Cart.png';
+
 // Import Style
 import styled from 'styled-components';
 import CloseButton from './CloseButton';
@@ -44,6 +47,15 @@ const CartContentWrapper = styled.div`
 
 const StyledH2 = styled.h2`
     margin:0;
+    font-family: sans-serif;
+
+`;
+
+const CartContainer = styled.div`
+    display: flex;
+    flex-direction:column;
+    justify-content:space-between;
+    height: 100%;
 
 `;
 
@@ -94,14 +106,33 @@ const QuantityP = styled.p`
   ${CommonQuantitySelectorStyle};
   width: 45px;
 `;
+const BottomCartWrapper = styled.div`
+  border-top: 2px dashed black;
+  margin: 20px 0;
+`;
 
-const EmpltyCartButton = styled.button`
+const CenterContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+`;
+
+const EmptyCartButton = styled.button`
   ${CommonButton};
-  margin-left: 0;
+`;
+
+const EmptyCartWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+
+const EmptyCartIMG = styled.img`
+    height: 150px;
+    width: 150px;
 `;
 
 function Cart () {
-  const { isOpen, cart, updateCart } = useCart();
+  const { isOpen, setIsOpen, cart, updateCart } = useCart();
   if (!cart) {
     return null;
   }
@@ -148,7 +179,7 @@ function Cart () {
         <CloseButton />
           {cart.length > 0
             ? (
-            <div>
+            <CartContainer>
               <div>
                 {cart.map(({ itemProperty, amount }, index) => (
                   <CartContentContainer key={`${itemProperty.name}-${index}`}>
@@ -172,12 +203,31 @@ function Cart () {
                   </CartContentContainer>
                 ))}
               </div>
-              <EmpltyCartButton onClick={() => updateCart([])}>Empty the cart</EmpltyCartButton>
-              <h3>Total :{total}€</h3>
-            </div>
+              <BottomCartWrapper>
+                <CenterContainer>
+                  <EmptyCartButton onClick={() => updateCart([])}>Empty the cart</EmptyCartButton>
+                </CenterContainer>
+                <CenterContainer>
+                  <StyledH2>Total : {total} €</StyledH2>
+                </CenterContainer>
+                <CenterContainer>
+                  <EmptyCartButton>Go To Checkout</EmptyCartButton>
+                </CenterContainer>
+              </BottomCartWrapper>
+            </CartContainer>
               )
             : (
-            <div>Your cart is empty</div>
+            <EmptyCartWrapper>
+              <CenterContainer>
+                <EmptyCartIMG src={emptyCart} alt='emptyCart'></EmptyCartIMG>
+              </CenterContainer>
+              <CenterContainer>
+                <StyledH2>Your cart is empty</StyledH2>
+              </CenterContainer>
+              <CenterContainer>
+                  <EmptyCartButton onClick={() => setIsOpen(false)}>Keep Browsing</EmptyCartButton>
+                </CenterContainer>
+            </EmptyCartWrapper>
               )}
     </CartContentWrapper>
   );
