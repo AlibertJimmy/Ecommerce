@@ -1,19 +1,21 @@
 // Import React Libraries
 import React from 'react';
+import { Outlet } from 'react-router';
 
 // Import Components
 
 // Import Datas
 
 // Import Style
-import { PageWrapper } from '../../../utils/Styles';
+import { PageWrapper } from '../../utils/Styles';
 
-function ShelterDoubleWall () {
+function Shelter () {
   return (
       <PageWrapper>
-        Double Wall
+        Shelter
+      <Outlet/>
       </PageWrapper>
   );
 }
 
-export default ShelterDoubleWall;
+export default Shelter;

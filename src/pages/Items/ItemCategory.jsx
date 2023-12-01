@@ -5,19 +5,17 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 // Import Context
-import { useCart } from '../../../context';
+import { useCart } from '../../context';
 
 // Import Components
 
 // Import Functions
-import { addToCart } from '../../../utils/CartFunctions/Functions';
-
-// Import Datas
-import { singleWallList } from '../../../datas/Shelter/SingleWall';
+import { addToCart } from '../../utils/CartFunctions/Functions';
+import { getItemList } from '../../utils/Functions/ItemFunctions';
 
 // Import Style
 import styled from 'styled-components';
-import { CommonButton, CommonQuantitySelectorStyle, PageWrapper } from '../../../utils/Styles';
+import { CommonButton, CommonQuantitySelectorStyle, PageWrapper } from '../../utils/Styles';
 
 const ItemPresentation = styled.div`
   border: 1px solid black;
@@ -69,16 +67,20 @@ function decreaseSelection (amount, updateAmount) {
   }
 }
 
-function ShelterSingleWall () {
+function ItemCategoryPage ({ itemCategory, itemSubCategory }) {
   const { cart, updateCart } = useCart();
 
-  console.log('ShelterSingleWall');
-  console.log('cart');
-  console.log(cart);
+  console.log('Product Page');
+  console.log(`itemCategory : ${itemCategory}`);
+  console.log(`itemSubCategory : ${itemSubCategory}`);
+  const itemList = getItemList(itemCategory, itemSubCategory);
+  console.log('itemList');
+  console.log(itemList);
+
   const [amount, updateAmount] = useState(1);
   return (
       <PageWrapper>
-        {singleWallList.map((item, index) => (
+        {itemList.map((item, index) => (
           <ItemPresentation key={index} >
             <ItemTitle>{item.name}</ItemTitle>
             <ItemPicture src={item.picture1} alt='picture1'></ItemPicture>
@@ -99,9 +101,9 @@ function ShelterSingleWall () {
   );
 }
 
-ShelterSingleWall.propTypes = {
-  cart: PropTypes.array.isRequired,
-  updateCart: PropTypes.func.isRequired
+ItemCategoryPage.propTypes = {
+  itemCategory: PropTypes.string.isRequired,
+  itemSubCategory: PropTypes.string.isRequired
 };
 
-export default ShelterSingleWall;
+export default ItemCategoryPage;

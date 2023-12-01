@@ -1,19 +1,21 @@
 // Import React Libraries
 import React from 'react';
+import { Outlet } from 'react-router';
 
 // Import Components
 
 // Import Datas
 
 // Import Style
-import { PageWrapper } from '../../../utils/Styles';
+import { PageWrapper } from '../../utils/Styles';
 
-function Hammock () {
+function Bedding () {
   return (
       <PageWrapper>
-        Hammock
+        Bedding
+        <Outlet/>
       </PageWrapper>
   );
 }
 
-export default Hammock;
+export default Bedding;
