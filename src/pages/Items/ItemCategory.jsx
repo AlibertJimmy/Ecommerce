@@ -1,102 +1,126 @@
 // Import React Libraries
-import React, { useState } from 'react';
+import React from 'react';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 
 // Import PropTypes
 import PropTypes from 'prop-types';
 
 // Import Context
-import { useCart } from '../../context';
 
 // Import Components
 
 // Import Functions
-import { addToCart } from '../../utils/CartFunctions/Functions';
 import { getItemList } from '../../utils/Functions/ItemFunctions';
 
 // Import Style
 import styled from 'styled-components';
-import { CommonButton, CommonQuantitySelectorStyle, PageWrapper } from '../../utils/Styles';
+import { PageWrapper } from '../../utils/Styles';
+import { displayOutlet } from '../../utils/Functions/pathFunctions';
+
+// Import Constants
+import { responsiveWidth } from '../../utils/Constant';
+
+const PageContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 30px;
+`;
 
 const ItemPresentation = styled.div`
-  border: 1px solid black;
   border-radius: 15px;
+  box-shadow: 5px 5px 10px 5px rgba(0.1, 0, 0.1, 0.2);
+  display:flex;
+  flex-direction: column;
+  flex: 0 0 calc(23% - 10px);
+  width: 250px;
+  height: 250px;
+  margin: 10px 16px;
 
+  @media (max-width: ${responsiveWidth}px){
+    flex: 1 0 calc(50% - 10px);
+  }
+`;
+
+const StyledLink = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+`;
+
+const PictureContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
 `;
 
 const ItemPicture = styled.img`
+  max-width: 150px;
+  max-height: 150px;
 
 `;
 
 const ItemTitle = styled.h1`
-
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: 150;
 `;
 
-const ItemDatas = styled.p`
-
-`;
-
-const QuantitySelectorWrapper = styled.div`
+const ItemDatas = styled.div`
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  text-align:center;
+  justify-content:space-between;
+  height: 100px;
 `;
 
-const QuantityButton = styled.button`
-  ${CommonButton};
+const ItemPrice = styled.p`
+  font-family: sans-serif;
   font-weight: bold;
-  width: 25px;
+  font-size: 22px;
+  margin: 0;
 `;
-
-const QuantityP = styled.p`
-  ${CommonQuantitySelectorStyle};
-  width: 45px;
-`;
-
-const AddToCartButton = styled.button`
-  ${CommonButton};
-`;
-
-function increaseSelection (amount, updateAmount) {
-  amount = amount + 1;
-  updateAmount(amount);
-}
-
-function decreaseSelection (amount, updateAmount) {
-  if (amount > 1) {
-    amount = amount - 1;
-    updateAmount(amount);
-  }
-}
 
 function ItemCategoryPage ({ itemCategory, itemSubCategory }) {
-  const { cart, updateCart } = useCart();
-
+  const location = useLocation();
+  const currentUrl = location.pathname;
+  console.log(`currentUrl : ${currentUrl}`);
   console.log('Product Page');
   console.log(`itemCategory : ${itemCategory}`);
   console.log(`itemSubCategory : ${itemSubCategory}`);
   const itemList = getItemList(itemCategory, itemSubCategory);
   console.log('itemList');
   console.log(itemList);
+  console.log(displayOutlet(itemCategory, itemSubCategory, currentUrl));
+  const shouldDisplayPageContainer = displayOutlet(itemCategory, itemSubCategory, currentUrl);
 
-  const [amount, updateAmount] = useState(1);
   return (
       <PageWrapper>
+        {shouldDisplayPageContainer
+          ? (
+        <PageContainer>
         {itemList.map((item, index) => (
+
           <ItemPresentation key={index} >
-            <ItemTitle>{item.name}</ItemTitle>
-            <ItemPicture src={item.picture1} alt='picture1'></ItemPicture>
+            <StyledLink key={index} to={`/${itemCategory}/${itemSubCategory}/${index}`}>
+            <PictureContainer>
+              <ItemPicture src={item.picture1} alt='picture1'></ItemPicture>
+            </PictureContainer>
             <ItemDatas>
-              <ul>
-                <li>{item.price} euros</li>
-              </ul>
+              <ItemTitle>{item.name}</ItemTitle>
+              <ItemPrice>{item.price} euros</ItemPrice>
             </ItemDatas>
-            <QuantitySelectorWrapper>
-                <QuantityButton onClick={() => decreaseSelection(amount, updateAmount)}>-</QuantityButton>
-                <QuantityP>{amount}</QuantityP>
-                <QuantityButton onClick={() => increaseSelection(amount, updateAmount)}>+</QuantityButton>
-                <AddToCartButton onClick={() => addToCart(cart, updateCart, item, amount)}>Add To Cart</AddToCartButton>
-            </QuantitySelectorWrapper>
+            </StyledLink>
           </ItemPresentation>
+
         ))}
+        </PageContainer>
+            )
+          : (
+        <Outlet/>
+            )}
       </PageWrapper>
   );
 }

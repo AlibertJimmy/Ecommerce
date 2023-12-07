@@ -15,6 +15,7 @@ import Account from './pages/Account/Account';
 import Shelter from './pages/Items/Shelter';
 import Bedding from './pages/Items/Bedding';
 import ItemCategoryPage from './pages/Items/ItemCategory';
+import ItemDetailPage from './pages/Items/ItemDetail';
 
 // Import Style
 import styled from 'styled-components';
@@ -41,7 +42,9 @@ function App () {
                   <Route path="/" element={<Home />} />
 
                   <Route path="Shelter" element={<Shelter />} >
-                    <Route path="SingleWall" element={<ItemCategoryPage itemCategory='Shelter' itemSubCategory='SingleWall'/>} />
+                    <Route path="SingleWall" element={<ItemCategoryPage itemCategory='Shelter' itemSubCategory='SingleWall'/>}>
+                      <Route path=":index" element={<ItemDetailPage itemCategory='Shelter' itemSubCategory='SingleWall'/>}/>
+                    </Route>
                     <Route path="DoubleWall" element={<ItemCategoryPage itemCategory='Shelter' itemSubCategory='DoubleWall'/>} />
                   </Route>
 
