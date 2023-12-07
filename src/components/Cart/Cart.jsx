@@ -183,7 +183,7 @@ function Cart () {
               <div>
                 {cart.map(({ itemProperty, amount }, index) => (
                   <CartContentContainer key={`${itemProperty.name}-${index}`}>
-                    <CartItemImagePreview src={itemProperty.picture1}></CartItemImagePreview>
+                    <CartItemImagePreview src={itemProperty.illustrations[0].picture}></CartItemImagePreview>
                     <CartItemDataDisplay>
                       <TitleAndPrice>
                         <StyledP>{itemProperty.name}</StyledP>

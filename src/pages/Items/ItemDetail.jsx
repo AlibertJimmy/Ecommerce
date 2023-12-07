@@ -17,43 +17,57 @@ import { getItemList } from '../../utils/Functions/ItemFunctions';
 // Import Style
 import styled from 'styled-components';
 import { CommonButton, CommonQuantitySelectorStyle, PageWrapper } from '../../utils/Styles';
+import colors from '../../utils/Colors';
+import { IllustrationContainer, ItemPicture, PictureDisplayer, PictureSelectionPreview, PictureSelectionPreviewContainer, PictureSelector } from '../../utils/Style/ItemDetailStyle';
 
 const PageContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
+  margin: 0 50px;
 `;
 
 const ItemPresentation = styled.div`
-  border: 1px solid black;
-  border-radius: 15px;
-  display:flex;
-  flex: 1 0 calc(40% - 10px);
-  width: 500px;
   margin: 5px 10px;
+  width: auto;
 
+  display:flex;
+  flex-direction: row;
+
+  border: 0px solid black;
+  border-radius: 15px;
 `;
-const PictureContainer = styled.div`
+
+const InfoContainer = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 250px;
-  height: 250px;
-  border: 1px solid red;
-`;
+  flex-direction: column;
+  flex: 1;
 
-const ItemPicture = styled.img`
-  max-width: 250px;
-  max-height: 250px;
-
+  padding: 50px;
+  border: 1px solid black;
 `;
 
 const ItemTitle = styled.h1`
+  font-family: sans-serif;
+  color: ${colors.orangeCustom};
+  margin: 0;
+`;
+
+const ItemDatas = styled.div`
 
 `;
 
-const ItemDatas = styled.p`
+const StyledUl1 = styled.ul`
+  display: flex;  
+  flex-direction: column;
+  gap: 20px;
+  padding:0;
 
+  list-style: none;
+
+  font-family: sans-serif;
+  font-weight: 600 ;
+  font-size: 20px;
 `;
 
 const QuantitySelectorWrapper = styled.div`
@@ -74,6 +88,14 @@ const QuantityP = styled.p`
 
 const AddToCartButton = styled.button`
   ${CommonButton};
+`;
+
+const DescriptionContainer = styled.div`
+
+`;
+
+const StyledUl2 = styled.ul`
+
 `;
 
 function increaseSelection (amount, updateAmount) {
@@ -99,29 +121,63 @@ function ItemDetailPage ({ itemCategory, itemSubCategory }) {
   console.log(itemList);
   console.log(`Index : ${index}`);
   console.log(itemList[index]);
-  // cherche l'index correspondant au name pour l'afficher
+
+  const [image, setImage] = useState(itemList[index].illustrations[0].picture);
+
+  const changeImage = (e) => {
+    setImage(e.target.src);
+  };
 
   const [amount, updateAmount] = useState(1);
   return (
       <PageWrapper>
         <PageContainer>
           <ItemPresentation key={index} >
-            <ItemTitle>{itemList[index].name}</ItemTitle>
-            <PictureContainer>
-              <ItemPicture src={itemList[index].picture1} alt='picture1'></ItemPicture>
-            </PictureContainer>
-            <ItemDatas>
-              <ul>
-                <li>{itemList[index].price} euros</li>
-              </ul>
-            </ItemDatas>
-            <QuantitySelectorWrapper>
-                <QuantityButton onClick={() => decreaseSelection(amount, updateAmount)}>-</QuantityButton>
-                <QuantityP>{amount}</QuantityP>
-                <QuantityButton onClick={() => increaseSelection(amount, updateAmount)}>+</QuantityButton>
-                <AddToCartButton onClick={() => addToCart(cart, updateCart, itemList[index], amount)}>Add To Cart</AddToCartButton>
-            </QuantitySelectorWrapper>
+            <IllustrationContainer>
+              <PictureDisplayer>
+                <ItemPicture src={image} alt='picture1'></ItemPicture>
+              </PictureDisplayer>
+              <PictureSelector>
+              {itemList[index].illustrations.map((liComponent, indexIllus) => (
+                <PictureSelectionPreviewContainer key={`${itemList[index].name}-li-${indexIllus}`}>
+                    <PictureSelectionPreview src={liComponent.picture} alt={`Picture${indexIllus}`} onClick={changeImage}></PictureSelectionPreview>
+                </PictureSelectionPreviewContainer>
+              ))}
+              </PictureSelector>
+            </IllustrationContainer>
+            <InfoContainer>
+              <ItemDatas>
+                <ItemTitle>{itemList[index].name}</ItemTitle>
+                <StyledUl1>
+                  <li><p style={{ fontStyle: 'italic' }}> {itemList[index].brand} </p></li>
+                  <li><p> {itemList[index].weight} </p></li>
+                  <li>
+                    <p style={{ color: `${colors.greenCustom}`, fontSize: '25px' }}>
+                     {itemList[index].price} €
+                    </p>
+                  </li>
+                </StyledUl1>
+              </ItemDatas>
+              <QuantitySelectorWrapper>
+                  <QuantityButton onClick={() => decreaseSelection(amount, updateAmount)}>-</QuantityButton>
+                  <QuantityP>{amount}</QuantityP>
+                  <QuantityButton onClick={() => increaseSelection(amount, updateAmount)}>+</QuantityButton>
+                  <AddToCartButton onClick={() => addToCart(cart, updateCart, itemList[index], amount)}>Add To Cart</AddToCartButton>
+              </QuantitySelectorWrapper>
+            </InfoContainer>
           </ItemPresentation>
+          <DescriptionContainer>
+            <ItemTitle>Description</ItemTitle>
+            {itemList[index].description.map((liComponent, indexDescr) => (
+                    <p key={`${itemList[index].name}-li-${indexDescr}`}>{liComponent.li}</p>
+            ))}
+            <ItemTitle>Characteristic</ItemTitle>
+            <StyledUl2>
+                {itemList[index].characteristic.map((liComponent, indexCharac) => (
+                    <li key={`${itemList[index].name}-li-${indexCharac}`}><p>{liComponent.li}</p></li>
+                ))}
+            </StyledUl2>
+          </DescriptionContainer>
         </PageContainer>
       </PageWrapper>
   );

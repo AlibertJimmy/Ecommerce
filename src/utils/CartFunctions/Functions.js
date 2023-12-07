@@ -1,8 +1,9 @@
 // Function to check if an individual cart item has the desired structure
 export function isValidCartItem (item) {
   const expectedKeys = [
-    'name', 'category', 'subCategory', 'id', 'available', 'weight',
-    'picture1', 'picture2', 'picture3', 'picture4', 'picture5', 'picture6',
+    'name', 'category', 'subCategory', 'id',
+    'available', 'weight',
+    'illustrations',
     'brand', 'price'
   ];
 
