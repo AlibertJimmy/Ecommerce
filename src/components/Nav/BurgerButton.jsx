@@ -86,6 +86,10 @@ function Burger () {
   useEffect(() => {
     // Function to handle clicks outside the component
     function handleClickOutside (event) {
+      console.log('burgerRef.current');
+      console.log(burgerRef.current);
+      console.log('burgerRef.current.contains(event.target)');
+      console.log(burgerRef.current.contains(event.target));
       if (burgerRef.current && !burgerRef.current.contains(event.target)) {
         setOpenBurgerButton(false);
       }

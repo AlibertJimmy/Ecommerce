@@ -1,5 +1,5 @@
 // Import React Libraries
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 // Import Context
 import { useCart } from '../../context';
@@ -74,8 +74,33 @@ const CartIMG = styled.img`
 function CartButton () {
   const { isOpen, setIsOpen, cart } = useCart();
   const amoutOfItemInCart = itemQuantity(cart);
+  const cartRef = useRef(null);
+
+  useEffect(() => {
+    // Function to handle clicks outside the component
+    function handleClickOutside (event) {
+      console.log('cartRef.current');
+      console.log(cartRef.current);
+      console.log('cartRef.current.contains(event.target)');
+      console.log(cartRef.current.contains(event.target));
+      if (cartRef.current && !cartRef.current.contains(event.target)) {
+        setIsOpen(false);
+        console.log('click OutsideCart');
+        console.log('close cart');
+      }
+    }
+
+    // Add event listener when the component mounts
+    document.addEventListener('click', handleClickOutside);
+
+    // Remove the event listener when the component unmounts
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <CartWrapper id='#CartWrapperButton'>
+    <CartWrapper ref={cartRef} id='#CartWrapperButton'>
       <OpenCartButton
         onClick={() => setIsOpen(!isOpen)}
         amount={amoutOfItemInCart}
