@@ -45,7 +45,9 @@ function App () {
                     <Route path="SingleWall" element={<ItemCategoryPage itemCategory='Shelter' itemSubCategory='SingleWall'/>}>
                       <Route path=":index" element={<ItemDetailPage itemCategory='Shelter' itemSubCategory='SingleWall'/>}/>
                     </Route>
-                    <Route path="DoubleWall" element={<ItemCategoryPage itemCategory='Shelter' itemSubCategory='DoubleWall'/>} />
+                    <Route path="DoubleWall" element={<ItemCategoryPage itemCategory='Shelter' itemSubCategory='DoubleWall'/>}>
+                      <Route path=":index" element={<ItemDetailPage itemCategory='Shelter' itemSubCategory='DoubleWall'/>}/>
+                    </Route>
                   </Route>
 
                   <Route path="Bedding" element={<Bedding />} >

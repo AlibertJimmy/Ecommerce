@@ -72,14 +72,32 @@ export const singleWallList = [
     id: 'DDHammocksTarpPU3x3',
     available: true,
     weight: '800g',
-    picture1: DDTarp3x31,
-    picture2: DDTarp3x32,
-    picture3: DDTarp3x33,
-    picture4: DDTarp3x34,
-    picture5: '',
-    picture6: '',
+    illustrations:
+    [
+      { picture: DDTarp3x31 },
+      { picture: DDTarp3x32 },
+      { picture: DDTarp3x33 },
+      { picture: DDTarp3x34 }
+    ],
     brand: 'DD Hammock',
-    price: 52.00
+    price: 52.00,
+    description:
+    [
+      { li: 'The DD Hammocks Magic Carpet XL is a versatile 2-in-1 piece of equipment: it serves as a waterproof groundsheet to place inside your single-wall shelter (such as the Superlight A-Frame Tent or the Superlight Pyramid Tent) or under a double-wall tent to protect the floor of the inner tent.' },
+      { li: 'Equipped with a strap at each corner, it can also be used as a minimalist micro tarp (to be used with a bivouac bag in this case) or to close the entrance of another larger tarp.' },
+      { li: 'Made from PU-coated 210T polyester fabric, the Magic Carpet XL is waterproof and durable while remaining lightweight.' }
+    ],
+    characteristic:
+      [
+        { li: 'Floor covering / Micro Tarp.' },
+        { li: 'Fabric: PU-coated 210T Polyester (resistant to a water column of 3000 mm).' },
+        { li: 'Waterproof seams with heat-sealed tapes.' },
+        { li: 'Sold with its storage bag (but without stakes or guy lines).' },
+        { li: '4 attachment points.' },
+        { li: 'Flat dimensions of the tarp: 2.2 m x 1.4 m.' },
+        { li: 'Weight of the shelter alone: 225 g.' },
+        { li: 'Color: Olive Green.' }
+      ]
   },
   {
     name: 'DD Hammocks Tarp PU 3.5 x 2.4 m',
@@ -88,14 +106,30 @@ export const singleWallList = [
     id: 'DDHammocksTarpPU3.5x2.4',
     available: true,
     weight: '815g',
-    picture1: DDTarp35x241,
-    picture2: DDTarp35x242,
-    picture3: '',
-    picture4: '',
-    picture5: '',
-    picture6: '',
+    illustrations:
+    [
+      { picture: DDTarp35x241 },
+      { picture: DDTarp35x242 }
+    ],
     brand: 'DD Hammock',
-    price: 57.00
+    price: 57.00,
+    description:
+    [
+      { li: 'The DD Hammocks Magic Carpet XL is a versatile 2-in-1 piece of equipment: it serves as a waterproof groundsheet to place inside your single-wall shelter (such as the Superlight A-Frame Tent or the Superlight Pyramid Tent) or under a double-wall tent to protect the floor of the inner tent.' },
+      { li: 'Equipped with a strap at each corner, it can also be used as a minimalist micro tarp (to be used with a bivouac bag in this case) or to close the entrance of another larger tarp.' },
+      { li: 'Made from PU-coated 210T polyester fabric, the Magic Carpet XL is waterproof and durable while remaining lightweight.' }
+    ],
+    characteristic:
+      [
+        { li: 'Floor covering / Micro Tarp.' },
+        { li: 'Fabric: PU-coated 210T Polyester (resistant to a water column of 3000 mm).' },
+        { li: 'Waterproof seams with heat-sealed tapes.' },
+        { li: 'Sold with its storage bag (but without stakes or guy lines).' },
+        { li: '4 attachment points.' },
+        { li: 'Flat dimensions of the tarp: 2.2 m x 1.4 m.' },
+        { li: 'Weight of the shelter alone: 225 g.' },
+        { li: 'Color: Olive Green.' }
+      ]
   },
   {
     name: 'Sea To Summit Hamac Tarp Nano 3.6 x 2.8m',
@@ -104,14 +138,31 @@ export const singleWallList = [
     id: 'SeaToSummitHamacTarpNano3.6x2.8',
     available: true,
     weight: '350g',
-    picture1: SeatoSummitHamacTarpNano1,
-    picture2: SeatoSummitHamacTarpNano2,
-    picture3: SeatoSummitHamacTarpNano3,
-    picture4: '',
-    picture5: '',
-    picture6: '',
+    illustrations:
+    [
+      { picture: SeatoSummitHamacTarpNano1 },
+      { picture: SeatoSummitHamacTarpNano2 },
+      { picture: SeatoSummitHamacTarpNano3 }
+    ],
     brand: 'Sea To Summit',
-    price: 130.00
+    price: 130.00,
+    description:
+    [
+      { li: 'The DD Hammocks Magic Carpet XL is a versatile 2-in-1 piece of equipment: it serves as a waterproof groundsheet to place inside your single-wall shelter (such as the Superlight A-Frame Tent or the Superlight Pyramid Tent) or under a double-wall tent to protect the floor of the inner tent.' },
+      { li: 'Equipped with a strap at each corner, it can also be used as a minimalist micro tarp (to be used with a bivouac bag in this case) or to close the entrance of another larger tarp.' },
+      { li: 'Made from PU-coated 210T polyester fabric, the Magic Carpet XL is waterproof and durable while remaining lightweight.' }
+    ],
+    characteristic:
+      [
+        { li: 'Floor covering / Micro Tarp.' },
+        { li: 'Fabric: PU-coated 210T Polyester (resistant to a water column of 3000 mm).' },
+        { li: 'Waterproof seams with heat-sealed tapes.' },
+        { li: 'Sold with its storage bag (but without stakes or guy lines).' },
+        { li: '4 attachment points.' },
+        { li: 'Flat dimensions of the tarp: 2.2 m x 1.4 m.' },
+        { li: 'Weight of the shelter alone: 225 g.' },
+        { li: 'Color: Olive Green.' }
+      ]
   },
   {
     name: 'Sierra Designs High Route 3000',
@@ -120,14 +171,34 @@ export const singleWallList = [
     id: 'SierraDesignsHighRoute3000',
     available: true,
     weight: '880g',
-    picture1: SierraDesignsHighRoute30001,
-    picture2: SierraDesignsHighRoute30002,
-    picture3: SierraDesignsHighRoute30003,
-    picture4: SierraDesignsHighRoute30004,
-    picture5: SierraDesignsHighRoute30005,
-    picture6: SierraDesignsHighRoute30006,
+    illustrations:
+    [
+      { picture: SierraDesignsHighRoute30001 },
+      { picture: SierraDesignsHighRoute30002 },
+      { picture: SierraDesignsHighRoute30003 },
+      { picture: SierraDesignsHighRoute30004 },
+      { picture: SierraDesignsHighRoute30005 },
+      { picture: SierraDesignsHighRoute30006 }
+    ],
     brand: 'Sierra Designs',
-    price: 319.00
+    price: 319.00,
+    description:
+    [
+      { li: 'The DD Hammocks Magic Carpet XL is a versatile 2-in-1 piece of equipment: it serves as a waterproof groundsheet to place inside your single-wall shelter (such as the Superlight A-Frame Tent or the Superlight Pyramid Tent) or under a double-wall tent to protect the floor of the inner tent.' },
+      { li: 'Equipped with a strap at each corner, it can also be used as a minimalist micro tarp (to be used with a bivouac bag in this case) or to close the entrance of another larger tarp.' },
+      { li: 'Made from PU-coated 210T polyester fabric, the Magic Carpet XL is waterproof and durable while remaining lightweight.' }
+    ],
+    characteristic:
+      [
+        { li: 'Floor covering / Micro Tarp.' },
+        { li: 'Fabric: PU-coated 210T Polyester (resistant to a water column of 3000 mm).' },
+        { li: 'Waterproof seams with heat-sealed tapes.' },
+        { li: 'Sold with its storage bag (but without stakes or guy lines).' },
+        { li: '4 attachment points.' },
+        { li: 'Flat dimensions of the tarp: 2.2 m x 1.4 m.' },
+        { li: 'Weight of the shelter alone: 225 g.' },
+        { li: 'Color: Olive Green.' }
+      ]
   },
   {
     name: 'Six Moon Designs - Skyscape TREKKER',
@@ -136,14 +207,33 @@ export const singleWallList = [
     id: 'SixMoonDesignsSkyscapeTREKKER',
     available: true,
     weight: '790g',
-    picture1: SkyscapeTrekker1,
-    picture2: SkyscapeTrekker2,
-    picture3: SkyscapeTrekker3,
-    picture4: SkyscapeTrekker4,
-    picture5: SkyscapeTrekker5,
-    picture6: '',
+    illustrations:
+    [
+      { picture: SkyscapeTrekker1 },
+      { picture: SkyscapeTrekker2 },
+      { picture: SkyscapeTrekker3 },
+      { picture: SkyscapeTrekker4 },
+      { picture: SkyscapeTrekker5 }
+    ],
     brand: 'Six Moon',
-    price: 315.00
+    price: 315.00,
+    description:
+    [
+      { li: 'The DD Hammocks Magic Carpet XL is a versatile 2-in-1 piece of equipment: it serves as a waterproof groundsheet to place inside your single-wall shelter (such as the Superlight A-Frame Tent or the Superlight Pyramid Tent) or under a double-wall tent to protect the floor of the inner tent.' },
+      { li: 'Equipped with a strap at each corner, it can also be used as a minimalist micro tarp (to be used with a bivouac bag in this case) or to close the entrance of another larger tarp.' },
+      { li: 'Made from PU-coated 210T polyester fabric, the Magic Carpet XL is waterproof and durable while remaining lightweight.' }
+    ],
+    characteristic:
+      [
+        { li: 'Floor covering / Micro Tarp.' },
+        { li: 'Fabric: PU-coated 210T Polyester (resistant to a water column of 3000 mm).' },
+        { li: 'Waterproof seams with heat-sealed tapes.' },
+        { li: 'Sold with its storage bag (but without stakes or guy lines).' },
+        { li: '4 attachment points.' },
+        { li: 'Flat dimensions of the tarp: 2.2 m x 1.4 m.' },
+        { li: 'Weight of the shelter alone: 225 g.' },
+        { li: 'Color: Olive Green.' }
+      ]
   },
   {
     name: 'Sea to Summit - Poncho/Tarp Ultra-Sil Nano',
@@ -152,13 +242,30 @@ export const singleWallList = [
     id: 'SeatoSummitPonchoTarpUltraSilNano',
     available: true,
     weight: '186g',
-    picture1: SeatoSummitUltraSilNANOPonchoTarp1,
-    picture2: SeatoSummitUltraSilNANOPonchoTarp2,
-    picture3: SeatoSummitUltraSilNANOPonchoTarp3,
-    picture4: '',
-    picture5: '',
-    picture6: '',
+    illustrations:
+    [
+      { picture: SeatoSummitUltraSilNANOPonchoTarp1 },
+      { picture: SeatoSummitUltraSilNANOPonchoTarp2 },
+      { picture: SeatoSummitUltraSilNANOPonchoTarp3 }
+    ],
     brand: 'Sea To Summit',
-    price: 100.00
+    price: 100.00,
+    description:
+    [
+      { li: 'The DD Hammocks Magic Carpet XL is a versatile 2-in-1 piece of equipment: it serves as a waterproof groundsheet to place inside your single-wall shelter (such as the Superlight A-Frame Tent or the Superlight Pyramid Tent) or under a double-wall tent to protect the floor of the inner tent.' },
+      { li: 'Equipped with a strap at each corner, it can also be used as a minimalist micro tarp (to be used with a bivouac bag in this case) or to close the entrance of another larger tarp.' },
+      { li: 'Made from PU-coated 210T polyester fabric, the Magic Carpet XL is waterproof and durable while remaining lightweight.' }
+    ],
+    characteristic:
+      [
+        { li: 'Floor covering / Micro Tarp.' },
+        { li: 'Fabric: PU-coated 210T Polyester (resistant to a water column of 3000 mm).' },
+        { li: 'Waterproof seams with heat-sealed tapes.' },
+        { li: 'Sold with its storage bag (but without stakes or guy lines).' },
+        { li: '4 attachment points.' },
+        { li: 'Flat dimensions of the tarp: 2.2 m x 1.4 m.' },
+        { li: 'Weight of the shelter alone: 225 g.' },
+        { li: 'Color: Olive Green.' }
+      ]
   }
 ];

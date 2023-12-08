@@ -24,6 +24,8 @@ const HeaderWrapper = styled.div`
   ${commonHeaderFooter};
   flex-direction: column;
   color: white;
+  position: fixed;
+  top:0;
 `;
 
 const StyledHeader = styled.div`

@@ -22,8 +22,6 @@ export const PictureDisplayer = styled.div`
   justify-content: center;
 
   overflow: hidden;
-  
-  border: 1px solid red;
 `;
 
 export const ItemPicture = styled.img`
@@ -36,7 +34,6 @@ export const PictureSelector = styled.div`
   display: flex;
   justify-content: space-evenly;
   width: ${IllustrationDisplayWidth}px;
-  border: 1px solid blue;
 `;
 
 export const PictureSelectionPreviewContainer = styled.div`
@@ -47,7 +44,7 @@ export const PictureSelectionPreviewContainer = styled.div`
 
   display: flex;
   align-items: center;
-  border: 1px solid green;
+  justify-content: center;
 `;
 
 export const PictureSelectionPreview = styled.img`

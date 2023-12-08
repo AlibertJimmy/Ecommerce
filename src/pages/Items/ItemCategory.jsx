@@ -19,6 +19,7 @@ import { displayOutlet } from '../../utils/Functions/pathFunctions';
 
 // Import Constants
 import { responsiveWidth } from '../../utils/Constant';
+import { scrollToTop } from '../../utils/Functions';
 
 const PageContainer = styled.div`
   display: flex;
@@ -96,6 +97,10 @@ function ItemCategoryPage ({ itemCategory, itemSubCategory }) {
   console.log(displayOutlet(itemCategory, itemSubCategory, currentUrl));
   const shouldDisplayPageContainer = displayOutlet(itemCategory, itemSubCategory, currentUrl);
 
+  function handleOnClick () {
+    scrollToTop();
+  }
+
   return (
       <PageWrapper>
         {shouldDisplayPageContainer
@@ -104,9 +109,9 @@ function ItemCategoryPage ({ itemCategory, itemSubCategory }) {
         {itemList.map((item, index) => (
 
           <ItemPresentation key={index} >
-            <StyledLink key={index} to={`/${itemCategory}/${itemSubCategory}/${index}`}>
+            <StyledLink key={index} to={`/${itemCategory}/${itemSubCategory}/${index}`} onClick={handleOnClick}>
             <PictureContainer>
-              <ItemPicture src={item.picture1} alt='picture1'></ItemPicture>
+              <ItemPicture src={item.illustrations[0].picture} alt='picture1'></ItemPicture>
             </PictureContainer>
             <ItemDatas>
               <ItemTitle>{item.name}</ItemTitle>

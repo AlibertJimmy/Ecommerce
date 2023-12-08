@@ -10,7 +10,7 @@ import { borderWidth, responsiveWidth } from './Constant';
 
 export const PageWrapper = styled.div`
 
-  margin-top: 50px;
+  margin-top: 120px;
   margin-bottom: 50px;
 `;
 

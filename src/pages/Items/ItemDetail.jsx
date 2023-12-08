@@ -44,7 +44,6 @@ const InfoContainer = styled.div`
   flex: 1;
 
   padding: 50px;
-  border: 1px solid black;
 `;
 
 const ItemTitle = styled.h1`
@@ -140,7 +139,7 @@ function ItemDetailPage ({ itemCategory, itemSubCategory }) {
               <PictureSelector>
               {itemList[index].illustrations.map((liComponent, indexIllus) => (
                 <PictureSelectionPreviewContainer key={`${itemList[index].name}-li-${indexIllus}`}>
-                    <PictureSelectionPreview src={liComponent.picture} alt={`Picture${indexIllus}`} onClick={changeImage}></PictureSelectionPreview>
+                    <PictureSelectionPreview src={liComponent.picture} alt={`Picture${indexIllus}`} onMouseOver={changeImage}></PictureSelectionPreview>
                 </PictureSelectionPreviewContainer>
               ))}
               </PictureSelector>

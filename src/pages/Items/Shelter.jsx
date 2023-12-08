@@ -12,7 +12,6 @@ import { PageWrapper } from '../../utils/Styles';
 function Shelter () {
   return (
       <PageWrapper>
-        Shelter
       <Outlet/>
       </PageWrapper>
   );
