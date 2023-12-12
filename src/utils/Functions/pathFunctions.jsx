@@ -5,3 +5,11 @@ export function displayOutlet (itemCategory, itemSubCategory, currentUrl) {
     return false;
   }
 }
+
+export function displayOutletSubCategory (itemCategory, currentUrl) {
+  if (currentUrl === `/${itemCategory}`) {
+    return true;
+  } else {
+    return false;
+  }
+}

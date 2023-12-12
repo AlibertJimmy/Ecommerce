@@ -12,6 +12,7 @@ export const PageWrapper = styled.div`
 
   margin-top: 120px;
   margin-bottom: 50px;
+  min-height: 350px;
 `;
 
 export const ComponentBorder = css`

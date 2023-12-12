@@ -65,7 +65,7 @@ function NavItems () {
   console.log(`openBurgerButton : ${openBurgerButton}`);
   const dropDownTitle1 = 'Shelter';
   const links1 = ['Shelter/SingleWall', 'Shelter/DoubleWall'];
-  const linksRender1 = ['Single Wall', 'Double Wall', 'Accesories'];
+  const linksRender1 = ['Single Wall', 'Double Wall', 'Accessory'];
 
   const dropDownTitle2 = 'Bedding';
   const links2 = ['Bedding/SleepingBag', 'Bedding/Mattress', 'Bedding/Hammock'];

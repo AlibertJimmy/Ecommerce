@@ -114,7 +114,7 @@ function Category () {
     <Container id='container'>
       <GridContainer id='gridContainer'>
         <GridOne id='featuredGridOne'>
-          <Link to="/shelter">
+          <Link to="/Shelter">
             <OverLay id="img1"></OverLay>
             <CategoryImg src={shelterCategory} alt="img1" />
             <Description className="main-description">Shelter</Description>

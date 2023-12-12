@@ -12,9 +12,9 @@ import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import Account from './pages/Account/Account';
 
-import Shelter from './pages/Items/Shelter';
 import Bedding from './pages/Items/Bedding';
 import ItemCategoryPage from './pages/Items/ItemCategory';
+import ItemSubcategoryPage from './components/Category/SubCategory';
 import ItemDetailPage from './pages/Items/ItemDetail';
 
 // Import Style
@@ -41,7 +41,7 @@ function App () {
                 <Routes>
                   <Route path="/" element={<Home />} />
 
-                  <Route path="Shelter" element={<Shelter />} >
+                  <Route path="Shelter" element={<ItemSubcategoryPage itemCategory='Shelter'/>} >
                     <Route path="SingleWall" element={<ItemCategoryPage itemCategory='Shelter' itemSubCategory='SingleWall'/>}>
                       <Route path=":index" element={<ItemDetailPage itemCategory='Shelter' itemSubCategory='SingleWall'/>}/>
                     </Route>
