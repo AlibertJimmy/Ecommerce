@@ -2,6 +2,8 @@
 import React from 'react';
 
 // Import Components
+import Category from '../../components/Category/Category';
+
 // Import Datas
 
 // Import Style
@@ -11,6 +13,7 @@ function Home () {
   return (
       <PageWrapper>
         Home
+        <Category/>
       </PageWrapper>
   );
 }

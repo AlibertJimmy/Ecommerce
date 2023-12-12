@@ -24,9 +24,6 @@ const StyledFooter = styled.div`
     flex-direction: row;
     align-items:center;
 
-    position: fixed;
-    bottom:0;
-
     justify-content: space-between;
 
     color: ${colors.link};

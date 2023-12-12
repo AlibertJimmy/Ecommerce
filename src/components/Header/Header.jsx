@@ -26,6 +26,7 @@ const HeaderWrapper = styled.div`
   color: white;
   position: fixed;
   top:0;
+  z-index: 99;
 `;
 
 const StyledHeader = styled.div`
