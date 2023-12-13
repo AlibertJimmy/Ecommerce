@@ -39,6 +39,7 @@ export const singleWallList = [
     id: 'MagicCarpetXL',
     available: true,
     weight: '225 g',
+    new: true,
     illustrations:
     [
       { picture: MagicCarpetXL1 },
@@ -72,6 +73,7 @@ export const singleWallList = [
     id: 'DDHammocksTarpPU3x3',
     available: true,
     weight: '800g',
+    new: false,
     illustrations:
     [
       { picture: DDTarp3x31 },
@@ -106,6 +108,7 @@ export const singleWallList = [
     id: 'DDHammocksTarpPU3.5x2.4',
     available: true,
     weight: '815g',
+    new: false,
     illustrations:
     [
       { picture: DDTarp35x241 },
@@ -138,6 +141,7 @@ export const singleWallList = [
     id: 'SeaToSummitHamacTarpNano3.6x2.8',
     available: true,
     weight: '350g',
+    new: false,
     illustrations:
     [
       { picture: SeatoSummitHamacTarpNano1 },
@@ -171,6 +175,7 @@ export const singleWallList = [
     id: 'SierraDesignsHighRoute3000',
     available: true,
     weight: '880g',
+    new: false,
     illustrations:
     [
       { picture: SierraDesignsHighRoute30001 },
@@ -207,6 +212,7 @@ export const singleWallList = [
     id: 'SixMoonDesignsSkyscapeTREKKER',
     available: true,
     weight: '790g',
+    new: false,
     illustrations:
     [
       { picture: SkyscapeTrekker1 },
@@ -242,6 +248,7 @@ export const singleWallList = [
     id: 'SeatoSummitPonchoTarpUltraSilNano',
     available: true,
     weight: '186g',
+    new: false,
     illustrations:
     [
       { picture: SeatoSummitUltraSilNANOPonchoTarp1 },

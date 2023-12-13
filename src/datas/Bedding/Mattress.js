@@ -10,6 +10,7 @@ export const mattressList = [
     id: 'ThermarestNeoAirXliteRegular',
     available: true,
     weight: '350g',
+    new: true,
     illustrations:
     [
       { picture: ThermarestNeoAirXliteRegular1 },

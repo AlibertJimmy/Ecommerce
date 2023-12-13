@@ -1,34 +1,39 @@
 // Import React Libraries
 import React from 'react';
-import { Link, Outlet, useLocation } from 'react-router-dom';
-
-// Import PropTypes
-import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 // Import Context
 
 // Import Components
 
 // Import Functions
-import { getItemSubCategoryList } from '../../utils/Functions/itemSubcategoryFunction';
-import { displayOutletSubCategory } from '../../utils/Functions/pathFunctions';
+import { whatsNewParser } from '../../utils/Functions/whatsnewFunctions';
 
 // Import Style
 import styled from 'styled-components';
-import { PageWrapper } from '../../utils/Styles';
+
+// Import Colors
+import colors from '../../utils/Colors';
 
 // Import Constants
 import { responsiveWidthMobile, responsiveWidthTablet } from '../../utils/Constant';
 import { scrollToTop } from '../../utils/Functions';
 
+const WhatsNewWrapper = styled.div`
+  margin: 0 40px;
+`;
+
 const PageContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: 0 30px;
-  justify-content: center;
-  @media (max-width: ${responsiveWidthTablet}px){
-    justify-content: flex-start;
-  }
+  justify-content: flex-start;
+`;
+
+const StyledTitle = styled.h1`
+  font-family: sans-serif;
+  color: ${colors.orangeCustom};
+  margin: 0;
 `;
 
 const ItemPresentation = styled.div`
@@ -38,7 +43,7 @@ const ItemPresentation = styled.div`
   flex-direction: column;
   flex: 0 0 calc(23% - 10px);
   width: 250px;
-  height: 200px;
+  height: 250px;
   margin: 10px 16px;
 
   @media (max-width: ${responsiveWidthTablet}px){
@@ -84,48 +89,33 @@ const ItemDatas = styled.div`
   height: 100px;
 `;
 
-function ItemSubcategoryPage ({ itemCategory }) {
-  const location = useLocation();
-  const currentUrl = location.pathname;
-  const itemSubcategoryList = getItemSubCategoryList(itemCategory);
-  console.log('itemSubcategoryList');
-  console.log(itemSubcategoryList);
-  const shouldDisplayPageContainer = displayOutletSubCategory(itemCategory, currentUrl);
-
+function WhatsNewDisplay () {
   function handleOnClick () {
     scrollToTop();
   }
+  const newArticleList = whatsNewParser();
 
   return (
-      <PageWrapper id='pageWrapper'>
-        {shouldDisplayPageContainer
-          ? (
+      <WhatsNewWrapper id='whatsNewWrapper'>
+        <StyledTitle>Our Novelty</StyledTitle>
         <PageContainer id='pageContainer'>
-        {itemSubcategoryList.map((item, index) => (
+        {newArticleList.map((item, index) => (
 
           <ItemPresentation key={index} id='itemPresentation'>
-            <StyledLink key={index} to={`/${itemCategory}/${itemSubcategoryList[index].subCategory}`} onClick={handleOnClick}>
+            <StyledLink key={index} to={`/${newArticleList[index].category}/${newArticleList[index].subCategory}`} onClick={handleOnClick}>
             <PictureContainer id='pictureContainer'>
-              <ItemPicture src={item.illustration} alt='picture1'></ItemPicture>
+              <ItemPicture src={item.illustrations[0].picture} alt='picture1'></ItemPicture>
             </PictureContainer>
             <ItemDatas id='itemDatas'>
-              <ItemTitle>{item.text}</ItemTitle>
+              <ItemTitle>{item.name}</ItemTitle>
             </ItemDatas>
             </StyledLink>
           </ItemPresentation>
 
         ))}
         </PageContainer>
-            )
-          : (
-        <Outlet/>
-            )}
-      </PageWrapper>
+      </WhatsNewWrapper>
   );
 }
 
-ItemSubcategoryPage.propTypes = {
-  itemCategory: PropTypes.string.isRequired
-};
-
-export default ItemSubcategoryPage;
+export default WhatsNewDisplay;

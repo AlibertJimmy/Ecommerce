@@ -10,6 +10,7 @@ export const hammockList = [
     id: 'DDHammocksSuperLightV2',
     available: true,
     weight: '270g',
+    new: true,
     illustrations:
     [
       { picture: ddHammockSuperLightV21 },

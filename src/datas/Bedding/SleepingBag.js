@@ -10,6 +10,7 @@ export const sleepingBagList = [
     id: 'MountainHardwearBishopPass1C',
     available: true,
     weight: '810g',
+    new: true,
     illustrations:
     [
       { picture: MountainHardwearBishopPass1C1 },

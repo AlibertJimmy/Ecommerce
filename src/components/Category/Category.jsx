@@ -16,7 +16,6 @@ const Container = styled.div`
   margin: 50px auto;
   padding: 10px 19px;
   z-index: 1;
-  border: 1px solid black;
 `;
 
 const GridContainer = styled.div`

@@ -8,6 +8,7 @@ export const accessoryList = [
     id: 'FerrinoSuperlightPeg',
     available: true,
     weight: '7g',
+    new: false,
     illustrations:
     [
       { picture: FerrinoSuperlightPeg }

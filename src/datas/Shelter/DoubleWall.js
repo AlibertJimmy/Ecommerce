@@ -13,6 +13,7 @@ export const doubleWallList = [
     id: 'LightTent2',
     available: true,
     weight: '2160g',
+    new: true,
     illustrations:
     [
       { picture: LihtTent2Pic1 },
