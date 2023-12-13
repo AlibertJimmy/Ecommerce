@@ -102,7 +102,7 @@ function WhatsNewDisplay () {
         {newArticleList.map((item, index) => (
 
           <ItemPresentation key={index} id='itemPresentation'>
-            <StyledLink key={index} to={`/${newArticleList[index].category}/${newArticleList[index].subCategory}`} onClick={handleOnClick}>
+            <StyledLink key={index} to={`/${newArticleList[index].category}/${newArticleList[index].subCategory}/${newArticleList[index].id}`} onClick={handleOnClick}>
             <PictureContainer id='pictureContainer'>
               <ItemPicture src={item.illustrations[0].picture} alt='picture1'></ItemPicture>
             </PictureContainer>

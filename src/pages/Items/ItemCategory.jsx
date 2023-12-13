@@ -112,7 +112,7 @@ function ItemCategoryPage ({ itemCategory, itemSubCategory }) {
         {itemList.map((item, index) => (
 
           <ItemPresentation key={index} >
-            <StyledLink key={index} to={`/${itemCategory}/${itemSubCategory}/${index}`} onClick={handleOnClick}>
+            <StyledLink key={index} to={`/${itemCategory}/${itemSubCategory}/${itemList[index].id}`} onClick={handleOnClick}>
             <PictureContainer>
               <ItemPicture src={item.illustrations[0].picture} alt='picture1'></ItemPicture>
             </PictureContainer>

@@ -42,25 +42,25 @@ function App () {
 
                   <Route path="Shelter" element={<ItemSubcategoryPage itemCategory='Shelter'/>} >
                     <Route path="SingleWall" element={<ItemCategoryPage itemCategory='Shelter' itemSubCategory='SingleWall'/>}>
-                      <Route path=":index" element={<ItemDetailPage itemCategory='Shelter' itemSubCategory='SingleWall'/>}/>
+                      <Route path=":id" element={<ItemDetailPage itemCategory='Shelter' itemSubCategory='SingleWall'/>}/>
                     </Route>
                     <Route path="DoubleWall" element={<ItemCategoryPage itemCategory='Shelter' itemSubCategory='DoubleWall'/>}>
-                      <Route path=":index" element={<ItemDetailPage itemCategory='Shelter' itemSubCategory='DoubleWall'/>}/>
+                      <Route path=":id" element={<ItemDetailPage itemCategory='Shelter' itemSubCategory='DoubleWall'/>}/>
                     </Route>
                     <Route path="Accessory" element={<ItemCategoryPage itemCategory='Shelter' itemSubCategory='Accessory'/>}>
-                      <Route path=":index" element={<ItemDetailPage itemCategory='Shelter' itemSubCategory='Accessory'/>}/>
+                      <Route path=":id" element={<ItemDetailPage itemCategory='Shelter' itemSubCategory='Accessory'/>}/>
                     </Route>
                   </Route>
 
                   <Route path="Bedding" element={<ItemSubcategoryPage itemCategory='Bedding'/>} >
                     <Route path="SleepingBag" element={<ItemCategoryPage itemCategory='Bedding' itemSubCategory='SleepingBag'/>}>
-                      <Route path=":index" element={<ItemDetailPage itemCategory='Bedding' itemSubCategory='SleepingBag'/>}/>
+                      <Route path=":id" element={<ItemDetailPage itemCategory='Bedding' itemSubCategory='SleepingBag'/>}/>
                     </Route>
                     <Route path="Mattress" element={<ItemCategoryPage itemCategory='Bedding' itemSubCategory='Mattress'/>}>
-                      <Route path=":index" element={<ItemDetailPage itemCategory='Bedding' itemSubCategory='Mattress'/>}/>
+                      <Route path=":id" element={<ItemDetailPage itemCategory='Bedding' itemSubCategory='Mattress'/>}/>
                     </Route>
                     <Route path="Hammock" element={<ItemCategoryPage itemCategory='Bedding' itemSubCategory='Hammock'/>}>
-                      <Route path=":index" element={<ItemDetailPage itemCategory='Bedding' itemSubCategory='Hammock'/>}/>
+                      <Route path=":id" element={<ItemDetailPage itemCategory='Bedding' itemSubCategory='Hammock'/>}/>
                     </Route>
                   </Route>
 

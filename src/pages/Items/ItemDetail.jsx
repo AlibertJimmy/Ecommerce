@@ -12,7 +12,7 @@ import { useCart } from '../../context';
 
 // Import Functions
 import { addToCart } from '../../utils/CartFunctions/Functions';
-import { getItemList } from '../../utils/Functions/ItemFunctions';
+import { getItemCorrespondingToId, getItemList } from '../../utils/Functions/ItemFunctions';
 
 // Import Style
 import { PageWrapper } from '../../utils/Styles';
@@ -43,8 +43,9 @@ function decreaseSelection (amount, updateAmount) {
 
 function ItemDetailPage ({ itemCategory, itemSubCategory }) {
   const { cart, updateCart } = useCart();
-  const { index } = useParams();
+  const { id } = useParams();
   const itemList = getItemList(itemCategory, itemSubCategory);
+  const index = getItemCorrespondingToId(id, itemList);
   /*
   console.log('Item Detail Page');
   console.log(`itemCategory : ${itemCategory}`);

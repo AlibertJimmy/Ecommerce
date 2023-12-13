@@ -28,7 +28,6 @@ export const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 50px;
-  border: 1px solid red;
 
   @media (max-width: ${responsiveWidthTablet}px){
     margin: 0 10px;
@@ -55,7 +54,6 @@ export const ItemPresentation = styled.div`
   flex-direction: row;
 
   border-radius: 15px;
-  border: 1px solid black;
 
   @media (max-width: ${responsiveWidthTablet}px){
 
