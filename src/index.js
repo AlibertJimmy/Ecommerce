@@ -12,7 +12,6 @@ import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import Account from './pages/Account/Account';
 
-import Bedding from './pages/Items/Bedding';
 import ItemCategoryPage from './pages/Items/ItemCategory';
 import ItemSubcategoryPage from './components/Category/SubCategory';
 import ItemDetailPage from './pages/Items/ItemDetail';
@@ -48,12 +47,21 @@ function App () {
                     <Route path="DoubleWall" element={<ItemCategoryPage itemCategory='Shelter' itemSubCategory='DoubleWall'/>}>
                       <Route path=":index" element={<ItemDetailPage itemCategory='Shelter' itemSubCategory='DoubleWall'/>}/>
                     </Route>
+                    <Route path="Accessory" element={<ItemCategoryPage itemCategory='Shelter' itemSubCategory='Accessory'/>}>
+                      <Route path=":index" element={<ItemDetailPage itemCategory='Shelter' itemSubCategory='Accessory'/>}/>
+                    </Route>
                   </Route>
 
-                  <Route path="Bedding" element={<Bedding />} >
-                    <Route path="SleepingBag" element={<ItemCategoryPage itemCategory='Bedding' itemSubCategory='SleepingBag'/>} />
-                    <Route path="Mattress" element={<ItemCategoryPage itemCategory='Bedding' itemSubCategory='Mattress'/>} />
-                    <Route path="Hammock" element={<ItemCategoryPage itemCategory='Bedding' itemSubCategory='Hammock'/>} />
+                  <Route path="Bedding" element={<ItemSubcategoryPage itemCategory='Bedding'/>} >
+                    <Route path="SleepingBag" element={<ItemCategoryPage itemCategory='Bedding' itemSubCategory='SleepingBag'/>}>
+                      <Route path=":index" element={<ItemDetailPage itemCategory='Bedding' itemSubCategory='SleepingBag'/>}/>
+                    </Route>
+                    <Route path="Mattress" element={<ItemCategoryPage itemCategory='Bedding' itemSubCategory='Mattress'/>}>
+                      <Route path=":index" element={<ItemDetailPage itemCategory='Bedding' itemSubCategory='Mattress'/>}/>
+                    </Route>
+                    <Route path="Hammock" element={<ItemCategoryPage itemCategory='Bedding' itemSubCategory='Hammock'/>}>
+                      <Route path=":index" element={<ItemDetailPage itemCategory='Bedding' itemSubCategory='Hammock'/>}/>
+                    </Route>
                   </Route>
 
                   <Route path="/Account" element={<Account />} />

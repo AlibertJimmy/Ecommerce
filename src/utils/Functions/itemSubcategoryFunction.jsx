@@ -1,11 +1,13 @@
 // Import Datas
 
 // Shelter
-import { shelterSubCategoryList } from '../../datas/Shelter/Subcategory';
+import { shelterSubCategoryList } from '../../datas/Shelter/SubCategory';
+import { beddingSubCategoryList } from '../../datas/Bedding/SubCategory';
 
 export function getItemSubCategoryList (itemCategory) {
   const functionMap = {
-    Shelter: shelterSubCategoryList
+    Shelter: shelterSubCategoryList,
+    Bedding: beddingSubCategoryList
   };
 
   const selectedItemList = functionMap[itemCategory];

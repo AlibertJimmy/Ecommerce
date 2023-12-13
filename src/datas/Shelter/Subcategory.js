@@ -1,6 +1,6 @@
-import accessory from '../../assets/Items/Shelter/Subcategory/Accessory.jpg';
-import singleWall from '../../assets/Items/Shelter/Subcategory/SingleWall.jpg';
-import doubleWall from '../../assets/Items/Shelter/Subcategory/DoubleWall.jpg';
+import accessory from '../../assets/Items/Shelter/SubCategory/Accessory.jpg';
+import singleWall from '../../assets/Items/Shelter/SubCategory/SingleWall.jpg';
+import doubleWall from '../../assets/Items/Shelter/SubCategory/DoubleWall.jpg';
 
 export const shelterSubCategoryList = [
   {
