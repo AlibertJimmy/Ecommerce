@@ -1,6 +1,9 @@
 // Import Style
 import styled from 'styled-components';
-// import colors from '../../utils/Colors';
+import { CommonButton, CommonQuantitySelectorStyle } from '../Styles';
+
+// Import Colors
+import colors from '../Colors';
 
 // Import Constants
 import { responsiveWidthMobile, responsiveWidthTablet } from '../Constant';
@@ -20,6 +23,50 @@ const PicturePreviewHeight = 100;
 const PicturePreviewHeightResponsiveTablet = 75;
 const PicturePreviewHeightResponsiveMobile = 50;
 
+// Page General
+export const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 0 50px;
+  border: 1px solid red;
+
+  @media (max-width: ${responsiveWidthTablet}px){
+    margin: 0 10px;
+  }
+
+  @media (max-width: ${responsiveWidthMobile}px){
+    justify-content: center;
+    margin: 0 10px;
+  }
+`;
+
+export const ItemTitle = styled.h1`
+  font-family: sans-serif;
+  color: ${colors.orangeCustom};
+  margin: 0;
+`;
+
+// Item Presentation
+export const ItemPresentation = styled.div`
+  margin: 5px 10px;
+  width: auto;
+
+  display:flex;
+  flex-direction: row;
+
+  border-radius: 15px;
+  border: 1px solid black;
+
+  @media (max-width: ${responsiveWidthTablet}px){
+
+  }
+
+  @media (max-width: ${responsiveWidthMobile}px){
+    flex-direction: column-reverse;
+  }
+`;
+
+// Illustration Related
 export const IllustrationContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -117,4 +164,109 @@ export const PictureSelectionPreview = styled.img`
     width: ${PicturePreviewWidthResponsiveMobile}px;
     height: ${PicturePreviewHeightResponsiveMobile}px;
   }
+`;
+
+// Info Related
+export const InfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 50px;
+
+  @media (max-width: ${responsiveWidthTablet}px){
+    padding: 25px;
+  }
+
+  @media (max-width: ${responsiveWidthMobile}px){
+    padding: 25px;
+  }
+`;
+
+export const ItemDatas = styled.div`
+  display: flex;
+  flex-direction: column;
+
+`;
+
+export const StyledUlInfo = styled.ul`
+  display: flex;  
+  flex-direction: column;
+  gap: 20px;
+  padding:0;
+
+  list-style: none;
+
+  font-family: sans-serif;
+  font-weight: 600 ;
+  font-size: 20px;
+
+  @media (max-width: ${responsiveWidthTablet}px){
+    gap: 0;
+
+    li {
+      margin: 0;
+      p{
+        margin: 10px;
+      }
+    }
+  }
+`;
+
+// Quantity Selection Related
+export const QuantitySelectorWrapper = styled.div`
+  display: flex;
+  align-items: center;
+
+  @media (max-width: ${responsiveWidthTablet}px){
+    margin-top:0;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  @media (max-width: ${responsiveWidthMobile}px){
+    flex-direction: row;
+    align-items: center;
+  }
+`;
+
+export const QuantitySelectorContainer = styled.div`
+  display: flex;
+`;
+
+export const QuantityButton = styled.button`
+  ${CommonButton};
+  font-weight: bold;
+  width: 25px;
+
+  
+`;
+
+export const QuantityP = styled.p`
+  ${CommonQuantitySelectorStyle};
+  width: 45px;
+`;
+
+export const AddToCartButton = styled.button`
+  ${CommonButton};
+
+  @media (max-width: ${responsiveWidthTablet}px){
+    margin-top: 10px;
+  }
+  
+  @media (max-width: ${responsiveWidthMobile}px){
+    margin-left: 15%;
+    margin-top: 0;
+    width: 100px;
+  }
+`;
+
+// Item Description Related
+export const DescriptionContainer = styled.div`
+  @media (max-width: ${responsiveWidthTablet}px){
+    margin: 5%;
+  }
+`;
+
+export const StyledUlDescription = styled.ul`
+
 `;
