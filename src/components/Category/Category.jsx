@@ -11,6 +11,9 @@ import beddingCategory from '../../assets/Items/Category_Pictures/Bedding_Catego
 // Import Style
 import styled, { css } from 'styled-components';
 
+// Import Constants
+import { responsiveWidthMobile, responsiveWidthTablet } from '../../utils/Constant';
+
 const Container = styled.div`
   max-width: 1200px;
   margin: 50px auto;
@@ -90,16 +93,16 @@ const Description = styled.p`
   font-weight: 600;
   font-family: sans-serif;
 
-  @media (max-width:450px) {
+  @media (max-width:${responsiveWidthTablet}px) {
         bottom: 1rem;
         left: 1rem;
         font-size: 3rem;
   }
 
-@media (max-width:400px) {
-        bottom: 1rem;
-        left: 0.5rem;
-        font-size: 2.5rem;
+  @media (max-width:${responsiveWidthMobile}px) {
+          bottom: 1rem;
+          left: 0.5rem;
+          font-size: 1.5rem;
   }
 `;
 
