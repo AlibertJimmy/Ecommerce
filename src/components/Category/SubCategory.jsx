@@ -18,7 +18,7 @@ import styled from 'styled-components';
 import { PageWrapper } from '../../utils/Styles';
 
 // Import Constants
-import { responsiveWidthTablet } from '../../utils/Constant';
+import { responsiveWidthMobile, responsiveWidthTablet } from '../../utils/Constant';
 import { scrollToTop } from '../../utils/Functions';
 
 const PageContainer = styled.div`
@@ -26,6 +26,9 @@ const PageContainer = styled.div`
   flex-wrap: wrap;
   margin: 0 30px;
   justify-content: center;
+  @media (max-width: ${responsiveWidthTablet}px){
+    justify-content: flex-start;
+  }
 `;
 
 const ItemPresentation = styled.div`
@@ -39,6 +42,9 @@ const ItemPresentation = styled.div`
   margin: 10px 16px;
 
   @media (max-width: ${responsiveWidthTablet}px){
+    flex: 0 0 calc(45% - 10px);
+  }
+  @media (max-width: ${responsiveWidthMobile}px){
     flex: 1 0 calc(50% - 10px);
   }
 `;
@@ -91,18 +97,18 @@ function ItemSubcategoryPage ({ itemCategory }) {
   }
 
   return (
-      <PageWrapper>
+      <PageWrapper id='pageWrapper'>
         {shouldDisplayPageContainer
           ? (
-        <PageContainer>
+        <PageContainer id='pageContainer'>
         {itemSubcategoryList.map((item, index) => (
 
-          <ItemPresentation key={index} >
+          <ItemPresentation key={index} id='itemPresentation'>
             <StyledLink key={index} to={`/${itemCategory}/${itemSubcategoryList[index].subCategory}`} onClick={handleOnClick}>
-            <PictureContainer>
+            <PictureContainer id='pictureContainer'>
               <ItemPicture src={item.illustration} alt='picture1'></ItemPicture>
             </PictureContainer>
-            <ItemDatas>
+            <ItemDatas id='itemDatas'>
               <ItemTitle>{item.text}</ItemTitle>
             </ItemDatas>
             </StyledLink>
