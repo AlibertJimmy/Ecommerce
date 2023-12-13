@@ -18,7 +18,7 @@ import styled from 'styled-components';
 import { PageWrapper } from '../../utils/Styles';
 
 // Import Constants
-import { responsiveWidth } from '../../utils/Constant';
+import { responsiveWidthTablet } from '../../utils/Constant';
 import { scrollToTop } from '../../utils/Functions';
 
 const PageContainer = styled.div`
@@ -38,7 +38,7 @@ const ItemPresentation = styled.div`
   height: 250px;
   margin: 10px 16px;
 
-  @media (max-width: ${responsiveWidth}px){
+  @media (max-width: ${responsiveWidthTablet}px){
     flex: 1 0 calc(50% - 10px);
   }
 `;

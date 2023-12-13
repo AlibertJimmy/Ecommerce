@@ -6,7 +6,7 @@ import styled, { css } from 'styled-components';
 
 // Impor Colors
 import colors from './Colors';
-import { borderWidth, responsiveWidth } from './Constant';
+import { borderWidth, responsiveWidthTablet } from './Constant';
 
 export const PageWrapper = styled.div`
 
@@ -23,7 +23,7 @@ const commonWriting = css`
   font-family:  sans-serif;
   font-weight:bold;
 
-  @media (max-width: ${responsiveWidth}px){
+  @media (max-width: ${responsiveWidthTablet}px){
     color: ${colors.linkResponsive};
   }
 

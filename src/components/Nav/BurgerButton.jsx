@@ -16,7 +16,7 @@ import styled from 'styled-components';
 // import colors from '../../utils/Colors';
 
 // Import Constante
-import { responsiveWidth } from '../../utils/Constant';
+import { responsiveWidthTablet } from '../../utils/Constant';
 
 const MenuWrapper = styled.div`
   padding:0;
@@ -38,7 +38,7 @@ const StyledBurger = styled.div`
 
     display: none;
 
-    @media (max-width: ${responsiveWidth}px){
+    @media (max-width: ${responsiveWidthTablet}px){
         display: flex;
         justify-content: space-around;
         flex-flow: column nowrap;
@@ -67,7 +67,7 @@ const StyledBurger = styled.div`
 
         
         
-        @media (max-width: ${responsiveWidth}px){
+        @media (max-width: ${responsiveWidthTablet}px){
           background-color: ${({ open }) => open ? 'black' : 'white'};
         }
 

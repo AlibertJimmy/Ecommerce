@@ -17,14 +17,14 @@ import CartWhite from '../../assets/Functionnal_Icon/Cart_White.png';
 import styled from 'styled-components';
 
 // Import Constants
-import { responsiveWidth } from '../../utils/Constant';
+import { responsiveWidthTablet } from '../../utils/Constant';
 
 const CartWrapper = styled.div`
   display:flex;
   height: 25px;
   width: 40px;
 
-  @media (max-width: ${responsiveWidth}px){
+  @media (max-width: ${responsiveWidthTablet}px){
     margin-right: 50px;
   }
 `;

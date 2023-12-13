@@ -17,7 +17,7 @@ import { StyledLink } from '../../utils/Styles';
 import colors from '../../utils/Colors';
 
 // Import constantes
-import { responsiveWidth, headerHeight } from '../../utils/Constant';
+import { responsiveWidthTablet, headerHeight } from '../../utils/Constant';
 
 const StyledUl = styled.ul`
   height: ${headerHeight}px;
@@ -33,7 +33,7 @@ const StyledUl = styled.ul`
     margin:0;
     background: ${colors.marineBlue};
 
-    @media (max-width: ${responsiveWidth}px){
+    @media (max-width: ${responsiveWidthTablet}px){
         flex-flow: column nowrap;
 
         position: fixed;

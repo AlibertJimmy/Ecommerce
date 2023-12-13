@@ -20,11 +20,18 @@ import { CommonButton, CommonQuantitySelectorStyle, PageWrapper } from '../../ut
 import colors from '../../utils/Colors';
 import { IllustrationContainer, ItemPicture, PictureDisplayer, PictureSelectionPreview, PictureSelectionPreviewContainer, PictureSelector } from '../../utils/Style/ItemDetailStyle';
 
+// Import Constants
+import { responsiveWidthMobile, responsiveWidthTablet } from '../../utils/Constant';
+
 const PageContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   margin: 0 50px;
+
+  @media (max-width: ${responsiveWidthMobile}px){
+    justify-content: center;
+    margin: 0 10px;
+  }
 `;
 
 const ItemPresentation = styled.div`
@@ -34,16 +41,25 @@ const ItemPresentation = styled.div`
   display:flex;
   flex-direction: row;
 
-  border: 0px solid black;
   border-radius: 15px;
+
+  @media (max-width: ${responsiveWidthTablet}px){
+  }
+
+  @media (max-width: ${responsiveWidthMobile}px){
+    flex-direction: column-reverse;
+  }
 `;
 
 const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-
   padding: 50px;
+
+  @media (max-width: ${responsiveWidthMobile}px){
+    padding: 25px;
+  }
 `;
 
 const ItemTitle = styled.h1`
@@ -67,17 +83,29 @@ const StyledUl1 = styled.ul`
   font-family: sans-serif;
   font-weight: 600 ;
   font-size: 20px;
+
+  @media (max-width: ${responsiveWidthMobile}px){
+    gap: 0;
+  }
 `;
 
 const QuantitySelectorWrapper = styled.div`
   display: flex;
   align-items: center;
+  @media (max-width: ${responsiveWidthTablet}px){
+  }
+
+  @media (max-width: ${responsiveWidthMobile}px){
+    width: 100%;
+  }
 `;
 
 const QuantityButton = styled.button`
   ${CommonButton};
   font-weight: bold;
   width: 25px;
+
+  
 `;
 
 const QuantityP = styled.p`
@@ -87,10 +115,16 @@ const QuantityP = styled.p`
 
 const AddToCartButton = styled.button`
   ${CommonButton};
+  
+  @media (max-width: ${responsiveWidthMobile}px){
+    margin-left: 15%;
+  }
 `;
 
 const DescriptionContainer = styled.div`
-
+  @media (max-width: ${responsiveWidthMobile}px){
+    margin: 5%;
+  }
 `;
 
 const StyledUl2 = styled.ul`
@@ -129,12 +163,12 @@ function ItemDetailPage ({ itemCategory, itemSubCategory }) {
 
   const [amount, updateAmount] = useState(1);
   return (
-      <PageWrapper>
-        <PageContainer>
-          <ItemPresentation key={index} >
-            <IllustrationContainer>
-              <PictureDisplayer>
-                <ItemPicture src={image} alt='picture1'></ItemPicture>
+      <PageWrapper id='pageWrapper'>
+        <PageContainer id='pageContainer'>
+          <ItemPresentation key={index} id='itemPresentation'>
+            <IllustrationContainer id='illustrationContainer'>
+              <PictureDisplayer id='pictureDisplayer'>
+                <ItemPicture src={image} alt='picture1' id='itemPicture'></ItemPicture>
               </PictureDisplayer>
               {
                 itemList[index].illustrations.length > 1
@@ -148,8 +182,8 @@ function ItemDetailPage ({ itemCategory, itemSubCategory }) {
                   : <></>
               }
             </IllustrationContainer>
-            <InfoContainer>
-              <ItemDatas>
+            <InfoContainer id='infoContainer'>
+              <ItemDatas id='itemDatas'>
                 <ItemTitle>{itemList[index].name}</ItemTitle>
                 <StyledUl1>
                   <li><p style={{ fontStyle: 'italic' }}> {itemList[index].brand} </p></li>

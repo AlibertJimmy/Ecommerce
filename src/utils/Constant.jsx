@@ -1,7 +1,8 @@
 // Export Constants
 export const borderWidth = 0;
 
-export const responsiveWidth = 990;
+export const responsiveWidthMobile = 450;
+export const responsiveWidthTablet = 950;
 
 export const headerHeight = 50;
 export const footerHeight = 50;
