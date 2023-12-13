@@ -27,6 +27,11 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 50px;
+  border: 1px solid red;
+
+  @media (max-width: ${responsiveWidthTablet}px){
+    margin: 0 10px;
+  }
 
   @media (max-width: ${responsiveWidthMobile}px){
     justify-content: center;
@@ -42,8 +47,10 @@ const ItemPresentation = styled.div`
   flex-direction: row;
 
   border-radius: 15px;
+  border: 1px solid black;
 
   @media (max-width: ${responsiveWidthTablet}px){
+
   }
 
   @media (max-width: ${responsiveWidthMobile}px){
@@ -57,6 +64,10 @@ const InfoContainer = styled.div`
   flex: 1;
   padding: 50px;
 
+  @media (max-width: ${responsiveWidthTablet}px){
+    padding: 25px;
+  }
+
   @media (max-width: ${responsiveWidthMobile}px){
     padding: 25px;
   }
@@ -69,6 +80,8 @@ const ItemTitle = styled.h1`
 `;
 
 const ItemDatas = styled.div`
+  display: flex;
+  flex-direction: column;
 
 `;
 
@@ -84,20 +97,36 @@ const StyledUl1 = styled.ul`
   font-weight: 600 ;
   font-size: 20px;
 
-  @media (max-width: ${responsiveWidthMobile}px){
+  @media (max-width: ${responsiveWidthTablet}px){
     gap: 0;
+
+    li {
+      margin: 0;
+      p{
+        margin: 10px;
+      }
+    }
   }
 `;
 
 const QuantitySelectorWrapper = styled.div`
   display: flex;
   align-items: center;
+
   @media (max-width: ${responsiveWidthTablet}px){
+    margin-top:0;
+    flex-direction: column;
+    align-items: start;
   }
 
   @media (max-width: ${responsiveWidthMobile}px){
-    width: 100%;
+    flex-direction: row;
+    align-items: center;
   }
+`;
+
+const QuantitySelectorContainer = styled.div`
+  display: flex;
 `;
 
 const QuantityButton = styled.button`
@@ -115,14 +144,20 @@ const QuantityP = styled.p`
 
 const AddToCartButton = styled.button`
   ${CommonButton};
+
+  @media (max-width: ${responsiveWidthTablet}px){
+    margin-top: 10px;
+  }
   
   @media (max-width: ${responsiveWidthMobile}px){
     margin-left: 15%;
+    margin-top: 0;
+    width: 100px;
   }
 `;
 
 const DescriptionContainer = styled.div`
-  @media (max-width: ${responsiveWidthMobile}px){
+  @media (max-width: ${responsiveWidthTablet}px){
     margin: 5%;
   }
 `;
@@ -146,14 +181,16 @@ function decreaseSelection (amount, updateAmount) {
 function ItemDetailPage ({ itemCategory, itemSubCategory }) {
   const { cart, updateCart } = useCart();
   const { index } = useParams();
+  const itemList = getItemList(itemCategory, itemSubCategory);
+  /*
   console.log('Item Detail Page');
   console.log(`itemCategory : ${itemCategory}`);
   console.log(`itemSubCategory : ${itemSubCategory}`);
-  const itemList = getItemList(itemCategory, itemSubCategory);
   console.log('itemList');
   console.log(itemList);
   console.log(`Index : ${index}`);
   console.log(itemList[index]);
+  */
 
   const [image, setImage] = useState(itemList[index].illustrations[0].picture);
 
@@ -189,21 +226,25 @@ function ItemDetailPage ({ itemCategory, itemSubCategory }) {
                   <li><p style={{ fontStyle: 'italic' }}> {itemList[index].brand} </p></li>
                   <li><p> {itemList[index].weight} </p></li>
                   <li>
-                    <p style={{ color: `${colors.greenCustom}`, fontSize: '25px' }}>
+                    <p style={{ color: `${colors.greenCustom}`, fontSize: '25px', marginBottom: '0' }}>
                      {itemList[index].price} €
                     </p>
                   </li>
                 </StyledUl1>
               </ItemDatas>
               <QuantitySelectorWrapper>
-                  <QuantityButton onClick={() => decreaseSelection(amount, updateAmount)}>-</QuantityButton>
-                  <QuantityP>{amount}</QuantityP>
-                  <QuantityButton onClick={() => increaseSelection(amount, updateAmount)}>+</QuantityButton>
-                  <AddToCartButton onClick={() => addToCart(cart, updateCart, itemList[index], amount)}>Add To Cart</AddToCartButton>
+                  <QuantitySelectorContainer>
+                    <QuantityButton onClick={() => decreaseSelection(amount, updateAmount)}>-</QuantityButton>
+                    <QuantityP>{amount}</QuantityP>
+                    <QuantityButton onClick={() => increaseSelection(amount, updateAmount)}>+</QuantityButton>
+                  </QuantitySelectorContainer>
+                  <div>
+                    <AddToCartButton onClick={() => addToCart(cart, updateCart, itemList[index], amount)}>Add To Cart</AddToCartButton>
+                  </div>
               </QuantitySelectorWrapper>
             </InfoContainer>
           </ItemPresentation>
-          <DescriptionContainer>
+          <DescriptionContainer id='descriptionContainer'>
             <ItemTitle>Description</ItemTitle>
             {itemList[index].description.map((liComponent, indexDescr) => (
                     <p key={`${itemList[index].name}-li-${indexDescr}`}>{liComponent.li}</p>

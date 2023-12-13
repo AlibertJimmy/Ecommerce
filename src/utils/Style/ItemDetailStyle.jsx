@@ -7,10 +7,10 @@ import { responsiveWidthMobile, responsiveWidthTablet } from '../Constant';
 
 // Illustration Related
 const IllustrationDisplayWidth = 750;
-const IllustrationDisplayWidthResponsiveTablet = 750;
+const IllustrationDisplayWidthResponsiveTablet = 450;
 const IllustrationDisplayWidthResponsiveMobile = 300;
 const IllustrationDisplayHeight = 500;
-const IllustrationDisplayHeightResponsiveTablet = 500;
+const IllustrationDisplayHeightResponsiveTablet = 350;
 const IllustrationDisplayHeightResponsiveMobile = 250;
 
 const PicturePreviewWidth = 100;
