@@ -136,13 +136,17 @@ function ItemDetailPage ({ itemCategory, itemSubCategory }) {
               <PictureDisplayer>
                 <ItemPicture src={image} alt='picture1'></ItemPicture>
               </PictureDisplayer>
-              <PictureSelector>
-              {itemList[index].illustrations.map((liComponent, indexIllus) => (
-                <PictureSelectionPreviewContainer key={`${itemList[index].name}-li-${indexIllus}`}>
-                    <PictureSelectionPreview src={liComponent.picture} alt={`Picture${indexIllus}`} onMouseOver={changeImage}></PictureSelectionPreview>
-                </PictureSelectionPreviewContainer>
-              ))}
-              </PictureSelector>
+              {
+                itemList[index].illustrations.length > 1
+                  ? <PictureSelector>
+                {itemList[index].illustrations.map((liComponent, indexIllus) => (
+                  <PictureSelectionPreviewContainer key={`${itemList[index].name}-li-${indexIllus}`}>
+                      <PictureSelectionPreview src={liComponent.picture} alt={`Picture${indexIllus}`} onMouseOver={changeImage}></PictureSelectionPreview>
+                  </PictureSelectionPreviewContainer>
+                ))}
+                </PictureSelector>
+                  : <></>
+              }
             </IllustrationContainer>
             <InfoContainer>
               <ItemDatas>
