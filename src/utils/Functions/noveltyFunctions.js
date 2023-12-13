@@ -22,9 +22,7 @@ const completeItemListBySubCategory = [
 ];
 
 export function whatsNewParser () {
-  // Sonder chacun des elements de chaque liste, si la mention new === true l'ajouter à un array
-  // lors d'un click sur l'element amener l'utilisateur sur la page de cet article
-  const newArticleArrray = [];
+  let newArticleArrray = [];
   for (let i = 0; i < completeItemListBySubCategory.length; i++) {
     const subCategoryList = completeItemListBySubCategory[i];
     for (let j = 0; j < subCategoryList.length; j++) {
@@ -35,7 +33,19 @@ export function whatsNewParser () {
       }
     }
   }
+  if (newArticleArrray.length > 7) {
+    newArticleArrray = pickRandomNewArticle(newArticleArrray);
+  }
   // console.log('newArticleArrray');
   // console.log(newArticleArrray);
   return newArticleArrray;
+}
+
+function pickRandomNewArticle (newArticleArray) {
+  const shuffledArray = [...newArticleArray];
+  for (let i = shuffledArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+  }
+  return shuffledArray.slice(0, 8);
 }

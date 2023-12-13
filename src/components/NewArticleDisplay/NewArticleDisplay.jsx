@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 // Import Components
 
 // Import Functions
-import { whatsNewParser } from '../../utils/Functions/whatsnewFunctions';
+import { whatsNewParser } from '../../utils/Functions/noveltyFunctions';
 
 // Import Style
 import styled from 'styled-components';
