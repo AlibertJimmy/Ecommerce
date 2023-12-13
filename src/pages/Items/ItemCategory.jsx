@@ -18,7 +18,7 @@ import { PageWrapper } from '../../utils/Styles';
 import { displayOutlet } from '../../utils/Functions/pathFunctions';
 
 // Import Constants
-import { responsiveWidthTablet } from '../../utils/Constant';
+import { responsiveWidthMobile, responsiveWidthTablet } from '../../utils/Constant';
 import { scrollToTop } from '../../utils/Functions';
 
 const PageContainer = styled.div`
@@ -38,6 +38,9 @@ const ItemPresentation = styled.div`
   margin: 10px 16px;
 
   @media (max-width: ${responsiveWidthTablet}px){
+    flex: 0 0 calc(45% - 10px);
+  }
+  @media (max-width: ${responsiveWidthMobile}px){
     flex: 1 0 calc(50% - 10px);
   }
 `;
