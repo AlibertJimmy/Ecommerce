@@ -23,7 +23,7 @@ function TrendingItem ({ itemCategory }) {
         <ItemContainer key={item.id} id='rowItem'>
           <StyledLink
             onClick={() => window.top(0, 0)}
-            to={`/categories/product/${item.id}`}
+            to={`/${itemCategory}/${item.subCategory}/${item.id}`}
           >
             <PictureContainer id='itemHeader'>
               <ArticlePicture src={item.illustrations[0].picture} alt='product' />
