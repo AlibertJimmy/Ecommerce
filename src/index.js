@@ -12,9 +12,9 @@ import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import Account from './pages/Account/Account';
 
-import ItemCategoryPage from './pages/Items/ItemCategory';
-import ItemSubcategoryPage from './components/Category/SubCategory';
-import ItemDetailPage from './pages/Items/ItemDetail';
+import ItemSelectorPage from './pages/Items/ItemSelectorPage';
+import ItemSubcategorySelectorPage from './pages/Items/SubCategorySelectorPage';
+import ItemDetailPage from './pages/Items/ItemDetailPage';
 
 // Import Style
 import styled from 'styled-components';
@@ -40,26 +40,26 @@ function App () {
                 <Routes>
                   <Route path="/" element={<Home />} />
 
-                  <Route path="Shelter" element={<ItemSubcategoryPage itemCategory='Shelter'/>} >
-                    <Route path="SingleWall" element={<ItemCategoryPage itemCategory='Shelter' itemSubCategory='SingleWall'/>}>
+                  <Route path="Shelter" element={<ItemSubcategorySelectorPage itemCategory='Shelter'/>} >
+                    <Route path="SingleWall" element={<ItemSelectorPage itemCategory='Shelter' itemSubCategory='SingleWall'/>}>
                       <Route path=":id" element={<ItemDetailPage itemCategory='Shelter' itemSubCategory='SingleWall'/>}/>
                     </Route>
-                    <Route path="DoubleWall" element={<ItemCategoryPage itemCategory='Shelter' itemSubCategory='DoubleWall'/>}>
+                    <Route path="DoubleWall" element={<ItemSelectorPage itemCategory='Shelter' itemSubCategory='DoubleWall'/>}>
                       <Route path=":id" element={<ItemDetailPage itemCategory='Shelter' itemSubCategory='DoubleWall'/>}/>
                     </Route>
-                    <Route path="Accessory" element={<ItemCategoryPage itemCategory='Shelter' itemSubCategory='Accessory'/>}>
+                    <Route path="Accessory" element={<ItemSelectorPage itemCategory='Shelter' itemSubCategory='Accessory'/>}>
                       <Route path=":id" element={<ItemDetailPage itemCategory='Shelter' itemSubCategory='Accessory'/>}/>
                     </Route>
                   </Route>
 
-                  <Route path="Bedding" element={<ItemSubcategoryPage itemCategory='Bedding'/>} >
-                    <Route path="SleepingBag" element={<ItemCategoryPage itemCategory='Bedding' itemSubCategory='SleepingBag'/>}>
+                  <Route path="Bedding" element={<ItemSubcategorySelectorPage itemCategory='Bedding'/>} >
+                    <Route path="SleepingBag" element={<ItemSelectorPage itemCategory='Bedding' itemSubCategory='SleepingBag'/>}>
                       <Route path=":id" element={<ItemDetailPage itemCategory='Bedding' itemSubCategory='SleepingBag'/>}/>
                     </Route>
-                    <Route path="Mattress" element={<ItemCategoryPage itemCategory='Bedding' itemSubCategory='Mattress'/>}>
+                    <Route path="Mattress" element={<ItemSelectorPage itemCategory='Bedding' itemSubCategory='Mattress'/>}>
                       <Route path=":id" element={<ItemDetailPage itemCategory='Bedding' itemSubCategory='Mattress'/>}/>
                     </Route>
-                    <Route path="Hammock" element={<ItemCategoryPage itemCategory='Bedding' itemSubCategory='Hammock'/>}>
+                    <Route path="Hammock" element={<ItemSelectorPage itemCategory='Bedding' itemSubCategory='Hammock'/>}>
                       <Route path=":id" element={<ItemDetailPage itemCategory='Bedding' itemSubCategory='Hammock'/>}/>
                     </Route>
                   </Route>

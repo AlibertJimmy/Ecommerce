@@ -93,7 +93,7 @@ const ItemPrice = styled.p`
   margin: 0;
 `;
 
-function ItemCategoryPage ({ itemCategory, itemSubCategory }) {
+function ItemSubCategorySelectorPage ({ itemCategory, itemSubCategory }) {
   const location = useLocation();
   const currentUrl = location.pathname;
   console.log(`currentUrl : ${currentUrl}`);
@@ -142,9 +142,9 @@ function ItemCategoryPage ({ itemCategory, itemSubCategory }) {
   );
 }
 
-ItemCategoryPage.propTypes = {
+ItemSubCategorySelectorPage.propTypes = {
   itemCategory: PropTypes.string.isRequired,
   itemSubCategory: PropTypes.string.isRequired
 };
 
-export default ItemCategoryPage;
+export default ItemSubCategorySelectorPage;

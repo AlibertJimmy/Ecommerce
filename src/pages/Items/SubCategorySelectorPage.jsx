@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 // Import Context
 
 // Import Components
-import TrendingSlider from '../TrendingSlider/TrendingSlider';
+import TrendingSlider from '../../components/TrendingSlider/TrendingSlider';
 
 // Import Functions
 import { getItemSubCategoryList } from '../../utils/Functions/itemSubcategoryFunction';
@@ -94,7 +94,7 @@ const SliderContainer = styled.div`
   min-height: 50px;
 `;
 
-function ItemSubcategoryPage ({ itemCategory }) {
+function ItemSubcategorySelectorPage ({ itemCategory }) {
   const location = useLocation();
   const currentUrl = location.pathname;
   const itemSubcategoryList = getItemSubCategoryList(itemCategory);
@@ -139,8 +139,8 @@ function ItemSubcategoryPage ({ itemCategory }) {
   );
 }
 
-ItemSubcategoryPage.propTypes = {
+ItemSubcategorySelectorPage.propTypes = {
   itemCategory: PropTypes.string.isRequired
 };
 
-export default ItemSubcategoryPage;
+export default ItemSubcategorySelectorPage;
