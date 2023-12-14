@@ -6,15 +6,13 @@ import PropTypes from 'prop-types';
 
 // Import Functions
 import { getTrendingItem } from '../../utils/Functions/trendingItemFunction';
-import {
-  ItemContainer,
-  PictureContainer, ArticlePicture,
-  ArticleDescription, StyledP
-} from '../../utils/Style/TrendingSliderStyle';
-import { StyledLink } from '../../utils/Styles';
 
 // Import Style
+import { StyledLink } from '../../utils/Style/GlobalStyle';
+import { ItemContainer, ArticleDescription, StyledP } from '../../utils/Style/TrendingSliderStyle';
+import { PictureContainer, ArticlePicturePreviewSelection } from '../../utils/Style/PreviewStyle';
 
+// Import Style
 function TrendingItem ({ itemCategory }) {
   const trendingItemList = getTrendingItem(itemCategory);
   return (
@@ -26,7 +24,7 @@ function TrendingItem ({ itemCategory }) {
             to={`/${itemCategory}/${item.subCategory}/${item.id}`}
           >
             <PictureContainer id='itemHeader'>
-              <ArticlePicture src={item.illustrations[0].picture} alt='product' />
+              <ArticlePicturePreviewSelection src={item.illustrations[0].picture} alt='product' />
             </PictureContainer>
             <ArticleDescription id="itemDescription">
               <StyledP>{item.brand}</StyledP>

@@ -11,3 +11,6 @@ export const profilePicSize = 400;
 export const profilePicSizeResponsive = 200;
 
 export const topIllustrationHeight = 400;
+
+export const elementWidth = '300px';
+export const pictureWidth = '150px';

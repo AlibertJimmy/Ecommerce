@@ -24,7 +24,6 @@ const PicturePreviewHeightResponsiveMobile = 50;
 export const ItemDetailContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 50px;
 
   @media (max-width: ${responsiveWidthTablet}px){
     margin: 0 10px;
@@ -34,6 +33,7 @@ export const ItemDetailContainer = styled.div`
     justify-content: center;
     margin: 0 10px;
   }
+  border: 1px solid red;
 `;
 
 // Item Presentation
@@ -88,7 +88,7 @@ export const PictureDisplayer = styled.div`
   }
 `;
 
-export const ItemPicture = styled.img`
+export const ItemDetailPicture = styled.img`
   max-width: ${IllustrationDisplayWidth}px;
   max-height: ${IllustrationDisplayHeight}px;
   object-fit: contain;

@@ -6,17 +6,10 @@ import { Outlet, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // Import Style
-import styled from 'styled-components';
-import { PageWrapper } from '../../utils/Styles';
 import { displayOutlet } from '../../utils/Functions/pathFunctions';
 
 // Import Constants
 import ItemSelector from '../../components/Items/ItemSelector';
-
-const PageContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
 
 function ItemSelectorPage ({ itemCategory, itemSubCategory }) {
   const location = useLocation();
@@ -29,17 +22,15 @@ function ItemSelectorPage ({ itemCategory, itemSubCategory }) {
   */
 
   return (
-      <PageWrapper>
+    <>
         {shouldDisplayPageContainer
           ? (
-          <PageContainer id='pageContainer'>
             <ItemSelector itemCategory={itemCategory} itemSubCategory={itemSubCategory}/>
-          </PageContainer>
             )
           : (
         <Outlet/>
             )}
-      </PageWrapper>
+    </>
   );
 }
 

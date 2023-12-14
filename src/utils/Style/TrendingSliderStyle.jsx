@@ -6,8 +6,7 @@ import styled, { css } from 'styled-components';
 
 // Import Colors
 import colors from '../Colors';
-
-const elementWidth = '300px';
+import { elementWidth, pictureWidth } from '../Constant';
 
 /* Trending Slider */
 
@@ -83,17 +82,9 @@ export const ItemContainer = styled.div`
   }
 `;
 
-export const PictureContainer = styled.div`
-  height: 150px;
-  width: ${elementWidth};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
 export const ArticlePicture = styled.img`
   max-height: 100px;
-  max-width: ${elementWidth};
+  max-width: ${pictureWidth};
 `;
 
 export const ArticleDescription = styled.div`

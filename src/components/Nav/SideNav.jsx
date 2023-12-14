@@ -11,7 +11,7 @@ import { scrollToTop } from '../../utils/Functions';
 
 // Import Style
 import styled from 'styled-components';
-import { StyledLink } from '../../utils/Styles';
+import { StyledLink } from '../../utils/Style/GlobalStyle';
 
 // Import Colors
 import colors from '../../utils/Colors';

@@ -1,57 +1,19 @@
-// Import React Libraries
-import { Link } from 'react-router-dom';
-
 // Import Style
 import styled, { css } from 'styled-components';
 
 // Impor Colors
 import colors from './Colors';
-import { borderWidth, responsiveWidthTablet } from './Constant';
+import { borderWidth } from './Constant';
 
 export const PageWrapper = styled.div`
 
-  margin-top: 120px;
-  margin-bottom: 50px;
-  min-height: 350px;
+  margin: 120px 2% 2% 2%;
+  min-height: 400px;
+  border: 1px solid green;
 `;
 
 export const ComponentBorder = css`
     border: ${borderWidth}px solid black;
-`;
-
-const commonWriting = css`
-  font-family:  sans-serif;
-  font-weight:bold;
-
-  @media (max-width: ${responsiveWidthTablet}px){
-    color: ${colors.linkResponsive};
-  }
-
-`;
-
-const commonLink = css`
-    
-  text-decoration: none;
-
-  &:hover {
-    color: ${colors.linkHover};
-  }
-`;
-
-export const StyledSpanHeader = styled.span`
-  ${commonWriting};
-`;
-
-export const StyledLink = styled(Link)`
-    ${commonWriting};
-    ${commonLink};
-    color:inherit;
-`;
-
-export const StyledLinkDropDown = styled(Link)`
-    ${commonWriting};
-    color: ${colors.linkResponsive} ;
-    text-decoration: none;
 `;
 
 // Header & Footer

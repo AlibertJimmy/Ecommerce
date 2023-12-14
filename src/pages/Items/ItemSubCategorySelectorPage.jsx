@@ -23,10 +23,6 @@ const PageContainer = styled.div`
   flex-direction: column;
 `;
 
-const SliderContainer = styled.div`
-  min-height: 50px;
-`;
-
 function ItemSubcategorySelectorPage ({ itemCategory }) {
   const location = useLocation();
   const currentUrl = location.pathname;
@@ -41,9 +37,7 @@ function ItemSubcategorySelectorPage ({ itemCategory }) {
           ? (
         <PageContainer>
           <ItemSubcategorySelector itemCategory={itemCategory} />
-          <SliderContainer id='sliderContainer'>
-            <TrendingSlider itemCategory={itemCategory}/>
-          </SliderContainer>
+          <TrendingSlider itemCategory={itemCategory}/>
         </PageContainer>
             )
           : (

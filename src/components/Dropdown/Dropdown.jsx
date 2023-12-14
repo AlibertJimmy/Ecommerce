@@ -4,13 +4,15 @@ import React, { useState } from 'react';
 // Import PropStyles
 import PropTypes from 'prop-types';
 
+// Import Function
+import { scrollToTop } from '../../utils/Functions';
+
 // Import Assets
 import ArrowDown from '../../assets/Functionnal_Icon/arrowDown.png';
 
 // Import Style
 import styled from 'styled-components';
-import { StyledLinkDropDown, StyledSpanHeader } from '../../utils/Styles';
-import { scrollToTop } from '../../utils/Functions';
+import { StyledLinkDropDown, StyledSpanHeader } from '../../utils/Style/GlobalStyle';
 
 // Styled components
 const DropdownContainer = styled.div`

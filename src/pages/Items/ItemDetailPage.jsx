@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import ItemDetail from '../../components/Items/ItemDetail';
 
 // Import Style
-import { PageWrapper } from '../../utils/Styles';
+// import { PageWrapper } from '../../utils/Styles';
 
 function ItemDetailPage ({ itemCategory, itemSubCategory }) {
   /*
@@ -17,9 +17,9 @@ function ItemDetailPage ({ itemCategory, itemSubCategory }) {
   */
 
   return (
-      <PageWrapper id='pageWrapper'>
+      <>
         <ItemDetail itemCategory={itemCategory} itemSubCategory={itemSubCategory} />
-      </PageWrapper>
+      </>
   );
 }
 

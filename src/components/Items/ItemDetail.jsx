@@ -19,7 +19,7 @@ import { StyledTitleH1 } from '../../utils/Style/GlobalStyle';
 import {
   ItemDetailContainer,
   ItemPresentation,
-  IllustrationContainer, PictureDisplayer, ItemPicture,
+  IllustrationContainer, PictureDisplayer, ItemDetailPicture,
   PictureSelector, PictureSelectionPreviewContainer, PictureSelectionPreview,
   InfoContainer, ItemDatas, StyledUlInfo,
   QuantitySelectorWrapper, QuantitySelectorContainer, QuantityButton, QuantityP, AddToCartButton,
@@ -68,7 +68,7 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
           <ItemPresentation key={index} id='itemPresentation'>
             <IllustrationContainer id='illustrationContainer'>
               <PictureDisplayer id='pictureDisplayer'>
-                <ItemPicture src={image} alt='picture1' id='itemPicture'></ItemPicture>
+                <ItemDetailPicture src={image} alt='picture1' id='itemPicture'></ItemDetailPicture>
               </PictureDisplayer>
               {
                 itemList[index].illustrations.length > 1
