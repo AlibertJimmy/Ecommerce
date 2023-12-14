@@ -91,7 +91,6 @@ const ItemDatas = styled.div`
 `;
 
 const SliderContainer = styled.div`
-  border: 1px solid black;
   min-height: 50px;
 `;
 
