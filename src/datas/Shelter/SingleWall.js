@@ -67,7 +67,7 @@ export const singleWallList = [
       ]
   },
   {
-    name: 'DD Hammocks Tarp PU 3 x 3 m',
+    name: 'Tarp PU 3 x 3 m',
     category: 'Shelter',
     subCategory: 'SingleWall',
     id: 'DDHammocksTarpPU3x3',
@@ -102,7 +102,7 @@ export const singleWallList = [
       ]
   },
   {
-    name: 'DD Hammocks Tarp PU 3.5 x 2.4 m',
+    name: 'Tarp PU 3.5 x 2.4 m',
     category: 'Shelter',
     subCategory: 'SingleWall',
     id: 'DDHammocksTarpPU3.5x2.4',
@@ -135,7 +135,7 @@ export const singleWallList = [
       ]
   },
   {
-    name: 'Sea To Summit Hamac Tarp Nano 3.6 x 2.8m',
+    name: 'Hammock Tarp Nano 3.6 x 2.8m',
     category: 'Shelter',
     subCategory: 'SingleWall',
     id: 'SeaToSummitHamacTarpNano3.6x2.8',
@@ -169,7 +169,7 @@ export const singleWallList = [
       ]
   },
   {
-    name: 'Sierra Designs High Route 3000',
+    name: 'High Route 3000',
     category: 'Shelter',
     subCategory: 'SingleWall',
     id: 'SierraDesignsHighRoute3000',
@@ -206,7 +206,7 @@ export const singleWallList = [
       ]
   },
   {
-    name: 'Six Moon Designs - Skyscape TREKKER',
+    name: 'Skyscape TREKKER',
     category: 'Shelter',
     subCategory: 'SingleWall',
     id: 'SixMoonDesignsSkyscapeTREKKER',
@@ -242,7 +242,7 @@ export const singleWallList = [
       ]
   },
   {
-    name: 'Sea to Summit - Poncho/Tarp Ultra-Sil Nano',
+    name: 'Poncho/Tarp Ultra-Sil Nano',
     category: 'Shelter',
     subCategory: 'SingleWall',
     id: 'SeatoSummitPonchoTarpUltraSilNano',

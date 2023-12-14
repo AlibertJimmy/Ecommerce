@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
 // Import Context
 
 // Import Components
+// import TrendingSlider from '../../components/TrendingSlider/TrendingSlider';
 
 // Import Functions
 import { getItemList } from '../../utils/Functions/ItemFunctions';
@@ -22,6 +23,11 @@ import { responsiveWidthMobile, responsiveWidthTablet } from '../../utils/Consta
 import { scrollToTop } from '../../utils/Functions';
 
 const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const SubCategoryContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: 0 30px;
@@ -108,23 +114,26 @@ function ItemCategoryPage ({ itemCategory, itemSubCategory }) {
       <PageWrapper>
         {shouldDisplayPageContainer
           ? (
-        <PageContainer>
-        {itemList.map((item, index) => (
+          <PageContainer id='pageContainer'>
+            <SubCategoryContainer>
+            {itemList.map((item, index) => (
 
-          <ItemPresentation key={index} >
-            <StyledLink key={index} to={`/${itemCategory}/${itemSubCategory}/${itemList[index].id}`} onClick={handleOnClick}>
-            <PictureContainer>
-              <ItemPicture src={item.illustrations[0].picture} alt='picture1'></ItemPicture>
-            </PictureContainer>
-            <ItemDatas>
-              <ItemTitle>{item.name}</ItemTitle>
-              <ItemPrice>{item.price} euros</ItemPrice>
-            </ItemDatas>
-            </StyledLink>
-          </ItemPresentation>
-
-        ))}
-        </PageContainer>
+              <ItemPresentation key={index} >
+                <StyledLink key={index} to={`/${itemCategory}/${itemSubCategory}/${itemList[index].id}`} onClick={handleOnClick}>
+                <PictureContainer>
+                  <ItemPicture src={item.illustrations[0].picture} alt='picture1'></ItemPicture>
+                </PictureContainer>
+                <ItemDatas>
+                  <ItemTitle>{item.name}</ItemTitle>
+                  <ItemPrice>{item.price} €</ItemPrice>
+                </ItemDatas>
+                {console.log('check1')}
+                </StyledLink>
+                {console.log('check')}
+              </ItemPresentation>
+            ))}
+            </SubCategoryContainer>
+          </PageContainer>
             )
           : (
         <Outlet/>

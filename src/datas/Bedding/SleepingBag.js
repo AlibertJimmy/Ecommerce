@@ -4,7 +4,7 @@ import MountainHardwearBishopPass1C3 from '../../assets/Items/Bedding/SleepingBa
 
 export const sleepingBagList = [
   {
-    name: 'Mountain Hardwear - Bishop Pass 30°F/-1°C',
+    name: 'Bishop Pass 30°F/-1°C',
     category: 'Bedding',
     subCategory: 'SleepingBag',
     id: 'MountainHardwearBishopPass1C',

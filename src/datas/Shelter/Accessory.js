@@ -2,8 +2,8 @@ import FerrinoSuperlightPeg from '../../assets/Items/Shelter/Accessory/FerrinoSu
 
 export const accessoryList = [
   {
-    name: 'Ferrino - Superlight Peg',
-    category: 'Bedding',
+    name: 'Superlight Peg',
+    category: 'Shelter',
     subCategory: 'Accessory',
     id: 'FerrinoSuperlightPeg',
     available: true,

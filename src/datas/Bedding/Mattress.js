@@ -4,7 +4,7 @@ import ThermarestNeoAirXliteRegular3 from '../../assets/Items/Bedding/Mattress/T
 
 export const mattressList = [
   {
-    name: 'Therm a rest - Neo Air Xlite - Regular',
+    name: 'Neo Air Xlite - Regular',
     category: 'Bedding',
     subCategory: 'Mattress',
     id: 'ThermarestNeoAirXliteRegular',

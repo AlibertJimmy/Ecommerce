@@ -10,6 +10,7 @@ import { hammockList } from '../../datas/Bedding/Hammock';
 import { sleepingBagList } from '../../datas/Bedding/SleepingBag';
 import { mattressList } from '../../datas/Bedding/Mattress';
 
+/* Browse a list of item and return the index of an item corresponding to a specific id */
 export function getItemCorrespondingToId (id, itemList) {
   console.log('function getItemCorrespondingToId');
   console.log(`id : ${id}`);
@@ -21,8 +22,23 @@ export function getItemCorrespondingToId (id, itemList) {
   }
   console.log(`index : ${index}`);
   return index;
-}
+};
 
+/* Generates a list containing all the items of a category */
+export function getAllItemSubCategoryList (itemCategory) {
+  const functionMap = {
+    Shelter: [singleWallList, doubleWallList, accessoryList],
+    Bedding: [hammockList, sleepingBagList, mattressList]
+  };
+
+  if (functionMap) {
+    return functionMap[itemCategory];
+  } else {
+    console.error(`Unknown itemCategory: ${itemCategory}`);
+  }
+};
+
+/* Return the subCategory list of items using intermediary functions */
 export function getItemList (itemCategory, itemSubCategory) {
   const functionMap = {
     Shelter: getItemListShelter,

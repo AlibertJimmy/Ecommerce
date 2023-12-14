@@ -4,7 +4,7 @@ import ddHammockSuperLightV23 from '../../assets/Items/Bedding/Hammock/DDHammock
 
 export const hammockList = [
   {
-    name: 'DD Hammocks Super Light V2',
+    name: 'Super Light V2',
     category: 'Bedding',
     subCategory: 'Hammock',
     id: 'DDHammocksSuperLightV2',

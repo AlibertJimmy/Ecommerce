@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
 // Import Context
 
 // Import Components
+import TrendingSlider from '../TrendingSlider/TrendingSlider';
 
 // Import Functions
 import { getItemSubCategoryList } from '../../utils/Functions/itemSubcategoryFunction';
@@ -22,6 +23,11 @@ import { responsiveWidthMobile, responsiveWidthTablet } from '../../utils/Consta
 import { scrollToTop } from '../../utils/Functions';
 
 const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const SubCategoryContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: 0 30px;
@@ -84,6 +90,11 @@ const ItemDatas = styled.div`
   height: 100px;
 `;
 
+const SliderContainer = styled.div`
+  border: 1px solid black;
+  min-height: 50px;
+`;
+
 function ItemSubcategoryPage ({ itemCategory }) {
   const location = useLocation();
   const currentUrl = location.pathname;
@@ -100,21 +111,26 @@ function ItemSubcategoryPage ({ itemCategory }) {
       <PageWrapper id='pageWrapper'>
         {shouldDisplayPageContainer
           ? (
-        <PageContainer id='pageContainer'>
-        {itemSubcategoryList.map((item, index) => (
+        <PageContainer>
+          <SubCategoryContainer id='pageContainer'>
+          {itemSubcategoryList.map((item, index) => (
 
-          <ItemPresentation key={index} id='itemPresentation'>
-            <StyledLink key={index} to={`/${itemCategory}/${itemSubcategoryList[index].subCategory}`} onClick={handleOnClick}>
-            <PictureContainer id='pictureContainer'>
-              <ItemPicture src={item.illustration} alt='picture1'></ItemPicture>
-            </PictureContainer>
-            <ItemDatas id='itemDatas'>
-              <ItemTitle>{item.text}</ItemTitle>
-            </ItemDatas>
-            </StyledLink>
-          </ItemPresentation>
+            <ItemPresentation key={index} id='itemPresentation'>
+              <StyledLink key={index} to={`/${itemCategory}/${itemSubcategoryList[index].subCategory}`} onClick={handleOnClick}>
+              <PictureContainer id='pictureContainer'>
+                <ItemPicture src={item.illustration} alt='picture1'></ItemPicture>
+              </PictureContainer>
+              <ItemDatas id='itemDatas'>
+                <ItemTitle>{item.text}</ItemTitle>
+              </ItemDatas>
+              </StyledLink>
+            </ItemPresentation>
 
-        ))}
+          ))}
+          </SubCategoryContainer>
+          <SliderContainer id='sliderContainer'>
+            <TrendingSlider itemCategory={itemCategory}/>
+          </SliderContainer>
         </PageContainer>
             )
           : (
