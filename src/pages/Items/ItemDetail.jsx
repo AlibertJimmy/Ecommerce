@@ -16,8 +16,9 @@ import { getItemCorrespondingToId, getItemList } from '../../utils/Functions/Ite
 
 // Import Style
 import { PageWrapper } from '../../utils/Styles';
+import { StyledTitleH1 } from '../../utils/Style/GlobalStyle';
 import {
-  PageContainer, ItemTitle,
+  PageContainer,
   ItemPresentation,
   IllustrationContainer, PictureDisplayer, ItemPicture,
   PictureSelector, PictureSelectionPreviewContainer, PictureSelectionPreview,
@@ -85,7 +86,7 @@ function ItemDetailPage ({ itemCategory, itemSubCategory }) {
             </IllustrationContainer>
             <InfoContainer id='infoContainer'>
               <ItemDatas id='itemDatas'>
-                <ItemTitle>{itemList[index].name}</ItemTitle>
+                <StyledTitleH1 id='articleTitleName'>{itemList[index].name}</StyledTitleH1>
                 <StyledUlInfo>
                   <li><p style={{ fontStyle: 'italic' }}> {itemList[index].brand} </p></li>
                   <li><p> {itemList[index].weight} </p></li>
@@ -105,11 +106,11 @@ function ItemDetailPage ({ itemCategory, itemSubCategory }) {
             </InfoContainer>
           </ItemPresentation>
           <DescriptionContainer id='descriptionContainer'>
-            <ItemTitle>Description</ItemTitle>
+            <StyledTitleH1 id='articleTitleDescription'>Description</StyledTitleH1>
             {itemList[index].description.map((liComponent, indexDescr) => (
                     <p key={`${itemList[index].name}-li-${indexDescr}`}>{liComponent.li}</p>
             ))}
-            <ItemTitle>Characteristic</ItemTitle>
+            <StyledTitleH1 id='articleTitleCharacteristic'>Characteristic</StyledTitleH1>
             <StyledUlDescription>
                 {itemList[index].characteristic.map((liComponent, indexCharac) => (
                     <li key={`${itemList[index].name}-li-${indexCharac}`}><p>{liComponent.li}</p></li>

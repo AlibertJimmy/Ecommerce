@@ -2,9 +2,6 @@
 import styled from 'styled-components';
 import { CommonButton, CommonQuantitySelectorStyle } from '../Styles';
 
-// Import Colors
-import colors from '../Colors';
-
 // Import Constants
 import { responsiveWidthMobile, responsiveWidthTablet } from '../Constant';
 
@@ -37,12 +34,6 @@ export const PageContainer = styled.div`
     justify-content: center;
     margin: 0 10px;
   }
-`;
-
-export const ItemTitle = styled.h1`
-  font-family: sans-serif;
-  color: ${colors.orangeCustom};
-  margin: 0;
 `;
 
 // Item Presentation
