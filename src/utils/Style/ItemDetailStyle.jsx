@@ -21,7 +21,7 @@ const PicturePreviewHeightResponsiveTablet = 75;
 const PicturePreviewHeightResponsiveMobile = 50;
 
 // Page General
-export const PageContainer = styled.div`
+export const ItemDetailContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 50px;
