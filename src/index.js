@@ -13,7 +13,7 @@ import Home from './pages/Home/Home';
 import Account from './pages/Account/Account';
 
 import ItemSelectorPage from './pages/Items/ItemSelectorPage';
-import ItemSubcategorySelectorPage from './pages/Items/SubCategorySelectorPage';
+import ItemSubcategorySelectorPage from './pages/Items/ItemSubCategorySelectorPage';
 import ItemDetailPage from './pages/Items/ItemDetailPage';
 
 // Import Style

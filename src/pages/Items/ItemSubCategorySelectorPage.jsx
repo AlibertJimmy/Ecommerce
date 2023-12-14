@@ -98,9 +98,11 @@ function ItemSubcategorySelectorPage ({ itemCategory }) {
   const location = useLocation();
   const currentUrl = location.pathname;
   const itemSubcategoryList = getItemSubCategoryList(itemCategory);
+  const shouldDisplayPageContainer = displayOutletSubCategory(itemCategory, currentUrl);
+  /*
   console.log('itemSubcategoryList');
   console.log(itemSubcategoryList);
-  const shouldDisplayPageContainer = displayOutletSubCategory(itemCategory, currentUrl);
+  */
 
   function handleOnClick () {
     scrollToTop();
