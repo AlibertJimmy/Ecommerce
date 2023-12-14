@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Import Components
-import Category from '../../components/Category/Category';
+import CategoryGrid from '../../components/Category/CategoryGrid';
 import WhatsNewDisplay from '../../components/NewArticleDisplay/NewArticleDisplay';
 // Import Datas
 
@@ -12,7 +12,7 @@ import { PageWrapper } from '../../utils/Styles';
 function Home () {
   return (
       <PageWrapper>
-        <Category/>
+        <CategoryGrid/>
         <WhatsNewDisplay/>
       </PageWrapper>
   );

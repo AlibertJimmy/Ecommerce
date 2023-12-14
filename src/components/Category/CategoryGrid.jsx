@@ -111,7 +111,7 @@ const CategoryImg = styled.img`
   width:100%;
 `;
 
-function Category () {
+function CategoryGrid () {
   return (
     <Container id='container'>
       <GridContainer id='gridContainer'>
@@ -148,4 +148,4 @@ function Category () {
   );
 }
 
-export default Category;
+export default CategoryGrid;
