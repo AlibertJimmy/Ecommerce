@@ -12,5 +12,6 @@ export const profilePicSizeResponsive = 200;
 
 export const topIllustrationHeight = 400;
 
-export const elementWidth = '300px';
-export const pictureWidth = '150px';
+export const sliderElementWidth = 285;
+export const sliderElementGap = 15;
+export const sliderElementPictureWidth = 150;

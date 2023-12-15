@@ -7,7 +7,7 @@ import { borderWidth } from './Constant';
 
 export const PageWrapper = styled.div`
 
-  margin: 120px 2% 2% 2%;
+  margin: 120px 20px 2% 20px;
   min-height: 400px;
   border: 1px solid green;
 `;

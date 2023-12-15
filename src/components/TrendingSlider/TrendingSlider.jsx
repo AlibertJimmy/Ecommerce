@@ -17,19 +17,22 @@ import {
   Slider
 } from '../../utils/Style/TrendingSliderStyle';
 
+// Import Constants
+import { sliderElementGap, sliderElementWidth } from '../../utils/Constant';
+
 function TrendingSlider ({ itemCategory }) {
   const slideLeft = () => {
     const slider = document.getElementById('slider');
-    slider.scrollLeft = slider.scrollLeft - 235;
+    slider.scrollLeft = slider.scrollLeft - (sliderElementWidth + sliderElementGap);
   };
 
   const slideRight = () => {
     const slider = document.getElementById('slider');
-    slider.scrollLeft = slider.scrollLeft + 235;
+    slider.scrollLeft = slider.scrollLeft + (sliderElementWidth + sliderElementGap);
   };
 
   return (
-    <SliderWrapper id='trending'>
+    <SliderWrapper id='sliderWrapper'>
         <SliderHeaderContainer id='sliderHeaderContainer'>
           <StyledTitleH1>Trending Now</StyledTitleH1>
           <SliderButtonContainer id='sliderButtonContainer'>

@@ -135,7 +135,7 @@ export const singleWallList = [
       ]
   },
   {
-    name: 'Hammock Tarp Nano 3.6 x 2.8m',
+    name: 'Tarp Nano 3.6 x 2.8m',
     category: 'Shelter',
     subCategory: 'SingleWall',
     id: 'SeaToSummitHamacTarpNano3.6x2.8',
