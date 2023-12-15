@@ -10,9 +10,6 @@ export const SubCategorySelectorContainer = styled.div`
   flex-wrap: wrap;
   margin: 0 30px;
   justify-content: center;
-  @media (max-width: ${responsiveWidthTablet}px){
-    justify-content: flex-start;
-  }
 `;
 
 export const ItemPreviewContainer = styled.div`

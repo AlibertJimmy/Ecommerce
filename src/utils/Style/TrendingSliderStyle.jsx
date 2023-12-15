@@ -15,7 +15,7 @@ import {
 
 export const SliderWrapper = styled.div`
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 50px auto 0 auto;
 
   @media (max-width: 1242px){
     max-width: 900px;
