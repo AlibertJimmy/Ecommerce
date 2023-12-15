@@ -16,6 +16,9 @@ import CartWhite from '../../assets/Functionnal_Icon/Cart_White.png';
 // Import Style
 import styled from 'styled-components';
 
+// Import Colors
+import colors from '../../utils/Colors';
+
 // Import Constants
 import { responsiveWidthTablet } from '../../utils/Constant';
 
@@ -44,7 +47,7 @@ const OpenCartButton = styled.button`
     ${props => (props.amount > 0
     ? `
     content: '${props.amount}';
-    background-color: red;
+    background-color: ${colors.orangeCustom};;
     `
     : `
     content: '';
@@ -79,14 +82,14 @@ function CartButton () {
   useEffect(() => {
     // Function to handle clicks outside the component
     function handleClickOutside (event) {
+      /*
       console.log('cartRef.current');
       console.log(cartRef.current);
       console.log('cartRef.current.contains(event.target)');
       console.log(cartRef.current.contains(event.target));
+      */
       if (cartRef.current && !cartRef.current.contains(event.target)) {
         setIsOpen(false);
-        console.log('click OutsideCart');
-        console.log('close cart');
       }
     }
 

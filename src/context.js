@@ -54,12 +54,13 @@ export const CartContextProvider = ({ children }) => {
     if (savedCart) {
       try {
         const parsedCart = JSON.parse(savedCart);
+        /*
         console.log('parsedCart');
         console.log(parsedCart);
+        */
         // Check if parsedCart is an array and has the desired structure
         if (Array.isArray(parsedCart) && parsedCart.every(item => isValidCartItem(item))) {
           updateCart(parsedCart);
-          console.log('Cart data is valid:', parsedCart);
         } else {
           console.error('Invalid cart format:', parsedCart);
         }

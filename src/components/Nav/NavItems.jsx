@@ -61,8 +61,7 @@ const StyledLi = styled.li`
 `;
 function NavItems () {
   const { openBurgerButton, setOpenBurgerButton } = useNav();
-  console.log('NavItems');
-  console.log(`openBurgerButton : ${openBurgerButton}`);
+
   const dropDownTitle1 = 'Shelter';
   const links1 = ['Shelter/SingleWall', 'Shelter/DoubleWall', 'Shelter/Accessory'];
   const linksRender1 = ['Single Wall', 'Double Wall', 'Accessory'];
@@ -70,6 +69,10 @@ function NavItems () {
   const dropDownTitle2 = 'Bedding';
   const links2 = ['Bedding/SleepingBag', 'Bedding/Mattress', 'Bedding/Hammock'];
   const linksRender2 = ['SleepingBag', 'Mattress', 'Hammock'];
+  /*
+  console.log('NavItems');
+  console.log(`openBurgerButton : ${openBurgerButton}`);
+  */
 
   return (
     <div id='#ItemNav'>

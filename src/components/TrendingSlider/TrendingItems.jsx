@@ -4,17 +4,13 @@ import React from 'react';
 // Import PropTypes
 import PropTypes from 'prop-types';
 
-// Import Functions
-import { getTrendingItem } from '../../utils/Functions/trendingItemFunction';
-
 // Import Style
 import { StyledLink } from '../../utils/Style/GlobalStyle';
 import { ItemContainer, ArticleDescription, StyledP } from '../../utils/Style/TrendingSliderStyle';
 import { PictureContainer, ArticlePicturePreviewSelection } from '../../utils/Style/PreviewStyle';
 
 // Import Style
-function TrendingItem ({ itemCategory }) {
-  const trendingItemList = getTrendingItem(itemCategory);
+function TrendingItem ({ itemCategory, trendingItemList }) {
   return (
     <>
       {trendingItemList.map((item) => (
@@ -39,7 +35,8 @@ function TrendingItem ({ itemCategory }) {
 }
 
 TrendingItem.propTypes = {
-  itemCategory: PropTypes.string.isRequired
+  itemCategory: PropTypes.string.isRequired,
+  trendingItemList: PropTypes.array.isRequired
 };
 
 export default TrendingItem;

@@ -15,3 +15,5 @@ export const topIllustrationHeight = 400;
 export const sliderElementWidth = 285;
 export const sliderElementGap = 15;
 export const sliderElementPictureWidth = 150;
+
+export const trendingSliderMaxItem = 8;
