@@ -51,5 +51,7 @@ export const StyledTitleH1 = styled.h1`
 `;
 
 export const StyledTitleH2 = styled.h2`
+  font-family: sans-serif;
   font-size: 20px;
+  font-weight: 200;
 `;

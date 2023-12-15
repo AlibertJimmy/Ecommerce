@@ -34,10 +34,7 @@ function ItemSubcategorySelector ({ itemCategory }) {
                 <PictureContainer id='pictureContainer'>
                   <ArticlePicturePreviewSelection src={item.illustration} alt='picture1'/>
                 </PictureContainer>
-                <div id='itemDatasContainer'>
-                  <StyledTitleH2>{item.text}</StyledTitleH2>
-                </div>
-
+                <StyledTitleH2>{item.text}</StyledTitleH2>
               </ItemPreviewContainer>
             </StyledLink>
 
