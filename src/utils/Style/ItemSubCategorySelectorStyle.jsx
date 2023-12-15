@@ -1,9 +1,11 @@
 // Import Style
 import styled from 'styled-components';
 
+// Import Colors
+import colors from '../Colors';
+
 // Import Constants
 import { responsiveWidthMobile, responsiveWidthTablet } from '../../utils/Constant';
-import colors from '../Colors';
 
 export const SubCategorySelectorContainer = styled.div`
   display: flex;
@@ -14,10 +16,8 @@ export const SubCategorySelectorContainer = styled.div`
 
 export const ItemPreviewContainer = styled.div`
   display:flex;
-  flex-direction: column;
+  
   flex: 0 0 calc(23% - 10px);
-
-  align-items: center;
 
   border-radius: 15px;
   box-shadow: 5px 5px 10px 5px rgba(0.1, 0, 0.1, 0.2);

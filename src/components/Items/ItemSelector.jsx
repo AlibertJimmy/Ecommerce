@@ -13,8 +13,8 @@ import {
   ItemSelectionWrapper, ItemSelectorContainer,
   ItemPresentation, ItemDatas, ItemPrice
 } from '../../utils/Style/ItemSelectorStyle';
-import { StyledLink, StyledTitleH2 } from '../../utils/Style/GlobalStyle';
-import { ArticlePicturePreviewSelection, PictureContainer } from '../../utils/Style/PreviewStyle';
+import { StyledTitleH2 } from '../../utils/Style/GlobalStyle';
+import { ArticlePicturePreviewSelection, PictureContainer, StyledLinkShape } from '../../utils/Style/PreviewStyle';
 
 function ItemSelector ({ itemCategory, itemSubCategory }) {
   const itemList = getItemList(itemCategory, itemSubCategory);
@@ -35,7 +35,7 @@ function ItemSelector ({ itemCategory, itemSubCategory }) {
       {itemList.map((item, index) => (
 
         <ItemPresentation id='itemPresentation' key={index} >
-          <StyledLink key={index} to={`/${itemCategory}/${itemSubCategory}/${itemList[index].id}`} onClick={handleOnClick}>
+          <StyledLinkShape key={index} to={`/${itemCategory}/${itemSubCategory}/${itemList[index].id}`} onClick={handleOnClick}>
           <PictureContainer>
             <ArticlePicturePreviewSelection src={item.illustrations[0].picture} alt='picture1'></ArticlePicturePreviewSelection>
           </PictureContainer>
@@ -43,7 +43,7 @@ function ItemSelector ({ itemCategory, itemSubCategory }) {
             <StyledTitleH2>{item.name}</StyledTitleH2>
             <ItemPrice>{item.price} €</ItemPrice>
           </ItemDatas>
-          </StyledLink>
+          </StyledLinkShape>
         </ItemPresentation>
       ))}
     </ItemSelectorContainer>
