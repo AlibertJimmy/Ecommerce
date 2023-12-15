@@ -6,35 +6,51 @@ import styled, { css } from 'styled-components';
 
 // Import Colors
 import colors from '../Colors';
+import { sliderElementBorderWith, previewSliderElementGap, previewSliderElementWidth } from '../Constant';
+/*
+IllustrationDisplayHeight, IllustrationDisplayHeightResponsiveTablet, IllustrationDisplayHeightResponsiveMobile,
+  PicturePreviewWidth, PicturePreviewWidthResponsiveTablet, PicturePreviewWidthResponsiveMobile,
+  PicturePreviewHeight, PicturePreviewHeightResponsiveTablet, PicturePreviewHeightResponsiveMobile,
+  */
 
 // Import Constants
-import {
-  trendingSliderElementWidth, trendingSliderElementPictureWidth, trendingSliderElementGap, sliderElementBorderWith
-} from '../Constant';
+const previewHeight = 150;
+
 /* Trending Slider */
 
 export const SliderWrapper = styled.div`
-  max-width: 1201px;
-  margin: 50px auto 0 auto;
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: space-between;
+
+`;
+/*
+  @media (max-width: ${responsiveWidthTablet}px){
+    max-width: ${IllustrationDisplayWidthResponsiveTablet}px;
+  }
+
+  @media (max-width: ${responsiveWidthMobile}px){
+    max-width: ${IllustrationDisplayWidthResponsiveMobile}px;
+  }
 
   @media (max-width: 1242px){
-    max-width: 901px;
+    max-width: 900px;
   }
 
   @media (max-width: 941px){
-    max-width: 601px;
+    max-width: 600px;
   }
 
   @media (max-width: 641px){
-    max-width: 301px;
+    max-width: 300px;
   }
-
-`;
+  */
 
 export const SliderHeaderContainer = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  flex-start: end;
 `;
 
 export const CommonLinksIcon = css`
@@ -79,48 +95,48 @@ export const SliderButtonContainer = styled.div`
 
 export const Slider = styled.div`
   display: flex;
-  gap: ${trendingSliderElementGap}px;
+  gap: ${previewSliderElementGap}px;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
   scroll-behavior: smooth;
   position: relative;
   padding: 1rem 0.6rem;
+  width: 625px;
 `;
 
 /* Trending Item */
 
 export const ItemContainer = styled.div`
   display: flex;
+  align-items: center;
 
-  height: auto;  
-  width: ${trendingSliderElementWidth}px;
+  height: ${previewHeight}px;
+  width: ${previewSliderElementWidth}px;
 
   border-radius: 15px;
-  outline: ${sliderElementBorderWith}px solid rgba(0, 0, 0, .205);
+  outline: ${sliderElementBorderWith}px solid rgba(0, 0, 0, .6);
   
   cursor: pointer;
   transition: all 0.15s ease-in;
 
   &:hover {
-    outline: ${sliderElementBorderWith}px solid rgba(0, 0, 0, .6);
+    outline: 2px solid rgba(0, 0, 0, .6);
   }
 `;
 
-export const ArticlePicture = styled.img`
-  max-height: 100px;
-  max-width: ${trendingSliderElementPictureWidth}px;
-`;
+//
 
-export const ArticleDescription = styled.div`
-  width: ${trendingSliderElementWidth}px;
-  font-size: 20px;
+export const ButtonContainer = styled.div`
   display: flex;
-  flex-direction : column;
-  justify-content: center;
-  align-items: center;
+  height:100%;
+  width: 40px;
+`;
+export const PreviewPictureContainer = styled.div`
+
 `;
 
-export const StyledP = styled.p`
-  margin: 5px 0;
+export const ArticlePicturePreviewSelection = styled.img`
+  max-height: ${previewSliderElementWidth}px;
+  max-width: ${previewHeight}px;
 `;

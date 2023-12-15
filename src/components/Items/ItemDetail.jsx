@@ -28,6 +28,7 @@ import {
 
 // Import Colors
 import colors from '../../utils/Colors';
+import PreviewSlider from '../Slider/PreviewSlider/PreviewSlider';
 
 function increaseSelection (amount, updateAmount) {
   amount = amount + 1;
@@ -71,15 +72,21 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
                 <ItemDetailPicture src={image} alt='picture1' id='itemPicture'></ItemDetailPicture>
               </PictureDisplayer>
               {
-                itemList[index].illustrations.length > 1
-                  ? <PictureSelector>
-                {itemList[index].illustrations.map((liComponent, indexIllus) => (
-                  <PictureSelectionPreviewContainer key={`${itemList[index].name}-li-${indexIllus}`}>
-                      <PictureSelectionPreview src={liComponent.picture} alt={`Picture${indexIllus}`} onMouseOver={changeImage}></PictureSelectionPreview>
-                  </PictureSelectionPreviewContainer>
-                ))}
-                </PictureSelector>
-                  : <></>
+                itemList[index].illustrations.length < 1
+                  ? <></>
+                  : itemList[index].illustrations.length <= 3
+                    ? <PictureSelector>
+                  {itemList[index].illustrations.map((liComponent, indexIllus) => (
+                    <PictureSelectionPreviewContainer key={`${itemList[index].name}-li-${indexIllus}`}>
+                        <PictureSelectionPreview src={liComponent.picture} alt={`Picture${indexIllus}`} onMouseOver={changeImage}></PictureSelectionPreview>
+                    </PictureSelectionPreviewContainer>
+                  ))}
+                  </PictureSelector>
+                    : <PictureSelector>
+                      {console.log('pictureList passed as props')}
+                      {console.log(itemList[index].illustrations)}
+                      <PreviewSlider pictureList={itemList[index].illustrations}/>
+                      </PictureSelector>
               }
             </IllustrationContainer>
             <InfoContainer id='infoContainer'>

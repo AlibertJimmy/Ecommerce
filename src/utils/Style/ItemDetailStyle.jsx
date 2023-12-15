@@ -3,22 +3,15 @@ import styled from 'styled-components';
 import { CommonButton, CommonQuantitySelectorStyle } from '../Styles';
 
 // Import Constants
-import { responsiveWidthMobile, responsiveWidthTablet } from '../Constant';
+import {
+  responsiveWidthMobile, responsiveWidthTablet,
+  IllustrationDisplayWidth, IllustrationDisplayWidthResponsiveTablet, IllustrationDisplayWidthResponsiveMobile,
+  IllustrationDisplayHeight, IllustrationDisplayHeightResponsiveTablet, IllustrationDisplayHeightResponsiveMobile,
+  PicturePreviewWidth, PicturePreviewWidthResponsiveTablet, PicturePreviewWidthResponsiveMobile,
+  PicturePreviewHeight, PicturePreviewHeightResponsiveTablet, PicturePreviewHeightResponsiveMobile
+} from '../Constant';
 
 // Illustration Related
-const IllustrationDisplayWidth = 750;
-const IllustrationDisplayWidthResponsiveTablet = 450;
-const IllustrationDisplayWidthResponsiveMobile = 300;
-const IllustrationDisplayHeight = 500;
-const IllustrationDisplayHeightResponsiveTablet = 350;
-const IllustrationDisplayHeightResponsiveMobile = 250;
-
-const PicturePreviewWidth = 100;
-const PicturePreviewWidthResponsiveTablet = 75;
-const PicturePreviewWidthResponsiveMobile = 50;
-const PicturePreviewHeight = 100;
-const PicturePreviewHeightResponsiveTablet = 75;
-const PicturePreviewHeightResponsiveMobile = 50;
 
 // Page General
 export const ItemDetailContainer = styled.div`
@@ -33,7 +26,6 @@ export const ItemDetailContainer = styled.div`
     justify-content: center;
     margin: 0 10px;
   }
-  border: 1px solid red;
 `;
 
 // Item Presentation

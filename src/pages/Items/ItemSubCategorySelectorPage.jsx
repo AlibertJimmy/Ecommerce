@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 // Import Components
 import ItemSubcategorySelector from '../../components/Items/ItemSubCategorySelector';
-import TrendingSlider from '../../components/TrendingSlider/TrendingSlider';
+import TrendingSlider from '../../components/Slider/TrendingSlider/TrendingSlider';
 
 // Import Functions
 import { displayOutletSubCategory } from '../../utils/Functions/pathFunctions';

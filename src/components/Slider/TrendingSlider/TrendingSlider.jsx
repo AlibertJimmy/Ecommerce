@@ -10,19 +10,19 @@ import PropTypes from 'prop-types';
 import TrendingItem from './TrendingItems';
 
 // Import Functions
-import { getMaxScrollingIndex, getTrendingItem } from '../../utils/Functions/trendingItemFunction';
+import { getMaxScrollingIndex, getTrendingItem } from '../../../utils/Functions/trendingItemFunction';
 
 // Import Style
-import { StyledTitleH1 } from '../../utils/Style/GlobalStyle';
+import { StyledTitleH1 } from '../../../utils/Style/GlobalStyle';
 import {
   SliderWrapper,
   SliderHeaderContainer,
   SliderButtonContainer, StyledIcon,
   Slider
-} from '../../utils/Style/TrendingSliderStyle';
+} from '../../../utils/Style/TrendingSliderStyle';
 
 // Import Constants
-import { sliderElementGap, sliderElementWidth } from '../../utils/Constant';
+import { sliderElementBorderWith, trendingSliderElementGap, trendingSliderElementWidth } from '../../../utils/Constant';
 
 function TrendingSlider ({ itemCategory }) {
   const [trendingItemList, updateTrendingItemList] = useState([]);
@@ -51,14 +51,14 @@ function TrendingSlider ({ itemCategory }) {
 
   const slideLeft = () => {
     const slider = document.getElementById('slider');
-    slider.scrollLeft = slider.scrollLeft - (sliderElementWidth + sliderElementGap);
+    slider.scrollLeft = slider.scrollLeft - (trendingSliderElementWidth + trendingSliderElementGap + sliderElementBorderWith);
 
     updatescrollingIndex(scrollingIndex - 1);
   };
 
   const slideRight = () => {
     const slider = document.getElementById('slider');
-    slider.scrollLeft = slider.scrollLeft + (sliderElementWidth + sliderElementGap);
+    slider.scrollLeft = slider.scrollLeft + (trendingSliderElementWidth + trendingSliderElementGap + sliderElementBorderWith);
 
     updatescrollingIndex(scrollingIndex + 1);
   };
