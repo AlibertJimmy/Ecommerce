@@ -1,3 +1,6 @@
+// Import Constant
+import { previewSliderAmountOfPictureDisplayed } from '../Constant';
+
 export function determineNecessaryScrolling (pictureToDisplayIndex, scopeStart, scopeEnd) {
   let scrollAction;
 
@@ -12,4 +15,36 @@ export function determineNecessaryScrolling (pictureToDisplayIndex, scopeStart, 
     scrollAction = 'none';
   }
   return scrollAction;
+}
+
+export function displayLeftButton (amountOfPictureToDisplay, scrollingIndex) {
+  let display;
+  if (amountOfPictureToDisplay <= previewSliderAmountOfPictureDisplayed) {
+    display = false;
+  } else {
+    if (scrollingIndex === 0) {
+      display = false;
+    } else {
+      display = true;
+    }
+  }
+  console.log('displayLeftButton');
+  console.log(display);
+  return display;
+}
+
+export function displayRightButton (amountOfPictureToDisplay, scrollingIndex, maxScrollingIndex) {
+  let display;
+  if (amountOfPictureToDisplay <= previewSliderAmountOfPictureDisplayed) {
+    display = false;
+  } else {
+    if (scrollingIndex === maxScrollingIndex) {
+      display = false;
+    } else {
+      display = true;
+    }
+  }
+  console.log('displayRightButton');
+  console.log(display);
+  return display;
 }

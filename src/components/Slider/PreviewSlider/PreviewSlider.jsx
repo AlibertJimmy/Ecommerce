@@ -13,7 +13,7 @@ import { usePreviewSliderContext } from '../../../context/PreviewSliderContext';
 import PreviewItem from './PreviewItems';
 
 // Import Function
-import { determineNecessaryScrolling } from '../../../utils/Functions/previewSliderFunction';
+import { determineNecessaryScrolling, displayLeftButton, displayRightButton } from '../../../utils/Functions/previewSliderFunction';
 
 // Import Style
 import {
@@ -88,18 +88,20 @@ function PreviewSlider ({ pictureList, setImage }) {
   return (
     <SliderWrapper id='sliderWrapper'>
       <ButtonContainer id='scrollingButtonLeftContainer'>
-        <ScrollingButton id='scrollLeftButton' onClick={slideLeft} style={{ display: scrollingIndex === 0 ? 'none' : undefined }}>
+        <ScrollingButton id='scrollLeftButton' onClick={slideLeft}
+        style={{ display: displayLeftButton(pictureList.length, scrollingIndex) === false ? 'none' : undefined }}>
           <StyledIcon icon={faChevronLeft} />
         </ScrollingButton>
       </ButtonContainer>
-        <Slider id='slider' ref={sliderRef}>
-          <PreviewItem pictureList={pictureList} setImage={setImage}/>
-        </Slider>
-        <ButtonContainer id='scrollingButtonRightContainer'>
-          <ScrollingButton id='scrollRightButton' onClick={slideRight} style={{ display: scrollingIndex === maxScrollingIndex ? 'none' : undefined }}>
-            <StyledIcon icon={faChevronRight} />
-          </ScrollingButton>
-        </ButtonContainer>
+      <Slider id='slider' ref={sliderRef}>
+        <PreviewItem pictureList={pictureList} setImage={setImage}/>
+      </Slider>
+      <ButtonContainer id='scrollingButtonRightContainer'>
+        <ScrollingButton id='scrollRightButton' onClick={slideRight}
+        style={{ display: displayRightButton(pictureList.length, scrollingIndex, maxScrollingIndex) === false ? 'none' : undefined }}>
+          <StyledIcon icon={faChevronRight} />
+        </ScrollingButton>
+      </ButtonContainer>
     </SliderWrapper>
   );
 }

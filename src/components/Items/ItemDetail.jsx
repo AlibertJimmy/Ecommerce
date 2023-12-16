@@ -81,7 +81,7 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
     console.log('second useEffect');
     console.log(`pictureToDisplayIndex : ${pictureToDisplayIndex}`);
 
-    if (pictureToDisplayIndex < itemList[index].illustrations.length - 1) {
+    if (pictureToDisplayIndex <= itemList[index].illustrations.length - 1) {
       console.log('different from undefined');
       console.log(itemList[index].illustrations[pictureToDisplayIndex].picture);
       setImage(itemList[index].illustrations[pictureToDisplayIndex].picture);
@@ -158,8 +158,7 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
 
 ItemDetail.propTypes = {
   itemCategory: PropTypes.string.isRequired,
-  itemSubCategory: PropTypes.string.isRequired,
-  index: PropTypes.number.isRequired
+  itemSubCategory: PropTypes.string.isRequired
 };
 
 export default ItemDetail;
