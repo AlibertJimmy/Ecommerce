@@ -8,7 +8,7 @@ import {
   IllustrationDisplayWidth, IllustrationDisplayWidthResponsiveTablet, IllustrationDisplayWidthResponsiveMobile,
   IllustrationDisplayHeight, IllustrationDisplayHeightResponsiveTablet, IllustrationDisplayHeightResponsiveMobile,
   PicturePreviewWidth, PicturePreviewWidthResponsiveTablet, PicturePreviewWidthResponsiveMobile,
-  PicturePreviewHeight, PicturePreviewHeightResponsiveTablet, PicturePreviewHeightResponsiveMobile
+  PicturePreviewHeight, PicturePreviewHeightResponsiveTablet, PicturePreviewHeightResponsiveMobile, PicturelayoutButtonWidth
 } from '../Constant';
 
 // Illustration Related
@@ -66,7 +66,7 @@ export const PictureDisplayer = styled.div`
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
   overflow: hidden;
   @media (max-width: ${responsiveWidthTablet}px){
@@ -78,22 +78,26 @@ export const PictureDisplayer = styled.div`
     width: ${IllustrationDisplayWidthResponsiveMobile}px;
     height: ${IllustrationDisplayHeightResponsiveMobile}px;
   }
+
+  border: 1px solid blue;
 `;
 
 export const ItemDetailPicture = styled.img`
-  max-width: ${IllustrationDisplayWidth}px;
+  max-width: ${IllustrationDisplayWidth - PicturelayoutButtonWidth * 2}px;
   max-height: ${IllustrationDisplayHeight}px;
   object-fit: contain;
 
   @media (max-width: ${responsiveWidthTablet}px){
-    width: ${IllustrationDisplayWidthResponsiveTablet}px;
+    width: ${IllustrationDisplayWidthResponsiveTablet - PicturelayoutButtonWidth * 2}px;
     height: ${IllustrationDisplayHeightResponsiveTablet}px;
   }
 
   @media (max-width: ${responsiveWidthMobile}px){
-    width: ${IllustrationDisplayWidthResponsiveMobile}px;
+    width: ${IllustrationDisplayWidthResponsiveMobile - PicturelayoutButtonWidth * 2}px;
     height: ${IllustrationDisplayHeightResponsiveMobile}px;
   }
+
+  border: 1px solid red;
 `;
 
 export const PictureSelector = styled.div`

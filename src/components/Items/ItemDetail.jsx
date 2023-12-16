@@ -1,5 +1,6 @@
 // Import React Libraries
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { useParams } from 'react-router-dom';
 
 // Import PropTypes
@@ -7,6 +8,7 @@ import PropTypes from 'prop-types';
 
 // Import Context
 import { useCart } from '../../context';
+import { usePreviewSliderContext } from '../../context/PreviewSliderContext';
 
 // Import Components
 
@@ -29,6 +31,7 @@ import {
 // Import Colors
 import colors from '../../utils/Colors';
 import PreviewSlider from '../Slider/PreviewSlider/PreviewSlider';
+import { ButtonContainer, ScrollingButton, StyledIcon } from '../../utils/Style/PreviewSliderStyle';
 
 function increaseSelection (amount, updateAmount) {
   amount = amount + 1;
@@ -43,6 +46,7 @@ function decreaseSelection (amount, updateAmount) {
 }
 
 function ItemDetail ({ itemCategory, itemSubCategory }) {
+  const { pictureToDisplayIndex, setPictureToDisplayIndex } = usePreviewSliderContext();
   const { cart, updateCart } = useCart();
   const { id } = useParams();
   const itemList = getItemList(itemCategory, itemSubCategory);
@@ -50,6 +54,7 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
 
   const [image, setImage] = useState(itemList[index].illustrations[0].picture);
   const [amount, updateAmount] = useState(1);
+
   /*
   console.log('Item Detail Page');
   console.log(`itemCategory : ${itemCategory}`);
@@ -59,15 +64,55 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
   console.log(`Index : ${index}`);
   console.log(itemList[index]);
   */
+  const slideLeft = async () => {
+    setPictureToDisplayIndex(pictureToDisplayIndex - 1);
+  };
+
+  const slideRight = async () => {
+    setPictureToDisplayIndex(pictureToDisplayIndex + 1);
+  };
+
+  useEffect(() => {
+    setPictureToDisplayIndex(0);
+    console.log(`pictureToDisplayIndex : ${pictureToDisplayIndex}`);
+  }, []);
+
+  useEffect(() => {
+    console.log('second useEffect');
+    console.log(`pictureToDisplayIndex : ${pictureToDisplayIndex}`);
+
+    if (pictureToDisplayIndex < itemList[index].illustrations.length - 1) {
+      console.log('different from undefined');
+      console.log(itemList[index].illustrations[pictureToDisplayIndex].picture);
+      setImage(itemList[index].illustrations[pictureToDisplayIndex].picture);
+    }
+  }, [pictureToDisplayIndex]);
+
   return (
         <ItemDetailContainer id='pageContainer'>
           <ItemPresentation key={index} id='itemPresentation'>
             <IllustrationContainer id='illustrationContainer'>
               <PictureDisplayer id='pictureDisplayer'>
-                <ItemDetailPicture src={image} alt='picture1' id='itemPicture'></ItemDetailPicture>
+                <ButtonContainer id='scrollingButtonLeftContainer'>
+                  {itemList[index].illustrations.length === 1
+                    ? <></>
+                    : <ScrollingButton id='scrollLeftButton' onClick={slideLeft}
+                      style={{ display: pictureToDisplayIndex === 0 ? 'none' : undefined }}>
+                        <StyledIcon icon={faChevronLeft} />
+                      </ScrollingButton>}
+                </ButtonContainer>
+                  <ItemDetailPicture src={image} alt='picture1' id='itemPicture'></ItemDetailPicture>
+                <ButtonContainer id='scrollingButtonRightContainer'>
+                {itemList[index].illustrations.length === 1
+                  ? <></>
+                  : <ScrollingButton id='scrollRightButton' onClick={slideRight}
+                    style={{ display: pictureToDisplayIndex === itemList[index].illustrations.length - 1 ? 'none' : undefined }}>
+                      <StyledIcon icon={faChevronRight} />
+                    </ScrollingButton>}
+                </ButtonContainer>
               </PictureDisplayer>
               {
-                itemList[index].illustrations.length < 1
+                itemList[index].illustrations.length <= 1
                   ? <></>
                   : <PictureSelector>
                       <PreviewSlider pictureList={itemList[index].illustrations} setImage={setImage}/>

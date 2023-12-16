@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 // Import Context
 import { NavContextProvider, CartContextProvider } from './context';
+import { PreviewSliderContextProvider } from './context/PreviewSliderContext';
 
 // Import Component
 import Header from './components/Header/Header';
@@ -33,43 +34,46 @@ function App () {
     <NavContextProvider>
       <CartContextProvider>
         <React.StrictMode>
-          <Router>
-            <Header/>
-            <HomeWrapper>
-              <ContentWrapper>
-                <Routes>
-                  <Route path="/" element={<Home />} />
+          <PreviewSliderContextProvider>
+            <Router>
+              <Header/>
+              <HomeWrapper>
+                <ContentWrapper>
+                  <Routes>
+                    <Route path="/" element={<Home />} />
 
-                  <Route path="Shelter" element={<ItemSubcategorySelectorPage itemCategory='Shelter'/>} >
-                    <Route path="SingleWall" element={<ItemSelectorPage itemCategory='Shelter' itemSubCategory='SingleWall'/>}>
-                      <Route path=":id" element={<ItemDetailPage itemCategory='Shelter' itemSubCategory='SingleWall'/>}/>
+                    <Route path="Shelter" element={<ItemSubcategorySelectorPage itemCategory='Shelter'/>} >
+                      <Route path="SingleWall" element={<ItemSelectorPage itemCategory='Shelter' itemSubCategory='SingleWall'/>}>
+                        <Route path=":id" element={<ItemDetailPage itemCategory='Shelter' itemSubCategory='SingleWall'/>}/>
+                      </Route>
+                      <Route path="DoubleWall" element={<ItemSelectorPage itemCategory='Shelter' itemSubCategory='DoubleWall'/>}>
+                        <Route path=":id" element={<ItemDetailPage itemCategory='Shelter' itemSubCategory='DoubleWall'/>}/>
+                      </Route>
+                      <Route path="Accessory" element={<ItemSelectorPage itemCategory='Shelter' itemSubCategory='Accessory'/>}>
+                        <Route path=":id" element={<ItemDetailPage itemCategory='Shelter' itemSubCategory='Accessory'/>}/>
+                      </Route>
                     </Route>
-                    <Route path="DoubleWall" element={<ItemSelectorPage itemCategory='Shelter' itemSubCategory='DoubleWall'/>}>
-                      <Route path=":id" element={<ItemDetailPage itemCategory='Shelter' itemSubCategory='DoubleWall'/>}/>
-                    </Route>
-                    <Route path="Accessory" element={<ItemSelectorPage itemCategory='Shelter' itemSubCategory='Accessory'/>}>
-                      <Route path=":id" element={<ItemDetailPage itemCategory='Shelter' itemSubCategory='Accessory'/>}/>
-                    </Route>
-                  </Route>
 
-                  <Route path="Bedding" element={<ItemSubcategorySelectorPage itemCategory='Bedding'/>} >
-                    <Route path="SleepingBag" element={<ItemSelectorPage itemCategory='Bedding' itemSubCategory='SleepingBag'/>}>
-                      <Route path=":id" element={<ItemDetailPage itemCategory='Bedding' itemSubCategory='SleepingBag'/>}/>
+                    <Route path="Bedding" element={<ItemSubcategorySelectorPage itemCategory='Bedding'/>} >
+                      <Route path="SleepingBag" element={<ItemSelectorPage itemCategory='Bedding' itemSubCategory='SleepingBag'/>}>
+                        <Route path=":id" element={<ItemDetailPage itemCategory='Bedding' itemSubCategory='SleepingBag'/>}/>
+                      </Route>
+                      <Route path="Mattress" element={<ItemSelectorPage itemCategory='Bedding' itemSubCategory='Mattress'/>}>
+                        <Route path=":id" element={<ItemDetailPage itemCategory='Bedding' itemSubCategory='Mattress'/>}/>
+                      </Route>
+                      <Route path="Hammock" element={<ItemSelectorPage itemCategory='Bedding' itemSubCategory='Hammock'/>}>
+                        <Route path=":id" element={<ItemDetailPage itemCategory='Bedding' itemSubCategory='Hammock'/>}/>
+                      </Route>
                     </Route>
-                    <Route path="Mattress" element={<ItemSelectorPage itemCategory='Bedding' itemSubCategory='Mattress'/>}>
-                      <Route path=":id" element={<ItemDetailPage itemCategory='Bedding' itemSubCategory='Mattress'/>}/>
-                    </Route>
-                    <Route path="Hammock" element={<ItemSelectorPage itemCategory='Bedding' itemSubCategory='Hammock'/>}>
-                      <Route path=":id" element={<ItemDetailPage itemCategory='Bedding' itemSubCategory='Hammock'/>}/>
-                    </Route>
-                  </Route>
 
-                  <Route path="/Account" element={<Account />} />
-                </Routes>
-              </ContentWrapper>
-            </HomeWrapper>
-            <Footer/>
-        </Router>
+                    <Route path="/Account" element={<Account />} />
+                  </Routes>
+                </ContentWrapper>
+              </HomeWrapper>
+              <Footer/>
+
+          </Router>
+        </PreviewSliderContextProvider>
       </React.StrictMode>
     </CartContextProvider>
   </NavContextProvider>

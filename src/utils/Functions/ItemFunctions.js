@@ -12,8 +12,8 @@ import { mattressList } from '../../datas/Bedding/Mattress';
 
 /* Browse a list of item and return the index of an item corresponding to a specific id */
 export function getItemCorrespondingToId (id, itemList) {
-  console.log('function getItemCorrespondingToId');
-  console.log(`id : ${id}`);
+  // console.log('function getItemCorrespondingToId');
+  // console.log(`id : ${id}`);
   let index;
   for (let i = 0; i < itemList.length; i++) {
     if (itemList[i].id === id) {
@@ -64,8 +64,8 @@ export function getItemListShelter (itemSubCategory) {
 
   const selectedItemList = functionMap[itemSubCategory];
   if (selectedItemList) {
-    console.log('selectedItemList');
-    console.log(selectedItemList);
+    // console.log('selectedItemList');
+    // console.log(selectedItemList);
     return selectedItemList;
   } else {
     console.error(`Unknown itemSubCategory: ${itemSubCategory}`);
@@ -82,8 +82,8 @@ export function getItemListBedding (itemSubCategory) {
 
   const selectedItemList = functionMap[itemSubCategory];
   if (selectedItemList) {
-    console.log('selectedItemList');
-    console.log(selectedItemList);
+    // console.log('selectedItemList');
+    // console.log(selectedItemList);
     return selectedItemList;
   } else {
     console.error(`Unknown itemSubCategory: ${itemSubCategory}`);

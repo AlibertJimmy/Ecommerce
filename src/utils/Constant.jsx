@@ -40,3 +40,5 @@ export const PicturePreviewWidthResponsiveMobile = 50;
 export const PicturePreviewHeight = 100;
 export const PicturePreviewHeightResponsiveTablet = 75;
 export const PicturePreviewHeightResponsiveMobile = 50;
+
+export const PicturelayoutButtonWidth = 40;

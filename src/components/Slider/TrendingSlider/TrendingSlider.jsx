@@ -63,8 +63,9 @@ function TrendingSlider ({ itemCategory }) {
     updatescrollingIndex(scrollingIndex + 1);
   };
 
+  /*
   useEffect(() => {
-    console.log(`listIndex : ${scrollingIndex}`);
+    // console.log(`listIndex : ${scrollingIndex}`);
     // Check if the slider has reached an extremity
     if (scrollingIndex === maxScrollingIndex) {
       console.log('Max Right Reached');
@@ -72,6 +73,7 @@ function TrendingSlider ({ itemCategory }) {
       console.log('Min Left Reached');
     }
   }, [scrollingIndex]);
+  */
 
   return (
     <SliderWrapper id='sliderWrapper'>

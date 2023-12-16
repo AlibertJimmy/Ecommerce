@@ -6,7 +6,7 @@ import styled, { css } from 'styled-components';
 
 // Import Colors
 import colors from '../Colors';
-import { previewSliderElementBorderWith, previewSliderElementGap, previewSliderElementHeight, previewSliderElementWidth } from '../Constant';
+import { previewSliderElementGap, previewSliderElementHeight, previewSliderElementWidth } from '../Constant';
 /*
 IllustrationDisplayHeight, IllustrationDisplayHeightResponsiveTablet, IllustrationDisplayHeightResponsiveMobile,
   PicturePreviewWidth, PicturePreviewWidthResponsiveTablet, PicturePreviewWidthResponsiveMobile,
@@ -112,20 +112,16 @@ export const ItemContainer = styled.div`
 
   height: ${previewSliderElementHeight}px;
   width: ${previewSliderElementWidth}px;
-
-  border-radius: 15px;
-  outline: ${previewSliderElementBorderWith}px solid rgba(0, 0, 0, .6);
-  
+    
   cursor: pointer;
-  
-
-  &:hover {
-    outline: 2px solid rgba(0, 0, 0, .6);
-  }
 `;
-
+/*
+outline: ${previewSliderElementBorderWith}px solid rgba(0, 0, 0, .6);
+&:hover {
+  outline: 2px solid rgba(0, 0, 0, .6);
+}
+*/
 //
-
 export const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
