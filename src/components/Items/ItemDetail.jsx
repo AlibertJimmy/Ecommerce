@@ -20,7 +20,7 @@ import {
   ItemDetailContainer,
   ItemPresentation,
   IllustrationContainer, PictureDisplayer, ItemDetailPicture,
-  PictureSelector, PictureSelectionPreviewContainer, PictureSelectionPreview,
+  PictureSelector,
   InfoContainer, ItemDatas, StyledUlInfo,
   QuantitySelectorWrapper, QuantitySelectorContainer, QuantityButton, QuantityP, AddToCartButton,
   DescriptionContainer, StyledUlDescription
@@ -47,6 +47,9 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
   const { id } = useParams();
   const itemList = getItemList(itemCategory, itemSubCategory);
   const index = getItemCorrespondingToId(id, itemList);
+
+  const [image, setImage] = useState(itemList[index].illustrations[0].picture);
+  const [amount, updateAmount] = useState(1);
   /*
   console.log('Item Detail Page');
   console.log(`itemCategory : ${itemCategory}`);
@@ -56,14 +59,6 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
   console.log(`Index : ${index}`);
   console.log(itemList[index]);
   */
-
-  const [image, setImage] = useState(itemList[index].illustrations[0].picture);
-
-  const changeImage = (e) => {
-    setImage(e.target.src);
-  };
-
-  const [amount, updateAmount] = useState(1);
   return (
         <ItemDetailContainer id='pageContainer'>
           <ItemPresentation key={index} id='itemPresentation'>
@@ -74,19 +69,11 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
               {
                 itemList[index].illustrations.length < 1
                   ? <></>
-                  : itemList[index].illustrations.length <= 3
-                    ? <PictureSelector>
-                  {itemList[index].illustrations.map((liComponent, indexIllus) => (
-                    <PictureSelectionPreviewContainer key={`${itemList[index].name}-li-${indexIllus}`}>
-                        <PictureSelectionPreview src={liComponent.picture} alt={`Picture${indexIllus}`} onMouseOver={changeImage}></PictureSelectionPreview>
-                    </PictureSelectionPreviewContainer>
-                  ))}
-                  </PictureSelector>
-                    : <PictureSelector>
+                  : <PictureSelector>
                       {console.log('pictureList passed as props')}
                       {console.log(itemList[index].illustrations)}
-                      <PreviewSlider pictureList={itemList[index].illustrations}/>
-                      </PictureSelector>
+                      <PreviewSlider pictureList={itemList[index].illustrations} setImage={setImage}/>
+                    </PictureSelector>
               }
             </IllustrationContainer>
             <InfoContainer id='infoContainer'>

@@ -20,7 +20,7 @@ import {
 // Import Constants
 import { sliderElementBorderWith, previewSliderElementGap, previewSliderElementWidth } from '../../../utils/Constant';
 
-function PreviewSlider ({ pictureList }) {
+function PreviewSlider ({ pictureList, setImage }) {
   const [scrollingIndex, updatescrollingIndex] = useState(0);
   const maxScrollingIndex = pictureList.length - 4;
 
@@ -64,7 +64,7 @@ function PreviewSlider ({ pictureList }) {
         </button>
       </ButtonContainer>
         <Slider id="slider">
-          <PreviewItem pictureList={pictureList}/>
+          <PreviewItem pictureList={pictureList} setImage={setImage}/>
         </Slider>
         <ButtonContainer>
           <button id='scrollRightButton' onClick={slideRight} style={{ display: scrollingIndex === maxScrollingIndex ? 'none' : undefined }}>
@@ -76,7 +76,8 @@ function PreviewSlider ({ pictureList }) {
 }
 
 PreviewSlider.propTypes = {
-  pictureList: PropTypes.array.isRequired
+  pictureList: PropTypes.array.isRequired,
+  setImage: PropTypes.func.isRequired
 };
 
 export default PreviewSlider;
