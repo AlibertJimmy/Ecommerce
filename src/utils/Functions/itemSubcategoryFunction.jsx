@@ -1,7 +1,7 @@
 // Import Datas
 
 // Shelter
-import { shelterSubCategoryList } from '../../datas/Shelter/SubCCategory';
+import { shelterSubCategoryList } from '../../datas/Shelter/SubCategory';
 import { beddingSubCategoryList } from '../../datas/Bedding/SubCategory';
 
 export function getItemSubCategoryList (itemCategory) {
