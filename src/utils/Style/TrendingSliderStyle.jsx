@@ -9,7 +9,7 @@ import colors from '../Colors';
 
 // Import Constants
 import {
-  trendingSliderElementWidth, trendingSliderElementPictureWidth, trendingSliderElementGap, sliderElementBorderWith
+  trendingSliderElementWidth, trendingSliderElementPictureWidth, trendingSliderElementGap, trendingSliderElementBorderWith
 } from '../Constant';
 /* Trending Slider */
 
@@ -97,13 +97,13 @@ export const ItemContainer = styled.div`
   width: ${trendingSliderElementWidth}px;
 
   border-radius: 15px;
-  outline: ${sliderElementBorderWith}px solid rgba(0, 0, 0, .205);
+  outline: ${trendingSliderElementBorderWith}px solid rgba(0, 0, 0, .205);
   
   cursor: pointer;
   transition: all 0.15s ease-in;
 
   &:hover {
-    outline: ${sliderElementBorderWith}px solid rgba(0, 0, 0, .6);
+    outline: ${trendingSliderElementBorderWith}px solid rgba(0, 0, 0, .6);
   }
 `;
 

@@ -16,14 +16,15 @@ export const topIllustrationHeight = 400;
 export const trendingSliderElementWidth = 285;
 export const trendingSliderElementGap = 15;
 export const trendingSliderElementPictureWidth = 150;
+export const trendingSliderElementBorderWith = 2;
 
 export const trendingSliderMaxItem = 8;
 
 // Preview Slider
 export const previewSliderElementWidth = 150;
+export const previewSliderElementHeight = 150;
 export const previewSliderElementGap = 10;
-
-export const sliderElementBorderWith = 2;
+export const previewSliderElementBorderWith = 1;
 
 // Item Details
 export const IllustrationDisplayWidth = 750;

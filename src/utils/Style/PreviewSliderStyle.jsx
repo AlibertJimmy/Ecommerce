@@ -6,7 +6,7 @@ import styled, { css } from 'styled-components';
 
 // Import Colors
 import colors from '../Colors';
-import { sliderElementBorderWith, previewSliderElementGap, previewSliderElementWidth } from '../Constant';
+import { previewSliderElementBorderWith, previewSliderElementGap, previewSliderElementHeight, previewSliderElementWidth } from '../Constant';
 /*
 IllustrationDisplayHeight, IllustrationDisplayHeightResponsiveTablet, IllustrationDisplayHeightResponsiveMobile,
   PicturePreviewWidth, PicturePreviewWidthResponsiveTablet, PicturePreviewWidthResponsiveMobile,
@@ -14,9 +14,8 @@ IllustrationDisplayHeight, IllustrationDisplayHeightResponsiveTablet, Illustrati
   */
 
 // Import Constants
-const previewHeight = 150;
 
-/* Trending Slider */
+/* Previous Slider */
 
 export const SliderWrapper = styled.div`
   display: flex;
@@ -92,33 +91,33 @@ export const SliderButtonContainer = styled.div`
     width: 120px;
   }
 `;
-
+// scroll-behavior: smooth;
 export const Slider = styled.div`
   display: flex;
   gap: ${previewSliderElementGap}px;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
-  scroll-behavior: smooth;
+  
   position: relative;
   padding: 1rem 0.6rem;
   width: 625px;
 `;
 
-/* Trending Item */
-
+/* Previous Item */
+// transition: all ${sliderAnimationDuration}ms ease-in;
 export const ItemContainer = styled.div`
   display: flex;
   align-items: center;
 
-  height: ${previewHeight}px;
+  height: ${previewSliderElementHeight}px;
   width: ${previewSliderElementWidth}px;
 
   border-radius: 15px;
-  outline: ${sliderElementBorderWith}px solid rgba(0, 0, 0, .6);
+  outline: ${previewSliderElementBorderWith}px solid rgba(0, 0, 0, .6);
   
   cursor: pointer;
-  transition: all 0.15s ease-in;
+  
 
   &:hover {
     outline: 2px solid rgba(0, 0, 0, .6);
@@ -129,8 +128,24 @@ export const ItemContainer = styled.div`
 
 export const ButtonContainer = styled.div`
   display: flex;
-  height:100%;
+  align-items: center;
   width: 40px;
+`;
+
+export const ScrollingButton = styled.button`
+  
+  height: ${previewSliderElementHeight}px;
+  width: 100%;
+
+  border: none;
+  margin:0;
+
+  color: white;
+  background-color: ${colors.marineBlue};
+
+  &:hover{
+    color: ${colors.orangeCustom};
+  }
 `;
 export const PreviewPictureContainer = styled.div`
 
@@ -138,5 +153,5 @@ export const PreviewPictureContainer = styled.div`
 
 export const ArticlePicturePreviewSelection = styled.img`
   max-height: ${previewSliderElementWidth}px;
-  max-width: ${previewHeight}px;
+  max-width: ${previewSliderElementHeight}px;
 `;

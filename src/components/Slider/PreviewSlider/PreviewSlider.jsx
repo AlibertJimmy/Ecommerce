@@ -1,5 +1,5 @@
 // Import React Libraries
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 // import React from 'react';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -14,34 +14,43 @@ import {
   SliderWrapper,
   StyledIcon,
   Slider,
-  ButtonContainer
+  ButtonContainer,
+  ScrollingButton
 } from '../../../utils/Style/PreviewSliderStyle';
 
 // Import Constants
-import { sliderElementBorderWith, previewSliderElementGap, previewSliderElementWidth } from '../../../utils/Constant';
+import { previewSliderElementBorderWith, previewSliderElementGap, previewSliderElementWidth } from '../../../utils/Constant';
 
 function PreviewSlider ({ pictureList, setImage }) {
   const [scrollingIndex, updatescrollingIndex] = useState(0);
-  const maxScrollingIndex = pictureList.length - 4;
+  const sliderRef = useRef(null);
+
+  // Fix the maximum amount of possible scroll
+  let maxScrollingIndex;
+  if (pictureList.length <= 4) {
+    maxScrollingIndex = 0;
+  } else if (pictureList.length > 4) {
+    maxScrollingIndex = pictureList.length - 4;
+  }
 
   useEffect(() => {
     updatescrollingIndex(0);
 
     // Reset the position of the slider
-    const slider = document.getElementById('slider');
+    const slider = sliderRef.current;
     slider.scrollLeft = 0;
   }, []);
 
-  const slideLeft = () => {
-    const slider = document.getElementById('slider');
-    slider.scrollLeft = slider.scrollLeft - (previewSliderElementWidth + previewSliderElementGap + sliderElementBorderWith);
+  const slideLeft = async () => {
+    const slider = sliderRef.current;
+    slider.scrollLeft = slider.scrollLeft - (previewSliderElementWidth + previewSliderElementGap + previewSliderElementBorderWith);
 
     updatescrollingIndex(scrollingIndex - 1);
   };
 
-  const slideRight = () => {
-    const slider = document.getElementById('slider');
-    slider.scrollLeft = slider.scrollLeft + (previewSliderElementWidth + previewSliderElementGap + sliderElementBorderWith);
+  const slideRight = async () => {
+    const slider = sliderRef.current;
+    slider.scrollLeft = slider.scrollLeft + (previewSliderElementWidth + previewSliderElementGap + previewSliderElementBorderWith);
 
     updatescrollingIndex(scrollingIndex + 1);
   };
@@ -58,18 +67,18 @@ function PreviewSlider ({ pictureList, setImage }) {
 
   return (
     <SliderWrapper id='sliderWrapper'>
-      <ButtonContainer>
-        <button id='scrollLeftButton' onClick={slideLeft} style={{ display: scrollingIndex === 0 ? 'none' : undefined }}>
+      <ButtonContainer id='scrollingButtonLeftContainer'>
+        <ScrollingButton id='scrollLeftButton' onClick={slideLeft} style={{ display: scrollingIndex === 0 ? 'none' : undefined }}>
           <StyledIcon icon={faChevronLeft} />
-        </button>
+        </ScrollingButton>
       </ButtonContainer>
-        <Slider id="slider">
+        <Slider id='slider' ref={sliderRef}>
           <PreviewItem pictureList={pictureList} setImage={setImage}/>
         </Slider>
-        <ButtonContainer>
-          <button id='scrollRightButton' onClick={slideRight} style={{ display: scrollingIndex === maxScrollingIndex ? 'none' : undefined }}>
+        <ButtonContainer id='scrollingButtonRightContainer'>
+          <ScrollingButton id='scrollRightButton' onClick={slideRight} style={{ display: scrollingIndex === maxScrollingIndex ? 'none' : undefined }}>
             <StyledIcon icon={faChevronRight} />
-          </button>
+          </ScrollingButton>
         </ButtonContainer>
     </SliderWrapper>
   );

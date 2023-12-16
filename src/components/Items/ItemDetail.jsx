@@ -70,8 +70,6 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
                 itemList[index].illustrations.length < 1
                   ? <></>
                   : <PictureSelector>
-                      {console.log('pictureList passed as props')}
-                      {console.log(itemList[index].illustrations)}
                       <PreviewSlider pictureList={itemList[index].illustrations} setImage={setImage}/>
                     </PictureSelector>
               }
