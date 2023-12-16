@@ -25,6 +25,7 @@ export const previewSliderElementWidth = 150;
 export const previewSliderElementHeight = 150;
 export const previewSliderElementGap = 10;
 export const previewSliderElementBorderWith = 1;
+export const previewSliderAmountOfPictureDisplayed = 4;
 
 // Item Details
 export const IllustrationDisplayWidth = 750;

@@ -6,8 +6,14 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 // Import PropTypes
 import PropTypes from 'prop-types';
 
+// Import Context
+import { usePreviewSliderContext } from '../../../context/PreviewSliderContext';
+
 // Import Components
 import PreviewItem from './PreviewItems';
+
+// Import Function
+import { determineNecessaryScrolling } from '../../../utils/Functions/previewSliderFunction';
 
 // Import Style
 import {
@@ -22,6 +28,7 @@ import {
 import { previewSliderElementBorderWith, previewSliderElementGap, previewSliderElementWidth } from '../../../utils/Constant';
 
 function PreviewSlider ({ pictureList, setImage }) {
+  const { pictureToDisplayIndex, scopeStart, setScopeStart, scopeEnd, setScopeEnd } = usePreviewSliderContext();
   const [scrollingIndex, updatescrollingIndex] = useState(0);
   const sliderRef = useRef(null);
 
@@ -46,6 +53,8 @@ function PreviewSlider ({ pictureList, setImage }) {
     slider.scrollLeft = slider.scrollLeft - (previewSliderElementWidth + previewSliderElementGap + previewSliderElementBorderWith);
 
     updatescrollingIndex(scrollingIndex - 1);
+    setScopeStart(scopeStart - 1);
+    setScopeEnd(scopeEnd - 1);
   };
 
   const slideRight = async () => {
@@ -53,6 +62,8 @@ function PreviewSlider ({ pictureList, setImage }) {
     slider.scrollLeft = slider.scrollLeft + (previewSliderElementWidth + previewSliderElementGap + previewSliderElementBorderWith);
 
     updatescrollingIndex(scrollingIndex + 1);
+    setScopeStart(scopeStart + 1);
+    setScopeEnd(scopeEnd + 1);
   };
 
   useEffect(() => {
@@ -64,6 +75,15 @@ function PreviewSlider ({ pictureList, setImage }) {
       console.log('Min Left Reached');
     }
   }, [scrollingIndex]);
+
+  useEffect(() => {
+    const scrollingAction = determineNecessaryScrolling(pictureToDisplayIndex, scopeStart, scopeEnd);
+    if (scrollingAction === 'scrollRight') {
+      slideRight();
+    } else if (scrollingAction === 'scrollLeft') {
+      slideLeft();
+    }
+  }, [pictureToDisplayIndex]);
 
   return (
     <SliderWrapper id='sliderWrapper'>

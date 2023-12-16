@@ -4,11 +4,16 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 // Import PropTypes
 import PropTypes from 'prop-types';
 
+// Import Constants
+import { previewSliderAmountOfPictureDisplayed } from '../utils/Constant';
+
 // Nav Context
 const PreviewSliderContext = createContext();
 
 export const PreviewSliderContextProvider = ({ children }) => {
   const [pictureToDisplayIndex, setPictureToDisplayIndex] = useState(0);
+  const [scopeStart, setScopeStart] = useState(0);
+  const [scopeEnd, setScopeEnd] = useState(previewSliderAmountOfPictureDisplayed - 1);
 
   useEffect(() => {
     const json = localStorage.getItem('pictureToDisplayIndex');
@@ -25,7 +30,11 @@ export const PreviewSliderContextProvider = ({ children }) => {
 
   const contextValue = {
     pictureToDisplayIndex,
-    setPictureToDisplayIndex
+    setPictureToDisplayIndex,
+    scopeStart,
+    setScopeStart,
+    scopeEnd,
+    setScopeEnd
   };
 
   return <PreviewSliderContext.Provider value={contextValue}>{children}</PreviewSliderContext.Provider>;
