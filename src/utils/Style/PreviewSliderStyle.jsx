@@ -101,7 +101,7 @@ export const Slider = styled.div`
   
   position: relative;
   padding: 1rem 0.6rem;
-  width: 625px;
+  width: 630px;
 `;
 
 /* Previous Item */
