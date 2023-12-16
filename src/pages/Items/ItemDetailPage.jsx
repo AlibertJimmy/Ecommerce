@@ -25,8 +25,7 @@ function ItemDetailPage ({ itemCategory, itemSubCategory }) {
 
 ItemDetailPage.propTypes = {
   itemCategory: PropTypes.string.isRequired,
-  itemSubCategory: PropTypes.string.isRequired,
-  index: PropTypes.number.isRequired
+  itemSubCategory: PropTypes.string.isRequired
 };
 
 export default ItemDetailPage;

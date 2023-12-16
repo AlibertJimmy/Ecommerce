@@ -11,6 +11,7 @@ import { useCart } from '../../context';
 import { usePreviewSliderContext } from '../../context/PreviewSliderContext';
 
 // Import Components
+import PreviewSlider from '../Slider/PreviewSlider/PreviewSlider';
 
 // Import Functions
 import { addToCart } from '../../utils/CartFunctions/Functions';
@@ -30,7 +31,6 @@ import {
 
 // Import Colors
 import colors from '../../utils/Colors';
-import PreviewSlider from '../Slider/PreviewSlider/PreviewSlider';
 import { ButtonContainer, ScrollingButton, StyledIcon } from '../../utils/Style/PreviewSliderStyle';
 
 function increaseSelection (amount, updateAmount) {
