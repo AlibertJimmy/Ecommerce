@@ -20,7 +20,7 @@ export const ItemSelectorContainer = styled.div`
 
   @media (max-width:640px) {
     grid-template-columns: 1fr 1fr;
-}
+  }
 
   @media (max-width:${responsiveWidthMobile}px) {
         grid-template-columns: 1fr;

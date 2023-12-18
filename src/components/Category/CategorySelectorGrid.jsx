@@ -16,7 +16,6 @@ import { responsiveWidthMobile, responsiveWidthTablet } from '../../utils/Consta
 
 const Container = styled.div`
   max-width: 1200px;
-  margin: 50px auto;
   padding: 10px 19px;
   z-index: 1;
 `;

@@ -16,24 +16,39 @@ import styled from 'styled-components';
 import colors from '../../utils/Colors';
 
 // Import Constants
-import { responsiveWidthMobile, responsiveWidthTablet } from '../../utils/Constant';
+import { responsiveWidthMobile, responsiveWidthTablet, verticalMargin } from '../../utils/Constant';
 import { scrollToTop } from '../../utils/Functions';
 
 const WhatsNewWrapper = styled.div`
-  margin: 0 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: ${verticalMargin}px;
 `;
 
 const PageContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 30px;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+
+  @media (max-width:${responsiveWidthTablet}px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: auto;
+  }
+
+  @media (max-width:640px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width:${responsiveWidthMobile}px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const StyledTitle = styled.h1`
   font-family: sans-serif;
   color: ${colors.orangeCustom};
-  margin: 0;
+  margin-left: 1%;
 `;
 
 const ItemPresentation = styled.div`
@@ -41,8 +56,6 @@ const ItemPresentation = styled.div`
   box-shadow: 5px 5px 10px 5px rgba(0.1, 0, 0.1, 0.2);
   display:flex;
   flex-direction: column;
-  flex: 0 0 calc(23% - 10px);
-  width: 250px;
   height: 250px;
   margin: 10px 16px;
 

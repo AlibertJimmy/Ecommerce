@@ -22,7 +22,6 @@ export const PageWrapper = styled.div`
 
   @media (max-width: ${responsiveWidthMobile}px){
     margin: ${headerHeight * 2 + verticalMargin}px ${horizontalMarginMobile}px ${verticalMargin}px ${horizontalMarginMobile}px;
-
   }
 `;
 

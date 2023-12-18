@@ -10,7 +10,6 @@ import { responsiveWidthMobile, responsiveWidthTablet } from '../../utils/Consta
 export const SubCategorySelectorContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 0 30px;
   justify-content: center;
 `;
 
