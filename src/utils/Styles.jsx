@@ -10,7 +10,6 @@ export const PageWrapper = styled.div`
   margin: 120px 20px 2% 20px;
   min-height: 400px;
   border: 1px solid green;
-  width: 100%;
 `;
 
 export const ComponentBorder = css`
