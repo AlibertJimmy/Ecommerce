@@ -1,5 +1,7 @@
 // Import React Component
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 // Import PropStyles
 import PropTypes from 'prop-types';
@@ -7,12 +9,10 @@ import PropTypes from 'prop-types';
 // Import Function
 import { scrollToTop } from '../../utils/Functions';
 
-// Import Assets
-import ArrowDown from '../../assets/Functionnal_Icon/arrowDown.png';
-
 // Import Style
 import styled from 'styled-components';
-import { StyledLinkDropDown, StyledSpanHeader } from '../../utils/Style/GlobalStyle';
+import { StyledLinkDropDown } from '../../utils/Style/GlobalStyle';
+import { StyledSpanHeader } from '../../utils/Style/DropDownStyle';
 
 // Styled components
 const DropdownContainer = styled.div`
@@ -39,13 +39,15 @@ const DropdownItem = styled.div`
   }
 `;
 
-const DropDownArrow = styled.img`
-  width: 10px;
-  height:10px;
-  padding:0;
-  margin:0;
-`;
+const DropDownStyledIcon = styled(FontAwesomeIcon)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+  width: 10px;
+  
+  margin-left: 5px;
+`;
 function Dropdown ({ dropDownTitle, options, links, handleCloseBurger }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -57,7 +59,7 @@ function Dropdown ({ dropDownTitle, options, links, handleCloseBurger }) {
 
   return (
     <DropdownContainer onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)} id='dropDown'>
-      <StyledSpanHeader>{dropDownTitle}</StyledSpanHeader><DropDownArrow src={ArrowDown} alt="ArrowDown" style={{ paddingLeft: '5px' }}/>
+      <StyledSpanHeader>{dropDownTitle}<DropDownStyledIcon icon={faChevronDown} /></StyledSpanHeader>
       <DropdownContent open={isOpen}>
         {options.map((option, index) => (
           <DropdownItem key={index} >

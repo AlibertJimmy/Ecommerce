@@ -23,7 +23,7 @@ export function getItemCorrespondingToId (id, itemList) {
       index = i;
     }
   }
-  console.log(`index : ${index}`);
+  // console.log(`index : ${index}`);
   return index;
 };
 

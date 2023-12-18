@@ -11,7 +11,7 @@ import colors from '../Colors';
 // Import Constants
 import { responsiveWidthTablet } from '../Constant';
 
-const commonWriting = css`
+export const commonWriting = css`
   font-family:  sans-serif;
   font-weight:bold;
 
@@ -27,10 +27,6 @@ const commonLink = css`
   &:hover {
     color: ${colors.linkHover};
   }
-`;
-
-export const StyledSpanHeader = styled.span`
-  ${commonWriting};
 `;
 
 export const StyledLink = styled(Link)`
