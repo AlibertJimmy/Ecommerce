@@ -10,8 +10,11 @@ import WhatsNewDisplay from '../../components/NewArticleDisplay/NewArticleDispla
 import { PageWrapper } from '../../utils/Styles';
 
 function Home () {
+  const screenHeight = window.innerHeight;
+  const screenWidth = window.innerWidth;
   return (
       <PageWrapper>
+        <div>{`screenWidth : ${screenWidth} |screenHeight : ${screenHeight} `}</div>
         <CategorySelectorGrid/>
         <WhatsNewDisplay/>
       </PageWrapper>
