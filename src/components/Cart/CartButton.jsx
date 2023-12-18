@@ -46,6 +46,8 @@ const OpenCartButton = styled.button`
 
     ${props => (props.amount > 0
     ? `
+    display: flex;
+    justify-content: center;
     content: '${props.amount}';
     background-color: ${colors.orangeCustom};;
     `
