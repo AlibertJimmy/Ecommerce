@@ -10,6 +10,9 @@ import { hammockList } from '../../datas/Bedding/Hammock';
 import { sleepingBagList } from '../../datas/Bedding/SleepingBag';
 import { mattressList } from '../../datas/Bedding/Mattress';
 
+// Import Constants
+import { responsiveWidthTablet } from '../Constant';
+
 /* Browse a list of item and return the index of an item corresponding to a specific id */
 export function getItemCorrespondingToId (id, itemList) {
   // console.log('function getItemCorrespondingToId');
@@ -89,3 +92,13 @@ export function getItemListBedding (itemSubCategory) {
     console.error(`Unknown itemSubCategory: ${itemSubCategory}`);
   }
 };
+
+export function displayPreviewSlider (amountOfPictureAvailable, screenWidth) {
+  let previewSliderDisplay;
+  if ((amountOfPictureAvailable <= 1) || (screenWidth <= responsiveWidthTablet)) {
+    previewSliderDisplay = false;
+  } else {
+    return true;
+  }
+  return previewSliderDisplay;
+}

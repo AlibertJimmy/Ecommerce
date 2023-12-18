@@ -78,8 +78,6 @@ export const PictureDisplayer = styled.div`
     width: ${IllustrationDisplayWidthResponsiveMobile}px;
     height: ${IllustrationDisplayHeightResponsiveMobile}px;
   }
-
-  border: 1px solid blue;
 `;
 
 export const ItemDetailPicture = styled.img`
@@ -96,8 +94,6 @@ export const ItemDetailPicture = styled.img`
     width: ${IllustrationDisplayWidthResponsiveMobile - PicturelayoutButtonWidth * 2}px;
     height: ${IllustrationDisplayHeightResponsiveMobile}px;
   }
-
-  border: 1px solid red;
 `;
 
 export const PictureSelector = styled.div`

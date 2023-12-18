@@ -15,7 +15,7 @@ import PreviewSlider from '../Slider/PreviewSlider/PreviewSlider';
 
 // Import Functions
 import { addToCart } from '../../utils/CartFunctions/Functions';
-import { getItemCorrespondingToId, getItemList } from '../../utils/Functions/ItemFunctions';
+import { displayPreviewSlider, getItemCorrespondingToId, getItemList } from '../../utils/Functions/ItemFunctions';
 
 // Import Style
 import { StyledIcon, StyledTitleH1 } from '../../utils/Style/GlobalStyle';
@@ -54,6 +54,7 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
 
   const [image, setImage] = useState(itemList[index].illustrations[0].picture);
   const [amount, updateAmount] = useState(1);
+  const [screenWidth, updatescreenWidth] = useState(window.innerWidth);
 
   /*
   console.log('Item Detail Page');
@@ -74,15 +75,11 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
 
   useEffect(() => {
     setPictureToDisplayIndex(0);
-    console.log(`pictureToDisplayIndex : ${pictureToDisplayIndex}`);
+    updatescreenWidth(window.innerWidth);
   }, []);
 
   useEffect(() => {
-    console.log('second useEffect');
-    console.log(`pictureToDisplayIndex : ${pictureToDisplayIndex}`);
-
     if (pictureToDisplayIndex <= itemList[index].illustrations.length - 1) {
-      console.log('different from undefined');
       console.log(itemList[index].illustrations[pictureToDisplayIndex].picture);
       setImage(itemList[index].illustrations[pictureToDisplayIndex].picture);
     }
@@ -112,7 +109,7 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
                 </ButtonContainer>
               </PictureDisplayer>
               {
-                itemList[index].illustrations.length <= 1
+                displayPreviewSlider(itemList[index].illustrations.length, screenWidth) === false
                   ? <></>
                   : <PictureSelector>
                       <PreviewSlider pictureList={itemList[index].illustrations} setImage={setImage}/>

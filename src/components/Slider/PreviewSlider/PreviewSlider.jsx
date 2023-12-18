@@ -42,7 +42,6 @@ function PreviewSlider ({ pictureList, setImage }) {
 
   useEffect(() => {
     updatescrollingIndex(0);
-
     // Reset the position of the slider
     const slider = sliderRef.current;
     slider.scrollLeft = 0;

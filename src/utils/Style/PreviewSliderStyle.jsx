@@ -3,16 +3,11 @@ import styled from 'styled-components';
 
 // Import Colors
 import colors from '../Colors';
-import { previewSliderElementGap, previewSliderElementHeight, previewSliderElementWidth } from '../Constant';
-/*
-IllustrationDisplayHeight, IllustrationDisplayHeightResponsiveTablet, IllustrationDisplayHeightResponsiveMobile,
-  PicturePreviewWidth, PicturePreviewWidthResponsiveTablet, PicturePreviewWidthResponsiveMobile,
-  PicturePreviewHeight, PicturePreviewHeightResponsiveTablet, PicturePreviewHeightResponsiveMobile,
-  */
+import { previewSliderElementGap, previewSliderElementHeight, previewSliderElementWidth, responsiveWidthTablet } from '../Constant';
 
 // Import Constants
 
-/* Previous Slider */
+/* Preview Slider */
 
 export const SliderWrapper = styled.div`
   display: flex;
@@ -21,27 +16,6 @@ export const SliderWrapper = styled.div`
   justify-content: space-between;
 
 `;
-/*
-  @media (max-width: ${responsiveWidthTablet}px){
-    max-width: ${IllustrationDisplayWidthResponsiveTablet}px;
-  }
-
-  @media (max-width: ${responsiveWidthMobile}px){
-    max-width: ${IllustrationDisplayWidthResponsiveMobile}px;
-  }
-
-  @media (max-width: 1242px){
-    max-width: 900px;
-  }
-
-  @media (max-width: 941px){
-    max-width: 600px;
-  }
-
-  @media (max-width: 641px){
-    max-width: 300px;
-  }
-  */
 
 export const SliderHeaderContainer = styled.div`
   display: flex;
@@ -71,7 +45,7 @@ export const SliderButtonContainer = styled.div`
     width: 120px;
   }
 `;
-// scroll-behavior: smooth;
+
 export const Slider = styled.div`
   display: flex;
   gap: ${previewSliderElementGap}px;
@@ -85,7 +59,6 @@ export const Slider = styled.div`
 `;
 
 /* Previous Item */
-// transition: all ${sliderAnimationDuration}ms ease-in;
 export const ItemContainer = styled.div`
   display: flex;
   align-items: center;
@@ -101,11 +74,13 @@ export const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
   width: 40px;
+
+  
 `;
 
 export const ScrollingButton = styled.button`
   
-  height: ${previewSliderElementHeight}px;
+  height: 80px;
   width: 100%;
 
   border: none;
@@ -116,6 +91,10 @@ export const ScrollingButton = styled.button`
 
   &:hover{
     color: ${colors.orangeCustom};
+  }
+
+  @media (max-width: ${responsiveWidthTablet}px){
+    margin: 2px;
   }
 `;
 export const PreviewPictureContainer = styled.div`
