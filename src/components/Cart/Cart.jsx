@@ -81,9 +81,16 @@ const StyledP = styled.p`
     margin: 10px 10px 10px 5px;
 `;
 
+const CartImageContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+`;
+
 const CartItemImagePreview = styled.img`
-    height: 100px;
-    width: 100px;
+    max-height: 100px;
+    max-width: 100px;
 `;
 
 const QuantitySelectorWrapper = styled.div`
@@ -183,7 +190,9 @@ function Cart () {
               <div>
                 {cart.map(({ itemProperty, amount }, index) => (
                   <CartContentContainer key={`${itemProperty.name}-${index}`}>
-                    <CartItemImagePreview src={itemProperty.illustrations[0].picture}></CartItemImagePreview>
+                    <CartImageContainer>
+                      <CartItemImagePreview src={itemProperty.illustrations[0].picture}></CartItemImagePreview>
+                    </CartImageContainer>
                     <CartItemDataDisplay>
                       <TitleAndPrice>
                         <StyledP>{itemProperty.name}</StyledP>
