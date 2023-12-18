@@ -19,8 +19,6 @@ export const StyledFooter = styled.div`
     justify-content: space-between;
 
     color: ${colors.link};
-
-    border: 1px solid red;
 `;
 
 export const StyledText = styled.div`

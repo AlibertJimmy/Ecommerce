@@ -1,12 +1,20 @@
 // Export Constants
 export const borderWidth = 0;
 
+// Responsive Configuration
 export const responsiveWidthMobile = 450;
 export const responsiveWidthTablet = 950;
 
+// General Layout
 export const headerHeight = 50;
 export const footerHeight = 50;
 
+export const verticalMargin = 20;
+
+export const horizontalMargin = 20;
+export const horizontalMarginTablet = 15;
+export const horizontalMarginMobile = 10;
+// ?
 export const profilePicSize = 400;
 export const profilePicSizeResponsive = 200;
 

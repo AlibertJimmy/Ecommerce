@@ -5,20 +5,25 @@ import styled, { css } from 'styled-components';
 import colors from './Colors';
 
 // Import Constants
-import { borderWidth, responsiveWidthMobile, responsiveWidthTablet } from './Constant';
+import {
+  borderWidth,
+  headerHeight, footerHeight, verticalMargin, horizontalMargin, horizontalMarginTablet, horizontalMarginMobile,
+  responsiveWidthMobile, responsiveWidthTablet
+} from './Constant';
 
 export const PageWrapper = styled.div`
 
-  margin: 120px 20px 2% 20px;
-  min-height: 400px;
-  border: 1px solid green;
+  margin: ${headerHeight * 2 + verticalMargin}px ${horizontalMargin}px ${verticalMargin}px ${horizontalMargin}px;
+  min-height: ${window.innerHeight - (headerHeight * 2 + verticalMargin * 2 + footerHeight)}px;
+  border: 0px solid green;
 
   @media (max-width: ${responsiveWidthTablet}px){
-    margin: 120px 15px 2% 15px;
+    margin: ${headerHeight * 2 + verticalMargin}px ${horizontalMarginTablet}px ${verticalMargin}px ${horizontalMarginTablet}px;
   }
 
   @media (max-width: ${responsiveWidthMobile}px){
-    margin: 120px 10px 2% 10px;
+    margin: ${headerHeight * 2 + verticalMargin}px ${horizontalMarginMobile}px ${verticalMargin}px ${horizontalMarginMobile}px;
+
   }
 `;
 
