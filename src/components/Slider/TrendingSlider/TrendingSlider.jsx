@@ -1,6 +1,5 @@
 // Import React Libraries
 import React, { useEffect, useState } from 'react';
-// import React from 'react';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 // Import PropTypes
@@ -13,11 +12,11 @@ import TrendingItem from './TrendingItems';
 import { getMaxScrollingIndex, getTrendingItem } from '../../../utils/Functions/trendingItemFunction';
 
 // Import Style
-import { StyledTitleH1 } from '../../../utils/Style/GlobalStyle';
+import { StyledIcon, StyledTitleH1 } from '../../../utils/Style/GlobalStyle';
 import {
   SliderWrapper,
   SliderHeaderContainer,
-  SliderButtonWrapper, SliderButtonContainer, StyledIcon,
+  SliderButtonWrapper, SliderButtonContainer,
   Slider
 } from '../../../utils/Style/TrendingSliderStyle';
 

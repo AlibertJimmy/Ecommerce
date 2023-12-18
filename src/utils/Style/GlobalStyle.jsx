@@ -1,5 +1,6 @@
 // Import React Libraries
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // Import Style
 import styled, { css } from 'styled-components';
@@ -54,4 +55,19 @@ export const StyledTitleH2 = styled.h2`
   font-family: sans-serif;
   font-size: 20px;
   font-weight: 200;
+`;
+
+export const CommonLinksIcon = css`
+  width: 25px;
+  height: 25px;
+  color: white;
+
+  &:hover{
+      color: ${colors.orangeCustom};
+  }
+
+`;
+
+export const StyledIcon = styled(FontAwesomeIcon)`
+  ${CommonLinksIcon};
 `;

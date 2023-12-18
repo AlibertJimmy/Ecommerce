@@ -16,9 +16,9 @@ import PreviewItem from './PreviewItems';
 import { determineNecessaryScrolling, displayLeftButton, displayRightButton } from '../../../utils/Functions/previewSliderFunction';
 
 // Import Style
+import { StyledIcon } from '../../../utils/Style/GlobalStyle';
 import {
   SliderWrapper,
-  StyledIcon,
   Slider,
   ButtonContainer,
   ScrollingButton

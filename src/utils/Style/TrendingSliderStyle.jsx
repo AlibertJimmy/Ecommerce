@@ -1,8 +1,5 @@
-// Import React Libraries
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 // Import Style
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 // Import Colors
 import colors from '../Colors';
@@ -37,16 +34,6 @@ export const SliderHeaderContainer = styled.div`
   align-items: center;
 `;
 
-export const CommonLinksIcon = css`
-  width: 25px;
-  height: 25px;
-
-`;
-
-export const StyledIcon = styled(FontAwesomeIcon)`
-  ${CommonLinksIcon};
-`;
-
 export const SliderButtonWrapper = styled.div`
   display: flex;
   padding: 2px;
@@ -59,13 +46,6 @@ export const SliderButtonWrapper = styled.div`
     width: 3rem;
     cursor: pointer;
     border-radius: 15px;
-
-    &:hover{
-
-      ${StyledIcon}{
-        color: ${colors.orangeCustom};
-      } 
-    }
 
     @media (max-width: 641px){
       margin: 2px;

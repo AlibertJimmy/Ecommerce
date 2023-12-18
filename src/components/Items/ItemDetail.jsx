@@ -18,7 +18,8 @@ import { addToCart } from '../../utils/CartFunctions/Functions';
 import { getItemCorrespondingToId, getItemList } from '../../utils/Functions/ItemFunctions';
 
 // Import Style
-import { StyledTitleH1 } from '../../utils/Style/GlobalStyle';
+import { StyledIcon, StyledTitleH1 } from '../../utils/Style/GlobalStyle';
+import { ButtonContainer, ScrollingButton } from '../../utils/Style/PreviewSliderStyle';
 import {
   ItemDetailContainer,
   ItemPresentation,
@@ -31,7 +32,6 @@ import {
 
 // Import Colors
 import colors from '../../utils/Colors';
-import { ButtonContainer, ScrollingButton, StyledIcon } from '../../utils/Style/PreviewSliderStyle';
 
 function increaseSelection (amount, updateAmount) {
   amount = amount + 1;

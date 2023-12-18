@@ -1,11 +1,12 @@
 // Import React Libraries
 import React from 'react';
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 // Import Functions
 import { scrollToTop } from '../../utils/Functions';
 
 // Import Assets
-import ArrowUp from '../../assets/Functionnal_Icon/arrowUp.png';
+// import ArrowUp from '../../assets/Functionnal_Icon/arrowUp.png';
 
 // Import Style
 import styled from 'styled-components';
@@ -16,6 +17,7 @@ import colors from '../../utils/Colors';
 
 // Import Constants
 import { footerHeight } from '../../utils/Constant';
+import { StyledIcon } from '../../utils/Style/GlobalStyle';
 
 const StyledFooter = styled.div`
     ${commonHeaderFooter};
@@ -35,6 +37,7 @@ const StyledFooter = styled.div`
         padding: 10px 20px;
         cursor: pointer;
       }
+    border: 1px solid red;
 `;
 
 const StyledText = styled.div`
@@ -61,7 +64,7 @@ function Footer () {
         </StyledText>
         <div>
             <button id="goToTopButton" onClick={handleGoToTop}>
-            <img src={ArrowUp} alt='arrowUp' style={{ height: '20px', width: '20px' }}></img>
+    <StyledIcon icon={faChevronUp}/>
             </button>
         </div>
     </StyledFooter>
