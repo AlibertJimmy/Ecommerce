@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 // Import Component
 import Navbar from '../Nav/Navbar';
-import NavItems from '../Nav/NavItems';
+// import NavItems from '../Nav/NavItems';
 import Logo from '../Nav/Logo/Logo';
 
 // Import Function
@@ -40,7 +40,7 @@ const StyledHeader = styled.div`
 const LogoDiv = styled.div`
   margin-left: ${sideMargin}px;
 `;
-const NavCartDiv = styled.div`
+const CartDiv = styled.div`
   display:flex;
   align-items: center;
   margin-right: ${sideMargin}px;
@@ -50,31 +50,24 @@ const NavBarDiv = styled.div`
   margin-right: ${sideMargin}px;
 `;
 
-const NavItemDiv = styled.div`
-  margin-left: ${sideMargin}px;
-`;
-
 function Header () {
   function handleOnClick () {
     scrollToTop();
   }
 
   return (
-    <HeaderWrapper>
-      <StyledHeader>
-        <LogoDiv id='#LogoDiv'>
+    <HeaderWrapper id='headerWrapper'>
+      <StyledHeader id='styledHeader'>
+        <LogoDiv id='logoDiv'>
           <Link to='/' onClick={handleOnClick}><Logo/></Link>
-        </LogoDiv>
-        <NavCartDiv>
-          <NavBarDiv>
+      </LogoDiv>
+        <NavBarDiv id='navBarContainer'>
             <Navbar/>
-          </NavBarDiv>
+        </NavBarDiv>
+        <CartDiv id='cartContainer'>
           <CartButton />
-        </NavCartDiv>
+        </CartDiv>
       </StyledHeader>
-      <NavItemDiv>
-        <NavItems/>
-      </NavItemDiv>
     </HeaderWrapper>
   );
 }

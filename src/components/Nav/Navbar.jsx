@@ -50,7 +50,7 @@ function Navbar () {
   }, []);
 
   return (
-        <StyledNav isScrolled={isScrolled} id='#NavBar'>
+        <StyledNav isScrolled={isScrolled} id='navBar'>
             <Burger/>
         </StyledNav>
   );

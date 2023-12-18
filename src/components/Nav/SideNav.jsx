@@ -66,11 +66,12 @@ function SideNav () {
   function handleLinkClick () {
     setOpenBurgerButton(false);
     scrollToTop();
+    console.log('handleLinkClick');
   }
 
   return (
-    <div id='#SideNav'>
-      <StyledUl open={openBurgerButton}>
+    <div id='sideNav'>
+      <StyledUl open={openBurgerButton} id='sideul'>
             <StyledLi><StyledLink to="/" onClick={handleLinkClick}>Home</StyledLink></StyledLi>
             <StyledLi><StyledLink to="/Account" onClick={handleLinkClick}>Account</StyledLink></StyledLi>
         </StyledUl>

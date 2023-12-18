@@ -8,6 +8,7 @@ import { commonWriting } from './GlobalStyle';
 export const DropDownSpan = styled.span`
   ${commonWriting};
   display: flex;
+  border: 1px solid red;
 `;
 
 export const DropdownContainer = styled.div`
@@ -32,6 +33,7 @@ export const DropdownItem = styled.div`
   &:hover {
     background-color: #f1f1f1;
   }
+  border: 1px solid green;
 `;
 
 export const DropDownStyledIcon = styled(FontAwesomeIcon)`

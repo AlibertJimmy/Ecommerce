@@ -20,6 +20,8 @@ import { responsiveWidthTablet } from '../../utils/Constant';
 
 const MenuWrapper = styled.div`
   padding:0;
+  border: 1px solid yellow;
+  width: 100%;
 
 `;
 
@@ -89,9 +91,12 @@ function Burger () {
       /*
       console.log('burgerRef.current');
       console.log(burgerRef.current);
-      console.log('burgerRef.current.contains(event.target)');
-      console.log(burgerRef.current.contains(event.target));
+      console.log('!burgerRef.current.contains(event.target)');
+      console.log(!burgerRef.current.contains(event.target));
+      console.log('event.target');
+      console.log(event.target);
       */
+
       if (burgerRef.current && !burgerRef.current.contains(event.target)) {
         setOpenBurgerButton(false);
       }
@@ -107,16 +112,20 @@ function Burger () {
   }, []);
 
   return (
-        <MenuWrapper ref={burgerRef} id='MenuWrapper'>
-            <StyledBurger open={openBurgerButton} onClick={() => setOpenBurgerButton(!openBurgerButton)}>
-                <div />
-                <div />
-                <div />
-            </StyledBurger>
-            <SideNav openBurgerButton={openBurgerButton} handleCloseBurger={() => setOpenBurgerButton(false)}/>
-            <NavItems openBurgerButton={openBurgerButton} handleCloseBurger={() => setOpenBurgerButton(false)}/>
-        </MenuWrapper>
+    <MenuWrapper ref={burgerRef} id='menuWrapper'>
+        <StyledBurger open={openBurgerButton} onClick={() => setOpenBurgerButton(!openBurgerButton)}>
+            <div />
+            <div />
+            <div />
+        </StyledBurger>
+        <SideNav openBurgerButton={openBurgerButton} handleCloseBurger={() => setOpenBurgerButton(false)}/>
+        <NavItems openBurgerButton={openBurgerButton} handleCloseBurger={() => setOpenBurgerButton(false)}/>
+    </MenuWrapper>
   );
 }
 
 export default Burger;
+/*
+<SideNav openBurgerButton={openBurgerButton} handleCloseBurger={() => setOpenBurgerButton(false)}/>
+            <NavItems openBurgerButton={openBurgerButton} handleCloseBurger={() => setOpenBurgerButton(false)}/>
+            */

@@ -59,6 +59,10 @@ const StyledUl = styled.ul`
 const StyledLi = styled.li`
 
 `;
+
+const ItemSideNav = styled.div`
+    border: 1px solid red;
+`;
 function NavItems () {
   const { openBurgerButton, setOpenBurgerButton } = useNav();
 
@@ -69,18 +73,14 @@ function NavItems () {
   const dropDownTitle2 = 'Bedding';
   const links2 = ['Bedding/SleepingBag', 'Bedding/Mattress', 'Bedding/Hammock'];
   const linksRender2 = ['SleepingBag', 'Mattress', 'Hammock'];
-  /*
-  console.log('NavItems');
-  console.log(`openBurgerButton : ${openBurgerButton}`);
-  */
 
   return (
-    <div id='#ItemNav'>
-      <StyledUl open={openBurgerButton}>
+    <ItemSideNav id='itemSideNav'>
+      <StyledUl open={openBurgerButton} id='itemUl'>
             <StyledLi><Dropdown dropDownTitle ={dropDownTitle1} options={linksRender1} links={links1} handleCloseBurger={() => setOpenBurgerButton(false)}/></StyledLi>
             <StyledLi><Dropdown dropDownTitle ={dropDownTitle2} options={linksRender2} links={links2} handleCloseBurger={() => setOpenBurgerButton(false)}/></StyledLi>
         </StyledUl>
-    </div>
+    </ItemSideNav>
 
   );
 }
