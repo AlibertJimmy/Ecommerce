@@ -68,7 +68,7 @@ export const SliderButtonContainer = styled.div`
 export const Slider = styled.div`
   display: flex;
   gap: ${trendingSliderElementGap}px;
-  overflow-x: scroll;
+  overflow-x: hidden;
   overflow-y: hidden;
   white-space: nowrap;
   position: relative;

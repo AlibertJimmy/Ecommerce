@@ -14,11 +14,6 @@ export const verticalMargin = 20;
 export const horizontalMargin = 20;
 export const horizontalMarginTablet = 15;
 export const horizontalMarginMobile = 10;
-// ?
-export const profilePicSize = 400;
-export const profilePicSizeResponsive = 200;
-
-export const topIllustrationHeight = 400;
 
 // Trending Slider
 export const trendingSliderElementWidth = 285;
