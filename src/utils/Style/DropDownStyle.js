@@ -32,7 +32,6 @@ export const DropdownItem = styled.div`
   &:hover {
     background-color: #f1f1f1;
   }
-  border: 1px solid green;
 `;
 
 export const DropDownStyledIcon = styled(FontAwesomeIcon)`

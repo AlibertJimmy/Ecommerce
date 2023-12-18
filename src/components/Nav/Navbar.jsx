@@ -1,5 +1,5 @@
 // Import React Libraries
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 // Import PropTypes
 import PropTypes from 'prop-types';
@@ -26,31 +26,8 @@ const StyledNav = styled(BaseNav)`
 `;
 
 function Navbar () {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const scrollThreshold = 100;
-
-      // Check if the scroll position is beyond the threshold
-      if (scrollPosition > scrollThreshold) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    document.addEventListener('scroll', handleScroll);
-
-    // Clean up the event listener on component unmount
-    return () => {
-      document.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
   return (
-        <StyledNav isScrolled={isScrolled}>
+        <StyledNav>
             <Burger/>
         </StyledNav>
   );
