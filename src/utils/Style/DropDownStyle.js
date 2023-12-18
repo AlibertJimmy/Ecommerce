@@ -8,7 +8,6 @@ import { commonWriting } from './GlobalStyle';
 export const DropDownSpan = styled.span`
   ${commonWriting};
   display: flex;
-  border: 1px solid red;
 `;
 
 export const DropdownContainer = styled.div`

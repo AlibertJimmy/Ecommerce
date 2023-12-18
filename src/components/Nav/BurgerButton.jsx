@@ -20,8 +20,8 @@ import { responsiveWidthTablet } from '../../utils/Constant';
 
 const MenuWrapper = styled.div`
   padding:0;
-  border: 1px solid yellow;
   width: 100%;
+  background-color: transparent;
 
 `;
 

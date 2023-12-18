@@ -39,15 +39,18 @@ const StyledHeader = styled.div`
 
 const LogoDiv = styled.div`
   margin-left: ${sideMargin}px;
+  position: fixed;
 `;
 const CartDiv = styled.div`
   display:flex;
+  position: fixed;
+  right: 0;
   align-items: center;
   margin-right: ${sideMargin}px;
 `;
 
 const NavBarDiv = styled.div`
-  margin-right: ${sideMargin}px;
+  width: 100%;
 `;
 
 function Header () {

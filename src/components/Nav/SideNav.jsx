@@ -29,6 +29,7 @@ const StyledUl = styled.ul`
     list-style: none;
     text-decoration: none;
     z-index:25;
+    padding-left: 80%;
     
     margin:0;
     background: ${colors.marineBlue};

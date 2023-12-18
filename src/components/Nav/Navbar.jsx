@@ -13,7 +13,7 @@ import styled from 'styled-components';
 // Import Constants
 import { headerHeight } from '../../utils/Constant';
 
-const BaseNav = ({ className, children }) => <nav className={className}>{children}</nav>;
+const BaseNav = ({ className, children }) => <nav className={className} id='navBar'>{children}</nav>;
 
 BaseNav.propTypes = {
   className: PropTypes.string,
@@ -50,7 +50,7 @@ function Navbar () {
   }, []);
 
   return (
-        <StyledNav isScrolled={isScrolled} id='navBar'>
+        <StyledNav isScrolled={isScrolled}>
             <Burger/>
         </StyledNav>
   );

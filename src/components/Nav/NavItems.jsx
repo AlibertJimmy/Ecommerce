@@ -29,7 +29,7 @@ const StyledUl = styled.ul`
     text-decoration: none;
     z-index:25;
     
-    padding:0;
+    padding: 0 20px;
     margin:0;
     background: ${colors.marineBlue};
 
@@ -61,7 +61,6 @@ const StyledLi = styled.li`
 `;
 
 const ItemSideNav = styled.div`
-    border: 1px solid red;
 `;
 function NavItems () {
   const { openBurgerButton, setOpenBurgerButton } = useNav();
