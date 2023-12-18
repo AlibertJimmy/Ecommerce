@@ -1,6 +1,5 @@
 // Import React Component
 import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 // Import PropStyles
@@ -10,44 +9,16 @@ import PropTypes from 'prop-types';
 import { scrollToTop } from '../../utils/Functions';
 
 // Import Style
-import styled from 'styled-components';
+
 import { StyledLinkDropDown } from '../../utils/Style/GlobalStyle';
-import { StyledSpanHeader } from '../../utils/Style/DropDownStyle';
+import {
+  DropdownContainer,
+  DropDownSpan, DropDownStyledIcon,
+  DropdownContent, DropdownItem
+} from '../../utils/Style/DropDownStyle';
 
 // Styled components
-const DropdownContainer = styled.div`
 
-`;
-
-const DropdownContent = styled.div`
-  display: ${(props) => (props.open ? 'block' : 'none')};
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 200px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-`;
-
-const DropdownItem = styled.div`
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #f1f1f1;
-  }
-`;
-
-const DropDownStyledIcon = styled(FontAwesomeIcon)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 10px;
-  
-  margin-left: 5px;
-`;
 function Dropdown ({ dropDownTitle, options, links, handleCloseBurger }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -58,8 +29,8 @@ function Dropdown ({ dropDownTitle, options, links, handleCloseBurger }) {
   };
 
   return (
-    <DropdownContainer onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)} id='dropDown'>
-      <StyledSpanHeader>{dropDownTitle}<DropDownStyledIcon icon={faChevronDown} /></StyledSpanHeader>
+    <DropdownContainer onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)} id='dropDownContainer'>
+      <DropDownSpan id={`dropDownSpan${dropDownTitle}`}>{dropDownTitle}<DropDownStyledIcon icon={faChevronDown} /></DropDownSpan>
       <DropdownContent open={isOpen}>
         {options.map((option, index) => (
           <DropdownItem key={index} >
