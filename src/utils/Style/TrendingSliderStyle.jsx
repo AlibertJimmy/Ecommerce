@@ -47,7 +47,8 @@ export const StyledIcon = styled(FontAwesomeIcon)`
   ${CommonLinksIcon};
 `;
 
-export const SliderButtonContainer = styled.div`
+export const SliderButtonWrapper = styled.div`
+  display: flex;
   padding: 2px;
   button {
     color: white;
@@ -57,7 +58,6 @@ export const SliderButtonContainer = styled.div`
     height: 3rem;
     width: 3rem;
     cursor: pointer;
-    transition: all 0.1s ease-in;
     border-radius: 15px;
 
     &:hover{
@@ -77,13 +77,20 @@ export const SliderButtonContainer = styled.div`
   }
 `;
 
+export const SliderButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 3rem;
+`;
+
 export const Slider = styled.div`
   display: flex;
   gap: ${trendingSliderElementGap}px;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
-  scroll-behavior: smooth;
   position: relative;
   padding: 1rem 0.6rem;
 `;
@@ -100,7 +107,6 @@ export const ItemContainer = styled.div`
   outline: ${trendingSliderElementBorderWith}px solid rgba(0, 0, 0, .205);
   
   cursor: pointer;
-  transition: all 0.15s ease-in;
 
   &:hover {
     outline: ${trendingSliderElementBorderWith}px solid rgba(0, 0, 0, .6);

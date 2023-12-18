@@ -17,7 +17,7 @@ import { StyledTitleH1 } from '../../../utils/Style/GlobalStyle';
 import {
   SliderWrapper,
   SliderHeaderContainer,
-  SliderButtonContainer, StyledIcon,
+  SliderButtonWrapper, SliderButtonContainer, StyledIcon,
   Slider
 } from '../../../utils/Style/TrendingSliderStyle';
 
@@ -79,14 +79,18 @@ function TrendingSlider ({ itemCategory }) {
     <SliderWrapper id='sliderWrapper'>
         <SliderHeaderContainer id='sliderHeaderContainer'>
           <StyledTitleH1>Trending Now</StyledTitleH1>
-          <SliderButtonContainer id='sliderButtonContainer'>
+          <SliderButtonWrapper id='sliderButtonWrapper'>
+            <SliderButtonContainer id='sliderButtonContainerLeft'>
             <button id='scrollLeftButton' onClick={slideLeft} style={{ display: scrollingIndex === 0 ? 'none' : undefined }}>
               <StyledIcon icon={faChevronLeft} />
             </button>
+            </SliderButtonContainer>
+            <SliderButtonContainer id='sliderButtonContainerRight'>
             <button id='scrollRightButton' onClick={slideRight} style={{ display: scrollingIndex === maxScrollingIndex ? 'none' : undefined }}>
               <StyledIcon icon={faChevronRight} />
             </button>
-          </SliderButtonContainer>
+            </SliderButtonContainer>
+          </SliderButtonWrapper>
         </SliderHeaderContainer>
         <Slider id="slider">
           <TrendingItem itemCategory={itemCategory} trendingItemList={trendingItemList}/>
