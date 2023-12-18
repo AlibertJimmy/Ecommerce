@@ -20,6 +20,7 @@ import { footerHeight } from '../../utils/Constant';
 const StyledFooter = styled.div`
     ${commonHeaderFooter};
     height: ${footerHeight}px;
+    width: 100%;
 
     flex-direction: row;
     align-items:center;

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 
 // Import PropTypes
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 // Import Component
 import Burger from './BurgerButton';
@@ -13,6 +13,7 @@ import styled from 'styled-components';
 // Import Constants
 import { headerHeight } from '../../utils/Constant';
 
+/*
 const BaseNav = ({ className, children }) => <nav className={className}>{children}</nav>;
 
 BaseNav.propTypes = {
@@ -21,6 +22,8 @@ BaseNav.propTypes = {
 };
 
 const StyledNav = styled(BaseNav)`
+*/
+const StyledNav = styled.nav`
   height: ${headerHeight}px;
   z-index: 9999;
 `;
