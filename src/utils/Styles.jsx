@@ -3,13 +3,23 @@ import styled, { css } from 'styled-components';
 
 // Impor Colors
 import colors from './Colors';
-import { borderWidth } from './Constant';
+
+// Import Constants
+import { borderWidth, responsiveWidthMobile, responsiveWidthTablet } from './Constant';
 
 export const PageWrapper = styled.div`
 
   margin: 120px 20px 2% 20px;
   min-height: 400px;
   border: 1px solid green;
+
+  @media (max-width: ${responsiveWidthTablet}px){
+    margin: 120px 15px 2% 15px;
+  }
+
+  @media (max-width: ${responsiveWidthMobile}px){
+    margin: 120px 10px 2% 10px;
+  }
 `;
 
 export const ComponentBorder = css`
