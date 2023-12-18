@@ -13,14 +13,14 @@ export const DropDownSpan = styled.span`
 export const DropdownContainer = styled.div`
 
 `;
-
+// z-index: 1;
 export const DropdownContent = styled.div`
   display: ${(props) => (props.open ? 'block' : 'none')};
   position: absolute;
   background-color: #f9f9f9;
   min-width: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  
 `;
 
 export const DropdownItem = styled.div`

@@ -7,6 +7,9 @@ import { useCart } from '../../context';
 // Import Style
 import styled from 'styled-components';
 
+// Import Constant
+import { zIndexCartCloseButton } from '../../utils/Constant';
+
 const ClosingCross = styled.div`
     width: 2rem;
     height: 2rem;
@@ -18,7 +21,9 @@ const ClosingCross = styled.div`
     border-radius: 5px;
     padding: 2px;
 
-    z-index: 20;
+    z-index: ${zIndexCartCloseButton};
+
+    cursor: pointer;
 
     color: black;
 
@@ -44,7 +49,7 @@ const ClosingCross = styled.div`
 function CloseButton () {
   const { isOpen, setIsOpen } = useCart();
   return (
-          <ClosingCross onClick={() => setIsOpen(!isOpen)}>
+          <ClosingCross onClick={() => setIsOpen(!isOpen)} id='cartClosingCross'>
             <div/>
             <div/>
           </ClosingCross>

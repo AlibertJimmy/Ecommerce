@@ -46,3 +46,13 @@ export const PicturePreviewHeightResponsiveTablet = 75;
 export const PicturePreviewHeightResponsiveMobile = 50;
 
 export const PicturelayoutButtonWidth = 40;
+
+// z-index
+export const zIndexHeader = 1;
+
+export const zIndexCart = 100;
+export const zIndexCartButton = 0;
+export const zIndexCartCloseButton = 0;
+
+export const zIndexBurgerButton = 1;
+export const zIndexNavBar = 0;

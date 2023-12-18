@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 // Import Component
 import Navbar from '../Nav/Navbar';
-// import NavItems from '../Nav/NavItems';
+import CartButton from '../Cart/CartButton';
 import Logo from '../Nav/Logo/Logo';
 
 // Import Function
@@ -15,8 +15,7 @@ import styled from 'styled-components';
 import { commonHeaderFooter } from '../../utils/Styles';
 
 // Import Constants
-import { headerHeight } from '../../utils/Constant';
-import CartButton from '../Cart/CartButton';
+import { headerHeight, responsiveWidthTablet, zIndexHeader } from '../../utils/Constant';
 
 const sideMargin = 20;
 
@@ -26,7 +25,7 @@ const HeaderWrapper = styled.div`
   color: white;
   position: fixed;
   top:0;
-  z-index: 99;
+  z-index: ${zIndexHeader};
 `;
 
 const StyledHeader = styled.div`
@@ -47,6 +46,10 @@ const CartDiv = styled.div`
   right: 0;
   align-items: center;
   margin-right: ${sideMargin}px;
+
+  @media (max-width: ${responsiveWidthTablet}px){
+    position: static;
+  }
 `;
 
 const NavBarDiv = styled.div`
@@ -68,7 +71,7 @@ function Header () {
             <Navbar/>
         </NavBarDiv>
         <CartDiv id='cartContainer'>
-          <CartButton />
+          <CartButton id='cartButton'/>
         </CartDiv>
       </StyledHeader>
     </HeaderWrapper>

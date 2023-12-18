@@ -14,6 +14,7 @@ import emptyCart from '../../assets/Functionnal_Icon/Empty_Cart.png';
 import styled from 'styled-components';
 import CloseButton from './CloseButton';
 import { CommonButton, CommonQuantitySelectorStyle } from '../../utils/Styles';
+import { zIndexCart } from '../../utils/Constant';
 
 const CartContentWrapper = styled.div`
   display: flex;
@@ -32,7 +33,7 @@ const CartContentWrapper = styled.div`
   
   justify-content: flex-start;
   width: 300px;
-  z-index: 99;
+  z-index: ${zIndexCart};
 
   ${props =>
     props.isOpen
@@ -181,7 +182,7 @@ function Cart () {
   };
 
   return (
-      <CartContentWrapper isOpen={ isOpen } id='CartWrapper'>
+      <CartContentWrapper isOpen={ isOpen } id='cartWrapper'>
         <StyledH2>Cart ({itemQuantity(cart)})</StyledH2>
         <CloseButton />
           {cart.length > 0

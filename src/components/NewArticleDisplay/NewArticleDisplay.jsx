@@ -33,7 +33,7 @@ const PageContainer = styled.div`
 
   @media (max-width:${responsiveWidthTablet}px) {
     grid-template-columns: 1fr 1fr 1fr;
-    gap: auto;
+    gap: 0.5rem;
   }
 
   @media (max-width:640px) {

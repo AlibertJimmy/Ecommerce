@@ -18,6 +18,7 @@ import colors from '../../utils/Colors';
 // Import constantes
 import { responsiveWidthTablet, headerHeight } from '../../utils/Constant';
 
+// z-index:25;
 const StyledUl = styled.ul`
   height: ${headerHeight}px;
 
@@ -27,7 +28,7 @@ const StyledUl = styled.ul`
 
     list-style: none;
     text-decoration: none;
-    z-index:25;
+    
     
     padding: 0 20px;
     margin:0;

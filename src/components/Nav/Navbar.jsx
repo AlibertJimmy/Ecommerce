@@ -11,7 +11,7 @@ import Burger from './BurgerButton';
 import styled from 'styled-components';
 
 // Import Constants
-import { headerHeight } from '../../utils/Constant';
+import { headerHeight, zIndexNavBar } from '../../utils/Constant';
 
 const BaseNav = ({ className, children }) => <nav className={className} id='navBar'>{children}</nav>;
 
@@ -22,7 +22,7 @@ BaseNav.propTypes = {
 
 const StyledNav = styled(BaseNav)`
   height: ${headerHeight}px;
-  z-index: 9999;
+  z-index: ${zIndexNavBar};
 `;
 
 function Navbar () {

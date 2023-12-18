@@ -20,12 +20,11 @@ import styled from 'styled-components';
 import colors from '../../utils/Colors';
 
 // Import Constants
-import { responsiveWidthTablet } from '../../utils/Constant';
+import { responsiveWidthTablet, zIndexCartButton } from '../../utils/Constant';
 
 const CartWrapper = styled.div`
   display:flex;
   height: 25px;
-  width: 40px;
 
   @media (max-width: ${responsiveWidthTablet}px){
     margin-right: 50px;
@@ -38,7 +37,7 @@ const OpenCartButton = styled.button`
   border: none;
   font-weight: 600;
   cursor: pointer;
-  z-index: 10;
+  z-index: ${zIndexCartButton};
   color: white;
   position: relative;
 

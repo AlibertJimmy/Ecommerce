@@ -16,7 +16,7 @@ import styled from 'styled-components';
 // import colors from '../../utils/Colors';
 
 // Import Constante
-import { responsiveWidthTablet } from '../../utils/Constant';
+import { responsiveWidthTablet, zIndexBurgerButton } from '../../utils/Constant';
 
 const MenuWrapper = styled.div`
   padding:0;
@@ -30,13 +30,13 @@ const StyledBurger = styled.div`
     height: 2rem;
 
     position: fixed;
-    top: 10px;
-    right: 15px;
+    top: ${({ open }) => open ? '17px' : '10px'};
+    right: ${({ open }) => open ? '10px' : '15px'};
     
     border-radius: 5px;
     padding: 2px;
 
-    z-index: 99;
+    z-index: ${zIndexBurgerButton};
 
     display: none;
 
@@ -45,6 +45,7 @@ const StyledBurger = styled.div`
         justify-content: space-around;
         flex-flow: column nowrap;
         border-color: black;
+        cursor: pointer;
     }
 
     div{
