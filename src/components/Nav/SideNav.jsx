@@ -17,9 +17,8 @@ import { StyledLink } from '../../utils/Style/GlobalStyle';
 import colors from '../../utils/Colors';
 
 // Import constantes
-import { responsiveWidthTablet, headerHeight } from '../../utils/Constant';
+import { responsiveWidthTablet, headerHeight, zIndexSideNav } from '../../utils/Constant';
 
-// z-index:25;
 const StyledUl = styled.ul`
   height: ${headerHeight}px;
 
@@ -31,6 +30,7 @@ const StyledUl = styled.ul`
     text-decoration: none;
     
     padding-left: 80%;
+    z-index:${zIndexSideNav};
     
     margin:0;
     background: ${colors.marineBlue};

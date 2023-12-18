@@ -104,11 +104,8 @@ function CartButton () {
   }, []);
 
   return (
-    <CartWrapper ref={cartRef} id='#CartWrapperButton'>
-      <OpenCartButton
-        onClick={() => setIsOpen(!isOpen)}
-        amount={amoutOfItemInCart}
-      >
+    <CartWrapper ref={cartRef} id='cartWrapper'>
+      <OpenCartButton onClick={() => setIsOpen(!isOpen)} amount={amoutOfItemInCart} id='cartButton'>
         <CartIMG id='CartIcon' src={CartWhite} alt='cartPic'></CartIMG>
       </OpenCartButton >
       <Cart />

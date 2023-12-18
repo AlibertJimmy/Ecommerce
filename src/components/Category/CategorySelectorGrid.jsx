@@ -29,8 +29,6 @@ const GridContainer = styled.div`
   gap: 1.3rem;
 
   @media (max-width:750px) {
-        height: 500px;
-        display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
         grid-template-areas:
@@ -93,15 +91,13 @@ const Description = styled.p`
   font-family: sans-serif;
 
   @media (max-width:${responsiveWidthTablet}px) {
-        bottom: 1rem;
+        bottom: 0rem;
         left: 1rem;
-        font-size: 3rem;
+        font-size: 1rem;
   }
 
   @media (max-width:${responsiveWidthMobile}px) {
-          bottom: 1rem;
           left: 0.5rem;
-          font-size: 1.5rem;
   }
 `;
 

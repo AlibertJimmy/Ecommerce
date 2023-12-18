@@ -22,7 +22,6 @@ const MenuWrapper = styled.div`
   padding:0;
   width: 100%;
   background-color: transparent;
-
 `;
 
 const StyledBurger = styled.div`

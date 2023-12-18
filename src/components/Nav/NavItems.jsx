@@ -16,20 +16,18 @@ import styled from 'styled-components';
 import colors from '../../utils/Colors';
 
 // Import constantes
-import { responsiveWidthTablet, headerHeight } from '../../utils/Constant';
+import { responsiveWidthTablet, headerHeight, zIndexSideNav } from '../../utils/Constant';
 
-// z-index:25;
+//
 const StyledUl = styled.ul`
   height: ${headerHeight}px;
-
+  z-index:${zIndexSideNav};
     display: flex;
     align-items: center;
     gap: 2rem;
 
     list-style: none;
     text-decoration: none;
-    
-    
     padding: 0 20px;
     margin:0;
     background: ${colors.marineBlue};

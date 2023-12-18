@@ -27,7 +27,7 @@ const StyledNav = styled(BaseNav)`
 
 function Navbar () {
   return (
-        <StyledNav>
+        <StyledNav id='navBar'>
             <Burger/>
         </StyledNav>
   );

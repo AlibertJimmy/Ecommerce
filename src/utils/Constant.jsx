@@ -54,5 +54,7 @@ export const zIndexCart = 100;
 export const zIndexCartButton = 0;
 export const zIndexCartCloseButton = 0;
 
-export const zIndexBurgerButton = 1;
-export const zIndexNavBar = 0;
+export const zIndexBurgerButton = 50;
+export const zIndexNavBar = 1;
+
+export const zIndexSideNav = 25;
