@@ -20,10 +20,11 @@ import {
   CartContentContainer,
   CartContentImageContainer, CartContentImagePreview,
   CartContentDataDisplay, CartContentPContainer,
-  CartQuantitySelectorWrapper, CartQuantitySelectorContainer, QuantityButton,
-  CartCheckOutWrapper, CenterContainer, EmptyCartButton, EmptyCartIMG,
-  EmptyCartWrapper, QuantityP, StyledH2, StyledP
+  CartQuantitySelectorWrapper, CartQuantitySelectorContainer,
+  CartCheckOutWrapper, CenterContainer, EmptyCartIMG,
+  EmptyCartWrapper, StyledH2, StyledP
 } from '../../utils/Style/CartStyle';
+import { QuantityButton, EmptyCartButton, QuantityP } from '../../utils/Style/QuantitySelectionStyle';
 
 function Cart () {
   const { isOpen, setIsOpen, cart, updateCart } = useCartContext();

@@ -1,6 +1,5 @@
 // Import Style
 import styled from 'styled-components';
-import { CommonButton, CommonQuantitySelectorStyle } from '../Styles';
 
 // Import Constants
 import {
@@ -212,33 +211,6 @@ export const QuantitySelectorWrapper = styled.div`
 
 export const QuantitySelectorContainer = styled.div`
   display: flex;
-`;
-
-export const QuantityButton = styled.button`
-  ${CommonButton};
-  font-weight: bold;
-  width: 25px;
-
-  
-`;
-
-export const QuantityP = styled.p`
-  ${CommonQuantitySelectorStyle};
-  width: 45px;
-`;
-
-export const AddToCartButton = styled.button`
-  ${CommonButton};
-
-  @media (max-width: ${responsiveWidthTablet}px){
-    margin-top: 10px;
-  }
-  
-  @media (max-width: ${responsiveWidthMobile}px){
-    margin-left: 15%;
-    margin-top: 0;
-    width: 100px;
-  }
 `;
 
 // Item Description Related

@@ -26,12 +26,13 @@ import {
   IllustrationContainer, PictureDisplayer, ItemDetailPicture,
   PictureSelector,
   InfoContainer, ItemDatas, StyledUlInfo,
-  QuantitySelectorWrapper, QuantitySelectorContainer, QuantityButton, QuantityP, AddToCartButton,
+  QuantitySelectorWrapper, QuantitySelectorContainer,
   DescriptionContainer, StyledUlDescription
 } from '../../utils/Style/ItemDetailStyle';
 
 // Import Colors
 import colors from '../../utils/Colors';
+import { AddToCartButton, QuantityButton, QuantityP } from '../../utils/Style/QuantitySelectionStyle';
 
 function increaseSelection (amount, updateAmount) {
   amount = amount + 1;

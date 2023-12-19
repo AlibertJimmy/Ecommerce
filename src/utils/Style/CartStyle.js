@@ -1,6 +1,5 @@
 // Import Style
 import styled from 'styled-components';
-import { CommonButton, CommonQuantitySelectorStyle } from '../../utils/Styles';
 
 // Import Colors
 import colors from '../../utils/Colors';
@@ -98,16 +97,6 @@ export const CartQuantitySelectorContainer = styled.div`
     display: flex;
 `;
 
-export const QuantityButton = styled.button`
-  ${CommonButton};
-  font-weight: bold;
-  width: 25px;
-`;
-
-export const QuantityP = styled.p`
-  ${CommonQuantitySelectorStyle};
-  width: 45px;
-`;
 export const CartCheckOutWrapper = styled.div`
   border-top: 2px dashed black;
   margin: 20px 0;
@@ -117,10 +106,6 @@ export const CenterContainer = styled.div`
   display: flex;
   justify-content: center;
   margin: 20px 0;
-`;
-
-export const EmptyCartButton = styled.button`
-  ${CommonButton};
 `;
 
 export const EmptyCartWrapper = styled.div`
