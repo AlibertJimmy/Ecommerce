@@ -4,6 +4,9 @@ import React from 'react';
 // Import Context
 import { useCartContext } from '../../context/CartContext';
 
+// Import Component
+import CloseButton from './CloseButton';
+
 // Import Function
 import { itemQuantity } from '../../utils/CartFunctions/Functions';
 
@@ -11,133 +14,16 @@ import { itemQuantity } from '../../utils/CartFunctions/Functions';
 import emptyCart from '../../assets/Functionnal_Icon/Empty_Cart.png';
 
 // Import Style
-import styled from 'styled-components';
-import CloseButton from './CloseButton';
-import { CommonButton, CommonQuantitySelectorStyle } from '../../utils/Styles';
-import { zIndexCart } from '../../utils/Constant';
-
-const CartContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  position: fixed;
-  top:0;
-  right: 0;
-
-  height: 100%;
-
-  color: black;
-  background-color: white;
-  margin:0;
-  padding: 20px;
-  
-  justify-content: flex-start;
-  width: 300px;
-  z-index: ${zIndexCart};
-
-  ${props =>
-    props.isOpen
-      ? `
-      
-      transform: translateX(0);
-      `
-      : `
-      transform: translateX(100%);
-      `}
-`;
-
-const StyledH2 = styled.h2`
-    margin:0;
-    font-family: sans-serif;
-
-`;
-
-const CartContainer = styled.div`
-    display: flex;
-    flex-direction:column;
-    justify-content:space-between;
-    height: 100%;
-
-`;
-
-const CartContentContainer = styled.div`
-    display: flex;
-    margin: 20px 0 ;
-`;
-
-const CartItemDataDisplay = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex:1;
-`;
-
-const TitleAndPrice = styled.div`
-    display: flex;
-    justify-content: space-between;
-`;
-
-const StyledP = styled.p`
-    font-family: sans-serif;
-    margin: 10px 10px 10px 5px;
-`;
-
-const CartImageContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  height: 100px;
-  width: 100px;
-`;
-
-const CartItemImagePreview = styled.img`
-    max-height: 100px;
-    max-width: 100px;
-`;
-
-const QuantitySelectorWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-`;
-
-const QuantitySelectorContainer = styled.div`
-    display: flex;
-`;
-
-const QuantityButton = styled.button`
-  ${CommonButton};
-  font-weight: bold;
-  width: 25px;
-`;
-
-const QuantityP = styled.p`
-  ${CommonQuantitySelectorStyle};
-  width: 45px;
-`;
-const BottomCartWrapper = styled.div`
-  border-top: 2px dashed black;
-  margin: 20px 0;
-`;
-
-const CenterContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-`;
-
-const EmptyCartButton = styled.button`
-  ${CommonButton};
-`;
-
-const EmptyCartWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-`;
-
-const EmptyCartIMG = styled.img`
-    height: 150px;
-    width: 150px;
-`;
+import {
+  CartWrapper,
+  FilledCartWrapper,
+  CartContentContainer,
+  CartContentImageContainer, CartContentImagePreview,
+  CartContentDataDisplay, CartContentPContainer,
+  CartQuantitySelectorWrapper, CartQuantitySelectorContainer, QuantityButton,
+  CartCheckOutWrapper, CenterContainer, EmptyCartButton, EmptyCartIMG,
+  EmptyCartWrapper, QuantityP, StyledH2, StyledP
+} from '../../utils/Style/CartStyle';
 
 function Cart () {
   const { isOpen, setIsOpen, cart, updateCart } = useCartContext();
@@ -152,7 +38,7 @@ function Cart () {
   );
 
   function increase (index) {
-    console.log(`amount : ${cart[index].amount}`);
+    // console.log(`amount : ${cart[index].amount}`);
     const updatedCart = [...cart];
     updatedCart[index] = {
       ...cart[index],
@@ -162,7 +48,7 @@ function Cart () {
   }
 
   function decrease (index) {
-    console.log(`amount : ${cart[index].amount}`);
+    // console.log(`amount : ${cart[index].amount}`);
     const updatedCart = [...cart];
     if (updatedCart[index].amount > 1) {
       updatedCart[index] = {
@@ -182,38 +68,38 @@ function Cart () {
   };
 
   return (
-      <CartContentWrapper isOpen={ isOpen } id='cartWrapper'>
+      <CartWrapper isOpen={ isOpen } id='cartWrapper'>
         <StyledH2>Cart ({itemQuantity(cart)})</StyledH2>
         <CloseButton />
           {cart.length > 0
             ? (
-            <CartContainer>
+            <FilledCartWrapper id='cartFilledWrapper'>
               <div>
                 {cart.map(({ itemProperty, amount }, index) => (
-                  <CartContentContainer key={`${itemProperty.name}-${index}`}>
-                    <CartImageContainer>
-                      <CartItemImagePreview src={itemProperty.illustrations[0].picture}></CartItemImagePreview>
-                    </CartImageContainer>
-                    <CartItemDataDisplay>
-                      <TitleAndPrice>
+                  <CartContentContainer id={`cartContentContainer${itemProperty.name}`} key={`${itemProperty.name}-${index}`}>
+                    <CartContentImageContainer id={`cartContentImageContainer${itemProperty.name}`}>
+                      <CartContentImagePreview src={itemProperty.illustrations[0].picture} alt='imagePreview'/>
+                    </CartContentImageContainer>
+                    <CartContentDataDisplay id={`cartContentDataDisplay${itemProperty.name}`}>
+                      <CartContentPContainer id={`cartContentPContainer${itemProperty.name}`}>
                         <StyledP>{itemProperty.name}</StyledP>
                         <StyledP style={{ fontWeight: 'bold' }}>{itemProperty.price}€</StyledP>
-                      </TitleAndPrice>
-                      <QuantitySelectorWrapper>
-                        <QuantitySelectorContainer>
+                      </CartContentPContainer>
+                      <CartQuantitySelectorWrapper id={`cartQuantitySelectorWrapper${itemProperty.name}`}>
+                        <CartQuantitySelectorContainer id={`cartQuantitySelectorContainer${itemProperty.name}`}>
                           <QuantityButton onClick={() => decrease(index)}>-</QuantityButton>
                           <QuantityP>{amount}</QuantityP>
                           <QuantityButton onClick={() => increase(index)}>+</QuantityButton>
-                        </QuantitySelectorContainer>
+                        </CartQuantitySelectorContainer>
                         <div>
                           <QuantityButton onClick={() => removeFromCart(index) } style={{ marginRight: '10px' }}>X</QuantityButton>
                         </div>
-                    </QuantitySelectorWrapper>
-                    </CartItemDataDisplay>
+                      </CartQuantitySelectorWrapper>
+                    </CartContentDataDisplay>
                   </CartContentContainer>
                 ))}
               </div>
-              <BottomCartWrapper>
+              <CartCheckOutWrapper id='cartCheckOutWrapper'>
                 <CenterContainer>
                   <EmptyCartButton onClick={() => updateCart([])}>Empty the cart</EmptyCartButton>
                 </CenterContainer>
@@ -223,23 +109,23 @@ function Cart () {
                 <CenterContainer>
                   <EmptyCartButton>Go To Checkout</EmptyCartButton>
                 </CenterContainer>
-              </BottomCartWrapper>
-            </CartContainer>
+              </CartCheckOutWrapper>
+            </FilledCartWrapper>
               )
             : (
-            <EmptyCartWrapper>
+            <EmptyCartWrapper id='emptyCartWrapper'>
               <CenterContainer>
-                <EmptyCartIMG src={emptyCart} alt='emptyCart'></EmptyCartIMG>
+                <EmptyCartIMG src={emptyCart} alt='emptyCart'/>
               </CenterContainer>
               <CenterContainer>
                 <StyledH2>Your cart is empty</StyledH2>
               </CenterContainer>
               <CenterContainer>
-                  <EmptyCartButton onClick={() => setIsOpen(false)}>Keep Browsing</EmptyCartButton>
-                </CenterContainer>
+                <EmptyCartButton onClick={() => setIsOpen(false)}>Keep Browsing</EmptyCartButton>
+              </CenterContainer>
             </EmptyCartWrapper>
               )}
-    </CartContentWrapper>
+    </CartWrapper>
   );
 }
 
