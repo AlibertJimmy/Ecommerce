@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Import Context
-import { useNav } from '../../context';
+import { useNavContext } from '../../context/NavContext';
 
 // Import compoment
 
@@ -64,7 +64,7 @@ const StyledLi = styled.li`
 `;
 
 function SideNav () {
-  const { openBurgerButton, setOpenBurgerButton } = useNav();
+  const { openBurgerButton, setOpenBurgerButton } = useNavContext();
   function handleLinkClick () {
     setOpenBurgerButton(false);
     scrollToTop();

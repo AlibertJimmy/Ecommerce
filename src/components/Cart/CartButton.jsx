@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 
 // Import Context
-import { useCart } from '../../context';
+import { useCartContext } from '../../context/CartContext';
 
 // Import Components
 import Cart from './Cart';
@@ -76,7 +76,7 @@ const CartIMG = styled.img`
 `;
 
 function CartButton () {
-  const { isOpen, setIsOpen, cart } = useCart();
+  const { isOpen, setIsOpen, cart } = useCartContext();
   const amoutOfItemInCart = itemQuantity(cart);
   const cartRef = useRef(null);
 

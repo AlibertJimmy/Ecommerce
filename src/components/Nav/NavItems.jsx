@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Import Context
-import { useNav } from '../../context';
+import { useNavContext } from '../../context/NavContext';
 
 // Import compoment
 import Dropdown from '../Dropdown/Dropdown';
@@ -62,7 +62,7 @@ const StyledLi = styled.li`
 const ItemSideNav = styled.div`
 `;
 function NavItems () {
-  const { openBurgerButton, setOpenBurgerButton } = useNav();
+  const { openBurgerButton, setOpenBurgerButton } = useNavContext();
 
   const dropDownTitle1 = 'Shelter';
   const links1 = ['Shelter/SingleWall', 'Shelter/DoubleWall', 'Shelter/Accessory'];

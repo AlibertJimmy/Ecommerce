@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // Import Context
-import { useCart } from '../../context';
+import { useCartContext } from '../../context/CartContext';
 import { usePreviewSliderContext } from '../../context/PreviewSliderContext';
 
 // Import Components
@@ -47,7 +47,7 @@ function decreaseSelection (amount, updateAmount) {
 
 function ItemDetail ({ itemCategory, itemSubCategory }) {
   const { pictureToDisplayIndex, setPictureToDisplayIndex } = usePreviewSliderContext();
-  const { cart, updateCart } = useCart();
+  const { cart, updateCart } = useCartContext();
   const { id } = useParams();
   const itemList = getItemList(itemCategory, itemSubCategory);
   const index = getItemCorrespondingToId(id, itemList);

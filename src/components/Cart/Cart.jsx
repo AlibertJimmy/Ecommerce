@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Import Context
-import { useCart } from '../../context';
+import { useCartContext } from '../../context/CartContext';
 
 // Import Function
 import { itemQuantity } from '../../utils/CartFunctions/Functions';
@@ -140,7 +140,7 @@ const EmptyCartIMG = styled.img`
 `;
 
 function Cart () {
-  const { isOpen, setIsOpen, cart, updateCart } = useCart();
+  const { isOpen, setIsOpen, cart, updateCart } = useCartContext();
   if (!cart) {
     return null;
   }

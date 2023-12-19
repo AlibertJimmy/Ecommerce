@@ -5,7 +5,7 @@ import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 // Import Context
-import { useNav } from '../../context';
+import { useNavContext } from '../../context/NavContext';
 
 // Import Component
 import SideNav from './SideNav';
@@ -82,7 +82,7 @@ export const sideNavPropsType = PropTypes.shape({
 });
 
 function Burger () {
-  const { openBurgerButton, setOpenBurgerButton } = useNav();
+  const { openBurgerButton, setOpenBurgerButton } = useNavContext();
   const burgerRef = useRef(null);
 
   useEffect(() => {

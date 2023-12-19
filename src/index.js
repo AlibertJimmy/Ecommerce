@@ -4,7 +4,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 // Import Context
-import { NavContextProvider, CartContextProvider } from './context';
+import { CartContextProvider } from './context/CartContext';
+import { NavContextProvider } from './context/NavContext';
 import { PreviewSliderContextProvider } from './context/PreviewSliderContext';
 
 // Import Component

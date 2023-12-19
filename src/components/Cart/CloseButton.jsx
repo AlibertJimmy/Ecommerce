@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Import Context
-import { useCart } from '../../context';
+import { useCartContext } from '../../context/CartContext';
 
 // Import Style
 import styled from 'styled-components';
@@ -47,7 +47,7 @@ const ClosingCross = styled.div`
 `;
 
 function CloseButton () {
-  const { isOpen, setIsOpen } = useCart();
+  const { isOpen, setIsOpen } = useCartContext();
   return (
           <ClosingCross onClick={() => setIsOpen(!isOpen)} id='cartClosingCross'>
             <div/>

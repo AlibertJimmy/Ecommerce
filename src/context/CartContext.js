@@ -5,42 +5,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 // Import Function
-import { isValidCartItem } from './utils/CartFunctions/Functions';
-
-// Nav Context
-const NavContext = createContext();
-
-export const NavContextProvider = ({ children }) => {
-  const [openBurgerButton, setOpenBurgerButton] = useState(false);
-
-  useEffect(() => {
-    const json = localStorage.getItem('openBurgerButton');
-    const savedNav = JSON.parse(json);
-    if (savedNav) {
-      setOpenBurgerButton(savedNav);
-    }
-  }, []);
-
-  useEffect(() => {
-    const json = JSON.stringify(openBurgerButton);
-    localStorage.setItem('openBurgerButton', json);
-  }, [openBurgerButton]);
-
-  const contextValue = {
-    openBurgerButton,
-    setOpenBurgerButton
-  };
-
-  return <NavContext.Provider value={contextValue}>{children}</NavContext.Provider>;
-};
-
-NavContextProvider.propTypes = {
-  children: PropTypes.node.isRequired
-};
-
-export const useNav = () => {
-  return useContext(NavContext);
-};
+import { isValidCartItem } from '../utils/CartFunctions/Functions';
 
 // Cart Context
 const CartContext = createContext();
@@ -92,6 +57,6 @@ CartContextProvider.propTypes = {
   children: PropTypes.node.isRequired
 };
 
-export const useCart = () => {
+export const useCartContext = () => {
   return useContext(CartContext);
 };
