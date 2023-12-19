@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 // Import Constants
-import { responsiveWidthMobile, responsiveWidthTablet } from '../../utils/Constant';
+import { responsiveWidthMobile, responsiveWidthTablet } from '../Constant';
 
 export const ItemSelectionWrapper = styled.div`
   max-width: 1200px;

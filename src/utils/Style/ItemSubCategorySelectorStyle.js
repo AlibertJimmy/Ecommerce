@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import colors from '../Colors';
 
 // Import Constants
-import { responsiveWidthMobile, responsiveWidthTablet } from '../../utils/Constant';
+import { responsiveWidthMobile, responsiveWidthTablet } from '../Constant';
 
 export const SubCategorySelectorContainer = styled.div`
   display: flex;
