@@ -17,11 +17,11 @@ export const PageWrapper = styled.div`
   min-height: ${window.innerHeight - (headerHeight * 2 + verticalMargin * 2 + footerHeight)}px;
 
   @media (max-width: ${responsiveWidthTablet}px){
-    margin: ${headerHeight * 2 + verticalMargin}px ${horizontalMarginTablet}px ${verticalMargin}px ${horizontalMarginTablet}px;
+    margin: ${headerHeight + verticalMargin}px ${horizontalMarginTablet}px ${verticalMargin}px ${horizontalMarginTablet}px;
   }
 
   @media (max-width: ${responsiveWidthMobile}px){
-    margin: ${headerHeight * 2 + verticalMargin}px ${horizontalMarginMobile}px ${verticalMargin}px ${horizontalMarginMobile}px;
+    margin: ${headerHeight + verticalMargin}px ${horizontalMarginMobile}px ${verticalMargin}px ${horizontalMarginMobile}px;
   }
 `;
 

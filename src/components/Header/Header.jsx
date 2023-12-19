@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 // Import Component
 import Navbar from '../Nav/Navbar';
 import CartButton from '../Cart/CartButton';
-import Logo from '../Nav/Logo/Logo';
+import Logo from './Logo/Logo';
 
 // Import Function
 import { scrollToTop } from '../../utils/Functions';
