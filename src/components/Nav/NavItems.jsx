@@ -22,38 +22,38 @@ import { responsiveWidthTablet, headerHeight, zIndexSideNav } from '../../utils/
 const StyledUl = styled.ul`
   height: ${headerHeight}px;
   z-index:${zIndexSideNav};
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 
-    list-style: none;
-    text-decoration: none;
-    padding: 0 20px;
-    margin:0;
-    background: ${colors.marineBlue};
+  list-style: none;
+  text-decoration: none;
+  padding: 0 20px;
+  margin:0;
+  background: ${colors.marineBlue};
 
-    @media (max-width: ${responsiveWidthTablet}px){
-        flex-flow: column nowrap;
+  @media (max-width: ${responsiveWidthTablet}px){
+      flex-flow: column nowrap;
 
-        position: fixed;
-        top: 120px;
-        right: 0;
-        height: 100vh;
-        width: 100px;
-        padding: 0 3rem;
-        align-items: stretch;
-        margin-right:0;
-        gap:1rem;
-        
-        justify-content: top-start;
-        
-        background: #ffffff;
+      position: fixed;
+      top: 120px;
+      right: 0;
+      height: 100vh;
+      width: 100px;
+      padding: 0 3rem;
+      align-items: stretch;
+      margin-right:0;
+      gap:1rem;
+      
+      justify-content: top-start;
+      
+      background: #ffffff;
 
-        transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
-       li{
-            margin-bottom: 0px;
-       }
-    }
+      transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
+      li{
+          margin-bottom: 0px;
+      }
+  }
 `;
 const StyledLi = styled.li`
 

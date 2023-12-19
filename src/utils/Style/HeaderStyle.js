@@ -11,21 +11,17 @@ export const HeaderWrapper = styled.div`
   ${commonHeaderFooter};
   display: flex;
   flex-direction: column;
-  
+
+  justify-content: center;
+
   position: fixed;
   top: 0;
 
+  height: ${headerHeight}px;
+  
   color: white;
 
   z-index: ${zIndexHeader};
-`;
-
-export const StyledHeader = styled.div`
-  height: ${headerHeight}px;
-  display: flex;
-
-  align-items: center;
-  justify-content: space-between;
 `;
 
 export const LogoDiv = styled.div`

@@ -11,7 +11,10 @@ import Logo from './Logo/Logo';
 import { scrollToTop } from '../../utils/Functions';
 
 // Import Style
-import { CartDiv, HeaderWrapper, LogoDiv, NavBarDiv, StyledHeader } from '../../utils/Style/HeaderStyle';
+import {
+  HeaderWrapper,
+  CartDiv, LogoDiv, NavBarDiv
+} from '../../utils/Style/HeaderStyle';
 
 function Header () {
   function handleOnClick () {
@@ -20,7 +23,6 @@ function Header () {
 
   return (
     <HeaderWrapper id='headerWrapper'>
-      <StyledHeader id='styledHeader'>
         <LogoDiv id='logoDiv'>
           <Link to='/' onClick={handleOnClick}><Logo/></Link>
         </LogoDiv>
@@ -30,7 +32,6 @@ function Header () {
         <CartDiv id='cartContainer'>
           <CartOpenButton id='cartOpenButton'/>
         </CartDiv>
-      </StyledHeader>
     </HeaderWrapper>
   );
 }
