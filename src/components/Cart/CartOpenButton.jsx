@@ -16,7 +16,7 @@ import CartWhite from '../../assets/Functionnal_Icon/Cart_White.png';
 // Import Style
 import { CartButtonWrapper, OpenCartButton, CartIcon } from '../../utils/Style/CartStyle';
 
-function CartButton () {
+function CartOpenButton () {
   const { isOpen, setIsOpen, cart } = useCartContext();
   const amoutOfItemInCart = itemQuantity(cart);
   const cartRef = useRef(null);
@@ -54,4 +54,4 @@ function CartButton () {
   );
 }
 
-export default CartButton;
+export default CartOpenButton;

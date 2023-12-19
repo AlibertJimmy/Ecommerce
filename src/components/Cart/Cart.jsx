@@ -5,7 +5,7 @@ import React from 'react';
 import { useCartContext } from '../../context/CartContext';
 
 // Import Component
-import CloseButton from './CloseButton';
+import CartCloseButton from './CartCloseButton';
 
 // Import Function
 import { itemQuantity } from '../../utils/CartFunctions/Functions';
@@ -70,7 +70,7 @@ function Cart () {
   return (
       <CartWrapper isOpen={ isOpen } id='cartWrapper'>
         <StyledH2>Cart ({itemQuantity(cart)})</StyledH2>
-        <CloseButton />
+        <CartCloseButton />
           {cart.length > 0
             ? (
             <FilledCartWrapper id='cartFilledWrapper'>

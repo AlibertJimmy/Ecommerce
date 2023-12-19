@@ -6,7 +6,7 @@ import { CommonButton, CommonQuantitySelectorStyle } from '../../utils/Styles';
 import colors from '../../utils/Colors';
 
 // Import Constants
-import { responsiveWidthTablet, zIndexCartButton, zIndexCart } from '../../utils/Constant';
+import { responsiveWidthTablet, zIndexCartButton, zIndexCart, zIndexCartCloseButton } from '../../utils/Constant';
 
 export const StyledH2 = styled.h2`
     margin:0;
@@ -133,7 +133,7 @@ export const EmptyCartIMG = styled.img`
     width: 150px;
 `;
 
-// Cart Button
+// Cart Open Button
 
 export const CartButtonWrapper = styled.div`
   display:flex;
@@ -186,4 +186,42 @@ export const OpenCartButton = styled.button`
 export const CartIcon = styled.img`
     width: 25px;
     height:25px;
+`;
+
+// Cart Close Button
+
+export const ClosingCross = styled.div`
+    width: 2rem;
+    height: 2rem;
+    
+    position:fixed;
+    top: 17px;
+    right: 10px;
+    
+    border-radius: 5px;
+    padding: 2px;
+
+    z-index: ${zIndexCartCloseButton};
+
+    cursor: pointer;
+
+    color: black;
+
+    div{
+        
+        height: 0.25rem;
+        border-radius: 10px;
+        
+        transform-origin: 1px;
+
+        background-color: black;
+
+        &:nth-child(1){
+            transform: translate(14%, 65%) rotate(45deg);
+        }
+
+        &:nth-child(2){
+            transform: translate(14%, 500%) rotate(-45deg);
+        }
+    }
 `;

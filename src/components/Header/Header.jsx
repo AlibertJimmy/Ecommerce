@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 // Import Component
 import Navbar from '../Nav/Navbar';
-import CartButton from '../Cart/CartButton';
+import CartOpenButton from '../Cart/CartOpenButton';
 import Logo from './Logo/Logo';
 
 // Import Function
@@ -71,7 +71,7 @@ function Header () {
             <Navbar/>
         </NavBarDiv>
         <CartDiv id='cartContainer'>
-          <CartButton id='cartButton'/>
+          <CartOpenButton id='cartOpenButton'/>
         </CartDiv>
       </StyledHeader>
     </HeaderWrapper>
