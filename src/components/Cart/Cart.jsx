@@ -22,10 +22,10 @@ import {
   CartContentDataDisplay, CartContentPContainer,
   CartQuantitySelectorWrapper, CartQuantitySelectorContainer,
   CartCheckOutWrapper, CenterContainer, EmptyCartIMG,
-  EmptyCartWrapper, StyledH2
+  EmptyCartWrapper
 } from '../../utils/Style/CartStyle';
 import { QuantityButton, EmptyCartButton, QuantityP } from '../../utils/Style/QuantitySelectionStyle';
-import { StyledP } from '../../utils/Style/GlobalStyle';
+import { StyledP, StyledTitleH2 } from '../../utils/Style/GlobalStyle';
 
 function Cart () {
   const { cartState, setCartState, cart, updateCart } = useCartContext();
@@ -71,7 +71,7 @@ function Cart () {
 
   return (
       <CartWrapper cartState={ cartState } id='cartWrapper'>
-        <StyledH2>Cart ({itemQuantity(cart)})</StyledH2>
+        <StyledTitleH2>Cart ({itemQuantity(cart)})</StyledTitleH2>
         <CartCloseButton />
           {cart.length > 0
             ? (
@@ -106,7 +106,7 @@ function Cart () {
                   <EmptyCartButton onClick={() => updateCart([])}>Empty the cart</EmptyCartButton>
                 </CenterContainer>
                 <CenterContainer>
-                  <StyledH2>Total : {total} €</StyledH2>
+                  <StyledTitleH2>Total : {total} €</StyledTitleH2>
                 </CenterContainer>
                 <CenterContainer>
                   <EmptyCartButton>Go To Checkout</EmptyCartButton>
@@ -120,7 +120,7 @@ function Cart () {
                 <EmptyCartIMG src={emptyCart} alt='emptyCart'/>
               </CenterContainer>
               <CenterContainer>
-                <StyledH2>Your cart is empty</StyledH2>
+                <StyledTitleH2>Your cart is empty</StyledTitleH2>
               </CenterContainer>
               <CenterContainer>
                 <EmptyCartButton onClick={() => setCartState(false)}>Keep Browsing</EmptyCartButton>

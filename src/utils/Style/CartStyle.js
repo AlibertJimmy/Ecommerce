@@ -7,12 +7,6 @@ import colors from '../../utils/Colors';
 // Import Constants
 import { responsiveWidthTablet, zIndexCartButton, zIndexCart, zIndexCartCloseButton } from '../../utils/Constant';
 
-export const StyledH2 = styled.h2`
-    margin:0;
-    font-family: sans-serif;
-
-`;
-
 // Cart Display
 
 export const CartWrapper = styled.div`

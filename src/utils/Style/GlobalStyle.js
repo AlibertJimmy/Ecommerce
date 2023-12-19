@@ -49,8 +49,8 @@ export const StyledTitleH1 = styled.h1`
 
 export const StyledTitleH2 = styled.h2`
   font-family: sans-serif;
-  font-size: 20px;
-  font-weight: 200;
+  font-size: 25px;
+  margin: 0;
 `;
 
 export const StyledP = styled.p`
