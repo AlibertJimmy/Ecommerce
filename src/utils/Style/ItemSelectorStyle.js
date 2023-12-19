@@ -4,18 +4,19 @@ import styled from 'styled-components';
 // Import Constants
 import { responsiveWidthMobile, responsiveWidthTablet } from '../Constant';
 
-export const ItemSelectionWrapper = styled.div`
+export const ArticleSelectorWrapper = styled.div`
   max-width: 1200px;
   margin: 0 auto;
 `;
 
-export const ItemSelectorContainer = styled.div`
+export const ArticleSelectorContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 2rem;
 
   @media (max-width:${responsiveWidthTablet}px) {
-        grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
   }
 
   @media (max-width:640px) {
@@ -23,11 +24,11 @@ export const ItemSelectorContainer = styled.div`
   }
 
   @media (max-width:${responsiveWidthMobile}px) {
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 `;
 
-export const ItemPresentation = styled.div`
+export const ArticlePresentation = styled.div`
   display:flex;
   flex-direction: column;
   align-items: center;
@@ -39,7 +40,7 @@ export const ItemPresentation = styled.div`
   margin: 10px 16px;
 `;
 
-export const ItemDatas = styled.div`
+export const ArticleDatas = styled.div`
   display: flex;
   flex-direction: column;
   text-align:center;
@@ -47,7 +48,7 @@ export const ItemDatas = styled.div`
   height: 105px;
 `;
 
-export const ItemPrice = styled.p`
+export const ArticlePrice = styled.p`
   font-family: sans-serif;
   font-weight: bold;
   font-size: 22px;

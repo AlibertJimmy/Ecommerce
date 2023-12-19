@@ -5,11 +5,12 @@ import { Outlet, useLocation } from 'react-router-dom';
 // Import PropTypes
 import PropTypes from 'prop-types';
 
-// Import Style
-import { displayOutlet } from '../../utils/Functions/pathFunctions';
-
-// Import Constants
+// Import Component
 import ItemSelector from '../../components/Items/ItemSelector';
+
+// Import Function
+import { getItemList } from '../../utils/Functions/ItemFunctions';
+import { displayOutlet } from '../../utils/Functions/pathFunctions';
 
 function ItemSelectorPage ({ itemCategory, itemSubCategory }) {
   const location = useLocation();
@@ -21,11 +22,13 @@ function ItemSelectorPage ({ itemCategory, itemSubCategory }) {
   console.log(`shouldDisplayPageContainer ! ${shouldDisplayPageContainer}`);
   */
 
+  const itemList = getItemList(itemCategory, itemSubCategory);
+  const titleWrapper = `${itemCategory} / ${itemSubCategory}`;
   return (
     <>
         {shouldDisplayPageContainer
           ? (
-            <ItemSelector itemCategory={itemCategory} itemSubCategory={itemSubCategory}/>
+            <ItemSelector itemList={itemList} titleWrapper={titleWrapper}/>
             )
           : (
         <Outlet/>
