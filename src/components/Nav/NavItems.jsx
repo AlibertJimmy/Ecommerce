@@ -49,7 +49,7 @@ const StyledUl = styled.ul`
       
       background: #ffffff;
 
-      transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
+      transform: ${({ burgerButtonState }) => burgerButtonState ? 'translateX(0)' : 'translateX(100%)'};
       li{
           margin-bottom: 0px;
       }
@@ -62,7 +62,7 @@ const StyledLi = styled.li`
 const ItemSideNav = styled.div`
 `;
 function NavItems () {
-  const { openBurgerButton, setOpenBurgerButton } = useNavContext();
+  const { burgerButtonState, setBurgerButtonState } = useNavContext();
 
   const dropDownTitle1 = 'Shelter';
   const links1 = ['Shelter/SingleWall', 'Shelter/DoubleWall', 'Shelter/Accessory'];
@@ -74,9 +74,9 @@ function NavItems () {
 
   return (
     <ItemSideNav id='itemSideNav'>
-      <StyledUl open={openBurgerButton} id='itemUl'>
-            <StyledLi><Dropdown dropDownTitle ={dropDownTitle1} options={linksRender1} links={links1} handleCloseBurger={() => setOpenBurgerButton(false)}/></StyledLi>
-            <StyledLi><Dropdown dropDownTitle ={dropDownTitle2} options={linksRender2} links={links2} handleCloseBurger={() => setOpenBurgerButton(false)}/></StyledLi>
+      <StyledUl burgerButtonState={burgerButtonState} id='itemUl'>
+            <StyledLi><Dropdown dropDownTitle ={dropDownTitle1} options={linksRender1} links={links1} handleCloseBurger={() => setBurgerButtonState(false)}/></StyledLi>
+            <StyledLi><Dropdown dropDownTitle ={dropDownTitle2} options={linksRender2} links={links2} handleCloseBurger={() => setBurgerButtonState(false)}/></StyledLi>
         </StyledUl>
     </ItemSideNav>
 

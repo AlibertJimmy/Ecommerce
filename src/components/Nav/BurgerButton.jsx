@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 
 // Import Context
 import { useNavContext } from '../../context/NavContext';
+import { useCartContext } from '../../context/CartContext';
 
 // Import Component
 import SideNav from './SideNav';
@@ -19,32 +20,30 @@ import styled from 'styled-components';
 import { responsiveWidthTablet, zIndexBurgerButton } from '../../utils/Constant';
 
 const MenuWrapper = styled.div`
-  padding:0;
   width: 100%;
-  background-color: transparent;
 `;
 
-const StyledBurger = styled.div`
+const BurgerButton = styled.div`
     width: 2rem;
     height: 2rem;
 
     position: fixed;
-    top: ${({ open }) => open ? '17px' : '10px'};
-    right: ${({ open }) => open ? '10px' : '15px'};
+    top: ${({ burgerButtonState }) => burgerButtonState ? '17px' : '10px'};
+    right: ${({ burgerButtonState }) => burgerButtonState ? '10px' : '15px'};
     
     border-radius: 5px;
     padding: 2px;
 
-    z-index: ${zIndexBurgerButton};
-
     display: none;
 
+    z-index: ${zIndexBurgerButton};
+
     @media (max-width: ${responsiveWidthTablet}px){
-        display: flex;
-        justify-content: space-around;
-        flex-flow: column nowrap;
-        border-color: black;
-        cursor: pointer;
+      
+      display: ${({ cartState }) => cartState ? 'none' : 'flex'};
+      justify-content: space-around;
+      flex-flow: column nowrap;
+      cursor: pointer;
     }
 
     div{
@@ -55,22 +54,20 @@ const StyledBurger = styled.div`
         transform-origin: 1px;
 
         &:nth-child(1){
-            transform: ${({ open }) => open ? 'translate(14%) rotate(45deg)' : 'translate(0) rotate(0)'};
+            transform: ${({ burgerButtonState }) => burgerButtonState ? 'translate(14%) rotate(45deg)' : 'translate(0) rotate(0)'};
         }
 
         &:nth-child(2){
-            transform: ${({ open }) => open ? 'translate(100%)' : 'translate(0)'};
-            opacity: ${({ open }) => open ? 0 : 1};
+            transform: ${({ burgerButtonState }) => burgerButtonState ? 'translate(100%)' : 'translate(0)'};
+            opacity: ${({ burgerButtonState }) => burgerButtonState ? 0 : 1};
         }
 
         &:nth-child(3){
-            transform: ${({ open }) => open ? 'translate(14%) rotate(-45deg)' : 'translate(0) rotate(0)'};
+            transform: ${({ burgerButtonState }) => burgerButtonState ? 'translate(14%) rotate(-45deg)' : 'translate(0) rotate(0)'};
         }
-
-        
         
         @media (max-width: ${responsiveWidthTablet}px){
-          background-color: ${({ open }) => open ? 'black' : 'white'};
+          background-color: ${({ burgerButtonState }) => burgerButtonState ? 'black' : 'white'};
         }
 
     }
@@ -82,7 +79,8 @@ export const sideNavPropsType = PropTypes.shape({
 });
 
 function Burger () {
-  const { openBurgerButton, setOpenBurgerButton } = useNavContext();
+  const { burgerButtonState, setBurgerButtonState } = useNavContext();
+  const { cartState } = useCartContext();
   const burgerRef = useRef(null);
 
   useEffect(() => {
@@ -98,7 +96,7 @@ function Burger () {
       */
 
       if (burgerRef.current && !burgerRef.current.contains(event.target)) {
-        setOpenBurgerButton(false);
+        setBurgerButtonState(false);
       }
     }
 
@@ -113,19 +111,15 @@ function Burger () {
 
   return (
     <MenuWrapper ref={burgerRef} id='menuWrapper'>
-        <StyledBurger open={openBurgerButton} onClick={() => setOpenBurgerButton(!openBurgerButton)}>
+        <BurgerButton burgerButtonState={burgerButtonState} cartState={cartState} onClick={() => setBurgerButtonState(!burgerButtonState)} id='burgerButton'>
             <div />
             <div />
             <div />
-        </StyledBurger>
-        <SideNav openBurgerButton={openBurgerButton} handleCloseBurger={() => setOpenBurgerButton(false)}/>
-        <NavItems openBurgerButton={openBurgerButton} handleCloseBurger={() => setOpenBurgerButton(false)}/>
+        </BurgerButton>
+        <SideNav />
+        <NavItems />
     </MenuWrapper>
   );
 }
 
 export default Burger;
-/*
-<SideNav openBurgerButton={openBurgerButton} handleCloseBurger={() => setOpenBurgerButton(false)}/>
-            <NavItems openBurgerButton={openBurgerButton} handleCloseBurger={() => setOpenBurgerButton(false)}/>
-            */

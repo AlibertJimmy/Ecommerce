@@ -14,10 +14,9 @@ import styled, { css } from 'styled-components';
 // Import Constants
 import { responsiveWidthMobile, responsiveWidthTablet } from '../../utils/Constant';
 
-const Container = styled.div`
+const GridWrapper = styled.div`
   max-width: 1200px;
   padding: 10px 19px;
-  z-index: 1;
 `;
 
 const GridContainer = styled.div`
@@ -106,7 +105,7 @@ const CategoryImg = styled.img`
 
 function CategorySelectorGrid () {
   return (
-    <Container id='container'>
+    <GridWrapper id='gridWrapper'>
       <GridContainer id='gridContainer'>
         <GridOne id='featuredGridOne'>
           <Link to="/Shelter">
@@ -137,7 +136,7 @@ function CategorySelectorGrid () {
           </Link>
         </GridFourLow>
       </GridContainer>
-    </Container>
+    </GridWrapper>
   );
 }
 

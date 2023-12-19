@@ -20,37 +20,36 @@ import {
 // Styled components
 
 function Dropdown ({ dropDownTitle, options, links, handleCloseBurger }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [dropDownState, setDropDownState] = useState(false);
 
   const handleOptionClick = () => {
-    setIsOpen(false);
+    setDropDownState(false);
     scrollToTop();
     handleCloseBurger();
     console.log('handleOptionClick');
   };
 
   const handleOnMouseEnter = () => {
-    setIsOpen(true);
+    setDropDownState(true);
     console.log('handleOnMouseEnter');
   };
 
   const handleOnMouseLeave = () => {
-    setIsOpen(false);
+    setDropDownState(false);
     console.log('handleOnMouseLeave');
   };
 
   const handleOnClick = () => {
-    // setIsOpen(!isOpen);
-    setIsOpen(true);
+    setDropDownState(true);
     console.log('handleOnClick');
-    console.log(`isOpen : ${isOpen}`);
+    console.log(`dropDownState : ${dropDownState}`);
   };
 
   return (
     <DropdownContainer onMouseEnter={() => handleOnMouseEnter()} onMouseLeave={() => handleOnMouseLeave()} onClick={() => handleOnClick()}id='dropDownContainer'>
       <DropDownSpan id={`dropDownSpan${dropDownTitle}`}>{dropDownTitle}<DropDownStyledIcon icon={faChevronDown} /></DropDownSpan>
-      <DropdownContent id={`dropDownContent${dropDownTitle}`} open={isOpen}>
-        {console.log(`DropdownContent isOpen : ${isOpen}`)}
+      <DropdownContent id={`dropDownContent${dropDownTitle}`} open={dropDownState}>
+        {console.log(`DropdownContent isOpen : ${dropDownState}`)}
         {options.map((option, index) => (
           <DropdownItem key={index} id={`dropdownItem${option}`}>
             <StyledLinkDropDown key={index} to={`/${links[index]}`} onClick={() => handleOptionClick(links[index])}>{option}</StyledLinkDropDown>

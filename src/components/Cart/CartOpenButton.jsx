@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react';
 
 // Import Context
 import { useCartContext } from '../../context/CartContext';
+import { useNavContext } from '../../context/NavContext';
 
 // Import Components
 import Cart from './Cart';
@@ -17,7 +18,8 @@ import CartWhite from '../../assets/Functionnal_Icon/Cart_White.png';
 import { CartButtonWrapper, OpenCartButton, CartIcon } from '../../utils/Style/CartStyle';
 
 function CartOpenButton () {
-  const { isOpen, setIsOpen, cart } = useCartContext();
+  const { cartState, setCartState, cart } = useCartContext();
+  const { burgerButtonState } = useNavContext();
   const amoutOfItemInCart = itemQuantity(cart);
   const cartRef = useRef(null);
 
@@ -31,7 +33,7 @@ function CartOpenButton () {
       console.log(cartRef.current.contains(event.target));
       */
       if (cartRef.current && !cartRef.current.contains(event.target)) {
-        setIsOpen(false);
+        setCartState(false);
       }
     }
 
@@ -46,7 +48,7 @@ function CartOpenButton () {
 
   return (
     <CartButtonWrapper ref={cartRef} id='cartButtonWrapper'>
-      <OpenCartButton onClick={() => setIsOpen(!isOpen)} amount={amoutOfItemInCart} id='cartButton'>
+      <OpenCartButton onClick={() => setCartState(!cartState)} amount={amoutOfItemInCart} id='cartButton' burgerButtonState={burgerButtonState}>
         <CartIcon id='cartIcon' src={CartWhite} alt='cartPic'/>
       </OpenCartButton >
       <Cart />

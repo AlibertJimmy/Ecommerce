@@ -35,14 +35,16 @@ export const CartWrapper = styled.div`
   z-index: ${zIndexCart};
 
   ${props =>
-    props.isOpen
+    props.cartState
       ? `
       
       transform: translateX(0);
       `
       : `
       transform: translateX(100%);
-      `}
+      `
+  }
+  border: 2px solid red;
 `;
 
 export const FilledCartWrapper = styled.div`
@@ -138,6 +140,8 @@ export const OpenCartButton = styled.button`
   z-index: ${zIndexCartButton};
   color: white;
   position: relative;
+
+  display: ${({ burgerButtonState }) => burgerButtonState ? 'none' : 'inline-block'};
 
   &::after {
 

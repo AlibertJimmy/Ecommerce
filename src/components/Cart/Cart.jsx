@@ -27,7 +27,7 @@ import {
 import { QuantityButton, EmptyCartButton, QuantityP } from '../../utils/Style/QuantitySelectionStyle';
 
 function Cart () {
-  const { isOpen, setIsOpen, cart, updateCart } = useCartContext();
+  const { cartState, setCartState, cart, updateCart } = useCartContext();
   if (!cart) {
     return null;
   }
@@ -69,7 +69,7 @@ function Cart () {
   };
 
   return (
-      <CartWrapper isOpen={ isOpen } id='cartWrapper'>
+      <CartWrapper cartState={ cartState } id='cartWrapper'>
         <StyledH2>Cart ({itemQuantity(cart)})</StyledH2>
         <CartCloseButton />
           {cart.length > 0
@@ -122,7 +122,7 @@ function Cart () {
                 <StyledH2>Your cart is empty</StyledH2>
               </CenterContainer>
               <CenterContainer>
-                <EmptyCartButton onClick={() => setIsOpen(false)}>Keep Browsing</EmptyCartButton>
+                <EmptyCartButton onClick={() => setCartState(false)}>Keep Browsing</EmptyCartButton>
               </CenterContainer>
             </EmptyCartWrapper>
               )}

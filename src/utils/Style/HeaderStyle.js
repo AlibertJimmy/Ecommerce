@@ -36,13 +36,14 @@ export const CartDiv = styled.div`
   align-items: center;
 
   position: fixed;
-  right: 0;
-  
-  margin-right: ${sideMargin}px;
+  right: 20px;
 
+  width: 30px;
+  
   @media (max-width: ${responsiveWidthTablet}px){
-    position: static;
+    right: 65px;
   }
+
 `;
 
 export const NavBarDiv = styled.div`

@@ -8,24 +8,24 @@ import PropTypes from 'prop-types';
 const NavContext = createContext();
 
 export const NavContextProvider = ({ children }) => {
-  const [openBurgerButton, setOpenBurgerButton] = useState(false);
+  const [burgerButtonState, setBurgerButtonState] = useState(false);
 
   useEffect(() => {
-    const json = localStorage.getItem('openBurgerButton');
+    const json = localStorage.getItem('burgerButtonState');
     const savedNav = JSON.parse(json);
     if (savedNav) {
-      setOpenBurgerButton(savedNav);
+      setBurgerButtonState(savedNav);
     }
   }, []);
 
   useEffect(() => {
-    const json = JSON.stringify(openBurgerButton);
-    localStorage.setItem('openBurgerButton', json);
-  }, [openBurgerButton]);
+    const json = JSON.stringify(burgerButtonState);
+    localStorage.setItem('burgerButtonState', json);
+  }, [burgerButtonState]);
 
   const contextValue = {
-    openBurgerButton,
-    setOpenBurgerButton
+    burgerButtonState,
+    setBurgerButtonState
   };
 
   return <NavContext.Provider value={contextValue}>{children}</NavContext.Provider>;

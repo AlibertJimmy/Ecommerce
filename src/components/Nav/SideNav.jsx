@@ -53,7 +53,7 @@ const StyledUl = styled.ul`
         
         background: #ffffff;
 
-        transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
+        transform: ${({ burgerButtonState }) => burgerButtonState ? 'translateX(0)' : 'translateX(100%)'};
        li{
             margin-bottom: 0px;
        }
@@ -64,16 +64,16 @@ const StyledLi = styled.li`
 `;
 
 function SideNav () {
-  const { openBurgerButton, setOpenBurgerButton } = useNavContext();
+  const { burgerButtonState, setBurgerButtonState } = useNavContext();
   function handleLinkClick () {
-    setOpenBurgerButton(false);
+    setBurgerButtonState(false);
     scrollToTop();
     console.log('handleLinkClick');
   }
 
   return (
     <div id='sideNav'>
-      <StyledUl open={openBurgerButton} id='sideul'>
+      <StyledUl burgerButtonState={burgerButtonState} id='sideul'>
             <StyledLi><StyledLink to="/" onClick={handleLinkClick}>Home</StyledLink></StyledLi>
             <StyledLi><StyledLink to="/Account" onClick={handleLinkClick}>Account</StyledLink></StyledLi>
         </StyledUl>

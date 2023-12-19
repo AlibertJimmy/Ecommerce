@@ -8,9 +8,9 @@ import { useCartContext } from '../../context/CartContext';
 import { ClosingCross } from '../../utils/Style/CartStyle';
 
 function CartCloseButton () {
-  const { isOpen, setIsOpen } = useCartContext();
+  const { cartState, setCartState } = useCartContext();
   return (
-          <ClosingCross onClick={() => setIsOpen(!isOpen)} id='cartClosingCross'>
+          <ClosingCross onClick={() => setCartState(!cartState)} id='cartClosingCross'>
             <div/>
             <div/>
           </ClosingCross>
