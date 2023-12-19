@@ -5,8 +5,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // Import Style
-import { StyledLink } from '../../../utils/Style/GlobalStyle';
-import { ItemContainer, ArticleDescription, StyledP } from '../../../utils/Style/TrendingSliderStyle';
+import { StyledLink, StyledP } from '../../../utils/Style/GlobalStyle';
+import { ItemContainer, ArticleDescription } from '../../../utils/Style/TrendingSliderStyle';
 import { PictureContainer, ArticlePicturePreviewSelection } from '../../../utils/Style/PreviewStyle';
 
 // Import Style
@@ -23,9 +23,9 @@ function TrendingItem ({ itemCategory, trendingItemList }) {
               <ArticlePicturePreviewSelection src={item.illustrations[0].picture} alt='product' />
             </PictureContainer>
             <ArticleDescription id="articleDescription">
-              <StyledP>{item.brand}</StyledP>
-              <StyledP>{item.name}</StyledP>
-              <StyledP>{item.price}€</StyledP>
+              <StyledP style={{ margin: '5px 0px' }}>{item.brand}</StyledP>
+              <StyledP style={{ margin: '5px 0px' }}>{item.name}</StyledP>
+              <StyledP style={{ margin: '5px 0px' }}>{item.price}€</StyledP>
             </ArticleDescription>
           </StyledLink>
         </ItemContainer>

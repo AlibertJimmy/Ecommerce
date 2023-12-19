@@ -106,7 +106,3 @@ export const ArticleDescription = styled.div`
   justify-content: center;
   align-items: center;
 `;
-
-export const StyledP = styled.p`
-  margin: 5px 0;
-`;

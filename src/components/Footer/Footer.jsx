@@ -9,8 +9,8 @@ import { scrollToTop } from '../../utils/Functions';
 // import ArrowUp from '../../assets/Functionnal_Icon/arrowUp.png';
 
 // Import Style
-import { StyledIcon } from '../../utils/Style/GlobalStyle';
-import { StyledFooter, StyledText, StyledP, StyledButton } from '../../utils/Style/FooterStyle';
+import { StyledIcon, StyledP } from '../../utils/Style/GlobalStyle';
+import { StyledFooter, StyledText, StyledButton } from '../../utils/Style/FooterStyle';
 
 // Import Constants
 

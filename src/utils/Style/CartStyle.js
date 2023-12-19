@@ -83,11 +83,6 @@ export const CartContentPContainer = styled.div`
     justify-content: space-between;
 `;
 
-export const StyledP = styled.p`
-    font-family: sans-serif;
-    margin: 10px 10px 10px 5px;
-`;
-
 export const CartQuantitySelectorWrapper = styled.div`
   display: flex;
   justify-content: space-between;

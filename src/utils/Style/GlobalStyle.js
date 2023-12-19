@@ -53,6 +53,11 @@ export const StyledTitleH2 = styled.h2`
   font-weight: 200;
 `;
 
+export const StyledP = styled.p`
+    font-family: sans-serif;
+    font-style: 15px;
+`;
+
 export const CommonLinksIcon = css`
   width: 25px;
   height: 25px;

@@ -27,11 +27,6 @@ export const StyledText = styled.div`
       text-align:center;
 `;
 
-export const StyledP = styled.p`
-    font-size: 15px;
-    margin: 5px;
-`;
-
 export const StyledButton = styled.button`
   border: none;  
   background-color: transparent;

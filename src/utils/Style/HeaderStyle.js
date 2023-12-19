@@ -36,7 +36,7 @@ export const CartDiv = styled.div`
   align-items: center;
 
   position: fixed;
-  right: 20px;
+  right: 30px;
 
   width: 30px;
   

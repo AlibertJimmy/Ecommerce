@@ -22,9 +22,10 @@ import {
   CartContentDataDisplay, CartContentPContainer,
   CartQuantitySelectorWrapper, CartQuantitySelectorContainer,
   CartCheckOutWrapper, CenterContainer, EmptyCartIMG,
-  EmptyCartWrapper, StyledH2, StyledP
+  EmptyCartWrapper, StyledH2
 } from '../../utils/Style/CartStyle';
 import { QuantityButton, EmptyCartButton, QuantityP } from '../../utils/Style/QuantitySelectionStyle';
+import { StyledP } from '../../utils/Style/GlobalStyle';
 
 function Cart () {
   const { cartState, setCartState, cart, updateCart } = useCartContext();
@@ -83,8 +84,8 @@ function Cart () {
                     </CartContentImageContainer>
                     <CartContentDataDisplay id={`cartContentDataDisplay${itemProperty.name}`}>
                       <CartContentPContainer id={`cartContentPContainer${itemProperty.name}`}>
-                        <StyledP>{itemProperty.name}</StyledP>
-                        <StyledP style={{ fontWeight: 'bold' }}>{itemProperty.price}€</StyledP>
+                        <StyledP style={{ margin: '10px 10px 10px 5px' }}>{itemProperty.name}</StyledP>
+                        <StyledP style={{ fontWeight: 'bold', margin: '10px 10px 10px 5px' }}>{itemProperty.price}€</StyledP>
                       </CartContentPContainer>
                       <CartQuantitySelectorWrapper id={`cartQuantitySelectorWrapper${itemProperty.name}`}>
                         <CartQuantitySelectorContainer id={`cartQuantitySelectorContainer${itemProperty.name}`}>
