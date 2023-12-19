@@ -37,8 +37,6 @@ const GridContainer = styled.div`
         grid-gap: 13px;
         gap: 13px;
   }
-
-
 `;
 
 const FeaturedGrid = css`

@@ -11,50 +11,7 @@ import Logo from './Logo/Logo';
 import { scrollToTop } from '../../utils/Functions';
 
 // Import Style
-import styled from 'styled-components';
-import { commonHeaderFooter } from '../../utils/Styles';
-
-// Import Constants
-import { headerHeight, responsiveWidthTablet, zIndexHeader } from '../../utils/Constant';
-
-const sideMargin = 20;
-
-const HeaderWrapper = styled.div`
-  ${commonHeaderFooter};
-  flex-direction: column;
-  color: white;
-  position: fixed;
-  top:0;
-  z-index: ${zIndexHeader};
-`;
-
-const StyledHeader = styled.div`
-  height: ${headerHeight}px;
-  display: flex;
-
-  align-items: center;
-  justify-content: space-between;
-`;
-
-const LogoDiv = styled.div`
-  margin-left: ${sideMargin}px;
-  position: fixed;
-`;
-const CartDiv = styled.div`
-  display:flex;
-  position: fixed;
-  right: 0;
-  align-items: center;
-  margin-right: ${sideMargin}px;
-
-  @media (max-width: ${responsiveWidthTablet}px){
-    position: static;
-  }
-`;
-
-const NavBarDiv = styled.div`
-  width: 100%;
-`;
+import { CartDiv, HeaderWrapper, LogoDiv, NavBarDiv, StyledHeader } from '../../utils/Style/HeaderStyle';
 
 function Header () {
   function handleOnClick () {
@@ -66,7 +23,7 @@ function Header () {
       <StyledHeader id='styledHeader'>
         <LogoDiv id='logoDiv'>
           <Link to='/' onClick={handleOnClick}><Logo/></Link>
-      </LogoDiv>
+        </LogoDiv>
         <NavBarDiv id='navBarContainer'>
             <Navbar/>
         </NavBarDiv>

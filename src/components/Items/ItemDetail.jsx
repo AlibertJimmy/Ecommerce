@@ -20,6 +20,7 @@ import { displayPreviewSlider, getItemCorrespondingToId, getItemList } from '../
 // Import Style
 import { StyledIcon, StyledTitleH1 } from '../../utils/Style/GlobalStyle';
 import { ButtonContainer, ScrollingButton } from '../../utils/Style/PreviewSliderStyle';
+import { AddToCartButton, QuantityButton, QuantityP } from '../../utils/Style/QuantitySelectionStyle';
 import {
   ItemDetailContainer,
   ItemPresentation,
@@ -32,7 +33,6 @@ import {
 
 // Import Colors
 import colors from '../../utils/Colors';
-import { AddToCartButton, QuantityButton, QuantityP } from '../../utils/Style/QuantitySelectionStyle';
 
 function increaseSelection (amount, updateAmount) {
   amount = amount + 1;
