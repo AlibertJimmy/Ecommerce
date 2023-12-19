@@ -24,8 +24,8 @@ import { AddToCartButton, QuantityButton, QuantityP } from '../../utils/Style/Qu
 import {
   ItemDetailContainer,
   ItemPresentation,
-  IllustrationContainer, PictureDisplayer, ItemDetailPicture,
-  PictureSelector,
+  ImageContainer, ImageDisplayer, ItemDetailImage,
+  ImageSelector,
   InfoContainer, ItemDatas, StyledUlInfo,
   QuantitySelectorWrapper, QuantitySelectorContainer,
   DescriptionContainer, StyledUlDescription
@@ -89,8 +89,8 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
   return (
         <ItemDetailContainer id='pageContainer'>
           <ItemPresentation key={index} id='itemPresentation'>
-            <IllustrationContainer id='illustrationContainer'>
-              <PictureDisplayer id='pictureDisplayer'>
+            <ImageContainer id='illustrationContainer'>
+              <ImageDisplayer id='imageDisplayer'>
                 <ButtonContainer id='scrollingButtonLeftContainer'>
                   {itemList[index].illustrations.length === 1
                     ? <></>
@@ -99,7 +99,7 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
                         <StyledIcon icon={faChevronLeft} />
                       </ScrollingButton>}
                 </ButtonContainer>
-                  <ItemDetailPicture src={image} alt='picture1' id='itemPicture'></ItemDetailPicture>
+                  <ItemDetailImage src={image} alt='picture1' id='itemPicture'/>
                 <ButtonContainer id='scrollingButtonRightContainer'>
                 {itemList[index].illustrations.length === 1
                   ? <></>
@@ -108,15 +108,15 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
                       <StyledIcon icon={faChevronRight} />
                     </ScrollingButton>}
                 </ButtonContainer>
-              </PictureDisplayer>
+              </ImageDisplayer>
               {
                 displayPreviewSlider(itemList[index].illustrations.length, screenWidth) === false
                   ? <></>
-                  : <PictureSelector>
+                  : <ImageSelector>
                       <PreviewSlider pictureList={itemList[index].illustrations} setImage={setImage}/>
-                    </PictureSelector>
+                    </ImageSelector>
               }
-            </IllustrationContainer>
+            </ImageContainer>
             <InfoContainer id='infoContainer'>
               <ItemDatas id='itemDatas'>
                 <StyledTitleH1 id='articleTitleName'>{itemList[index].name}</StyledTitleH1>

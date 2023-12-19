@@ -47,7 +47,7 @@ export const ItemPresentation = styled.div`
 `;
 
 // Illustration Related
-export const IllustrationContainer = styled.div`
+export const ImageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,7 +59,7 @@ export const IllustrationContainer = styled.div`
   }
 `;
 
-export const PictureDisplayer = styled.div`
+export const ImageDisplayer = styled.div`
   width: ${IllustrationDisplayWidth}px;
   height: ${IllustrationDisplayHeight}px;
 
@@ -79,7 +79,7 @@ export const PictureDisplayer = styled.div`
   }
 `;
 
-export const ItemDetailPicture = styled.img`
+export const ItemDetailImage = styled.img`
   max-width: ${IllustrationDisplayWidth - PicturelayoutButtonWidth * 2}px;
   max-height: ${IllustrationDisplayHeight}px;
   object-fit: contain;
@@ -95,7 +95,7 @@ export const ItemDetailPicture = styled.img`
   }
 `;
 
-export const PictureSelector = styled.div`
+export const ImageSelector = styled.div`
   display: flex;
   justify-content: space-evenly;
   width: ${IllustrationDisplayWidth}px;
