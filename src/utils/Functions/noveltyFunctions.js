@@ -10,6 +10,9 @@ import { hammockList } from '../../datas/Bedding/Hammock';
 import { sleepingBagList } from '../../datas/Bedding/SleepingBag';
 import { mattressList } from '../../datas/Bedding/Mattress';
 
+// Import Constant
+import { noveltySelectorMaxItem } from '../Constant';
+
 const completeItemListBySubCategory = [
   // Shelter
   singleWallList,
@@ -47,5 +50,5 @@ function pickRandomNewArticle (newArticleArray) {
     const j = Math.floor(Math.random() * (i + 1));
     [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
   }
-  return shuffledArray.slice(0, 8);
+  return shuffledArray.slice(0, noveltySelectorMaxItem);
 }

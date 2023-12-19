@@ -23,6 +23,9 @@ export const trendingSliderElementBorderWith = 2;
 
 export const trendingSliderMaxItem = 8;
 
+// Novelty
+export const noveltySelectorMaxItem = 8;
+
 // Preview Slider
 export const previewSliderElementWidth = 150;
 export const previewSliderElementHeight = 150;
