@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 // Import Functions
 import { getItemSubCategoryList } from '../../utils/Functions/itemSubcategoryFunction';
-import { scrollToTop } from '../../utils/Functions';
+import { scrollToTop } from '../../utils/Functions/globalFunctions';
 
 // Import Style
 import { StyledTitleH2 } from '../../utils/Style/GlobalStyle';

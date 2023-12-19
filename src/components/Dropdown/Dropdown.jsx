@@ -6,7 +6,7 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 
 // Import Function
-import { scrollToTop } from '../../utils/Functions';
+import { scrollToTop } from '../../utils/Functions/globalFunctions';
 
 // Import Style
 

@@ -7,7 +7,7 @@ import { useNavContext } from '../../context/NavContext';
 // Import compoment
 
 // Import Functions
-import { scrollToTop } from '../../utils/Functions';
+import { scrollToTop } from '../../utils/Functions/globalFunctions';
 
 // Import Style
 import styled from 'styled-components';

@@ -3,7 +3,7 @@ import React from 'react';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 // Import Functions
-import { scrollToTop } from '../../utils/Functions';
+import { scrollToTop } from '../../utils/Functions/globalFunctions';
 
 // Import Assets
 // import ArrowUp from '../../assets/Functionnal_Icon/arrowUp.png';

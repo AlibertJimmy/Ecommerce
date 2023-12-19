@@ -5,7 +5,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // Import Functions
-import { scrollToTop } from '../../utils/Functions';
+import { scrollToTop } from '../../utils/Functions/globalFunctions';
 
 // Import Style
 import {
