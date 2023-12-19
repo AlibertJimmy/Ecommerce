@@ -63,7 +63,7 @@ const StyledLi = styled.li`
 
 `;
 
-function SideNav () {
+function NavMenu () {
   const { burgerButtonState, setBurgerButtonState } = useNavContext();
   function handleLinkClick () {
     setBurgerButtonState(false);
@@ -82,4 +82,4 @@ function SideNav () {
   );
 }
 
-export default SideNav;
+export default NavMenu;

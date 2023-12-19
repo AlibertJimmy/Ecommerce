@@ -9,7 +9,7 @@ import { useNavContext } from '../../context/NavContext';
 import { useCartContext } from '../../context/CartContext';
 
 // Import Component
-import SideNav from './SideNav';
+import NavMenu from './NavMenu';
 import NavItems from './NavItems';
 
 // Import Style
@@ -116,7 +116,7 @@ function Burger () {
             <div />
             <div />
         </BurgerButton>
-        <SideNav />
+        <NavMenu />
         <NavItems />
     </MenuWrapper>
   );
