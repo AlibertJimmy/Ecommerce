@@ -44,7 +44,6 @@ export const CartWrapper = styled.div`
       transform: translateX(100%);
       `
   }
-  border: 2px solid red;
 `;
 
 export const FilledCartWrapper = styled.div`

@@ -18,6 +18,7 @@ export const PageWrapper = styled.div`
 
   @media (max-width: ${responsiveWidthTablet}px){
     margin: ${headerHeight + verticalMargin}px ${horizontalMarginTablet}px ${verticalMargin}px ${horizontalMarginTablet}px;
+    min-height: ${window.innerHeight - (headerHeight + verticalMargin * 2 + footerHeight)}px;
   }
 
   @media (max-width: ${responsiveWidthMobile}px){
