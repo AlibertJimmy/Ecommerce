@@ -13,65 +13,7 @@ import NavMenu from './NavMenu';
 import NavItems from './NavItems';
 
 // Import Style
-import styled from 'styled-components';
-// import colors from '../../utils/Colors';
-
-// Import Constante
-import { responsiveWidthTablet, zIndexBurgerButton } from '../../utils/Constant';
-
-const MenuWrapper = styled.div`
-  width: 100%;
-`;
-
-const BurgerButton = styled.div`
-    width: 2rem;
-    height: 2rem;
-
-    position: fixed;
-    top: ${({ burgerButtonState }) => burgerButtonState ? '17px' : '10px'};
-    right: ${({ burgerButtonState }) => burgerButtonState ? '10px' : '15px'};
-    
-    border-radius: 5px;
-    padding: 2px;
-
-    display: none;
-
-    z-index: ${zIndexBurgerButton};
-
-    @media (max-width: ${responsiveWidthTablet}px){
-      
-      display: ${({ cartState }) => cartState ? 'none' : 'flex'};
-      justify-content: space-around;
-      flex-flow: column nowrap;
-      cursor: pointer;
-    }
-
-    div{
-        
-        height: 0.25rem;
-        border-radius: 10px;
-        
-        transform-origin: 1px;
-
-        &:nth-child(1){
-            transform: ${({ burgerButtonState }) => burgerButtonState ? 'translate(14%) rotate(45deg)' : 'translate(0) rotate(0)'};
-        }
-
-        &:nth-child(2){
-            transform: ${({ burgerButtonState }) => burgerButtonState ? 'translate(100%)' : 'translate(0)'};
-            opacity: ${({ burgerButtonState }) => burgerButtonState ? 0 : 1};
-        }
-
-        &:nth-child(3){
-            transform: ${({ burgerButtonState }) => burgerButtonState ? 'translate(14%) rotate(-45deg)' : 'translate(0) rotate(0)'};
-        }
-        
-        @media (max-width: ${responsiveWidthTablet}px){
-          background-color: ${({ burgerButtonState }) => burgerButtonState ? 'black' : 'white'};
-        }
-
-    }
-`;
+import { MenuWrapper, BurgerButton } from '../../utils/Style/NavStyle';
 
 export const sideNavPropsType = PropTypes.shape({
   open: PropTypes.bool.isRequired,
