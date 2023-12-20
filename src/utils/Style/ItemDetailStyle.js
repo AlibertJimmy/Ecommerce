@@ -16,7 +16,7 @@ import {
 export const ItemDetailContainer = styled.div`
   display: flex;
   flex-direction: column;
-
+  align-items: center;
   @media (max-width: ${responsiveWidthTablet}px){
     margin: 0 10px;
   }
@@ -57,10 +57,9 @@ export const ImageWrapper = styled.div`
   @media (max-width: ${responsiveWidthMobile}px){
     flex-direction: column;
   }
-  border: 1px solid green;
   
 `;
-// align-items: center;
+// align-items: center; --> bug source /!\
 export const ImageDisplayer = styled.div`
   width: ${IllustrationDisplayWidth}px;
   height: ${IllustrationDisplayHeight}px;
@@ -71,26 +70,26 @@ export const ImageDisplayer = styled.div`
   @media (max-width: ${responsiveWidthTablet}px){
     width: ${IllustrationDisplayWidthResponsiveTablet}px;
     height: ${IllustrationDisplayHeightResponsiveTablet}px;
+    align-items: center;
   }
 
   @media (max-width: ${responsiveWidthMobile}px){
     width: ${IllustrationDisplayWidthResponsiveMobile}px;
     height: ${IllustrationDisplayHeightResponsiveMobile}px;
   }
-  border: ${borderWidth}px solid red;
 `;
-// align-items: center;
+
 export const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
-  border: ${borderWidth}px solid yellow;
-  max-width: ${IllustrationDisplayWidth - PicturelayoutButtonWidth * 2}px;
-  max-height: ${IllustrationDisplayHeight}px;
+  align-items: center;
+  width: ${IllustrationDisplayWidth - PicturelayoutButtonWidth * 2}px;
+  height: ${IllustrationDisplayHeight}px;
 `;
 
 export const ItemDetailImage = styled.img`
-  width: ${IllustrationDisplayWidth - PicturelayoutButtonWidth * 2}px;
-  height: ${IllustrationDisplayHeight}px;
+  max-width: ${IllustrationDisplayWidth - PicturelayoutButtonWidth * 2}px;
+  max-height: ${IllustrationDisplayHeight}px;
   object-fit: contain;
 
   @media (max-width: ${responsiveWidthTablet}px){
@@ -102,7 +101,6 @@ export const ItemDetailImage = styled.img`
     width: ${IllustrationDisplayWidthResponsiveMobile - PicturelayoutButtonWidth * 2}px;
     height: ${IllustrationDisplayHeightResponsiveMobile}px;
   }
-  border: ${borderWidth}px solid green;
 `;
 
 export const ImageSelector = styled.div`
@@ -157,7 +155,6 @@ export const PictureSelectionPreview = styled.img`
 `;
 
 // Info Related
-// flex: 1;
 export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -175,7 +172,6 @@ export const InfoContainer = styled.div`
     padding: 25px;
     width: 15rem;
   }
-  border: 1px solid blue;
 `;
 
 export const ItemDatas = styled.div`
@@ -240,8 +236,6 @@ export const DescriptionContainer = styled.div`
     margin: 0;
     width: 100%;
   }
-  
-  border: ${borderWidth}px solid yellow;
 `;
 
 export const StyledUlDescription = styled.ul`
