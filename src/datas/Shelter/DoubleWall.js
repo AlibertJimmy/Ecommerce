@@ -1,9 +1,8 @@
-import LihtTent2Pic1 from '../../assets/Items/Shelter/DoubleWall/LightTent2/LightTent2_1.png';
-import LihtTent2Pic2 from '../../assets/Items/Shelter/DoubleWall/LightTent2/LightTent2_2.png';
-import LihtTent2Pic3 from '../../assets/Items/Shelter/DoubleWall/LightTent2/LightTent2_3.png';
-import LihtTent2Pic4 from '../../assets/Items/Shelter/DoubleWall/LightTent2/LightTent2_4.png';
-import LihtTent2Pic5 from '../../assets/Items/Shelter/DoubleWall/LightTent2/LightTent2_5.png';
-import LihtTent2Pic6 from '../../assets/Items/Shelter/DoubleWall/LightTent2/LightTent2_6.png';
+import LihtTent2Pic1 from '../../assets/Items/Shelter/DoubleWall/LightTent2/LightTent2_1.jpg';
+import LihtTent2Pic2 from '../../assets/Items/Shelter/DoubleWall/LightTent2/LightTent2_2.jpg';
+import LihtTent2Pic3 from '../../assets/Items/Shelter/DoubleWall/LightTent2/LightTent2_3.jpg';
+import LihtTent2Pic4 from '../../assets/Items/Shelter/DoubleWall/LightTent2/LightTent2_4.jpg';
+import LihtTent2Pic5 from '../../assets/Items/Shelter/DoubleWall/LightTent2/LightTent2_5.jpg';
 
 export const doubleWallList = [
   {
@@ -20,8 +19,7 @@ export const doubleWallList = [
       { picture: LihtTent2Pic2 },
       { picture: LihtTent2Pic3 },
       { picture: LihtTent2Pic4 },
-      { picture: LihtTent2Pic5 },
-      { picture: LihtTent2Pic6 }
+      { picture: LihtTent2Pic5 }
     ],
     brand: 'Ferrino',
     price: 239.00,

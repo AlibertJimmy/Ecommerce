@@ -81,7 +81,7 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
 
   useEffect(() => {
     if (pictureToDisplayIndex <= itemList[index].illustrations.length - 1) {
-      console.log(itemList[index].illustrations[pictureToDisplayIndex].picture);
+      // console.log(itemList[index].illustrations[pictureToDisplayIndex].picture);
       setImage(itemList[index].illustrations[pictureToDisplayIndex].picture);
     }
   }, [pictureToDisplayIndex]);

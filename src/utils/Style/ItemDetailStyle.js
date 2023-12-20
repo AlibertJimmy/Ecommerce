@@ -25,16 +25,13 @@ export const ItemDetailContainer = styled.div`
     justify-content: center;
     margin: 0 10px;
   }
-  overflow: hidden;
 `;
 
 // Item Presentation
 export const ItemPresentation = styled.div`
   margin: 5px 10px;
-  width: auto;
-
+  
   display:flex;
-  flex-direction: row;
   justify-content: center;
 
   @media (max-width: ${responsiveWidthTablet}px){
@@ -46,7 +43,6 @@ export const ItemPresentation = styled.div`
     align-items: center;
   }
   border: ${borderWidth}px solid pink;
-  overflow: hidden;
 `;
 
 // Illustration Related
@@ -54,21 +50,22 @@ export const ImageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
   @media (max-width: ${responsiveWidthTablet}px){
   }
 
   @media (max-width: ${responsiveWidthMobile}px){
     flex-direction: column;
   }
-  overflow: hidden;
+  border: 1px solid green;
+  
 `;
-
+// align-items: center;
 export const ImageDisplayer = styled.div`
   width: ${IllustrationDisplayWidth}px;
   height: ${IllustrationDisplayHeight}px;
 
   display: flex;
-  align-items: center;
   justify-content: space-between;
   
   @media (max-width: ${responsiveWidthTablet}px){
@@ -81,21 +78,19 @@ export const ImageDisplayer = styled.div`
     height: ${IllustrationDisplayHeightResponsiveMobile}px;
   }
   border: ${borderWidth}px solid red;
-  overflow: hidden;
 `;
-//
+// align-items: center;
 export const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
   border: ${borderWidth}px solid yellow;
-  width: ${IllustrationDisplayWidth - PicturelayoutButtonWidth * 2}px;
-  height: ${IllustrationDisplayHeight}px;
+  max-width: ${IllustrationDisplayWidth - PicturelayoutButtonWidth * 2}px;
+  max-height: ${IllustrationDisplayHeight}px;
 `;
 
 export const ItemDetailImage = styled.img`
-  max-width: ${IllustrationDisplayWidth - PicturelayoutButtonWidth * 2}px;
-  max-height: ${IllustrationDisplayHeight}px;
+  width: ${IllustrationDisplayWidth - PicturelayoutButtonWidth * 2}px;
+  height: ${IllustrationDisplayHeight}px;
   object-fit: contain;
 
   @media (max-width: ${responsiveWidthTablet}px){
@@ -108,7 +103,6 @@ export const ItemDetailImage = styled.img`
     height: ${IllustrationDisplayHeightResponsiveMobile}px;
   }
   border: ${borderWidth}px solid green;
-  overflow: hidden;
 `;
 
 export const ImageSelector = styled.div`
@@ -181,7 +175,7 @@ export const InfoContainer = styled.div`
     padding: 25px;
     width: 15rem;
   }
-  border: ${borderWidth}px solid blue;
+  border: 1px solid blue;
 `;
 
 export const ItemDatas = styled.div`
