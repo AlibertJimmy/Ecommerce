@@ -2,27 +2,39 @@
 import { Link } from 'react-router-dom';
 
 // Import Style
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 // Import Constants
-import { trendingSliderElementHeight, trendingSliderElementPictureHeight, trendingSliderElementPictureWidth, trendingSliderElementWidth } from '../Constant';
+import {
+  previewSliderElementHeight, previewSliderElementWidth,
+  trendingSliderElementHeight, trendingSliderElementPictureHeight,
+  trendingSliderElementPictureWidth, trendingSliderElementWidth
+} from '../Constant';
 
-export const PictureContainer = styled.div`
+const PictureContainer = css`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+export const PictureContainerTrendingSlider = styled.div`
+  ${PictureContainer};
 
   height: ${trendingSliderElementHeight}px;
   width: ${trendingSliderElementWidth}px;
 `;
 
+export const PictureContainerPreviewSlider = styled.div`
+  ${PictureContainer};
+
+  height: ${previewSliderElementHeight}px;
+  width: ${previewSliderElementWidth}px;
+`;
+
 export const PictureContainerSelector = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${PictureContainer};
 
   height: 150px;
-  width: 100%;
 `;
 
 export const ArticlePicturePreviewSelection = styled.img`

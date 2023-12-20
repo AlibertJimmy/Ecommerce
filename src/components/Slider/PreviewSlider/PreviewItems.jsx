@@ -8,7 +8,8 @@ import PropTypes from 'prop-types';
 import { usePreviewSliderContext } from '../../../context/PreviewSliderContext';
 
 // Import Style
-import { ItemContainer, ArticlePicturePreviewSelection, PictureContainer } from '../../../utils/Style/PreviewSliderStyle';
+import { ItemContainer, ArticlePicturePreviewSelection } from '../../../utils/Style/PreviewSliderStyle';
+import { PictureContainerPreviewSlider } from '../../../utils/Style/PreviewStyle';
 
 // Import Style
 function PreviewItem ({ pictureList, setImage }) {
@@ -28,9 +29,9 @@ function PreviewItem ({ pictureList, setImage }) {
         <ItemContainer key={index} id='itemContainer'
         style={{ outline: index === pictureToDisplayIndex ? '2px solid rgba(0, 0, 0, .6)' : 'none' }}
         >
-          <PictureContainer onMouseOver={(e) => changeImage(e, index)}>
+          <PictureContainerPreviewSlider onMouseOver={(e) => changeImage(e, index)}>
             <ArticlePicturePreviewSelection src={pictureList[index].picture} alt='product' />
-          </PictureContainer>
+          </PictureContainerPreviewSlider>
         </ItemContainer>
       ))}
     </>

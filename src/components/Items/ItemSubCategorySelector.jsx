@@ -11,7 +11,7 @@ import { scrollToTop } from '../../utils/Functions/globalFunctions';
 // Import Style
 import { StyledTitleH2 } from '../../utils/Style/GlobalStyle';
 import { SubCategorySelectorContainer, ItemPreviewContainer } from '../../utils/Style/ItemSubCategorySelectorStyle';
-import { PictureContainer, ArticlePicturePreviewSelection, StyledLinkShape } from '../../utils/Style/PreviewStyle';
+import { PictureContainerSelector, ArticlePicturePreviewSelection, StyledLinkShape } from '../../utils/Style/PreviewStyle';
 
 function ItemSubcategorySelector ({ itemCategory }) {
   const itemSubcategoryList = getItemSubCategoryList(itemCategory);
@@ -32,9 +32,9 @@ function ItemSubcategorySelector ({ itemCategory }) {
 
                 <StyledLinkShape key={index} to={`/${itemCategory}/${itemSubcategoryList[index].subCategory}`} onClick={handleOnClick} >
                 <>
-                <PictureContainer id='pictureContainer'>
+                <PictureContainerSelector id='pictureContainerSelector'>
                   <ArticlePicturePreviewSelection src={item.illustration} alt='picture1'/>
-                </PictureContainer>
+                </PictureContainerSelector>
                 <StyledTitleH2>{item.text}</StyledTitleH2>
                 </>
                 </StyledLinkShape>

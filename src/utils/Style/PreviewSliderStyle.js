@@ -72,15 +72,6 @@ export const ItemContainer = styled.div`
   cursor: pointer;
 `;
 
-export const PictureContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  height: ${previewSliderElementHeight}px;
-  width: ${previewSliderElementWidth}px;
-`;
-
 export const ArticlePicturePreviewSelection = styled.img`
   max-width: ${previewSliderElementWidth}px;
   max-height: ${previewSliderElementHeight}px;
