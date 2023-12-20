@@ -6,8 +6,10 @@ import { responsiveWidthMobile, responsiveWidthTablet } from '../../utils/Consta
 
 export const GridWrapper = styled.div`
   max-width: 1200px;
-
+  margin: 0 auto;
   padding: 10px 19px;
+  display: flex;
+  justify-content: center;
 `;
 
 export const GridContainer = styled.div`

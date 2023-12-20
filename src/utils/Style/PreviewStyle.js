@@ -4,7 +4,19 @@ import { Link } from 'react-router-dom';
 // Import Style
 import styled from 'styled-components';
 
+// Import Constants
+import { trendingSliderElementHeight, trendingSliderElementPictureHeight, trendingSliderElementPictureWidth, trendingSliderElementWidth } from '../Constant';
+
 export const PictureContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: ${trendingSliderElementHeight}px;
+  width: ${trendingSliderElementWidth}px;
+`;
+
+export const PictureContainerSelector = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,8 +26,8 @@ export const PictureContainer = styled.div`
 `;
 
 export const ArticlePicturePreviewSelection = styled.img`
-  max-width: 150px;
-  max-height: 150px;
+  max-height: ${trendingSliderElementPictureHeight}px;
+  max-width: ${trendingSliderElementPictureWidth}px;
 `;
 
 export const StyledLinkShape = styled(Link)`

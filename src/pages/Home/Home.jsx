@@ -16,7 +16,7 @@ function Home () {
   const titleWrapper = 'Our Novelty';
 
   return (
-      <PageWrapper>
+      <PageWrapper id='pageWrapperHome'>
         <CategorySelectorGrid/>
         <ItemSelector itemList={newArticleList} titleWrapper={titleWrapper}/>
       </PageWrapper>

@@ -7,7 +7,7 @@ import {
   IllustrationDisplayWidth, IllustrationDisplayWidthResponsiveTablet, IllustrationDisplayWidthResponsiveMobile,
   IllustrationDisplayHeight, IllustrationDisplayHeightResponsiveTablet, IllustrationDisplayHeightResponsiveMobile,
   PicturePreviewWidth, PicturePreviewWidthResponsiveTablet, PicturePreviewWidthResponsiveMobile,
-  PicturePreviewHeight, PicturePreviewHeightResponsiveTablet, PicturePreviewHeightResponsiveMobile, PicturelayoutButtonWidth
+  PicturePreviewHeight, PicturePreviewHeightResponsiveTablet, PicturePreviewHeightResponsiveMobile, PicturelayoutButtonWidth, borderWidth
 } from '../Constant';
 
 // Illustration Related
@@ -45,7 +45,7 @@ export const ItemPresentation = styled.div`
     flex-direction: column-reverse;
     align-items: center;
   }
-  border: 1px solid pink;
+  border: ${borderWidth}px solid pink;
   overflow: hidden;
 `;
 
@@ -80,7 +80,7 @@ export const ImageDisplayer = styled.div`
     width: ${IllustrationDisplayWidthResponsiveMobile}px;
     height: ${IllustrationDisplayHeightResponsiveMobile}px;
   }
-  border: 1px solid red;
+  border: ${borderWidth}px solid red;
   overflow: hidden;
 `;
 //
@@ -88,7 +88,7 @@ export const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid yellow;
+  border: ${borderWidth}px solid yellow;
   width: ${IllustrationDisplayWidth - PicturelayoutButtonWidth * 2}px;
   height: ${IllustrationDisplayHeight}px;
 `;
@@ -107,7 +107,7 @@ export const ItemDetailImage = styled.img`
     width: ${IllustrationDisplayWidthResponsiveMobile - PicturelayoutButtonWidth * 2}px;
     height: ${IllustrationDisplayHeightResponsiveMobile}px;
   }
-  border: 1px solid green;
+  border: ${borderWidth}px solid green;
   overflow: hidden;
 `;
 
@@ -181,7 +181,7 @@ export const InfoContainer = styled.div`
     padding: 25px;
     width: 15rem;
   }
-  border: 1px solid blue;
+  border: ${borderWidth}px solid blue;
 `;
 
 export const ItemDatas = styled.div`
@@ -247,7 +247,7 @@ export const DescriptionContainer = styled.div`
     width: 100%;
   }
   
-  border: 1px solid yellow;
+  border: ${borderWidth}px solid yellow;
 `;
 
 export const StyledUlDescription = styled.ul`

@@ -14,7 +14,7 @@ import {
 } from '../../utils/Style/ItemSelectorStyle';
 
 import { StyledTitleH1, StyledTitleH2 } from '../../utils/Style/GlobalStyle';
-import { ArticlePicturePreviewSelection, PictureContainer, StyledLinkShape } from '../../utils/Style/PreviewStyle';
+import { ArticlePicturePreviewSelection, PictureContainerSelector, StyledLinkShape } from '../../utils/Style/PreviewStyle';
 
 function ItemSelector ({ itemList, titleWrapper }) {
   /*
@@ -29,7 +29,7 @@ function ItemSelector ({ itemList, titleWrapper }) {
   }
 
   return (
-    <ArticleSelectorWrapper>
+    <ArticleSelectorWrapper id='articleSelectorWrapper'>
       <StyledTitleH1 style={{ margin: '20px 0' }}>{titleWrapper}</StyledTitleH1>
       <ArticleSelectorContainer id='itemSelectorContainer'>
         {itemList.map((item, index) => (
@@ -38,9 +38,9 @@ function ItemSelector ({ itemList, titleWrapper }) {
             <StyledLinkShape key={index}
             to={`/${itemList[index].category}/${itemList[index].subCategory}/${itemList[index].id}`}
             onClick={handleOnClick}>
-            <PictureContainer>
+            <PictureContainerSelector>
               <ArticlePicturePreviewSelection src={item.illustrations[0].picture} alt='picture1'/>
-            </PictureContainer>
+            </PictureContainerSelector>
             <ArticleDatas>
               <StyledTitleH2>{item.name}</StyledTitleH2>
               <ArticlePrice>{item.price} €</ArticlePrice>

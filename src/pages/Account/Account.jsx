@@ -9,7 +9,7 @@ import { PageWrapper } from '../../utils/Styles';
 
 function Account () {
   return (
-      <PageWrapper>
+      <PageWrapper id='pageWrapperAccount'>
         Account
       </PageWrapper>
   );

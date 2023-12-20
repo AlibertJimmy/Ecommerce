@@ -24,7 +24,6 @@ export const PageWrapper = styled.div`
   @media (max-width: ${responsiveWidthMobile}px){
     margin: ${headerHeight + verticalMargin}px ${horizontalMarginMobile}px ${verticalMargin}px ${horizontalMarginMobile}px;
   }
-  border: 1px solid red;
 `;
 
 export const ComponentBorder = css`

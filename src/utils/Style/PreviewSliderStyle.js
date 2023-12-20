@@ -70,7 +70,6 @@ export const ItemContainer = styled.div`
   width: ${previewSliderElementWidth}px;
   
   cursor: pointer;
-  border: 1px solid red;
 `;
 
 export const PictureContainer = styled.div`
@@ -78,8 +77,8 @@ export const PictureContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  height: 100%;
-  width: 150px;
+  height: ${previewSliderElementHeight}px;
+  width: ${previewSliderElementWidth}px;
 `;
 
 export const ArticlePicturePreviewSelection = styled.img`

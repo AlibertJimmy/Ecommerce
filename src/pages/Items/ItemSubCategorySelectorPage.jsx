@@ -32,7 +32,7 @@ function ItemSubcategorySelectorPage ({ itemCategory }) {
   console.log(`shouldDisplayPageContainer ! ${shouldDisplayPageContainer}`);
   */
   return (
-      <PageWrapper id='pageWrapper'>
+      <PageWrapper id='pageWrapperSubCategorySelectorPage'>
         {shouldDisplayPageContainer
           ? (
         <PageContainer>
