@@ -66,12 +66,12 @@ function PreviewSlider ({ pictureList, setImage }) {
   };
 
   useEffect(() => {
-    console.log(`listIndex : ${scrollingIndex}`);
+    // console.log(`listIndex : ${scrollingIndex}`);
     // Check if the slider has reached an extremity
     if (scrollingIndex === maxScrollingIndex) {
-      console.log('Max Right Reached');
+      // console.log('Max Right Reached');
     } else if (scrollingIndex === 0) {
-      console.log('Min Left Reached');
+      // console.log('Min Left Reached');
     }
   }, [scrollingIndex]);
 

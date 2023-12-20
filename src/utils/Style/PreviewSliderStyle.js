@@ -59,14 +59,32 @@ export const Slider = styled.div`
 `;
 
 /* Previous Item */
+//
+//
 export const ItemContainer = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
 
   height: ${previewSliderElementHeight}px;
   width: ${previewSliderElementWidth}px;
-    
+  
   cursor: pointer;
+  border: 1px solid red;
+`;
+
+export const PictureContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  width: 150px;
+`;
+
+export const ArticlePicturePreviewSelection = styled.img`
+  max-width: ${previewSliderElementWidth}px;
+  max-height: ${previewSliderElementHeight}px;
 `;
 
 //
@@ -74,7 +92,6 @@ export const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
   width: 40px;
-
   
 `;
 
@@ -97,11 +114,7 @@ export const ScrollingButton = styled.button`
     margin: 2px;
   }
 `;
-export const PreviewPictureContainer = styled.div`
 
-`;
+/*
 
-export const ArticlePicturePreviewSelection = styled.img`
-  max-height: ${previewSliderElementWidth}px;
-  max-width: ${previewSliderElementHeight}px;
-`;
+  */

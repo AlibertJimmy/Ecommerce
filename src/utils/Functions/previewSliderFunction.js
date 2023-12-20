@@ -28,8 +28,8 @@ export function displayLeftButton (amountOfPictureToDisplay, scrollingIndex) {
       display = true;
     }
   }
-  console.log('displayLeftButton');
-  console.log(display);
+  // console.log('displayLeftButton');
+  // console.log(display);
   return display;
 }
 
@@ -44,7 +44,7 @@ export function displayRightButton (amountOfPictureToDisplay, scrollingIndex, ma
       display = true;
     }
   }
-  console.log('displayRightButton');
-  console.log(display);
+  // console.log('displayRightButton');
+  // console.log(display);
   return display;
 }

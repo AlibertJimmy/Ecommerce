@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import { usePreviewSliderContext } from '../../../context/PreviewSliderContext';
 
 // Import Style
-import { ItemContainer, PreviewPictureContainer, ArticlePicturePreviewSelection } from '../../../utils/Style/PreviewSliderStyle';
+import { ItemContainer, ArticlePicturePreviewSelection, PictureContainer } from '../../../utils/Style/PreviewSliderStyle';
 
 // Import Style
 function PreviewItem ({ pictureList, setImage }) {
@@ -19,18 +19,18 @@ function PreviewItem ({ pictureList, setImage }) {
   const changeImage = (e, index) => {
     setImage(e.target.src);
     setPictureToDisplayIndex(index);
-    console.log(`index of the selected picture : ${index}`);
+    // console.log(`index of the selected picture : ${index}`);
   };
 
   return (
     <>
       {pictureList.map((item, index) => (
-        <ItemContainer key={index} id='itemContainer'>
-            <PreviewPictureContainer id='pictureContainer' style={{
-              outline: index === pictureToDisplayIndex ? '2px solid rgba(0, 0, 0, .6)' : 'none'
-            }}>
-              <ArticlePicturePreviewSelection src={pictureList[index].picture} alt='product' onMouseOver={(e) => changeImage(e, index)}/>
-            </PreviewPictureContainer>
+        <ItemContainer key={index} id='itemContainer'
+        style={{ outline: index === pictureToDisplayIndex ? '2px solid rgba(0, 0, 0, .6)' : 'none' }}
+        onMouseOver={(e) => changeImage(e, index)}>
+          <PictureContainer>
+            <ArticlePicturePreviewSelection src={pictureList[index].picture} alt='product' />
+          </PictureContainer>
         </ItemContainer>
       ))}
     </>

@@ -25,6 +25,7 @@ export const ItemDetailContainer = styled.div`
     justify-content: center;
     margin: 0 10px;
   }
+  overflow: hidden;
 `;
 
 // Item Presentation
@@ -34,8 +35,7 @@ export const ItemPresentation = styled.div`
 
   display:flex;
   flex-direction: row;
-
-  border-radius: 15px;
+  justify-content: center;
 
   @media (max-width: ${responsiveWidthTablet}px){
 
@@ -43,11 +43,14 @@ export const ItemPresentation = styled.div`
 
   @media (max-width: ${responsiveWidthMobile}px){
     flex-direction: column-reverse;
+    align-items: center;
   }
+  border: 1px solid pink;
+  overflow: hidden;
 `;
 
 // Illustration Related
-export const ImageContainer = styled.div`
+export const ImageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,6 +60,7 @@ export const ImageContainer = styled.div`
   @media (max-width: ${responsiveWidthMobile}px){
     flex-direction: column;
   }
+  overflow: hidden;
 `;
 
 export const ImageDisplayer = styled.div`
@@ -66,8 +70,7 @@ export const ImageDisplayer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  overflow: hidden;
+  
   @media (max-width: ${responsiveWidthTablet}px){
     width: ${IllustrationDisplayWidthResponsiveTablet}px;
     height: ${IllustrationDisplayHeightResponsiveTablet}px;
@@ -77,6 +80,17 @@ export const ImageDisplayer = styled.div`
     width: ${IllustrationDisplayWidthResponsiveMobile}px;
     height: ${IllustrationDisplayHeightResponsiveMobile}px;
   }
+  border: 1px solid red;
+  overflow: hidden;
+`;
+//
+export const ImageContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid yellow;
+  width: ${IllustrationDisplayWidth - PicturelayoutButtonWidth * 2}px;
+  height: ${IllustrationDisplayHeight}px;
 `;
 
 export const ItemDetailImage = styled.img`
@@ -93,6 +107,8 @@ export const ItemDetailImage = styled.img`
     width: ${IllustrationDisplayWidthResponsiveMobile - PicturelayoutButtonWidth * 2}px;
     height: ${IllustrationDisplayHeightResponsiveMobile}px;
   }
+  border: 1px solid green;
+  overflow: hidden;
 `;
 
 export const ImageSelector = styled.div`
@@ -147,25 +163,30 @@ export const PictureSelectionPreview = styled.img`
 `;
 
 // Info Related
+// flex: 1;
 export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 1;
+  
+
+  width: 15rem;
   padding: 50px;
 
   @media (max-width: ${responsiveWidthTablet}px){
     padding: 25px;
+    width: 12rem;
   }
 
   @media (max-width: ${responsiveWidthMobile}px){
     padding: 25px;
+    width: 15rem;
   }
+  border: 1px solid blue;
 `;
 
 export const ItemDatas = styled.div`
   display: flex;
   flex-direction: column;
-
 `;
 
 export const StyledUlInfo = styled.ul`
@@ -190,6 +211,7 @@ export const StyledUlInfo = styled.ul`
       }
     }
   }
+  
 `;
 
 // Quantity Selection Related
@@ -215,9 +237,17 @@ export const QuantitySelectorContainer = styled.div`
 
 // Item Description Related
 export const DescriptionContainer = styled.div`
+  width: 80vw;
   @media (max-width: ${responsiveWidthTablet}px){
     margin: 5%;
+    width: 90vw;
   }
+  @media (max-width: ${responsiveWidthMobile}px){
+    margin: 0;
+    width: 100%;
+  }
+  
+  border: 1px solid yellow;
 `;
 
 export const StyledUlDescription = styled.ul`

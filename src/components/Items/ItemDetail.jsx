@@ -24,7 +24,7 @@ import { AddToCartButton, QuantityButton, QuantityP } from '../../utils/Style/Qu
 import {
   ItemDetailContainer,
   ItemPresentation,
-  ImageContainer, ImageDisplayer, ItemDetailImage,
+  ImageWrapper, ImageContainer, ImageDisplayer, ItemDetailImage,
   ImageSelector,
   InfoContainer, ItemDatas, StyledUlInfo,
   QuantitySelectorWrapper, QuantitySelectorContainer,
@@ -87,9 +87,9 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
   }, [pictureToDisplayIndex]);
 
   return (
-        <ItemDetailContainer id='pageContainer'>
+        <ItemDetailContainer id='itemDetailContainer'>
           <ItemPresentation key={index} id='itemPresentation'>
-            <ImageContainer id='illustrationContainer'>
+            <ImageWrapper id='imageContainer'>
               <ImageDisplayer id='imageDisplayer'>
                 <ButtonContainer id='scrollingButtonLeftContainer'>
                   {itemList[index].illustrations.length === 1
@@ -99,7 +99,9 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
                         <StyledIcon icon={faChevronLeft} />
                       </ScrollingButton>}
                 </ButtonContainer>
-                  <ItemDetailImage src={image} alt='picture1' id='itemPicture'/>
+                  <ImageContainer>
+                    <ItemDetailImage src={image} alt='picture1' id='itemPicture'/>
+                  </ImageContainer>
                 <ButtonContainer id='scrollingButtonRightContainer'>
                 {itemList[index].illustrations.length === 1
                   ? <></>
@@ -116,7 +118,7 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
                       <PreviewSlider pictureList={itemList[index].illustrations} setImage={setImage}/>
                     </ImageSelector>
               }
-            </ImageContainer>
+            </ImageWrapper>
             <InfoContainer id='infoContainer'>
               <ItemDatas id='itemDatas'>
                 <StyledTitleH1 id='articleTitleName'>{itemList[index].name}</StyledTitleH1>
