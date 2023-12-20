@@ -17,9 +17,9 @@ function PreviewItem ({ pictureList, setImage }) {
   // console.log(pictureList);
 
   const changeImage = (e, index) => {
-    setImage(e.target.src);
+    setImage(pictureList[index].picture);
     setPictureToDisplayIndex(index);
-    // console.log(`index of the selected picture : ${index}`);
+    console.log(`index of the selected picture : ${index}`);
   };
 
   return (
@@ -27,8 +27,8 @@ function PreviewItem ({ pictureList, setImage }) {
       {pictureList.map((item, index) => (
         <ItemContainer key={index} id='itemContainer'
         style={{ outline: index === pictureToDisplayIndex ? '2px solid rgba(0, 0, 0, .6)' : 'none' }}
-        onMouseOver={(e) => changeImage(e, index)}>
-          <PictureContainer>
+        >
+          <PictureContainer onMouseOver={(e) => changeImage(e, index)}>
             <ArticlePicturePreviewSelection src={pictureList[index].picture} alt='product' />
           </PictureContainer>
         </ItemContainer>
