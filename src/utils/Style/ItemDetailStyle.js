@@ -57,7 +57,7 @@ export const ImageWrapper = styled.div`
   @media (max-width: ${responsiveWidthMobile}px){
     flex-direction: column;
   }
-  
+  border: 1px solid blue;
 `;
 // align-items: center; --> bug source /!\
 export const ImageDisplayer = styled.div`
@@ -79,12 +79,23 @@ export const ImageDisplayer = styled.div`
   }
 `;
 
-export const ImageContainer = styled.div`
+export const PictureContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   width: ${IllustrationDisplayWidth - PicturelayoutButtonWidth * 2}px;
   height: ${IllustrationDisplayHeight}px;
+
+  @media (max-width: ${responsiveWidthTablet}px){
+    width: ${IllustrationDisplayWidthResponsiveTablet}px;
+    height: ${IllustrationDisplayHeightResponsiveTablet}px;
+    align-items: center;
+  }
+
+  @media (max-width: ${responsiveWidthMobile}px){
+    width: ${IllustrationDisplayWidthResponsiveMobile}px;
+    height: ${IllustrationDisplayHeightResponsiveMobile}px;
+  }
 `;
 
 export const ItemDetailImage = styled.img`
@@ -172,11 +183,13 @@ export const InfoContainer = styled.div`
     padding: 25px;
     width: 15rem;
   }
+  border: 1px solid red;
 `;
 
 export const ItemDatas = styled.div`
   display: flex;
   flex-direction: column;
+  border: 1px solid yellow;
 `;
 
 export const StyledUlInfo = styled.ul`
@@ -216,9 +229,11 @@ export const QuantitySelectorWrapper = styled.div`
   }
 
   @media (max-width: ${responsiveWidthMobile}px){
-    flex-direction: row;
-    align-items: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    gap: 10px;
   }
+  border: 1px solid green;
 `;
 
 export const QuantitySelectorContainer = styled.div`

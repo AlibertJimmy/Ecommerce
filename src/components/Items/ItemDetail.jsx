@@ -24,7 +24,7 @@ import { AddToCartButton, QuantityButton, QuantityP } from '../../utils/Style/Qu
 import {
   ItemDetailContainer,
   ItemPresentation,
-  ImageWrapper, ImageContainer, ImageDisplayer, ItemDetailImage,
+  ImageWrapper, PictureContainer, ImageDisplayer, ItemDetailImage,
   ImageSelector,
   InfoContainer, ItemDatas, StyledUlInfo,
   QuantitySelectorWrapper, QuantitySelectorContainer,
@@ -37,12 +37,14 @@ import colors from '../../utils/Colors';
 function increaseSelection (amount, updateAmount) {
   amount = amount + 1;
   updateAmount(amount);
+  console.log('increaseSelection');
 }
 
 function decreaseSelection (amount, updateAmount) {
   if (amount > 1) {
     amount = amount - 1;
     updateAmount(amount);
+    console.log('decreaseSelection');
   }
 }
 
@@ -74,6 +76,10 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
     setPictureToDisplayIndex(pictureToDisplayIndex + 1);
   };
 
+  const onQuantitySelectionWrapper = async () => {
+    console.log('onQuantitySelectionWrapper click');
+  };
+
   useEffect(() => {
     setPictureToDisplayIndex(0);
     updatescreenWidth(window.innerWidth);
@@ -100,16 +106,16 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
                         <StyledIcon icon={faChevronLeft} />
                       </ScrollingButton>}
                 </ButtonContainer>
-                  <ImageContainer>
+                  <PictureContainer id='pictureContainer'>
                     <ItemDetailImage src={image} alt='picture1' id='itemPicture'/>
-                  </ImageContainer>
+                  </PictureContainer>
                 <ButtonContainer id='scrollingButtonRightContainer'>
-                {itemList[index].illustrations.length === 1
-                  ? <></>
-                  : <ScrollingButton id='scrollRightButton' onClick={slideRight}
-                    style={{ display: pictureToDisplayIndex === itemList[index].illustrations.length - 1 ? 'none' : undefined }}>
-                      <StyledIcon icon={faChevronRight} />
-                    </ScrollingButton>}
+                  {itemList[index].illustrations.length === 1
+                    ? <></>
+                    : <ScrollingButton id='scrollRightButton' onClick={slideRight}
+                      style={{ display: pictureToDisplayIndex === itemList[index].illustrations.length - 1 ? 'none' : undefined }}>
+                        <StyledIcon icon={faChevronRight} />
+                      </ScrollingButton>}
                 </ButtonContainer>
               </ImageDisplayer>
               {
@@ -129,7 +135,7 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
                   <li><p style={{ color: `${colors.greenCustom}`, fontSize: '25px', marginBottom: '0' }}>{itemList[index].price.toFixed(2)} €</p></li>
                 </StyledUlInfo>
               </ItemDatas>
-              <QuantitySelectorWrapper>
+              <QuantitySelectorWrapper onClick={() => onQuantitySelectionWrapper()}>
                   <QuantitySelectorContainer>
                     <QuantityButton onClick={() => decreaseSelection(amount, updateAmount)}>-</QuantityButton>
                     <QuantityP>{amount}</QuantityP>
