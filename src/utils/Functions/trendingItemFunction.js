@@ -19,25 +19,37 @@ export function getTrendingItem (itemCategory) {
   console.log(flattenedArray.slice(0, maxLength));
   */
   return flattenedArray.slice(0, maxLength);
-}
+};
 
-export function getMaxScrollingIndex (screenWidth) {
-  let amountOfItemDisplay;
+function getAmountOfPictureDisplayedOnTheSlider (screenWidth) {
+  let amountOfPictureDisplay;
   if (screenWidth >= 1242) {
-    amountOfItemDisplay = 4;
+    amountOfPictureDisplay = 4;
   }
 
   if ((screenWidth < 1242) && (screenWidth >= 941)) {
-    amountOfItemDisplay = 3;
+    amountOfPictureDisplay = 3;
   }
 
   if ((screenWidth < 941) && (screenWidth >= 641)) {
-    amountOfItemDisplay = 2;
+    amountOfPictureDisplay = 2;
   }
 
   if (screenWidth < 641) {
-    amountOfItemDisplay = 1;
+    amountOfPictureDisplay = 1;
   }
-  const maxScrollingIndex = trendingSliderMaxItem - amountOfItemDisplay;
+  return amountOfPictureDisplay;
+};
+
+export function getMaxScrollingIndex (amountOfProductToDisplay, screenWidth) {
+  console.log('getMaxScrollingIndex');
+  const amountOfPictureDisplayedOnTheSlider = getAmountOfPictureDisplayedOnTheSlider(screenWidth);
+  console.log(`amountOfPictureDisplayed : ${amountOfPictureDisplayedOnTheSlider}`);
+  console.log(`amountOfProductToDisplay : ${amountOfProductToDisplay}`);
+  let maxScrollingIndex = amountOfProductToDisplay - amountOfPictureDisplayedOnTheSlider;
+  if (maxScrollingIndex < 0) {
+    maxScrollingIndex = 0;
+  }
+  console.log(`maxScrollingIndex : ${maxScrollingIndex}`);
   return maxScrollingIndex;
-}
+};

@@ -21,31 +21,23 @@ import {
 } from '../../../utils/Style/TrendingSliderStyle';
 
 // Import Constants
-import { trendingSliderElementBorderWith, trendingSliderElementGap, trendingSliderElementWidth } from '../../../utils/Constant';
+import {
+  trendingSliderElementBorderWith, trendingSliderElementGap, trendingSliderElementWidth
+} from '../../../utils/Constant';
 
 function TrendingSlider ({ itemCategory }) {
-  const [trendingItemList, updateTrendingItemList] = useState([]);
+  const [trendingItemList, updateTrendingItemList] = useState(getTrendingItem(itemCategory));
   const [scrollingIndex, updatescrollingIndex] = useState(0);
-  const [screenWidth, updatescreenWidth] = useState(window.innerWidth);
-  const [maxScrollingIndex, updateMawScrollingIndex] = useState(getMaxScrollingIndex(screenWidth));
+  const [maxScrollingIndex, updateMaxScrollingIndex] = useState(getMaxScrollingIndex(trendingItemList.length, window.innerWidth));
 
   useEffect(() => {
     updateTrendingItemList(getTrendingItem(itemCategory));
     updatescrollingIndex(0);
+    updateMaxScrollingIndex(getMaxScrollingIndex(trendingItemList.length, window.innerWidth));
 
     // Reset the position of the slider
     const slider = document.getElementById('slider');
     slider.scrollLeft = 0;
-
-    const handleResize = () => {
-      updatescreenWidth(window.innerWidth);
-      updateMawScrollingIndex(getMaxScrollingIndex(screenWidth));
-    };
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
   }, []);
 
   const slideLeft = () => {
