@@ -9,7 +9,7 @@ import { useNavContext } from '../../context/NavContext';
 import Cart from './Cart';
 
 // Import Functions
-import { itemQuantity } from '../../utils/CartFunctions/Functions';
+import { isCartButton, itemQuantity } from '../../utils/CartFunctions/Functions';
 
 // Import Asset
 import CartWhite from '../../assets/Functionnal_Icon/Cart_White.png';
@@ -27,13 +27,20 @@ function CartOpenButton () {
     // Function to handle clicks outside the component
     function handleClickOutside (event) {
       /*
+      console.log(handleClickOutside);
       console.log('cartRef.current');
       console.log(cartRef.current);
       console.log('cartRef.current.contains(event.target)');
       console.log(cartRef.current.contains(event.target));
+      console.log('event.target');
+      console.log(event.target);
+      console.log(event.target.id);
       */
       if (cartRef.current && !cartRef.current.contains(event.target)) {
-        setCartState(false);
+        if (!isCartButton(event.target.id)) {
+          console.log('cart clickOutside');
+          setCartState(false);
+        }
       }
     }
 
@@ -44,7 +51,7 @@ function CartOpenButton () {
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
-  }, []);
+  }, [cartState]);
 
   return (
     <CartButtonWrapper ref={cartRef} id='cartButtonWrapper'>

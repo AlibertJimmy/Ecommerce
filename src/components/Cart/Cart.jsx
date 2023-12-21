@@ -1,5 +1,5 @@
 // Import React Libraries
-import React from 'react';
+import React, { useEffect } from 'react';
 
 // Import Context
 import { useCartContext } from '../../context/CartContext';
@@ -32,6 +32,11 @@ function Cart () {
   if (!cart) {
     return null;
   }
+
+  useEffect(() => {
+    console.log(`cartState : ${cartState}`);
+  }, [cartState]);
+
   const total = cart.reduce(
     (acc, item) => {
       return acc + item.amount * item.itemProperty.price;
@@ -89,12 +94,12 @@ function Cart () {
                       </CartContentPContainer>
                       <CartQuantitySelectorWrapper id={`cartQuantitySelectorWrapper${itemProperty.name}`}>
                         <CartQuantitySelectorContainer id={`cartQuantitySelectorContainer${itemProperty.name}`}>
-                          <QuantityButton onClick={() => decrease(index)}>-</QuantityButton>
+                          <QuantityButton id='cartMinusProductButton' onClick={() => decrease(index)}>-</QuantityButton>
                           <QuantityP>{amount}</QuantityP>
-                          <QuantityButton onClick={() => increase(index)}>+</QuantityButton>
+                          <QuantityButton id='cartPlusProductButton' onClick={() => increase(index)}>+</QuantityButton>
                         </CartQuantitySelectorContainer>
                         <div>
-                          <QuantityButton onClick={() => removeFromCart(index) } style={{ marginRight: '10px' }}>X</QuantityButton>
+                          <QuantityButton id='cartRemoveProductButton' onClick={() => removeFromCart(index) } style={{ marginRight: '10px' }}>X</QuantityButton>
                         </div>
                       </CartQuantitySelectorWrapper>
                     </CartContentDataDisplay>

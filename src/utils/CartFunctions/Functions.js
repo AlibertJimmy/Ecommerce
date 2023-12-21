@@ -44,3 +44,12 @@ export function itemQuantity (cart) {
   }
   return quantity;
 };
+
+export function isCartButton (target) {
+  const cartButtons = ['cartMinusProductButton', 'cartPlusProductButton', 'cartRemoveProductButton'];
+  if (cartButtons.includes(target)) {
+    return true;
+  } else {
+    return false;
+  }
+}
