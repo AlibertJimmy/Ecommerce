@@ -21,11 +21,16 @@ function NavItems () {
   const links2 = ['Bedding/SleepingBag', 'Bedding/Mattress', 'Bedding/Hammock'];
   const linksRender2 = ['SleepingBag', 'Mattress', 'Hammock', 'Accessory'];
 
+  const dropDownTitle3 = 'Cooking';
+  const links3 = ['Cooking/Cooking', 'Cooking/Stove'];
+  const linksRender3 = ['Cooking', 'Stove'];
+
   return (
     <div id='itemSideNav'>
       <StyledUlItems burgerButtonState={burgerButtonState} id='productUl'>
             <li><Dropdown dropDownTitle ={dropDownTitle1} options={linksRender1} links={links1} handleCloseBurger={() => setBurgerButtonState(false)}/></li>
             <li><Dropdown dropDownTitle ={dropDownTitle2} options={linksRender2} links={links2} handleCloseBurger={() => setBurgerButtonState(false)}/></li>
+            <li><Dropdown dropDownTitle ={dropDownTitle3} options={linksRender3} links={links3} handleCloseBurger={() => setBurgerButtonState(false)}/></li>
         </StyledUlItems>
     </div>
 

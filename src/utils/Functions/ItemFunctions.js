@@ -11,6 +11,10 @@ import { sleepingBagList } from '../../datas/Bedding/SleepingBag';
 import { mattressList } from '../../datas/Bedding/Mattress';
 import { beddingAccessoryList } from '../../datas/Bedding/Accessory';
 
+// Cooking
+import { cookingList } from '../../datas/Cooking/Cooking';
+import { stoveList } from '../../datas/Cooking/Stove';
+
 // Import Constants
 import { responsiveWidthTablet } from '../Constant';
 
@@ -32,7 +36,8 @@ export function getItemCorrespondingToId (id, itemList) {
 export function getAllItemSubCategoryList (itemCategory) {
   const functionMap = {
     Shelter: [singleWallList, doubleWallList, accessoryList],
-    Bedding: [hammockList, sleepingBagList, mattressList]
+    Bedding: [hammockList, sleepingBagList, mattressList],
+    Cooking: [cookingList, stoveList]
   };
 
   if (functionMap) {
@@ -46,7 +51,8 @@ export function getAllItemSubCategoryList (itemCategory) {
 export function getProductList (itemCategory, itemSubCategory) {
   const functionMap = {
     Shelter: getItemListShelter,
-    Bedding: getItemListBedding
+    Bedding: getItemListBedding,
+    Cooking: getItemListCooking
   };
 
   const selectedFunction = functionMap[itemCategory];
@@ -83,6 +89,23 @@ export function getItemListBedding (itemSubCategory) {
     SleepingBag: sleepingBagList,
     Mattress: mattressList,
     Accessory: beddingAccessoryList
+  };
+
+  const selectedItemList = functionMap[itemSubCategory];
+  if (selectedItemList) {
+    // console.log('selectedItemList');
+    // console.log(selectedItemList);
+    return selectedItemList;
+  } else {
+    console.error(`Unknown itemSubCategory: ${itemSubCategory}`);
+  }
+};
+
+// Bedding
+export function getItemListCooking (itemSubCategory) {
+  const functionMap = {
+    Cooking: cookingList,
+    Stove: stoveList
   };
 
   const selectedItemList = functionMap[itemSubCategory];
