@@ -31,7 +31,7 @@ export const noveltySelectorMaxItem = 8;
 // Preview Slider
 export const previewSliderElementWidth = 150;
 export const previewSliderElementHeight = 150;
-export const previewSliderElementGap = 10;
+export const previewSliderElementGap = 11;
 export const previewSliderElementBorderWith = 1;
 export const previewSliderAmountOfPictureDisplayed = 4;
 

@@ -94,6 +94,7 @@ function Cart () {
                       </CartContentPContainer>
                       <CartQuantitySelectorWrapper id={`cartQuantitySelectorWrapper${itemProperty.name}`}>
                         <CartQuantitySelectorContainer id={`cartQuantitySelectorContainer${itemProperty.name}`}>
+                          {/* QuantityButton ids are important because they areconsidered in the function isCartButton to avoid closing the cart when the item is removed from cart */}
                           <QuantityButton id='cartMinusProductButton' onClick={() => decrease(index)}>-</QuantityButton>
                           <QuantityP>{amount}</QuantityP>
                           <QuantityButton id='cartPlusProductButton' onClick={() => increase(index)}>+</QuantityButton>

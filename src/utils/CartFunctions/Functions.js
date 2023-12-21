@@ -46,6 +46,9 @@ export function itemQuantity (cart) {
 };
 
 export function isCartButton (target) {
+  /*
+  Necessary check because when a product is remove from the list it's not considered contained by the even.target anymore
+  */
   const cartButtons = ['cartMinusProductButton', 'cartPlusProductButton', 'cartRemoveProductButton'];
   if (cartButtons.includes(target)) {
     return true;
