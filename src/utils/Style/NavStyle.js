@@ -110,7 +110,7 @@ const StyledUlNav = css`
     right: 0;
     
     height: 100vh;
-    width: 100px;
+    width: 150px;
     
     margin-top: 0;
     margin-right:0;
