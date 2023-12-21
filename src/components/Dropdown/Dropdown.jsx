@@ -40,14 +40,14 @@ function Dropdown ({ dropDownTitle, options, links, handleCloseBurger }) {
   };
 
   const handleOnClick = () => {
-    setDropDownState(true);
+    setDropDownState(!dropDownState);
     // console.log('handleOnClick');
     // console.log(`dropDownState : ${dropDownState}`);
   };
 
   return (
-    <DropdownContainer onMouseEnter={() => handleOnMouseEnter()} onMouseLeave={() => handleOnMouseLeave()} onClick={() => handleOnClick()}id='dropDownContainer'>
-      <DropDownSpan id={`dropDownSpan${dropDownTitle}`}>{dropDownTitle}<DropDownStyledIcon icon={faChevronDown} /></DropDownSpan>
+    <DropdownContainer onMouseEnter={() => handleOnMouseEnter()} onMouseLeave={() => handleOnMouseLeave()} id='dropDownContainer'>
+      <DropDownSpan id={`dropDownSpan${dropDownTitle}`} onClick={() => handleOnClick()}>{dropDownTitle}<DropDownStyledIcon icon={faChevronDown} /></DropDownSpan>
       <DropdownContent id={`dropDownContent${dropDownTitle}`} open={dropDownState}>
         {options.map((option, index) => (
           <DropdownItem key={index} id={`dropdownItem${option}`}>
