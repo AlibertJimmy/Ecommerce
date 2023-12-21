@@ -25,12 +25,17 @@ function NavItems () {
   const links3 = ['Cooking/Cooking', 'Cooking/Stove'];
   const linksRender3 = ['Cooking', 'Stove'];
 
+  const dropDownTitle4 = 'Portage';
+  const links4 = ['Portage/Minus30L', 'Portage/Plus30L'];
+  const linksRender4 = ['Minus30L', 'Plus30L'];
+
   return (
     <div id='itemSideNav'>
       <StyledUlItems burgerButtonState={burgerButtonState} id='productUl'>
             <li><Dropdown dropDownTitle ={dropDownTitle1} options={linksRender1} links={links1} handleCloseBurger={() => setBurgerButtonState(false)}/></li>
             <li><Dropdown dropDownTitle ={dropDownTitle2} options={linksRender2} links={links2} handleCloseBurger={() => setBurgerButtonState(false)}/></li>
             <li><Dropdown dropDownTitle ={dropDownTitle3} options={linksRender3} links={links3} handleCloseBurger={() => setBurgerButtonState(false)}/></li>
+            <li><Dropdown dropDownTitle ={dropDownTitle4} options={linksRender4} links={links4} handleCloseBurger={() => setBurgerButtonState(false)}/></li>
         </StyledUlItems>
     </div>
 
