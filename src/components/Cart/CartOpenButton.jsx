@@ -9,7 +9,7 @@ import { useNavContext } from '../../context/NavContext';
 import Cart from './Cart';
 
 // Import Functions
-import { isCartButton, itemQuantity } from '../../utils/CartFunctions/Functions';
+import { isCartButton, itemQuantity } from '../../utils/Functions/cartFunctions';
 
 // Import Asset
 import CartWhite from '../../assets/Functionnal_Icon/Cart_White.png';

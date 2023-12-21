@@ -14,7 +14,7 @@ import { usePreviewSliderContext } from '../../context/PreviewSliderContext';
 import PreviewSlider from '../Slider/PreviewSlider/PreviewSlider';
 
 // Import Functions
-import { addToCart } from '../../utils/CartFunctions/Functions';
+import { addToCart } from '../../utils/Functions/cartFunctions';
 import { displayPreviewSlider, getItemCorrespondingToId, getItemList } from '../../utils/Functions/ItemFunctions';
 
 // Import Style

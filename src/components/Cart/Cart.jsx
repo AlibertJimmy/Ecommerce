@@ -8,7 +8,7 @@ import { useCartContext } from '../../context/CartContext';
 import CartCloseButton from './CartCloseButton';
 
 // Import Function
-import { itemQuantity } from '../../utils/CartFunctions/Functions';
+import { itemQuantity } from '../../utils/Functions/cartFunctions';
 
 // Import Assets
 import emptyCart from '../../assets/Functionnal_Icon/Empty_Cart.png';
