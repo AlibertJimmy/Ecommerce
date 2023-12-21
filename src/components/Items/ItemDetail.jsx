@@ -126,7 +126,7 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
                 <StyledUlInfo>
                   <li><p style={{ fontStyle: 'italic' }}> {itemList[index].brand} </p></li>
                   <li><p> {itemList[index].weight} </p></li>
-                  <li><p style={{ color: `${colors.greenCustom}`, fontSize: '25px', marginBottom: '0' }}>{itemList[index].price} €</p></li>
+                  <li><p style={{ color: `${colors.greenCustom}`, fontSize: '25px', marginBottom: '0' }}>{itemList[index].price.toFixed(2)} €</p></li>
                 </StyledUlInfo>
               </ItemDatas>
               <QuantitySelectorWrapper>
