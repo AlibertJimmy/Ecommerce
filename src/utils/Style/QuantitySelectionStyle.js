@@ -51,12 +51,13 @@ export const AddToCartButton = styled.button`
 
   @media (max-width: ${responsiveWidthTablet}px){
     margin-top: 10px;
+    width: 100px;
   }
   
   @media (max-width: ${responsiveWidthMobile}px){
-    margin-left: 15%;
+    
     margin-top: 0;
-    width: 100px;
+    
   }
 `;
 

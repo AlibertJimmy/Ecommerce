@@ -45,6 +45,10 @@ export const StyledTitleH1 = styled.h1`
   font-family: sans-serif;
   color: ${colors.orangeCustom};
   margin: 0;
+
+  @media (max-width: ${responsiveWidthTablet}px){
+    text-align: center;
+  }
 `;
 
 export const StyledTitleH2 = styled.h2`

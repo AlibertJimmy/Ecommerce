@@ -152,7 +152,7 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
             {itemList[index].description.map((liComponent, indexDescr) => (
                     <p key={`${itemList[index].name}-li-${indexDescr}`}>{liComponent.li}</p>
             ))}
-            <StyledTitleH1 id='articleTitleCharacteristic'>Characteristic</StyledTitleH1>
+            <StyledTitleH1 id='articleTitleCharacteristic'>Characteristics</StyledTitleH1>
             <StyledUlDescription>
                 {itemList[index].characteristic.map((liComponent, indexCharac) => (
                     <li key={`${itemList[index].name}-li-${indexCharac}`}><p>{liComponent.li}</p></li>

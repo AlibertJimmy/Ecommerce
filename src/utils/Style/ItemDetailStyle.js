@@ -176,6 +176,7 @@ export const InfoContainer = styled.div`
   @media (max-width: ${responsiveWidthTablet}px){
     padding: 25px;
     width: 12rem;
+    align-items: center;
   }
 
   @media (max-width: ${responsiveWidthMobile}px){
@@ -187,6 +188,10 @@ export const InfoContainer = styled.div`
 export const ItemDatas = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media (max-width: ${responsiveWidthTablet}px){
+    align-items: center;
+  }
 `;
 
 export const StyledUlInfo = styled.ul`
@@ -222,7 +227,6 @@ export const QuantitySelectorWrapper = styled.div`
   @media (max-width: ${responsiveWidthTablet}px){
     margin-top:0;
     flex-direction: column;
-    align-items: start;
   }
 
   @media (max-width: ${responsiveWidthMobile}px){
