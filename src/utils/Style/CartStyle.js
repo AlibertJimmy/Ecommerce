@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import colors from '../../utils/Colors';
 
 // Import Constants
-import { responsiveWidthTablet, zIndexCartButton, zIndexCart, zIndexCartCloseButton } from '../../utils/Constant';
+import { zIndexCartButton, zIndexCart, zIndexCartCloseButton } from '../../utils/Constant';
 
 // Cart Display
 
@@ -114,9 +114,7 @@ export const CartButtonWrapper = styled.div`
   display:flex;
   height: 25px;
 
-  @media (max-width: ${responsiveWidthTablet}px){
-    margin-right: 50px;
-  }
+  
 `;
 
 export const OpenCartButton = styled.button`

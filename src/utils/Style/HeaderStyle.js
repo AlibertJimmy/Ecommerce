@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { commonHeaderFooter } from '../../utils/Styles';
 
 // Import Constants
-import { headerHeight, responsiveWidthTablet, zIndexHeader } from '../../utils/Constant';
+import { headerHeight, responsiveWidthMobile, responsiveWidthTablet, zIndexHeader } from '../../utils/Constant';
 
 const sideMargin = 20;
 
@@ -41,7 +41,10 @@ export const CartDiv = styled.div`
   width: 30px;
   
   @media (max-width: ${responsiveWidthTablet}px){
-    right: 65px;
+    right: 85px;
+  }
+  @media (max-width: ${responsiveWidthMobile}px){
+    right: 75px;
   }
 
 `;
