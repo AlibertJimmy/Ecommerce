@@ -22,7 +22,7 @@ import {
 
 // Import Constants
 import {
-  trendingSliderElementBorderWith, trendingSliderElementGap, trendingSliderElementWidth
+  trendingSliderElementGap, trendingSliderElementWidth
 } from '../../../utils/Constant';
 
 function TrendingSlider ({ itemCategory }) {
@@ -42,14 +42,14 @@ function TrendingSlider ({ itemCategory }) {
 
   const slideLeft = () => {
     const slider = document.getElementById('slider');
-    slider.scrollLeft = slider.scrollLeft - (trendingSliderElementWidth + trendingSliderElementGap + trendingSliderElementBorderWith);
+    slider.scrollLeft = slider.scrollLeft - (trendingSliderElementWidth + trendingSliderElementGap);
 
     updatescrollingIndex(scrollingIndex - 1);
   };
 
   const slideRight = () => {
     const slider = document.getElementById('slider');
-    slider.scrollLeft = slider.scrollLeft + (trendingSliderElementWidth + trendingSliderElementGap + trendingSliderElementBorderWith);
+    slider.scrollLeft = slider.scrollLeft + (trendingSliderElementWidth + trendingSliderElementGap);
 
     updatescrollingIndex(scrollingIndex + 1);
   };

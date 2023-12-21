@@ -18,7 +18,7 @@ export const horizontalMarginMobile = 10;
 // Trending Slider
 export const trendingSliderElementHeight = 150;
 export const trendingSliderElementWidth = 285;
-export const trendingSliderElementGap = 15;
+export const trendingSliderElementGap = 16;
 export const trendingSliderElementPictureWidth = 150;
 export const trendingSliderElementPictureHeight = 150;
 export const trendingSliderElementBorderWith = 2;
