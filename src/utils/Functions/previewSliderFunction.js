@@ -3,7 +3,8 @@ import { previewSliderAmountOfPictureDisplayed } from '../Constant';
 
 export function determineNecessaryScrolling (pictureToDisplayIndex, scopeStart, scopeEnd) {
   let scrollAction;
-
+  // console.log('determineNecessaryScrolling');
+  // console.log(`scopeStart : ${scopeStart} | scopeEnd : ${scopeEnd}`);
   // if the picture to display isn't in the scope
   if (!((scopeStart < pictureToDisplayIndex) && (pictureToDisplayIndex < scopeEnd))) {
     if (pictureToDisplayIndex > scopeEnd) {
@@ -14,6 +15,7 @@ export function determineNecessaryScrolling (pictureToDisplayIndex, scopeStart, 
   } else {
     scrollAction = 'none';
   }
+  // console.log(`scrollAction : ${scrollAction}`);
   return scrollAction;
 }
 
@@ -28,8 +30,10 @@ export function displayLeftButton (amountOfPictureToDisplay, scrollingIndex) {
       display = true;
     }
   }
-  // console.log('displayLeftButton');
-  // console.log(display);
+  /*
+  console.log('displayLeftButton');
+  console.log(`display : ${display}`);
+  */
   return display;
 }
 
@@ -44,7 +48,9 @@ export function displayRightButton (amountOfPictureToDisplay, scrollingIndex, ma
       display = true;
     }
   }
-  // console.log('displayRightButton');
-  // console.log(display);
+  /*
+  console.log('displayRightButton');
+  console.log(`display : ${display}`);
+  */
   return display;
 }

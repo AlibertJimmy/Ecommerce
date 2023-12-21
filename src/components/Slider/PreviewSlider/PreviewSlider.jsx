@@ -25,7 +25,10 @@ import {
 } from '../../../utils/Style/PreviewSliderStyle';
 
 // Import Constants
-import { previewSliderElementBorderWith, previewSliderElementGap, previewSliderElementWidth } from '../../../utils/Constant';
+import {
+  previewSliderAmountOfPictureDisplayed,
+  previewSliderElementBorderWith, previewSliderElementGap, previewSliderElementWidth
+} from '../../../utils/Constant';
 
 function PreviewSlider ({ pictureList, setImage }) {
   const { pictureToDisplayIndex, scopeStart, setScopeStart, scopeEnd, setScopeEnd } = usePreviewSliderContext();
@@ -33,49 +36,59 @@ function PreviewSlider ({ pictureList, setImage }) {
   const sliderRef = useRef(null);
 
   // Fix the maximum amount of possible scroll
-  let maxScrollingIndex;
-  if (pictureList.length <= 4) {
-    maxScrollingIndex = 0;
-  } else if (pictureList.length > 4) {
-    maxScrollingIndex = pictureList.length - 4;
-  }
+  const [maxScrollingIndex, setMaxScrollingIndex] = useState(0);
 
   useEffect(() => {
     updatescrollingIndex(0);
     // Reset the position of the slider
     const slider = sliderRef.current;
     slider.scrollLeft = 0;
+
+    setScopeStart(0);
+    setScopeEnd(previewSliderAmountOfPictureDisplayed - 1);
+
+    if (pictureList.length <= previewSliderAmountOfPictureDisplayed) {
+      setMaxScrollingIndex(0);
+    } else if (pictureList.length > previewSliderAmountOfPictureDisplayed) {
+      setMaxScrollingIndex(pictureList.length - previewSliderAmountOfPictureDisplayed);
+    }
+    // console.log(`maxScrollingIndex : ${maxScrollingIndex}`);
   }, []);
 
   const slideLeft = async () => {
     const slider = sliderRef.current;
     slider.scrollLeft = slider.scrollLeft - (previewSliderElementWidth + previewSliderElementGap + previewSliderElementBorderWith);
-
-    updatescrollingIndex(scrollingIndex - 1);
-    setScopeStart(scopeStart - 1);
-    setScopeEnd(scopeEnd - 1);
+    if (scrollingIndex >= 1) {
+      updatescrollingIndex(scrollingIndex - 1);
+      setScopeStart(scopeStart - 1);
+      setScopeEnd(scopeEnd - 1);
+    }
   };
 
   const slideRight = async () => {
     const slider = sliderRef.current;
     slider.scrollLeft = slider.scrollLeft + (previewSliderElementWidth + previewSliderElementGap + previewSliderElementBorderWith);
-
-    updatescrollingIndex(scrollingIndex + 1);
-    setScopeStart(scopeStart + 1);
-    setScopeEnd(scopeEnd + 1);
+    if (scrollingIndex < maxScrollingIndex) {
+      updatescrollingIndex(scrollingIndex + 1);
+      setScopeStart(scopeStart + 1);
+      setScopeEnd(scopeEnd + 1);
+    }
   };
 
   useEffect(() => {
-    // console.log(`listIndex : ${scrollingIndex}`);
     // Check if the slider has reached an extremity
+    /*
+    console.log(`scrollingIndex : ${scrollingIndex}`);
     if (scrollingIndex === maxScrollingIndex) {
-      // console.log('Max Right Reached');
+      console.log('Max Right Reached');
     } else if (scrollingIndex === 0) {
-      // console.log('Min Left Reached');
+      console.log('Min Left Reached');
     }
+    */
   }, [scrollingIndex]);
 
   useEffect(() => {
+    // console.log(`useEffect pictureToDisplayIndex : ${pictureToDisplayIndex}`);
     const scrollingAction = determineNecessaryScrolling(pictureToDisplayIndex, scopeStart, scopeEnd);
     if (scrollingAction === 'scrollRight') {
       slideRight();

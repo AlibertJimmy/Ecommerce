@@ -20,7 +20,7 @@ function PreviewItem ({ pictureList, setImage }) {
   const changeImage = (e, index) => {
     setImage(pictureList[index].picture);
     setPictureToDisplayIndex(index);
-    console.log(`index of the selected picture : ${index}`);
+    // console.log(`index of the selected picture : ${index}`);
   };
 
   return (
