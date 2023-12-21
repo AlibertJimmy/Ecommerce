@@ -9,6 +9,7 @@ import { accessoryList } from '../../datas/Shelter/Accessory';
 import { hammockList } from '../../datas/Bedding/Hammock';
 import { sleepingBagList } from '../../datas/Bedding/SleepingBag';
 import { mattressList } from '../../datas/Bedding/Mattress';
+import { beddingAccessoryList } from '../../datas/Bedding/Accessory';
 
 // Import Constants
 import { responsiveWidthTablet } from '../Constant';
@@ -80,7 +81,8 @@ export function getItemListBedding (itemSubCategory) {
   const functionMap = {
     Hammock: hammockList,
     SleepingBag: sleepingBagList,
-    Mattress: mattressList
+    Mattress: mattressList,
+    Accessory: beddingAccessoryList
   };
 
   const selectedItemList = functionMap[itemSubCategory];

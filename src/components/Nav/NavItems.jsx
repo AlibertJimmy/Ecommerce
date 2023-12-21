@@ -19,7 +19,7 @@ function NavItems () {
 
   const dropDownTitle2 = 'Bedding';
   const links2 = ['Bedding/SleepingBag', 'Bedding/Mattress', 'Bedding/Hammock'];
-  const linksRender2 = ['SleepingBag', 'Mattress', 'Hammock'];
+  const linksRender2 = ['SleepingBag', 'Mattress', 'Hammock', 'Accessory'];
 
   return (
     <div id='itemSideNav'>

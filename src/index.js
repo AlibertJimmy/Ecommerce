@@ -65,6 +65,9 @@ function App () {
                       <Route path="Hammock" element={<ItemSelectorPage itemCategory='Bedding' itemSubCategory='Hammock'/>}>
                         <Route path=":id" element={<ItemDetailPage itemCategory='Bedding' itemSubCategory='Hammock'/>}/>
                       </Route>
+                      <Route path="Accessory" element={<ItemSelectorPage itemCategory='Bedding' itemSubCategory='Accessory'/>}>
+                        <Route path=":id" element={<ItemDetailPage itemCategory='Bedding' itemSubCategory='Accessory'/>}/>
+                      </Route>
                     </Route>
 
                     <Route path="/Account" element={<Account />} />
