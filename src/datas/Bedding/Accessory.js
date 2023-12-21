@@ -8,7 +8,7 @@ export const beddingAccessoryList = [
   {
     name: 'Super Light Mosquito Net V2',
     category: 'Bedding',
-    subCategory: 'Hammock',
+    subCategory: 'Accessory',
     id: 'DDHammocksSuperLightMosquitoNetV2',
     available: true,
     weight: '190g',

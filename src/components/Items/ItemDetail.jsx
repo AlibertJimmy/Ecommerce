@@ -54,7 +54,7 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
   const { id } = useParams();
   const productList = getProductList(itemCategory, itemSubCategory);
   const index = getItemCorrespondingToId(id, productList);
-
+  console.log(`index : ${index}`);
   const [image, setImage] = useState(productList[index].illustrations[0].picture);
   const [amount, updateAmount] = useState(1);
   const [screenWidth, updatescreenWidth] = useState(window.innerWidth);

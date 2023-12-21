@@ -36,7 +36,7 @@ export function getItemCorrespondingToId (id, itemList) {
 export function getAllItemSubCategoryList (itemCategory) {
   const functionMap = {
     Shelter: [singleWallList, doubleWallList, accessoryList],
-    Bedding: [hammockList, sleepingBagList, mattressList],
+    Bedding: [hammockList, sleepingBagList, mattressList, beddingAccessoryList],
     Cooking: [cookingList, stoveList]
   };
 
@@ -93,8 +93,8 @@ export function getItemListBedding (itemSubCategory) {
 
   const selectedItemList = functionMap[itemSubCategory];
   if (selectedItemList) {
-    // console.log('selectedItemList');
-    // console.log(selectedItemList);
+    console.log('selectedItemList');
+    console.log(selectedItemList);
     return selectedItemList;
   } else {
     console.error(`Unknown itemSubCategory: ${itemSubCategory}`);
