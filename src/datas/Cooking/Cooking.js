@@ -6,7 +6,7 @@ import Esbitpot625mlINOX4 from '../../assets/Items/Cooking/Cooking/Esbitpot625ml
 export const cookingList = [
 
   {
-    name: 'pot 625 ml INOX',
+    name: 'Pot 625 ml INOX',
     category: 'Cooking',
     subCategory: 'Cooking',
     id: 'Esbitpot625mlINOX',

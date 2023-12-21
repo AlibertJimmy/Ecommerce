@@ -79,6 +79,15 @@ function App () {
                       </Route>
                     </Route>
 
+                    <Route path="Portage" element={<ItemSubcategorySelectorPage itemCategory='Portage'/>} >
+                      <Route path="Minus30L" element={<ItemSelectorPage itemCategory='Portage' itemSubCategory='Minus30L'/>}>
+                        <Route path=":id" element={<ItemDetailPage itemCategory='Portage' itemSubCategory='Minus30L'/>}/>
+                      </Route>
+                      <Route path="Plus30L" element={<ItemSelectorPage itemCategory='Portage' itemSubCategory='Plus30L'/>}>
+                        <Route path=":id" element={<ItemDetailPage itemCategory='Portage' itemSubCategory='Plus30L'/>}/>
+                      </Route>
+                    </Route>
+
                     <Route path="/Account" element={<Account />} />
                   </Routes>
                 </ContentWrapper>

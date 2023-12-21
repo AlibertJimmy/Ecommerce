@@ -15,6 +15,10 @@ import { beddingAccessoryList } from '../../datas/Bedding/Accessory';
 import { cookingList } from '../../datas/Cooking/Cooking';
 import { stoveList } from '../../datas/Cooking/Stove';
 
+// Portage
+import { minus30LList } from '../../datas/Portage/Minus30L';
+import { plus30LList } from '../../datas/Portage/Plus30L';
+
 // Import Constants
 import { responsiveWidthTablet } from '../Constant';
 
@@ -37,7 +41,8 @@ export function getAllItemSubCategoryList (itemCategory) {
   const functionMap = {
     Shelter: [singleWallList, doubleWallList, accessoryList],
     Bedding: [hammockList, sleepingBagList, mattressList, beddingAccessoryList],
-    Cooking: [cookingList, stoveList]
+    Cooking: [cookingList, stoveList],
+    Portage: [minus30LList, plus30LList]
   };
 
   if (functionMap) {
@@ -52,7 +57,8 @@ export function getProductList (itemCategory, itemSubCategory) {
   const functionMap = {
     Shelter: getItemListShelter,
     Bedding: getItemListBedding,
-    Cooking: getItemListCooking
+    Cooking: getItemListCooking,
+    Portage: getItemListPortage
   };
 
   const selectedFunction = functionMap[itemCategory];
@@ -64,7 +70,7 @@ export function getProductList (itemCategory, itemSubCategory) {
 };
 
 // Shelter
-export function getItemListShelter (itemSubCategory) {
+function getItemListShelter (itemSubCategory) {
   const functionMap = {
     SingleWall: singleWallList,
     DoubleWall: doubleWallList,
@@ -83,7 +89,7 @@ export function getItemListShelter (itemSubCategory) {
 };
 
 // Bedding
-export function getItemListBedding (itemSubCategory) {
+function getItemListBedding (itemSubCategory) {
   const functionMap = {
     Hammock: hammockList,
     SleepingBag: sleepingBagList,
@@ -93,19 +99,36 @@ export function getItemListBedding (itemSubCategory) {
 
   const selectedItemList = functionMap[itemSubCategory];
   if (selectedItemList) {
-    console.log('selectedItemList');
-    console.log(selectedItemList);
+    // console.log('selectedItemList');
+    // console.log(selectedItemList);
     return selectedItemList;
   } else {
     console.error(`Unknown itemSubCategory: ${itemSubCategory}`);
   }
 };
 
-// Bedding
-export function getItemListCooking (itemSubCategory) {
+// Cooking
+function getItemListCooking (itemSubCategory) {
   const functionMap = {
     Cooking: cookingList,
     Stove: stoveList
+  };
+
+  const selectedItemList = functionMap[itemSubCategory];
+  if (selectedItemList) {
+    // console.log('selectedItemList');
+    // console.log(selectedItemList);
+    return selectedItemList;
+  } else {
+    console.error(`Unknown itemSubCategory: ${itemSubCategory}`);
+  }
+};
+
+// Portage
+function getItemListPortage (itemSubCategory) {
+  const functionMap = {
+    Minus30L: minus30LList,
+    Plus30L: plus30LList
   };
 
   const selectedItemList = functionMap[itemSubCategory];

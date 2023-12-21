@@ -6,12 +6,15 @@ import { shelterSubCategoryList } from '../../datas/Shelter/SubCategory';
 import { beddingSubCategoryList } from '../../datas/Bedding/SubCategory';
 // Cooking
 import { cookingSubCategoryList } from '../../datas/Cooking/SubCategory';
+// Portage
+import { portageSubCategoryList } from '../../datas/Portage/SubCategory';
 
 export function getItemSubCategoryList (itemCategory) {
   const functionMap = {
     Shelter: shelterSubCategoryList,
     Bedding: beddingSubCategoryList,
-    Cooking: cookingSubCategoryList
+    Cooking: cookingSubCategoryList,
+    Portage: portageSubCategoryList
   };
 
   const selectedItemList = functionMap[itemCategory];
