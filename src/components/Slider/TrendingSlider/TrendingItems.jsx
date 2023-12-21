@@ -14,7 +14,7 @@ function TrendingItem ({ itemCategory, trendingItemList }) {
   return (
     <>
       {trendingItemList.map((item) => (
-        <ItemContainer key={item.id} id='itemContainer'>
+        <ItemContainer key={item.id} id='productContainer'>
           <StyledLink
             onClick={() => window.top(0, 0)}
             to={`/${itemCategory}/${item.subCategory}/${item.id}`}

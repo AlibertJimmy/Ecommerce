@@ -4,12 +4,12 @@ import styled from 'styled-components';
 // Import Constants
 import { responsiveWidthMobile, responsiveWidthTablet } from '../Constant';
 
-export const ArticleSelectorWrapper = styled.div`
+export const ProductSelectorWrapper = styled.div`
   max-width: 1200px;
   margin: 0 auto;
 `;
 
-export const ArticleSelectorContainer = styled.div`
+export const ProductSelectorContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 2rem;
@@ -28,7 +28,7 @@ export const ArticleSelectorContainer = styled.div`
   }
 `;
 
-export const ArticlePresentation = styled.div`
+export const ProductPresentation = styled.div`
   display:flex;
   flex-direction: column;
   align-items: center;
@@ -40,7 +40,7 @@ export const ArticlePresentation = styled.div`
   margin: 10px 16px;
 `;
 
-export const ArticleDatas = styled.div`
+export const ProductDatasContainer = styled.div`
   display: flex;
   flex-direction: column;
   text-align:center;
@@ -48,7 +48,7 @@ export const ArticleDatas = styled.div`
   height: 105px;
 `;
 
-export const ArticlePrice = styled.p`
+export const ProductPrice = styled.p`
   font-family: sans-serif;
   font-weight: bold;
   font-size: 22px;

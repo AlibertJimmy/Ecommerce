@@ -29,7 +29,7 @@ function PreviewItem ({ pictureList, setImage }) {
         <ItemContainer key={index} id='itemContainer'
         style={{ outline: index === pictureToDisplayIndex ? '2px solid rgba(0, 0, 0, .6)' : 'none' }}
         >
-          <PictureContainerPreviewSlider onMouseOver={(e) => changeImage(e, index)}>
+          <PictureContainerPreviewSlider id='pictureContainerPreviewSlider' onMouseOver={(e) => changeImage(e, index)}>
             <ArticlePicturePreviewSelection src={pictureList[index].picture} alt='product' />
           </PictureContainerPreviewSlider>
         </ItemContainer>

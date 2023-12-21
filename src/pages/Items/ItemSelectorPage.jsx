@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import ItemSelector from '../../components/Items/ItemSelector';
 
 // Import Function
-import { getItemList } from '../../utils/Functions/ItemFunctions';
+import { getProductList } from '../../utils/Functions/ItemFunctions';
 import { displayOutlet } from '../../utils/Functions/pathFunctions';
 
 function ItemSelectorPage ({ itemCategory, itemSubCategory }) {
@@ -22,7 +22,7 @@ function ItemSelectorPage ({ itemCategory, itemSubCategory }) {
   console.log(`shouldDisplayPageContainer ! ${shouldDisplayPageContainer}`);
   */
 
-  const itemList = getItemList(itemCategory, itemSubCategory);
+  const itemList = getProductList(itemCategory, itemSubCategory);
   const titleWrapper = `${itemCategory} / ${itemSubCategory}`;
   return (
     <>

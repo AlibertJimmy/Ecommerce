@@ -15,18 +15,18 @@ import PreviewSlider from '../Slider/PreviewSlider/PreviewSlider';
 
 // Import Functions
 import { addToCart } from '../../utils/Functions/cartFunctions';
-import { displayPreviewSlider, getItemCorrespondingToId, getItemList } from '../../utils/Functions/ItemFunctions';
+import { displayPreviewSlider, getItemCorrespondingToId, getProductList } from '../../utils/Functions/ItemFunctions';
 
 // Import Style
 import { StyledIcon, StyledTitleH1 } from '../../utils/Style/GlobalStyle';
 import { ButtonContainer, ScrollingButton } from '../../utils/Style/PreviewSliderStyle';
 import { AddToCartButton, QuantityButton, QuantityP } from '../../utils/Style/QuantitySelectionStyle';
 import {
-  ItemDetailContainer,
-  ItemPresentation,
-  ImageWrapper, PictureContainer, ImageDisplayer, ItemDetailImage,
-  ImageSelector,
-  InfoContainer, ItemDatas, StyledUlInfo,
+  ProductDetailWrapper,
+  ProductPresentationWrapper,
+  PictureWrapper, PictureContainer, PictureDisplayer, ProductPicture,
+  PictureSelector,
+  ProductInfoWrapper, ProductInfoContainer, StyledUlInfo,
   QuantitySelectorWrapper, QuantitySelectorContainer,
   DescriptionContainer, StyledUlDescription
 } from '../../utils/Style/ItemDetailStyle';
@@ -52,10 +52,10 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
   const { pictureToDisplayIndex, setPictureToDisplayIndex } = usePreviewSliderContext();
   const { cart, updateCart } = useCartContext();
   const { id } = useParams();
-  const itemList = getItemList(itemCategory, itemSubCategory);
-  const index = getItemCorrespondingToId(id, itemList);
+  const productList = getProductList(itemCategory, itemSubCategory);
+  const index = getItemCorrespondingToId(id, productList);
 
-  const [image, setImage] = useState(itemList[index].illustrations[0].picture);
+  const [image, setImage] = useState(productList[index].illustrations[0].picture);
   const [amount, updateAmount] = useState(1);
   const [screenWidth, updatescreenWidth] = useState(window.innerWidth);
 
@@ -86,20 +86,20 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
   }, []);
 
   useEffect(() => {
-    if (pictureToDisplayIndex <= itemList[index].illustrations.length - 1) {
+    if (pictureToDisplayIndex <= productList[index].illustrations.length - 1) {
       // console.log(itemList[index].illustrations[pictureToDisplayIndex].picture);
-      setImage(itemList[index].illustrations[pictureToDisplayIndex].picture);
+      setImage(productList[index].illustrations[pictureToDisplayIndex].picture);
       // console.log(`pictureToDisplayIndex : ${pictureToDisplayIndex}`);
     }
   }, [pictureToDisplayIndex]);
 
   return (
-        <ItemDetailContainer id='itemDetailContainer'>
-          <ItemPresentation key={index} id='itemPresentation'>
-            <ImageWrapper id='imageContainer'>
-              <ImageDisplayer id='imageDisplayer'>
+        <ProductDetailWrapper id='productDetailContainer'>
+          <ProductPresentationWrapper key={index} id='productPresentationWrapper'>
+            <PictureWrapper id='pictureWrapper'>
+              <PictureDisplayer id='pictureDisplayer'>
                 <ButtonContainer id='scrollingButtonLeftContainer'>
-                  {itemList[index].illustrations.length === 1
+                  {productList[index].illustrations.length === 1
                     ? <></>
                     : <ScrollingButton id='scrollLeftButton' onClick={slideLeft}
                       style={{ display: pictureToDisplayIndex === 0 ? 'none' : undefined }}>
@@ -107,34 +107,34 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
                       </ScrollingButton>}
                 </ButtonContainer>
                   <PictureContainer id='pictureContainer'>
-                    <ItemDetailImage src={image} alt='picture1' id='itemPicture'/>
+                    <ProductPicture src={image} alt='picture1' id='itemPicture'/>
                   </PictureContainer>
                 <ButtonContainer id='scrollingButtonRightContainer'>
-                  {itemList[index].illustrations.length === 1
+                  {productList[index].illustrations.length === 1
                     ? <></>
                     : <ScrollingButton id='scrollRightButton' onClick={slideRight}
-                      style={{ display: pictureToDisplayIndex === itemList[index].illustrations.length - 1 ? 'none' : undefined }}>
+                      style={{ display: pictureToDisplayIndex === productList[index].illustrations.length - 1 ? 'none' : undefined }}>
                         <StyledIcon icon={faChevronRight} />
                       </ScrollingButton>}
                 </ButtonContainer>
-              </ImageDisplayer>
+              </PictureDisplayer>
               {
-                displayPreviewSlider(itemList[index].illustrations.length, screenWidth) === false
+                displayPreviewSlider(productList[index].illustrations.length, screenWidth) === false
                   ? <></>
-                  : <ImageSelector>
-                      <PreviewSlider pictureList={itemList[index].illustrations} setImage={setImage}/>
-                    </ImageSelector>
+                  : <PictureSelector id='pictureSelector'>
+                      <PreviewSlider pictureList={productList[index].illustrations} setImage={setImage}/>
+                    </PictureSelector>
               }
-            </ImageWrapper>
-            <InfoContainer id='infoContainer'>
-              <ItemDatas id='itemDatas'>
-                <StyledTitleH1 id='articleTitleName'>{itemList[index].name}</StyledTitleH1>
+            </PictureWrapper>
+            <ProductInfoWrapper id='productInfoWrapper'>
+              <ProductInfoContainer id='productInfoWrapper'>
+                <StyledTitleH1 id='articleTitleName'>{productList[index].name}</StyledTitleH1>
                 <StyledUlInfo>
-                  <li><p style={{ fontStyle: 'italic' }}> {itemList[index].brand} </p></li>
-                  <li><p> {itemList[index].weight} </p></li>
-                  <li><p style={{ color: `${colors.greenCustom}`, fontSize: '25px', marginBottom: '0' }}>{itemList[index].price.toFixed(2)} €</p></li>
+                  <li><p style={{ fontStyle: 'italic' }}> {productList[index].brand} </p></li>
+                  <li><p> {productList[index].weight} </p></li>
+                  <li><p style={{ color: `${colors.greenCustom}`, fontSize: '25px', marginBottom: '0' }}>{productList[index].price.toFixed(2)} €</p></li>
                 </StyledUlInfo>
-              </ItemDatas>
+              </ProductInfoContainer>
               <QuantitySelectorWrapper onClick={() => onQuantitySelectionWrapper()}>
                   <QuantitySelectorContainer>
                     <QuantityButton onClick={() => decreaseSelection(amount, updateAmount)}>-</QuantityButton>
@@ -142,24 +142,24 @@ function ItemDetail ({ itemCategory, itemSubCategory }) {
                     <QuantityButton onClick={() => increaseSelection(amount, updateAmount)}>+</QuantityButton>
                   </QuantitySelectorContainer>
                   <div>
-                    <AddToCartButton onClick={() => addToCart(cart, updateCart, itemList[index], amount)}>Add To Cart</AddToCartButton>
+                    <AddToCartButton onClick={() => addToCart(cart, updateCart, productList[index], amount)}>Add To Cart</AddToCartButton>
                   </div>
               </QuantitySelectorWrapper>
-            </InfoContainer>
-          </ItemPresentation>
+            </ProductInfoWrapper>
+          </ProductPresentationWrapper>
           <DescriptionContainer id='descriptionContainer'>
             <StyledTitleH1 id='articleTitleDescription'>Description</StyledTitleH1>
-            {itemList[index].description.map((liComponent, indexDescr) => (
-                    <p key={`${itemList[index].name}-li-${indexDescr}`}>{liComponent.li}</p>
+            {productList[index].description.map((liComponent, indexDescr) => (
+                    <p key={`${productList[index].name}-li-${indexDescr}`}>{liComponent.li}</p>
             ))}
             <StyledTitleH1 id='articleTitleCharacteristic'>Characteristics</StyledTitleH1>
             <StyledUlDescription>
-                {itemList[index].characteristic.map((liComponent, indexCharac) => (
-                    <li key={`${itemList[index].name}-li-${indexCharac}`}><p>{liComponent.li}</p></li>
+                {productList[index].characteristic.map((liComponent, indexCharac) => (
+                    <li key={`${productList[index].name}-li-${indexCharac}`}><p>{liComponent.li}</p></li>
                 ))}
             </StyledUlDescription>
           </DescriptionContainer>
-        </ItemDetailContainer>
+        </ProductDetailWrapper>
   );
 }
 

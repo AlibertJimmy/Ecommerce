@@ -22,8 +22,8 @@ function NavMenu () {
   }
 
   return (
-    <div id='sideNav'>
-      <StyledUlMenu burgerButtonState={burgerButtonState} id='sideul'>
+    <div id='menuNav'>
+      <StyledUlMenu burgerButtonState={burgerButtonState} id='menuUl'>
             <li><StyledLink to="/" onClick={handleLinkClick}>Home</StyledLink></li>
             <li><StyledLink to="/Account" onClick={handleLinkClick}>Account</StyledLink></li>
         </StyledUlMenu>

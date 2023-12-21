@@ -42,7 +42,7 @@ export function getAllItemSubCategoryList (itemCategory) {
 };
 
 /* Return the subCategory list of items using intermediary functions */
-export function getItemList (itemCategory, itemSubCategory) {
+export function getProductList (itemCategory, itemSubCategory) {
   const functionMap = {
     Shelter: getItemListShelter,
     Bedding: getItemListBedding

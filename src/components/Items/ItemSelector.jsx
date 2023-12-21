@@ -9,8 +9,8 @@ import { scrollToTop } from '../../utils/Functions/globalFunctions';
 
 // Import Style
 import {
-  ArticleSelectorWrapper, ArticleSelectorContainer,
-  ArticlePresentation, ArticleDatas, ArticlePrice
+  ProductSelectorWrapper, ProductSelectorContainer,
+  ProductPresentation, ProductDatasContainer, ProductPrice
 } from '../../utils/Style/ItemSelectorStyle';
 
 import { StyledTitleH1, StyledTitleH2 } from '../../utils/Style/GlobalStyle';
@@ -29,27 +29,27 @@ function ItemSelector ({ itemList, titleWrapper }) {
   }
 
   return (
-    <ArticleSelectorWrapper id='articleSelectorWrapper'>
+    <ProductSelectorWrapper id='productSelectorWrapper'>
       <StyledTitleH1 style={{ margin: '20px 0' }}>{titleWrapper}</StyledTitleH1>
-      <ArticleSelectorContainer id='itemSelectorContainer'>
+      <ProductSelectorContainer id='productSelectorContainer'>
         {itemList.map((item, index) => (
 
-          <ArticlePresentation id='itemPresentation' key={index} >
+          <ProductPresentation id='productPresentation' key={index} >
             <StyledLinkShape key={index}
             to={`/${itemList[index].category}/${itemList[index].subCategory}/${itemList[index].id}`}
             onClick={handleOnClick}>
-            <PictureContainerSelector>
+            <PictureContainerSelector id='pictureContainerSelector'>
               <ArticlePicturePreviewSelection src={item.illustrations[0].picture} alt='picture1'/>
             </PictureContainerSelector>
-            <ArticleDatas>
+            <ProductDatasContainer id='productDatasContainer'>
               <StyledTitleH2>{item.name}</StyledTitleH2>
-              <ArticlePrice>{item.price} €</ArticlePrice>
-            </ArticleDatas>
+              <ProductPrice>{item.price} €</ProductPrice>
+            </ProductDatasContainer>
             </StyledLinkShape>
-          </ArticlePresentation>
+          </ProductPresentation>
         ))}
-      </ArticleSelectorContainer>
-    </ArticleSelectorWrapper>
+      </ProductSelectorContainer>
+    </ProductSelectorWrapper>
   );
 }
 

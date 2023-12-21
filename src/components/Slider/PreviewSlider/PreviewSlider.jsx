@@ -98,14 +98,14 @@ function PreviewSlider ({ pictureList, setImage }) {
   }, [pictureToDisplayIndex]);
 
   return (
-    <SliderWrapper id='sliderWrapper'>
+    <SliderWrapper id='previewSliderWrapper'>
       <ButtonContainer id='scrollingButtonLeftContainer'>
         <ScrollingButton id='scrollLeftButton' onClick={slideLeft}
         style={{ display: displayLeftButton(pictureList.length, scrollingIndex) === false ? 'none' : undefined }}>
           <StyledIcon icon={faChevronLeft} />
         </ScrollingButton>
       </ButtonContainer>
-      <Slider id='slider' ref={sliderRef}>
+      <Slider id='previewSlider' ref={sliderRef}>
         <PreviewItem pictureList={pictureList} setImage={setImage}/>
       </Slider>
       <ButtonContainer id='scrollingButtonRightContainer'>

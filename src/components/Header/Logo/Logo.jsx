@@ -14,7 +14,7 @@ const SizedIMG = styled.img`
 
 function Logo () {
   return (
-        <div>
+        <div id='logoContainer'>
           <SizedIMG src={LogoPNG} alt='Logo'></SizedIMG>
         </div>
   );

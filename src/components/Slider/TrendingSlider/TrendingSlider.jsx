@@ -36,19 +36,19 @@ function TrendingSlider ({ itemCategory }) {
     updateMaxScrollingIndex(getMaxScrollingIndex(trendingItemList.length, window.innerWidth));
 
     // Reset the position of the slider
-    const slider = document.getElementById('slider');
+    const slider = document.getElementById('trendingSlider');
     slider.scrollLeft = 0;
   }, []);
 
   const slideLeft = () => {
-    const slider = document.getElementById('slider');
+    const slider = document.getElementById('trendingSlider');
     slider.scrollLeft = slider.scrollLeft - (trendingSliderElementWidth + trendingSliderElementGap);
 
     updatescrollingIndex(scrollingIndex - 1);
   };
 
   const slideRight = () => {
-    const slider = document.getElementById('slider');
+    const slider = document.getElementById('trendingSlider');
     slider.scrollLeft = slider.scrollLeft + (trendingSliderElementWidth + trendingSliderElementGap);
 
     updatescrollingIndex(scrollingIndex + 1);
@@ -67,23 +67,23 @@ function TrendingSlider ({ itemCategory }) {
   */
 
   return (
-    <SliderWrapper id='sliderWrapper'>
+    <SliderWrapper id='trendingSliderWrapper'>
         <SliderHeaderContainer id='sliderHeaderContainer'>
           <StyledTitleH1>Trending Now</StyledTitleH1>
           <SliderButtonWrapper id='sliderButtonWrapper'>
-            <SliderButtonContainer id='sliderButtonContainerLeft'>
+            <SliderButtonContainer id='sliderLeftButtonContainer'>
             <button id='scrollLeftButton' onClick={slideLeft} style={{ display: scrollingIndex === 0 ? 'none' : undefined }}>
               <StyledIcon icon={faChevronLeft} />
             </button>
             </SliderButtonContainer>
-            <SliderButtonContainer id='sliderButtonContainerRight'>
+            <SliderButtonContainer id='sliderRightButtonContainer'>
             <button id='scrollRightButton' onClick={slideRight} style={{ display: scrollingIndex === maxScrollingIndex ? 'none' : undefined }}>
               <StyledIcon icon={faChevronRight} />
             </button>
             </SliderButtonContainer>
           </SliderButtonWrapper>
         </SliderHeaderContainer>
-        <Slider id="slider">
+        <Slider id="trendingSlider">
           <TrendingItem itemCategory={itemCategory} trendingItemList={trendingItemList}/>
         </Slider>
     </SliderWrapper>

@@ -13,7 +13,7 @@ import {
 // Illustration Related
 
 // Page General
-export const ItemDetailContainer = styled.div`
+export const ProductDetailWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,7 +28,7 @@ export const ItemDetailContainer = styled.div`
 `;
 
 // Item Presentation
-export const ItemPresentation = styled.div`
+export const ProductPresentationWrapper = styled.div`
   margin: 5px 10px;
   
   display:flex;
@@ -46,7 +46,7 @@ export const ItemPresentation = styled.div`
 `;
 
 // Illustration Related
-export const ImageWrapper = styled.div`
+export const PictureWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,7 +59,7 @@ export const ImageWrapper = styled.div`
   }
 `;
 // align-items: center; --> bug source /!\
-export const ImageDisplayer = styled.div`
+export const PictureDisplayer = styled.div`
   width: ${IllustrationDisplayWidth}px;
   height: ${IllustrationDisplayHeight}px;
 
@@ -97,7 +97,7 @@ export const PictureContainer = styled.div`
   }
 `;
 
-export const ItemDetailImage = styled.img`
+export const ProductPicture = styled.img`
   max-width: ${IllustrationDisplayWidth - PicturelayoutButtonWidth * 2}px;
   max-height: ${IllustrationDisplayHeight}px;
   object-fit: contain;
@@ -113,7 +113,7 @@ export const ItemDetailImage = styled.img`
   }
 `;
 
-export const ImageSelector = styled.div`
+export const PictureSelector = styled.div`
   display: flex;
   justify-content: space-evenly;
   width: ${IllustrationDisplayWidth}px;
@@ -165,7 +165,7 @@ export const PictureSelectionPreview = styled.img`
 `;
 
 // Info Related
-export const InfoContainer = styled.div`
+export const ProductInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   
@@ -185,7 +185,7 @@ export const InfoContainer = styled.div`
   }
 `;
 
-export const ItemDatas = styled.div`
+export const ProductInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
 

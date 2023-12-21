@@ -23,7 +23,7 @@ function NavItems () {
 
   return (
     <div id='itemSideNav'>
-      <StyledUlItems burgerButtonState={burgerButtonState} id='itemUl'>
+      <StyledUlItems burgerButtonState={burgerButtonState} id='productUl'>
             <li><Dropdown dropDownTitle ={dropDownTitle1} options={linksRender1} links={links1} handleCloseBurger={() => setBurgerButtonState(false)}/></li>
             <li><Dropdown dropDownTitle ={dropDownTitle2} options={linksRender2} links={links2} handleCloseBurger={() => setBurgerButtonState(false)}/></li>
         </StyledUlItems>

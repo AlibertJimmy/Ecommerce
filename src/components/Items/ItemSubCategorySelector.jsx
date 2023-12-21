@@ -10,7 +10,7 @@ import { scrollToTop } from '../../utils/Functions/globalFunctions';
 
 // Import Style
 import { StyledTitleH2 } from '../../utils/Style/GlobalStyle';
-import { SubCategorySelectorContainer, ItemPreviewContainer } from '../../utils/Style/ItemSubCategorySelectorStyle';
+import { ProductSubCategorySelectorContainer, ProductPreviewContainer } from '../../utils/Style/ItemSubCategorySelectorStyle';
 import { PictureContainerSelector, ArticlePicturePreviewSelection, StyledLinkShape } from '../../utils/Style/PreviewStyle';
 
 function ItemSubcategorySelector ({ itemCategory }) {
@@ -25,10 +25,10 @@ function ItemSubcategorySelector ({ itemCategory }) {
   }
 
   return (
-          <SubCategorySelectorContainer id='subCategorySelectorContainer'>
+          <ProductSubCategorySelectorContainer id='productSubCategorySelectorContainer'>
           {itemSubcategoryList.map((item, index) => (
 
-              <ItemPreviewContainer key={index} id='itemPreviewContainer'>
+              <ProductPreviewContainer key={index} id='productPreviewContainer'>
 
                 <StyledLinkShape key={index} to={`/${itemCategory}/${itemSubcategoryList[index].subCategory}`} onClick={handleOnClick} >
                 <>
@@ -38,10 +38,10 @@ function ItemSubcategorySelector ({ itemCategory }) {
                 <StyledTitleH2>{item.text}</StyledTitleH2>
                 </>
                 </StyledLinkShape>
-              </ItemPreviewContainer>
+              </ProductPreviewContainer>
 
           ))}
-          </SubCategorySelectorContainer>
+          </ProductSubCategorySelectorContainer>
   );
 }
 

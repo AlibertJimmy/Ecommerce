@@ -7,13 +7,13 @@ import colors from '../Colors';
 // Import Constants
 import { responsiveWidthMobile, responsiveWidthTablet } from '../Constant';
 
-export const SubCategorySelectorContainer = styled.div`
+export const ProductSubCategorySelectorContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 `;
 
-export const ItemPreviewContainer = styled.div`
+export const ProductPreviewContainer = styled.div`
   display:flex;
   
   flex: 0 0 calc(23% - 10px);

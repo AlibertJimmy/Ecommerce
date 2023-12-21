@@ -25,8 +25,8 @@ function Footer () {
         <StyledText>
             <StyledP>Copyright © 2023 OutdoorShop</StyledP>
         </StyledText>
-        <div id='buttonContainer'>
-            <StyledButton id="goToTopButton" onClick={handleGoToTop}>
+        <div id='scrollToTopButtonContainer'>
+            <StyledButton id="scrollToTopButton" onClick={handleGoToTop}>
               <StyledIcon icon={faChevronUp}/>
             </StyledButton>
         </div>
