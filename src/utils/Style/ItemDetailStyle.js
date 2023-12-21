@@ -57,7 +57,6 @@ export const ImageWrapper = styled.div`
   @media (max-width: ${responsiveWidthMobile}px){
     flex-direction: column;
   }
-  border: 1px solid blue;
 `;
 // align-items: center; --> bug source /!\
 export const ImageDisplayer = styled.div`
@@ -183,13 +182,11 @@ export const InfoContainer = styled.div`
     padding: 25px;
     width: 15rem;
   }
-  border: 1px solid red;
 `;
 
 export const ItemDatas = styled.div`
   display: flex;
   flex-direction: column;
-  border: 1px solid yellow;
 `;
 
 export const StyledUlInfo = styled.ul`
@@ -233,7 +230,6 @@ export const QuantitySelectorWrapper = styled.div`
     padding: 10px 0;
     gap: 10px;
   }
-  border: 1px solid green;
 `;
 
 export const QuantitySelectorContainer = styled.div`

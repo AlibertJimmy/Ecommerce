@@ -109,7 +109,7 @@ function Cart () {
               </div>
               <CartCheckOutWrapper id='cartCheckOutWrapper'>
                 <CenterContainer>
-                  <EmptyCartButton onClick={() => updateCart([])}>Empty the cart</EmptyCartButton>
+                  <EmptyCartButton id='cartEmptyProductButton' onClick={() => updateCart([])}>Empty the cart</EmptyCartButton>
                 </CenterContainer>
                 <CenterContainer>
                   <StyledTitleH2>Total : {total} €</StyledTitleH2>
