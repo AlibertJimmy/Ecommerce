@@ -23,6 +23,8 @@ export const CartWrapper = styled.div`
   background-color: white;
   margin:0;
   padding: 20px;
+
+  overflow-y: auto;
   
   justify-content: flex-start;
   width: 300px;
