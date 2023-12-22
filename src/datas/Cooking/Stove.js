@@ -4,7 +4,7 @@ import FireMapleTitaniumStoveFMS116T3 from '../../assets/Items/Cooking/Stove/Fir
 import FireMapleTitaniumStoveFMS116T4 from '../../assets/Items/Cooking/Stove/FireMapleTitaniumStoveFMS116T/FireMapleTitaniumStoveFMS116T_4.jpg';
 import FireMapleTitaniumStoveFMS116T5 from '../../assets/Items/Cooking/Stove/FireMapleTitaniumStoveFMS116T/FireMapleTitaniumStoveFMS116T_5.jpg';
 
-import EsbitLiquidAlcoholStove from '../../assets/Items/Cooking/EsbitLiquidAlcoholStove/EsbitLiquidAlcoholStove.jpg';
+import EsbitLiquidAlcoholStove from '../../assets/Items/Cooking/Stove/EsbitLiquidAlcoholStove/EsbitLiquidAlcoholStove.jpg';
 
 export const stoveList = [
 
