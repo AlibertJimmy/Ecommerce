@@ -43,7 +43,7 @@ function ItemSelector ({ itemList, titleWrapper }) {
             </PictureContainerSelector>
             <ProductDatasContainer id='productDatasContainer'>
               <StyledTitleH2>{item.name}</StyledTitleH2>
-              <ProductPrice>{item.price} €</ProductPrice>
+              <ProductPrice>{item.price.toFixed(2)} €</ProductPrice>
             </ProductDatasContainer>
             </StyledLinkShape>
           </ProductPresentation>

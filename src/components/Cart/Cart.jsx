@@ -90,7 +90,7 @@ function Cart () {
                     <CartContentDataDisplay id={`cartContentDataDisplay${itemProperty.name}`}>
                       <CartContentPContainer id={`cartContentPContainer${itemProperty.name}`}>
                         <StyledP style={{ margin: '10px 10px 10px 5px' }}>{itemProperty.name}</StyledP>
-                        <StyledP style={{ fontWeight: 'bold', margin: '10px 10px 10px 5px' }}>{itemProperty.price}€</StyledP>
+                        <StyledP style={{ fontWeight: 'bold', margin: '10px 10px 10px 5px' }}>{itemProperty.price.toFixed(2)}€</StyledP>
                       </CartContentPContainer>
                       <CartQuantitySelectorWrapper id={`cartQuantitySelectorWrapper${itemProperty.name}`}>
                         <CartQuantitySelectorContainer id={`cartQuantitySelectorContainer${itemProperty.name}`}>
@@ -112,7 +112,7 @@ function Cart () {
                   <EmptyCartButton id='cartEmptyProductButton' onClick={() => updateCart([])}>Empty the cart</EmptyCartButton>
                 </CenterContainer>
                 <CenterContainer>
-                  <StyledTitleH2>Total : {total} €</StyledTitleH2>
+                  <StyledTitleH2>Total : {total.toFixed(2)} €</StyledTitleH2>
                 </CenterContainer>
                 <CenterContainer>
                   <EmptyCartButton onClick={() => setCartState(false)}>Go To Checkout</EmptyCartButton>

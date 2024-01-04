@@ -25,7 +25,7 @@ function TrendingItem ({ itemCategory, trendingItemList }) {
             <ArticleDescription id="articleDescription">
               <StyledP style={{ margin: '5px 0px' }}>{item.brand}</StyledP>
               <StyledP style={{ margin: '5px 0px' }}>{item.name}</StyledP>
-              <StyledP style={{ margin: '5px 0px' }}>{item.price}€</StyledP>
+              <StyledP style={{ margin: '5px 0px' }}>{item.price.toFixed(2)}€</StyledP>
             </ArticleDescription>
           </StyledLink>
         </ItemContainer>
