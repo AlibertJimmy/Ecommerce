@@ -115,7 +115,7 @@ function Cart () {
                   <StyledTitleH2>Total : {total} €</StyledTitleH2>
                 </CenterContainer>
                 <CenterContainer>
-                  <EmptyCartButton>Go To Checkout</EmptyCartButton>
+                  <EmptyCartButton onClick={() => setCartState(false)}>Go To Checkout</EmptyCartButton>
                 </CenterContainer>
               </CartCheckOutWrapper>
             </FilledCartWrapper>

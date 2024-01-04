@@ -91,7 +91,8 @@ export const CartQuantitySelectorContainer = styled.div`
 
 export const CartCheckOutWrapper = styled.div`
   border-top: 2px dashed black;
-  margin: 20px 0;
+  margin: 20px;
+  padding-bottom: 40px;
 `;
 
 export const CenterContainer = styled.div`
