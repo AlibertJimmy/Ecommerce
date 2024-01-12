@@ -1,6 +1,7 @@
 // Import React Libraries
 import React from 'react';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { format } from 'date-fns';
 
 // Import Functions
 import { scrollToTop } from '../../utils/Functions/globalFunctions';
@@ -15,6 +16,7 @@ import { StyledFooter, StyledText, StyledButton } from '../../utils/Style/Footer
 // Import Constants
 
 function Footer () {
+  const currentYear = format(new Date(), 'yyyy');
   const handleGoToTop = () => {
     scrollToTop();
   };
@@ -23,7 +25,7 @@ function Footer () {
     <StyledFooter id='footer'>
         <div></div>
         <StyledText>
-            <StyledP>Copyright © 2023 OutdoorShop</StyledP>
+            <StyledP>Copyright © {currentYear} All rights reserved.</StyledP>
         </StyledText>
         <div id='scrollToTopButtonContainer'>
             <StyledButton id="scrollToTopButton" onClick={handleGoToTop}>
